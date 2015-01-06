@@ -1,0 +1,35 @@
+Functieomschrijving
+* Reserveren voor bepaalde tijd
+* Zoekbalk voor locatie
+* Kaart restaurant (vrij, een persoon, twee personen color codes)
+* Max 2 mensen
+* Bij cancelen reservering, e-mail versturen naar user2 (yo gaat niet meer door)
+* Bij aanmelding user2, bevestiging e-mail naar beide
+* (Naam, leeftijd) en geslacht worden weergegeven op de plattegrond
+* Link naar de website, bij plattegrond restaurant
+* Je kan maar 1x reserveren
+* Als tafel is bezet, dan e-mail versturen naar beide users
+* 
+UsersUserIDNameSexBirthdateCityE-mailww
+RestautantIDNameGeo
+TablesIDRest_IDUser1User2StartTime	
+PermissionsIDName
+User_permPerm_IDUser_ID
+
+Paginaomschrijving
+Home, Hoe werkt het?, account, login
+Kaart (beschikbare restaurants in Amsterdam), Lijst van restaurants met link naar website
+Kaart pop-up:
+Bolletjes (in 2 kleuren), klikken geeft naam restaurant en aantal tafels (bezet of niet bezet, + voor reserveren, lege tafel met direct reserveren knop), link naar website
+Klikt op plusje:
+Als ingelogd dan reserveren (verschijnt vinkje)
+Als niet ingelogd (login scherm weergeven en keert terug naar pop-up)
+Klikt op reserveer nu, lege tafel:
+Als ingelogd (verandert naar jou info met plusje erachter)
+Als niet ingelogd (login scherm weergeven en keert terug naar pop-up)
+Als tafel is vol, dan weergeven 'bezet'
+
+
+
+
+
