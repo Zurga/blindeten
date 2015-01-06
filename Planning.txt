@@ -1,1 +1,27 @@
 Planning
+
+Week 2
+
+- Plan van aanpak 
+- Algemene taakverdeling
+- Algemeen ontwerp van de site 
+- Database inrichten en invullen (verschillende tabellen bepalen) 
+- Models 
+
+Week 3 
+
+- PHP cursus
+- Controller views
+
+Week 4 
+
+- Account aanmaken/inloggen/wijzigen
+- Restaurants toevoegen
+- Alle features van de site (cancellen/reserveren)
+
+Week 5
+
+- finishing touch
+- testen/beveiligen
+- presentatie maken 
+- verslag maken
