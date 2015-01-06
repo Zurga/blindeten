@@ -19,11 +19,11 @@ Functieomschrijving
 * Je kan maar 1x reserveren
 * Als tafel is bezet, dan e-mail versturen naar beide users
 * 
-UsersUserIDNameSexBirthdateCityE-mailww
-RestautantIDNameGeo
-TablesIDRest_IDUser1User2StartTime	
-PermissionsIDName
-User_permPerm_IDUser_ID
+Users ID Name Sex Birthdate City E-mail ww
+Restautant ID Name Geo
+Tables ID Rest_ID User1 User2 StartTime	
+Permissions ID Name
+User_perm Perm_ID User_ID
 
 Paginaomschrijving
 Home, Hoe werkt het?, account, login
@@ -39,6 +39,6 @@ Als niet ingelogd (login scherm weergeven en keert terug naar pop-up)
 Als tafel is vol, dan weergeven 'bezet'
 
 
-
+hallodiooo
 
 
