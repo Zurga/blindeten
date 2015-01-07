@@ -1,12 +1,5 @@
-<<<<<<< Updated upstream
-Aanpassing
-Aanpassing2
-
-=======
 WEBPROGRAMMEREN 
 
->>>>>>> Stashed changes
-Test
 Functieomschrijving
 * Reserveren voor bepaalde tijd
 * Zoekbalk voor locatie
