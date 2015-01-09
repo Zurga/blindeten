@@ -60,9 +60,20 @@ class User {
 			return false; 
 		}
 	}
-		
-}
+	
+	public function add_account($attr){
+		global $db;
 
+		$query = "INSERT INTO user (name, email, birthdate, sex, password, city) ".
+			"VALUES (". $attr->name . "," . $attr->email . "," .
+			$attr->birthdate. "," . $attr->sex . "," . $attr->password . "," . 
+			$attr->city . ")";
+	       	
+		$result	= $db->query($query);
+		if($result->num_rows > 0 ){
+			
+		}
+}
 
 
 
