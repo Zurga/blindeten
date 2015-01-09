@@ -65,6 +65,7 @@ class User {
 		if($result->num_rows > 0 ){
 			echo 'Yay888';
 		}
+	}
 }
 
 $test = new User;
