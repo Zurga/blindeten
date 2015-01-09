@@ -1,6 +1,7 @@
 <?php
 
 include('dblogin.php');
+include_once('Restaurant');
 
 class Map{
 	//markers is an array with restaurant associative arrays.
@@ -37,7 +38,3 @@ class Map{
 		}
 	}
 }
-				
-$map = new Map;
-$map->get_geo_info();
-var_dump($map);
