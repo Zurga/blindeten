@@ -20,6 +20,7 @@ class Map{
 		if ($result->num_rows > 0) {
 			//add the rows to the marker array
 			while ($row = $result->fetch_assoc()) {
+				var_dump($row);
 				$row['table_ids'] = array();
 				//get the tables
 				$subq = 'SELECT id FROM `tables`' .
