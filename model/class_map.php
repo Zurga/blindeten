@@ -11,6 +11,7 @@ class Map{
 
 		$query = 'SELECT restaurant.name, restaurant.lat, restaurant.lon,'.
 			' restaurant.url, tables.id' .
+			' FROM restaurant' .
 			' JOIN tables on restaurant.id = tables.rest_id' .
 			' WHERE tables.user2 is NULL';
 		
