@@ -27,7 +27,7 @@ class Map{
 			$names = array();
 			foreach ($rows as $row) {
 				echo $row['name'];
-				array_push($names, $row['name']);
+				$names[] = $row['name'];
 			}
 			array_push($markers,array_unique($names));
 		}	
