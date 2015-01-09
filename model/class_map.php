@@ -18,7 +18,7 @@ class Map{
 		$result = $db->query($query);
 		var_dump($result);
 		
-		if ($result->num_row > 0) {
+		if ($result->num_rows > 0) {
 			$row = $result->fetch_assoc();
 			//add the rows to the marker array
 			$names = array();
