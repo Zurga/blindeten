@@ -14,7 +14,7 @@ var_dump($map);
 <script>
 <?php
 foreach($map->markers as $marker){
-	echo "var div= '<div>'". $marker['name'] . $marker['url'] . '</div>';
+	echo "var div= '<div>". $marker['name'] . $marker['url'] . "</div>'";
 }
 </script>
 </body>
