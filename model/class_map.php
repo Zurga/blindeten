@@ -1,16 +1,16 @@
 <?php
 
-include('dblogin.php');
-
 class Map{
+
+	include('dblogin.php');
 	//markers is an array with restaurant associative arrays.
 	var $markers = array();
 	
 	public function get_geo_info(){
 		global $db;
 
-		$query = 'SELECT DISTINCT restaurant.id,restaurant.name, restaurant.lat, restaurant.lon,'.
-			' restaurant.url ' .
+		$query = 'SELECT DISTINCT restaurant.id,restaurant.name,' .
+			' restaurant.lat, restaurant.lon, restaurant.url' .
 			' FROM restaurant' .
 			' JOIN tables on restaurant.id = tables.rest_id' .
 			' WHERE tables.user2 is NULL';
@@ -35,7 +35,6 @@ class Map{
 				$this->markers[] = $row;
 			}
 		}
-
 	}
 }
 				
