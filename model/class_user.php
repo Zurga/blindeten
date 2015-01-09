@@ -42,9 +42,9 @@ class User {
 }
 
 $test = new User;
-$test->get_user('rens.mester@hotmail.com')
+$test->get_user('rens.mester@hotmail.com');
 
-var_dump($test)
+var_dump($test);
 
 
 ?>
