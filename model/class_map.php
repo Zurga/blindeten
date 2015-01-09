@@ -1,7 +1,6 @@
 <?php
 
 include('dblogin.php');
-include_once('Restaurant');
 
 class Map{
 	//markers is an array with restaurant associative arrays.
