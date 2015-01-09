@@ -1,6 +1,6 @@
 <?php
 
-//gives var db which is a connection to the database
+//gives var db which is a connection to the database, use $db->query() to query the database
 include("dblogin.php");
 global $db;
 
