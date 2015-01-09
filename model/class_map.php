@@ -15,6 +15,7 @@ class Map{
 			' WHERE tables.user2 is NULL';
 		
 		$result = $db->query($query);
+		var_dump($resulit);
 		
 		if ($result->num_row > 0) {
 			$row = $result->fetch_assoc();
