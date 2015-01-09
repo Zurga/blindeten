@@ -14,7 +14,6 @@ class Map{
 			' FROM restaurant' .
 			' JOIN tables on restaurant.id = tables.rest_id' .
 			' WHERE tables.user2 is NULL';
-		echo $query;
 		
 		$result = $db->query($query);
 		
@@ -32,7 +31,7 @@ class Map{
 				if ($result->num_rows > 0) {
 					while ($table = $result->fetch_assoc()) {
 						//add the table id to the restaurant
-						array_push($row['table'], $table);
+						array_push($row['table'], $table['id']);
 					}
 				}			
 				$this->markers[] = $row;
