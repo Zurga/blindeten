@@ -1,6 +1,6 @@
 <?php
 
-//gives var db which is a connection to the database
+//gives var db which is a connection to the database, use $db->query() to query the database
 include("dblogin.php");
 global $db;
 
@@ -63,14 +63,15 @@ class User {
 	       	
 		$result	= $db->query($query);
 		if($result->num_rows > 0 ){
-			
+			echo 'Yay888';
 		}
+	}
 }
 
 $test = new User;
 $test->get_user('rens.mester@hotmail.com');
 var_dump($test);
-$attr = array('name'=>'Rens Mester','sex'=>'0','birthdate'=>'1995-09-30','city'=>'Hoorn');
+$attr = array('name'=>'Rens Mester','sex'=>'0','birthdate'=>'1995-09-31','city'=>'Hoorn');
 var_dump($attr);
 var_dump($test);
 echo '<br>';
