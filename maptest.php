@@ -13,7 +13,7 @@ var_dump($map);
 <div id='Map'></div>
 <script>
 <?php
-foreach($map as $marker){
+foreach($map->marker as $marker){
 	echo "var div= '<div>'". $marker['name'] . $marker['url'] . '</div>';
 }
 </script>
