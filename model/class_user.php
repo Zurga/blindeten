@@ -63,7 +63,7 @@ class User {
 	       	
 		$result	= $db->query($query);
 		if($result->num_rows > 0 ){
-			echo 'Yay';
+			echo 'Yay888';
 		}
 }
 
