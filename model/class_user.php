@@ -48,28 +48,23 @@ class User {
 			
 		$result = $db->query($query);
 		
-		//check if email exists in db
-		if($result->num_rows > 0){
-			$row = $result->fetch_array(MYSQLI_ASSOC);
-			//assign values to user based on mySQL columns
-			foreach($row as $key=>$val){
-				$this->$key = $val;
-			}
-		}
-		else{
-			return false; 
-		}
+		var_dump($result);
+		echo '<br>';
 	}
 		
 }
 
 
-
-
 $test = new User;
 $test->get_user('rens.mester@hotmail.com');
+$attr = array('name'=>'Rens Mester','sex'=>'0','birthdate'=>'1995-09-30','city'=>'Hoorn');
 
-var_dump($test);
+var_dump($test->get_user('rens.mester@hotmail.com');
+echo '<br>';
+echo '<br>';
+$test->change_attr($attr);
+
+var_dump($test->get_user('rens.mester@hotmail.com');
 
 
 ?>
