@@ -9,8 +9,8 @@ class Map{
 	public function get_geo_info(){
 		global $db;
 
-		$query = 'SELECT restaurant.name, restaurant.lat, restaurant.lon,'.
-			' restaurant.url, tables.id' .
+		$query = 'SELECT DISTINCT restaurant.name, restaurant.lat, restaurant.lon,'.
+			' restaurant.url ' .
 			' FROM restaurant' .
 			' JOIN tables on restaurant.id = tables.rest_id' .
 			' WHERE tables.user2 is NULL';
@@ -18,23 +18,25 @@ class Map{
 		$result = $db->query($query);
 		
 		if ($result->num_rows > 0) {
-			$rows = array();
-			while ($row = $result->fetch_assoc()){
-				$rows[] = $row;
-			}
-			var_dump($rows);
 			//add the rows to the marker array
-			$names = array();
-			foreach ($rows as $row) {
-				echo $row['name'];
-				$names[] = $row['name'];
+			while ($row = $result->fetch_assoc()) {
+				$row['table_ids'] = array();
+				//get the tables
+				$subq = 'SELECT id FROM `tables`' .
+					' WHERE rest_id = ' . $row['id'];
+
+				$result = $db->query($subq);
+
+				if ($result->num_rows > 0) {
+					while ($table = $result->fetch_assoc()) {
+						//add the table id to the restaurant
+						array_push($row['table'], $table);
+					}
+				}			
+				$this->markers[] = $row;
 			}
-			var_dump($names);
-			array_push($markers,array_unique($names));
-		}	
-			//foreach ($markers['names'] as $name) {
-				//foreach ($row as $r) {
-				//	if ($r['name'] == $r['name']){
+		}
+
 	}
 }
 				
