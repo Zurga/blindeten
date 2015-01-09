@@ -18,12 +18,15 @@ class Map{
 		$result = $db->query($query);
 		
 		if ($result->num_rows > 0) {
-			$row = $result->fetch_all(MYSQL_ASSOC);
-			var_dump($row);
+			$rows = array()
+			while ($row = $result->fetch_assoc()){
+				$rows[] = $row;
+			}
+			var_dump($rows);
 			//add the rows to the marker array
 			$names = array();
-			foreach ($row as $r) {
-				$names[] = array($r['name']);
+			foreach ($rows as $row) {
+				$names[] = array($row['name']);
 			}
 			$markers[] = array_unique($names);
 		}	
