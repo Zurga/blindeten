@@ -9,7 +9,7 @@ class Map{
 	public function get_geo_info(){
 		global $db;
 
-		$query = 'SELECT DISTINCT id,restaurant.name, restaurant.lat, restaurant.lon,'.
+		$query = 'SELECT DISTINCT restaurant.id,restaurant.name, restaurant.lat, restaurant.lon,'.
 			' restaurant.url ' .
 			' FROM restaurant' .
 			' JOIN tables on restaurant.id = tables.rest_id' .
