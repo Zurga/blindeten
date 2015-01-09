@@ -31,7 +31,7 @@ class Map{
 				if ($result_table->num_rows > 0) {
 					while ($table = $result_table->fetch_assoc()) {
 						//add the table id to the restaurant
-						array_push($row['table'], $table['id']);
+						$row['table'][] = $table['id']);
 					}
 				}			
 				$this->markers[] = $row;
