@@ -39,7 +39,32 @@ class User {
 		}
 			
 		}
+	
+	public function change_attr($attr) {
+		global $db;
+		$query = "UPDATE 'user' SET 'name' = ".$attr->name", 'sex' = ".$attr->sex",".
+			"'birthdate' = ".$attr->birthdate", 'city' = ".$attr->city. 
+			"WHERE email = ".$this->email;
+			
+		$result = $db->query($query);
+		
+		//check if email exists in db
+		if($result->num_rows > 0){
+			$row = $result->fetch_array(MYSQLI_ASSOC);
+			//assign values to user based on mySQL columns
+			foreach($row as $key=>$val){
+				$this->$key = $val;
+			}
+		}
+		else{
+			return false; 
+		}
+	}
+		
 }
+
+
+
 
 $test = new User;
 $test->get_user('rens.mester@hotmail.com');
