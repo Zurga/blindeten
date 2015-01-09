@@ -29,6 +29,7 @@ class Map{
 				echo $row['name'];
 				$names[] = $row['name'];
 			}
+			var_dump($names);
 			array_push($markers,array_unique($names));
 		}	
 			//foreach ($markers['names'] as $name) {
