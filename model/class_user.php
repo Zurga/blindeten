@@ -42,10 +42,11 @@ class User {
 	
 	public function change_attr($attr) {
 		global $db;
-		$query = "UPDATE 'user' SET 'name' = ".$attr->name", 'sex' = ".$attr->sex",".
-			"'birthdate' = ".$attr->birthdate", 'city' = ".$attr->city. 
+		$query = "UPDATE 'user' SET 'name' = ".$attr->name.", 'sex' = ".$attr->sex.",".
+			"'birthdate' = ".$attr->birthdate.", 'city' = ".$attr->city. 
 			"WHERE email = ".$this->email;
-			
+		echo $query;
+		
 		$result = $db->query($query);
 		
 		var_dump($result);
