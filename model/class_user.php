@@ -58,9 +58,10 @@ class User {
 
 $test = new User;
 $test->get_user('rens.mester@hotmail.com');
+var_dump($test);
 $attr = array('name'=>'Rens Mester','sex'=>'0','birthdate'=>'1995-09-30','city'=>'Hoorn');
 
-var_dump($test->get_user('rens.mester@hotmail.com'));
+var_dump($test);
 echo '<br>';
 echo '<br>';
 $test->change_attr($attr);
