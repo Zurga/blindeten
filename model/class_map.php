@@ -18,7 +18,7 @@ class Map{
 		$result = $db->query($query);
 		
 		if ($result->num_rows > 0) {
-			$rows = array()
+			$rows = array();
 			while ($row = $result->fetch_assoc()){
 				$rows[] = $row;
 			}
