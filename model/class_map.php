@@ -16,10 +16,9 @@ class Map{
 			' WHERE tables.user2 is NULL';
 		
 		$result = $db->query($query);
-		var_dump($result);
 		
 		if ($result->num_rows > 0) {
-			$row = $result->fetch_assoc();
+			$row = $result->fetch_all(MYSQL_ASSOC);
 			var_dump($row);
 			//add the rows to the marker array
 			$names = array();
