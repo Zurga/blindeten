@@ -26,9 +26,9 @@ class Map{
 			//add the rows to the marker array
 			$names = array();
 			foreach ($rows as $row) {
-				$names[] = array($row['name']);
+				array_push($names, $row['name']);
 			}
-			$markers[] = array_unique($names);
+			array_push($markers,array_unique($names));
 		}	
 			//foreach ($markers['names'] as $name) {
 				//foreach ($row as $r) {
