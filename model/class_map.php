@@ -14,6 +14,7 @@ class Map{
 			' FROM restaurant' .
 			' JOIN tables on restaurant.id = tables.rest_id' .
 			' WHERE tables.user2 is NULL';
+		echo $query;
 		
 		$result = $db->query($query);
 		
