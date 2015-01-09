@@ -20,12 +20,13 @@ class Map{
 		
 		if ($result->num_rows > 0) {
 			$row = $result->fetch_assoc();
+			var_dump($row);
 			//add the rows to the marker array
 			$names = array();
 			foreach ($row as $r) {
 				$names[] = array($r['name']);
 			}
-			array_push(array_unique($names));
+			$markers[] = array_unique($names);
 		}	
 			//foreach ($markers['names'] as $name) {
 				//foreach ($row as $r) {
