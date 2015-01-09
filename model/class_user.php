@@ -42,23 +42,15 @@ class User {
 	
 	public function change_attr($attr) {
 		global $db;
-		$query = "UPDATE 'user' SET 'name' = ".$attr->name", 'sex' = ".$attr->sex",".
-			"'birthdate' = ".$attr->birthdate", 'city' = ".$attr->city. 
-			"WHERE email = ".$this->email;
-			
+		$query = "UPDATE 'user' SET 'name' = '".$attr['name']."', 'sex' = '".$attr['sex']."',".
+			"'birthdate' = '".$attr['birthdate']."', 'city' = '".$attr['city']."'". 
+			" WHERE email = '".$this->email."'";
+		echo $query;
+		
 		$result = $db->query($query);
 		
-		//check if email exists in db
-		if($result->num_rows > 0){
-			$row = $result->fetch_array(MYSQLI_ASSOC);
-			//assign values to user based on mySQL columns
-			foreach($row as $key=>$val){
-				$this->$key = $val;
-			}
-		}
-		else{
-			return false; 
-		}
+		var_dump($result);
+		echo '<br>';
 	}
 	
 	public function add_account($attr){
@@ -75,12 +67,17 @@ class User {
 		}
 }
 
-
-
 $test = new User;
 $test->get_user('rens.mester@hotmail.com');
-
 var_dump($test);
+$attr = array('name'=>'Rens Mester','sex'=>'0','birthdate'=>'1995-09-30','city'=>'Hoorn');
+var_dump($attr);
+var_dump($test);
+echo '<br>';
+echo '<br>';
+$test->change_attr($attr);
+
+var_dump($test->get_user('rens.mester@hotmail.com'));
 
 
 ?>
