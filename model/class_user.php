@@ -44,7 +44,7 @@ class User {
 		global $db;
 		$query = "UPDATE 'user' SET 'name' = ".$attr['name'].", 'sex' = ".$attr['sex'].",".
 			"'birthdate' = ".$attr['birthdate'].", 'city' = ".$attr['city']. 
-			" WHERE email = ".$this->email;
+			" WHERE email = '".$this->email."'";
 		echo $query;
 		
 		$result = $db->query($query);
