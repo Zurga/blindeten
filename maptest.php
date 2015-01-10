@@ -28,7 +28,7 @@ for(i=0;i<json.length;i++){
 	markers.addMarker(marker);
 	var popup = new OpenLayers.Popup.Framed('text', lonlat, popup_size, 
 		'Text', marker);
-	map.addPopup(popup);
+	//map.addPopup(popup);
 	
 }
 map.setCenter(lonlat, 14);
