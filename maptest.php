@@ -26,9 +26,9 @@ for(i=0;i<json.length;i++){
 		);
 	marker = new OpenLayers.Marker(lonlat);
 	marker.events.register("click", marker, function(e){
-		other_popups = document.getElementsByClassName('olPopup');
-		for(pop in other_popups){
-			pop.hidden = true;
+		popups = document.getElementsByClassName('olPopup');
+		for(i = 0; i<popups.length; i++){
+			popups[i].hidden = true;
 		}
 		var popup = new OpenLayers.Popup.FramedCloud("text", this.lonlat, popup_size, 
 			"<div style='width: 26px; height:20px;'>"+ marker.lonlat+"Text</div>", null, true);
