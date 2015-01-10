@@ -17,13 +17,15 @@ map.addLayer(new OpenLayers.Layer.OSM());
 var json = [ <?php foreach($map->markers as $marker){echo json_encode($marker) . ',';}?>]
 var markers = new OpenLayers.Layer.Markers("Restaurants");
 map.addLayer(markers);
+var popup_size = new OpenLayers.Size(200, 200);
+
 for(i=0;i<json.length;i++){
 	var lonlat = new OpenLayers.LonLat(json[i]['lon'], json[i]['lat'])
 		.transform( new OpenLayers.Projection("EPSG:4326"),
 			map.getProjectionObject()
 		);
 	markers.addMarker(new OpenLayers.Marker(lonlat));
-	var popup = new OpenLayers.Popup.FramedCloud("Popup", lonlat, null, 
+	var popup = new OpenLayers.Popup.FramedCloud(json[i]['name'], lonlat, size, 
 		json[i]['name'] + json[1]['url'], null, true);
 	map.addPopup(popup, false);
 	
