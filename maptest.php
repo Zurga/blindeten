@@ -31,7 +31,8 @@ for(i=0;i<json.length;i++){
 		for(i = 0; i<popups.length; i++){
 			popups[i].hidden = true;
 		}
-		if (pop = document.getElementById(this.id) != null){
+		pop = document.getElementById(this.id);
+		if (pop != null){
 			pop.hidden = false;
 		}
 		else{
