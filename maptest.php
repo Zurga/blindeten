@@ -26,9 +26,9 @@ for(i=0;i<json.length;i++){
 		);
 	marker = new OpenLayers.Marker(lonlat);
 	markers.addMarker(marker);
-	var popup = new OpenLayers.Popup.FramedCloud(json[i]['name'], lonlat, popup_size, 
-		json[i]['name'] + json[1]['url'], marker, true);
-	map.addPopup(popup, false);
+	var popup = new OpenLayers.Popup.FramedCloud(json[i]['name'] + 'text', lonlat, popup_size, 
+		json[i]['name'] + json[1]['url'] + 'Text', marker);
+	map.addPopup(popup);
 	
 }
 map.setCenter(lonlat, 14);
