@@ -27,7 +27,7 @@ for(i=0;i<json.length;i++){
 	marker = new OpenLayers.Marker(lonlat);
 	markers.addMarker(marker);
 	var popup = new OpenLayers.Popup.FramedCloud('text', lonlat, popup_size, 
-		'<div style='width: 26px; height:20px;'>Text</div>', null, true);
+		"<div style='width: 26px; height:20px;'>Text</div>", null, true);
 	map.addPopup(popup);
 	
 }
