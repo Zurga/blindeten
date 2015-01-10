@@ -25,14 +25,23 @@ for(i=0;i<json.length;i++){
 			map.getProjectionObject()
 		);
 	marker = new OpenLayers.Marker(lonlat);
+	marker.id = json[i].id;
 	marker.events.register("click", marker, function(e){
 		popups = document.getElementsByClassName('olPopup');
 		for(i = 0; i<popups.length; i++){
 			popups[i].hidden = true;
 		}
-		var popup = new OpenLayers.Popup.FramedCloud("text", this.lonlat, popup_size, 
-			"<div style='width: 26px; height:20px;'>"+ marker.lonlat+"Text</div>", null, true);
-		map.addPopup(popup)});
+		if (pop = document.getElementById(this.id) != null){
+			pop.hidden = false;
+		}
+		else{
+			var popup = new OpenLayers.Popup.FramedCloud(this.id, 
+				this.lonlat, popup_size, 
+				"<div style='width: 26px; height:20px;'>" +  
+				marker.lonlat+"Text</div>", null, true);
+			map.addPopup(popup)
+		}
+	});
 	markers.addMarker(marker);
 }
 map.setCenter(lonlat, 14);
