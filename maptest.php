@@ -25,7 +25,7 @@ for(i=0;i<json.length;i++){
 			map.getProjectionObject()
 		);
 	markers.addMarker(new OpenLayers.Marker(lonlat));
-	var popup = new OpenLayers.Popup.FramedCloud(json[i]['name'], lonlat, size, 
+	var popup = new OpenLayers.Popup.FramedCloud(json[i]['name'], lonlat, popup_size, 
 		json[i]['name'] + json[1]['url'], null, true);
 	map.addPopup(popup, false);
 	
