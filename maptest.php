@@ -23,6 +23,10 @@ for(i=0;i<json.length;i++){
 			map.getProjectionObject()
 		);
 	markers.addMarker(new OpenLayers.Marker(lonlat));
+	var popup = new OpenLayers.Popup.FramedCloud("Popup", lonlat, null, 
+		json[i]['name'] + json[1]['url'], true);
+	map.addPopup(popup, false);
+	
 }
 map.setCenter(lonlat, 14);
 </script>
