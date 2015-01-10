@@ -29,11 +29,11 @@ for(i=0;i<json.length;i++){
 	marker.events.register("click", marker, function(e){
 		popups = document.getElementsByClassName('olPopup');
 		for(i = 0; i<popups.length; i++){
-			popups[i].hidden = true;
+			popups[i].style.display = 'none';
 		}
 		pop = document.getElementById(this.id);
 		if (pop != null){
-			pop.hidden = false;
+			pop.style.display = '';
 		}
 		else{
 			var popup = new OpenLayers.Popup.FramedCloud(this.id, 
