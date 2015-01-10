@@ -12,10 +12,20 @@ var_dump($map);
 <body>
 <div id='Map'></div>
 <script>
-<?php
-foreach($map->markers as $marker){
-	echo "var div= '<div>". $marker['name'] . $marker['url'] . "</div>'";
+map = new OpenLayers.Map('Map');
+map.addLayer(new OpenLayers.Layer.OSM());
+
+var markers = [ <?php foreach($map->markers as $marker){echo json_encode($marker) . ',';}?>]
+var markers = new OpenLayers.Layer.Markers("Restaurants");
+map.addLayer(markers);
+for(i=0;i<markers.length;i++){
+	var lonlat = new OpenLayers.LonLat(markers[i]['lon'], markers[i]['lat'])
+		.transform( new OpenLayers.Projection("EPSG:4326"),
+			map.getProjectionObject()
+		);
+	markers.addMarker(new OpenLayers.Marker(lonlat));
 }
+map.setCenter(lonlat, 14);
 </script>
 </body>
 </html>
