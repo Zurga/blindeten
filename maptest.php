@@ -30,7 +30,7 @@ for(i=0;i<json.length;i++){
 		for(pop in other_popups){
 			pop.hidden = true;
 		}
-		var popup = new OpenLayers.Popup.FramedCloud("text", clone(this.lonlat), popup_size, 
+		var popup = new OpenLayers.Popup.FramedCloud("text", this.lonlat, popup_size, 
 			"<div style='width: 26px; height:20px;'>"+ marker.lonlat+"Text</div>", null, true);
 		map.addPopup(popup)});
 	markers.addMarker(marker);
