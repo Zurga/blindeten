@@ -15,11 +15,11 @@ var_dump($map);
 map = new OpenLayers.Map('Map');
 map.addLayer(new OpenLayers.Layer.OSM());
 
-var markers = [ <?php foreach($map->markers as $marker){echo json_encode($marker) . ',';}?>]
+var json = [ <?php foreach($map->markers as $marker){echo json_encode($marker) . ',';}?>]
 var markers = new OpenLayers.Layer.Markers("Restaurants");
 map.addLayer(markers);
-for(i=0;i<markers.length;i++){
-	var lonlat = new OpenLayers.LonLat(markers[i]['lon'], markers[i]['lat'])
+for(i=0;i<json.length;i++){
+	var lonlat = new OpenLayers.LonLat(json[i]['lon'], json[i]['lat'])
 		.transform( new OpenLayers.Projection("EPSG:4326"),
 			map.getProjectionObject()
 		);
