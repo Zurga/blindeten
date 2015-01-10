@@ -38,7 +38,7 @@ for(i=0;i<json.length;i++){
 		var popup = new OpenLayers.Popup.FramedCloud("text", clone(marker['lonlat']), popup_size, 
 			"<div style='width: 26px; height:20px;'>"+ marker.lonlat+"Text</div>", null, true);
 		popup.updatePosition();
-		console.log(marker.lonlat);
+		console.log(this.lonlat);
 		map.addPopup(popup)});
 	markers.addMarker(marker);
 }
