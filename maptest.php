@@ -27,7 +27,7 @@ for(i=0;i<json.length;i++){
 	marker = new OpenLayers.Marker(lonlat);
 	marker.events.register("click", marker, function(e){
 		other_popups = document.getElementsByClassName('olPopup');
-		for(pop in otherpop){
+		for(pop in other_popups){
 			pop.hidden = true;
 		}
 		var popup = new OpenLayers.Popup.FramedCloud("text", clone(this.lonlat), popup_size, 
