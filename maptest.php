@@ -18,7 +18,7 @@ var json = [ <?php foreach($map->markers as $marker){echo json_encode($marker) .
 var markers = new OpenLayers.Layer.Markers("Restaurants");
 map.addLayer(markers);
 var popup_size = new OpenLayers.Size(200, 200);
-alert(popup_size
+
 for(i=0;i<json.length;i++){
 	var lonlat = new OpenLayers.LonLat(json[i]['lon'], json[i]['lat'])
 		.transform( new OpenLayers.Projection("EPSG:4326"),
