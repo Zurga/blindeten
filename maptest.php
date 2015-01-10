@@ -26,7 +26,8 @@ for(i=0;i<json.length;i++){
 		);
 	marker = new OpenLayers.Marker(lonlat);
 	marker.events.register("click", marker, function(e){
-		var popup = new OpenLayers.Popup.FramedCloud("text", marker['lonlat'], popup_size, 
+		var popup = new OpenLayers.Popup.FramedCloud("text", 
+			new OpenLayers.LonLat(json[i]['lon'], json[i]['lat']), popup_size, 
 			"<div style='width: 26px; height:20px;'>Text</div>", null, true);
 		map.addPopup(popup)});
 	markers.addMarker(marker);
