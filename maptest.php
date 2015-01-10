@@ -11,15 +11,6 @@ $map->get_geo_info();
 <body>
 <div id='Map'></div>
 <script>
-function clone(obj) {
-	    if (null == obj || "object" != typeof obj) return obj;
-	        var copy = obj.constructor();
-	        for (var attr in obj) {
-			        if (obj.hasOwnProperty(attr)) copy[attr] = obj[attr];
-				    }
-		    return copy;
-}
-
 map = new OpenLayers.Map('Map');
 map.addLayer(new OpenLayers.Layer.OSM());
 
@@ -37,8 +28,10 @@ for(i=0;i<json.length;i++){
 	marker.events.register("click", marker, function(e){
 		var popup = new OpenLayers.Popup.FramedCloud("text", clone(this.lonlat), popup_size, 
 			"<div style='width: 26px; height:20px;'>"+ marker.lonlat+"Text</div>", null, true);
-		popup.updatePosition();
-		console.log(this.lonlat);
+		other_popups = document.getElementsByClassName('olPopup');
+		for(pop in otherpop){
+			pop.hidden = true;
+		}
 		map.addPopup(popup)});
 	markers.addMarker(marker);
 }
