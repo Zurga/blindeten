@@ -24,10 +24,11 @@ for(i=0;i<json.length;i++){
 		.transform( new OpenLayers.Projection("EPSG:4326"),
 			map.getProjectionObject()
 		);
-	markers.addMarker(new OpenLayers.Marker(lonlat));
-	//var popup = new OpenLayers.Popup.FramedCloud(json[i]['name'], lonlat, popup_size, 
-	//	json[i]['name'] + json[1]['url'], null, true);
-	//map.addPopup(popup, false);
+	marker = new OpenLayers.Marker(lonlat);
+	markers.addMarker(marker);
+	var popup = new OpenLayers.Popup.FramedCloud(json[i]['name'], lonlat, popup_size, 
+		json[i]['name'] + json[1]['url'], marker, true);
+	map.addPopup(popup, false);
 	
 }
 map.setCenter(lonlat, 14);
