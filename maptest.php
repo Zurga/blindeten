@@ -25,12 +25,11 @@ for(i=0;i<json.length;i++){
 			map.getProjectionObject()
 		);
 	marker = new OpenLayers.Marker(lonlat);
-	markers.addMarker(marker);
 	marker.events.register("click", marker, function(e){
-	var popup = new OpenLayers.Popup.FramedCloud("text", lonlat, popup_size, 
-		"<div style='width: 26px; height:20px;'>Text</div>", null, true);
-	map.addPopup(popup)});;
-	
+		var popup = new OpenLayers.Popup.FramedCloud("text", lonlat, popup_size, 
+			"<div style='width: 26px; height:20px;'>Text</div>", null, true);
+		map.addPopup(popup)});
+	markers.addMarker(marker);
 }
 map.setCenter(lonlat, 14);
 </script>
