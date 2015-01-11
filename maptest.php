@@ -27,7 +27,7 @@ for(i=0;i<json.length;i++){
 		);
 	marker = new OpenLayers.Marker(lonlat);
 	marker.id = json[i].id;
-	marker.name = jsond[i].name
+	marker.name = json[i].name
 	//creating the popup for each restaurant
 	marker.events.register("click", marker, function(e){
 		popups = document.getElementsByClassName('olPopup');
