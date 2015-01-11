@@ -13,4 +13,5 @@ class Controller {
 		$restaurants = $this->model->get_restaurants();
 		include 'view/map.php';
 	}
+}
 ?>
