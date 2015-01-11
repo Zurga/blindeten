@@ -6,7 +6,7 @@ $map->get_geo_info();
 ?>
 <html>
 <head>
-<script src='http://openlayers.org/api/OpenLayers.js'></script>
+<script src='js/OpenLayers.js'></script>
 </head>
 <body>
 <div id='Map'></div>
