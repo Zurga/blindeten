@@ -10,7 +10,7 @@ $map->get_geo_info();
           type="text/javascript"></script>
 </head>
 <body>
-<div id='Map'></div>
+<div id='map'></div>
 <script>
 map = new google.maps.Map(document.getElementById('map'),{
 	zoom: 3,
