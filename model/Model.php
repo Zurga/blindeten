@@ -1,6 +1,6 @@
 <?php
 //get db connection
-include_once('dbConnect');
+include_once('blindeten/model/dbConnect.php');
 include_once('Map.php');
 include_once('User.php');
 
