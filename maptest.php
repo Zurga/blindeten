@@ -13,6 +13,7 @@ $map->get_geo_info();
 <script>
 //map = new OpenLayers.Map('Map');
 //map.addLayer(new OpenLayers.Layer.OSM());
+ol  = OpenLayers;
 map = new OpenLayers.Map({target: 'map',
 	layers: [
 	new ol.layer.Tile({source: new ol.source.XYZ({ 
