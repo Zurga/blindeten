@@ -11,19 +11,8 @@ $map->get_geo_info();
 <body>
 <div id='Map'></div>
 <script>
-//map = new OpenLayers.Map('Map');
-//map.addLayer(new OpenLayers.Layer.OSM());
-ol  = OpenLayers;
-map = new OpenLayers.Map({target: 'map',
-	layers: [
-	new ol.Layer.Tile({source: new ol.source.XYZ({ 
-	url: 'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
-		attributions: [new ol.Attribution({ 
-		html: ['&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'] })]
-		})
-        })
-	]
-});
+map = new OpenLayers.Map('Map');
+map.addLayer(new OpenLayers.Layer.OSM());
 //create json from the model
 var json = [ <?php foreach($map->markers as $marker){echo json_encode($marker) . ',';}?>]
 var markers = new OpenLayers.Layer.Markers("Restaurants");
