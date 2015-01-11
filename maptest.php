@@ -10,7 +10,7 @@ $map->get_geo_info();
           type="text/javascript"></script>
 </head>
 <body>
-<div id='map'></div>
+<div id='map' style='height:100%;'></div>
 <script>
 map = new google.maps.Map(document.getElementById('map'),{
 	zoom: 3,
@@ -37,8 +37,8 @@ for(i=0;i<json.length;i++){
 		}
 	})(marker, i));
 }
-//map.setCenter(lonlat, 14);
-
+map.setCenter(latlon);
+map.setZoom(14);
 </script>
 </body>
 </html>
