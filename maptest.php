@@ -6,26 +6,26 @@ $map->get_geo_info();
 ?>
 <html>
 <head>
-<script src='js/OpenLayers.js'></script>
+<script src='js/ol.js'></script>
 </head>
 <body>
 <div id='Map'></div>
 <script>
-map = new OpenLayers.Map('Map');
-map.addLayer(new OpenLayers.Layer.OSM());
+map = new ol.Map('Map');
+map.addLayer(new ol.Layer.OSM());
 //create json from the model
 var json = [ <?php foreach($map->markers as $marker){echo json_encode($marker) . ',';}?>]
-var markers = new OpenLayers.Layer.Markers("Restaurants");
+var markers = new ol.Layer.Markers("Restaurants");
 map.addLayer(markers);
-var popup_size = new OpenLayers.Size(200, 200);
+var popup_size = new ol.Size(200, 200);
 
 for(i=0;i<json.length;i++){
 	//create lonlat for each restaurant
-	var lonlat = new OpenLayers.LonLat(json[i]['lon'], json[i]['lat'])
-		.transform( new OpenLayers.Projection("EPSG:4326"),
+	var lonlat = new ol.LonLat(json[i]['lon'], json[i]['lat'])
+		.transform( new ol.Projection("EPSG:4326"),
 			map.getProjectionObject()
 		);
-	marker = new OpenLayers.Marker(lonlat);
+	marker = new ol.Marker(lonlat);
 	marker.id = json[i].id;
 	marker.name = json[i].name
 	//todo create icon for the marker
@@ -43,7 +43,7 @@ for(i=0;i<json.length;i++){
 			pop.style.display = '';
 		}
 		else{	//create new popup
-			var popup = new OpenLayers.Popup.FramedCloud(this.id, 
+			var popup = new ol.Popup.FramedCloud(this.id, 
 				this.lonlat, popup_size, 
 				"<div style='width: 26px; height:20px;'>" +  
 				"Text</div>", null, true);
