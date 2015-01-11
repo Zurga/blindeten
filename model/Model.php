@@ -22,7 +22,7 @@ class Model{
 		//check if email exists in db
 		if($row = get_rows($result)){
 			$row = $result->fetch_array(MYSQLI_ASSOC);
-			$user = new User()
+			$user = new User();
 			//assign values to user based on mySQL columns
 			foreach($row as $key=>$val){
 				$user->$key = $val;
@@ -75,7 +75,6 @@ class Model{
 
 	//get a list of restaurants that have tables that can be reserved
 	public function get_restaurants($city){
-		global $db;
 		$restaurants = array();
 
 		$query = 'SELECT DISTINCT restaurant.id,restaurant.name,' .
