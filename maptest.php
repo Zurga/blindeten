@@ -11,9 +11,18 @@ $map->get_geo_info();
 <body>
 <div id='Map'></div>
 <script>
-map = new OpenLayers.Map('Map');
-map.addLayer(new OpenLayers.Layer.OSM());
-
+//map = new OpenLayers.Map('Map');
+//map.addLayer(new OpenLayers.Layer.OSM());
+map = new OpenLayers.Map({target: 'map',
+	layers: [
+	new ol.layer.Tile({source: new ol.source.XYZ({ 
+	url: 'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
+		attributions: [new ol.Attribution({ 
+		html: ['&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'] })]
+		})
+        })
+	]
+});
 //create json from the model
 var json = [ <?php foreach($map->markers as $marker){echo json_encode($marker) . ',';}?>]
 var markers = new OpenLayers.Layer.Markers("Restaurants");
@@ -28,6 +37,7 @@ for(i=0;i<json.length;i++){
 		);
 	marker = new OpenLayers.Marker(lonlat);
 	marker.id = json[i].id;
+	marker.name = jsond[i].name
 	//creating the popup for each restaurant
 	marker.events.register("click", marker, function(e){
 		popups = document.getElementsByClassName('olPopup');
@@ -45,7 +55,7 @@ for(i=0;i<json.length;i++){
 			var popup = new OpenLayers.Popup.FramedCloud(this.id, 
 				this.lonlat, popup_size, 
 				"<div style='width: 26px; height:20px;'>" +  
-				marker.lonlat+"Text</div>", null, true);
+				"Text</div>", null, true);
 			map.addPopup(popup)
 		}
 	});
