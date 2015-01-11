@@ -1,9 +1,4 @@
 <?php
-
-//gives var db which is a connection to the database, use $db->query() to query the database
-include("dblogin.php");
-global $db;
-
 class User {
 	public $name;
 	public $id;
@@ -13,7 +8,6 @@ class User {
 	public $birthdate;
 	public $city;
 	public $log_in;
-
 }
 /*
 $test = new User;
