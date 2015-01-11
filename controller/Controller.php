@@ -1,6 +1,6 @@
 <?php
 
-include_once('../model/class_map.php');
+include_once('../model/Model.php');
 
 class Controller {
 	public $model;
