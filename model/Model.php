@@ -1,16 +1,14 @@
 <?php
 //get db connection
-include_once('dbConnect.php');
+include_once('dbConnect');
 include_once('Map.php');
 include_once('User.php');
 
 
 class Model{
-	global $db;
 
 	//log the user the system and then return user info
 	public function login($email_addr, $password){
-		global $db;
 		$query = "SELECT user.id, user.name, user.sex ,".
 			" user.birthdate, user.city, user.email, permission.name AS permission".
 			" FROM user".
