@@ -119,7 +119,7 @@ function get_rows($result){
 	}
 	else if($result->num_rows > 1){
 		$rows = array();
-		while ($row = result->fetch_assoc()){
+		while ($row = $result->fetch_assoc()){
 			$rows[] = $row;
 		}
 		return $rows;
