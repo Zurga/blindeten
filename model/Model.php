@@ -68,8 +68,10 @@ class Model{
 			" WHERE id = " . $table_id;
 		$result = $db->query($tableQ);
 		
-		if ($rows = get_rows($result){
-			
+		if ($rows = get_rows($result)){
+			//todo find out in which column to place user
+			//and if table has two people send email to first user
+			//also put booking in the archive
 		}
 	}
 
