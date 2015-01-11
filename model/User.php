@@ -15,7 +15,7 @@ class User {
 	public $log_in;
 
 }
-
+/*
 $test = new User;
 $test->get_user('rens.mester@hotmail.com');
 var_dump($test);
@@ -28,5 +28,5 @@ $test->change_attr($attr);
 
 var_dump($test->get_user('rens.mester@hotmail.com'));
 
-
+ */
 ?>
