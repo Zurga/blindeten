@@ -71,7 +71,7 @@ class Model{
 		}
 
 		$tableQ = "SELECT DISTINCT  FROM tables" .
-			" WHERE id = " . $table_id.;
+			" WHERE id = " . $table_id;
 	
 		$result = $db->query($tableQ);
 		
