@@ -30,7 +30,6 @@ class Model{
 		else{
 			return false; 
 		}
-			
 	}
 
 	public function change_attr($user, $attr) {
@@ -75,6 +74,7 @@ class Model{
 
 	//get a list of restaurants that have tables that can be reserved
 	public function get_restaurants($city){
+		global $db;
 		$restaurants = array();
 
 		$query = 'SELECT DISTINCT restaurant.id,restaurant.name,' .
