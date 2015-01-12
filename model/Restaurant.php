@@ -1,5 +1,4 @@
 <?php
-include 'dbFunctions.php';
 
 class Restaurant{
 	public $id;
