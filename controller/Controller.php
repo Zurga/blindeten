@@ -10,7 +10,7 @@ class Controller {
 	}
 
 	public function invoke(){
-		$restaurants = $this->model->get_restaurants();
+		$restaurants = $this->model->get_restaurants('Amsterdam');
 		include '/view/map.php';
 	}
 }
