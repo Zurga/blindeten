@@ -123,9 +123,9 @@ class Model{
 					}
 				}
 				//fill the restaurant data
-				$restaurant = set_var($row, $restaurant);
-				var_dump($restaurant);
-				$restaurants[] = $restaurant;
+				$rest = set_var($row, $restaurant);
+				var_dump($rest);
+				$restaurants[] = $rest;
 				return $restaurants;
 			}
 		}
