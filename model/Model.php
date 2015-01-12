@@ -60,18 +60,39 @@ class Model{
 		}
 	}
 
-	public function booktable($user, $table_id){
+	public function booktable($user, $table_id, $time){
 		global $db;
 		//get if the table id exsists
-		$tableQ = "SELECT DISTINCT * FROM tables" .
-			" WHERE id = " . $table_id;
+		$tableQ = "SELECT DISTINCT  FROM tables" .
+			" WHERE id = " . $table_id.;
+			"JOIN "
 		$result = $db->query($tableQ);
 		
 		if ($rows = get_rows($result)){
+			if ($rows["user1"] == NULL) {
+				$column = "user1";
+			}
+			else {
+				$column = "user2";
+			}
+
+			$bookQ = "UPDATE tables SET ".$column." = ".$user->id.
+					" , start_time = ".$time;
+			$result = $db->query($bookQ);
+
+		}
+		else {
+			return false;
+		}
+
+
+
+
+
+
 			//todo find out in which column to place user
 			//and if table has two people send email to first user
 			//also put booking in the archive
-		}
 	}
 
 	//get a list of restaurants that have tables that can be reserved
