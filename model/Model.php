@@ -108,7 +108,6 @@ class Model{
 		
 		if ($rows = get_rows($result)) {
 			foreach($rows as $row) {
-				var_dump($row);
 				//new restaurant object
 				$restaurant = new Restaurant;
 
