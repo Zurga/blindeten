@@ -117,7 +117,6 @@ class Model{
 
 				if ($tables = get_rows($db->query($tableQ))) {
 					foreach($tables as $table){
-						var_dump($table);
 						//add the table id to the restaurant
 						//$restaurant->tables[] = $table['id'];
 					}
