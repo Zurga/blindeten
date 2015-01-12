@@ -107,8 +107,6 @@ class Model{
 			}
 		}
 	}
-
-
 }
 
 //return all rows or one
