@@ -11,8 +11,15 @@ class User {
 	public $birthdate;
 	public $city;
 	public $log_in;
-	
-	public function login($email_addr, $password){
+
+	function __construct($email, $pwd){
+		if ($this->get_user){
+			return $this;
+		}
+		else{
+			$this->
+
+	public function get_user($email_addr, $password){
 		$query = "SELECT user.id, user.name, user.sex ,".
 			" user.birthdate, user.city, user.email, permission.name AS permission".
 			" FROM user".
@@ -29,9 +36,9 @@ class User {
 			$user = new User();
 			//assign values to user based on mySQL columns
 			foreach($row as $key=>$val){
-				$user->$key = $val;
+				$this->$key = $val;
 			}
-			return $user;
+			return $this;
 		}
 		else{
 			return false; 
