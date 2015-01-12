@@ -1,7 +1,8 @@
 <?php
 include('model/Model.php');
-
 $model = new Model;
+$restaurants = $model->getRestaurants();
+var_dump($restaurants);
 ?>
 <html>
 <head>
