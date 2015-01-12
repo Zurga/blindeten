@@ -66,13 +66,9 @@ class Model{
 		
 		if (in_array($table_id, $restaurant->tables)) {
 			$check_table = "SELECT * FROM bookings" .
-				       " WHERE table_id = " . $table_id . "AND "
-				       " 
+				       " WHERE table_id = " . $table_id . "AND ".
+				       " ";
 		}
-
-
-
-
 
 		$tableQ = "SELECT DISTINCT  FROM tables" .
 			" WHERE id = " . $table_id.;
@@ -90,32 +86,23 @@ class Model{
 			$bookQ = "UPDATE tables SET ".$column." = ".$user->id.
 					" , start_time = ".$time;
 			$result = $db->query($bookQ);
-
 		}
 		else {
 			return false;
 		}
-
-
-
-
-
-
 			//todo find out in which column to place user
 			//and if table has two people send email to first user
 			//also put booking in the archive
 	}
 
-	//get a list of restaurants that have tables that can be reserved
-	public function get_restaurants($city){
+	//get an array of restaurants objects
+	public function getRestaurants(){
 		global $db;
 		$restaurants = array();
 
 		$query = 'SELECT DISTINCT restaurant.id,restaurant.name,' .
 			' restaurant.lat, restaurant.lon, restaurant.url' .
-			' FROM restaurant' .
-			' JOIN tables on restaurant.id = tables.rest_id' .
-			' WHERE tables.user2 is NULL';
+			' FROM restaurant';
 		
 		$result = $db->query($query);
 		
@@ -123,19 +110,21 @@ class Model{
 			foreach($rows as $row) {
 				//new restaurant object
 				$restaurant = new Restaurant;
+
+				//check which table belong to the restaurant
 				$tableQ = 'SELECT id FROM `tables`' .
 					' WHERE rest_id = ' . $row['id'];
 
 				if ($tables = get_rows($db->query($tableQ))) {
 					foreach($tables as $table){
 						//add the table id to the restaurant
-						$restaurant->table[] = $table['id'];
+						$restaurant->tables[] = $table['id'];
 					}
 				}
 				//fill the restaurant data
 				$restaurant = set_var($row, $restaurant);
 				$restaurants[] = $restaurant;
-				return $restaurant;
+				return $restaurants;
 			}
 		}
 	}

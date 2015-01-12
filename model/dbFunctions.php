@@ -18,7 +18,7 @@ function get_rows($result){
 }
 
 function set_var($var, $object){
-	foreach($row as $key=>$val){
+	foreach($var as $key=>$val){
 		$object->$key = $val;
 	}
 }
