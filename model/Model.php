@@ -3,7 +3,7 @@
 include_once 'dblogin.php';
 //include_once 'Map.php';
 include_once 'User.php';
-include_once 'Restaurant';
+include_once 'Restaurant.php';
 
 class Model{
 	//log the user the system and then return user info
