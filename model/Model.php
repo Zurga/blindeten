@@ -126,8 +126,8 @@ class Model{
 				$rest = set_var($row, $restaurant);
 				var_dump($rest);
 				$restaurants[] = $rest;
-				return $restaurants;
 			}
+			return $restaurants;
 		}
 	}
 }
