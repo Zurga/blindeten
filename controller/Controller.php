@@ -13,5 +13,6 @@ class Controller {
 		$restaurants = $this->model->get_restaurants('Amsterdam');
 		include '/view/map.php';
 	}
+	
 }
 ?>

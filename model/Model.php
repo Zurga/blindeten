@@ -1,8 +1,9 @@
 <?php
 //get db connection
 include_once 'dblogin.php';
-//include_once('Map.php');
+include_once 'Map.php';
 include_once 'User.php';
+include_once 'Restaurant';
 
 class Model{
 	//log the user the system and then return user info
@@ -59,17 +60,39 @@ class Model{
 		}
 	}
 
-	public function booktable($user, $table_id){
+	public function booktable($user, $table_id, $time){
+		global $db;
 		//get if the table id exsists
-		$tableQ = "SELECT DISTINCT * FROM tables" .
-			" WHERE id = " . $table_id;
+		$tableQ = "SELECT DISTINCT  FROM tables" .
+			" WHERE id = " . $table_id.;
+			"JOIN "
 		$result = $db->query($tableQ);
 		
 		if ($rows = get_rows($result)){
+			if ($rows["user1"] == NULL) {
+				$column = "user1";
+			}
+			else {
+				$column = "user2";
+			}
+
+			$bookQ = "UPDATE tables SET ".$column." = ".$user->id.
+					" , start_time = ".$time;
+			$result = $db->query($bookQ);
+
+		}
+		else {
+			return false;
+		}
+
+
+
+
+
+
 			//todo find out in which column to place user
 			//and if table has two people send email to first user
 			//also put booking in the archive
-		}
 	}
 
 	//get a list of restaurants that have tables that can be reserved
@@ -104,29 +127,5 @@ class Model{
 				return $restaurant;
 			}
 		}
-	}
-}
-
-//return all rows or one
-function get_rows($result){
-	if ($result->num_rows == 1){
-		$row = $result->fetch_assoc();
-		return $row;
-	}
-	else if($result->num_rows > 1){
-		$rows = array();
-		while ($row = $result->fetch_assoc()){
-			$rows[] = $row;
-		}
-		return $rows;
-	}
-	else{
-		return false;
-	}
-}
-
-function set_var($var, $object){
-	foreach($row as $key=>$val){
-		$object->$key = $val;
 	}
 }
