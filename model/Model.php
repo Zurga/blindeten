@@ -111,7 +111,6 @@ class Model{
 				var_dump($row);
 				//new restaurant object
 				$restaurant = new Restaurant;
-				var_dump($restaurant);
 
 				//check which table belong to the restaurant
 				$tableQ = 'SELECT id FROM `tables`' .
@@ -124,9 +123,12 @@ class Model{
 					}
 				}
 				//fill the restaurant data
-				$rest = set_var($row, $restaurant);
-				var_dump($rest);
-				$restaurants[] = $rest;
+				foreach($row as $key=>$val){
+					$restaurant->$key = $val;
+				}
+				//$rest = set_var($row, $restaurant);
+				//var_dump($rest);
+				$restaurants[] = $restaurant;
 			}
 			return $restaurants;
 		}
