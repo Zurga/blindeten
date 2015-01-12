@@ -66,7 +66,8 @@ class Model{
 		
 		if (in_array($table_id, $restaurant->tables)) {
 			$check_table = "SELECT * FROM bookings" .
-						  " WHERE table_id = " . $table_id . ", "
+				       " WHERE table_id = " . $table_id . "AND "
+				       " 
 		}
 
 

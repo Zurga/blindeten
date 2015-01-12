@@ -1,6 +1,6 @@
 <?php
 
-include_once 'dbfunctions.php';
+include_once 'dbFunctions.php';
 
 class User {
 	public $name;
@@ -45,17 +45,31 @@ class User {
 		}
 	}
 
-	public function change_attr($user, $attr) {
+	public function change_attr($attr) {
 		global $db;
 		$query = "UPDATE user SET name = '".$attr['name']."', sex = '".$attr['sex']."',".
 			"birthdate = '".$attr['birthdate']."', city = '".$attr['city']."'". 
-			" WHERE email = '".$user->email."'";
+			" WHERE email = '".$this->email."'";
 		echo $query;
 		
 		$result = $db->query($query);
 		
 		var_dump($result);
 		echo '<br>';
+	}
+
+	public function add_account($attr){
+		global $db;
+
+		$query = "INSERT INTO user (name, email, birthdate, sex, password, city) ".
+			"VALUES (". $attr->name . "," . $attr->email . "," .
+			$attr->birthdate. "," . $attr->sex . "," . $attr->password . "," . 
+			$attr->city . ")";
+	       	
+		$result	= $db->query($query);
+		if($row =  ){
+			//todo 
+		}
 	}
 }
 /*
