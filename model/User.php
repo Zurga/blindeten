@@ -69,9 +69,9 @@ class User {
 			$attr->city . ")";
 	       	
 		$result	= $db->query($query);
-		if($row =  ){
+		//if($row =  ){
 			//todo 
-		}
+		//}
 	}
 }
 /*
