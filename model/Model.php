@@ -61,6 +61,7 @@ class Model{
 	}
 
 	public function booktable($user, $table_id){
+		global $db;
 		//get if the table id exsists
 		$tableQ = "SELECT DISTINCT * FROM tables" .
 			" WHERE id = " . $table_id;
