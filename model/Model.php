@@ -100,7 +100,7 @@ class Model{
 		global $db;
 		$restaurants = array();
 
-		$query = 'SELECT DISTINCT restaurant.id,restaurant.name,' .
+		$query = 'SELECT restaurant.id,restaurant.name,' .
 			' restaurant.lat, restaurant.lon, restaurant.url' .
 			' FROM restaurant';
 		
