@@ -60,12 +60,22 @@ class Model{
 		}
 	}
 
-	public function booktable($user, $table_id, $time){
+	public function booktable($user, $restaurant, $table_id, $time){
 		global $db;
 		//get if the table id exsists
+		
+		if (in_array($table_id, $restaurant->tables)) {
+			$check_table = "SELECT * FROM bookings" .
+						  " WHERE table_id = " . $table_id . ", "
+		}
+
+
+
+
+
 		$tableQ = "SELECT DISTINCT  FROM tables" .
 			" WHERE id = " . $table_id.;
-			"JOIN "
+	
 		$result = $db->query($tableQ);
 		
 		if ($rows = get_rows($result)){
