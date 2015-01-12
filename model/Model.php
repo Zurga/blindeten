@@ -123,6 +123,7 @@ class Model{
 				}
 				//fill the restaurant data
 				$restaurant = set_var($row, $restaurant);
+				var_dump($restaurant);
 				$restaurants[] = $restaurant;
 				return $restaurants;
 			}
