@@ -1,8 +1,7 @@
 <?php
-include('model/class_map.php');
+include('model/Model.php');
 
-$map = new Map;
-$map->get_geo_info();
+$model = new Model;
 ?>
 <html>
 <head>
@@ -17,7 +16,7 @@ map = new google.maps.Map(document.getElementById('map'),{
 	center: new google.maps.LatLng(52, 4)
 });
 //create json from the model
-var json = [ <?php foreach($map->markers as $marker){echo json_encode($marker) . ',';}?>]
+var json = [ <?php foreach($model->getRestaurants as $marker){echo json_encode($marker) . ',';}?>]
 
 for(i=0;i<json.length;i++){
 	//create lonlat for each restaurant
