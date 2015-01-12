@@ -94,14 +94,19 @@ a img {
 #menu ul {
     list-style-type: none;  
 	margin-top: 90px;
+	padding: 5px;
+	background-color: black;
+	opacity: 0.6; 
+	font-size: 17px;
+	
 } 
 #menu ul li { 
-     display: inline;  
+    display: inline;  
     margin: 0;  
 }
 #menu ul li a {  
-    padding: 15px;  
-    font-family: Verdana;  
+    padding: 40px;  
+    font-family: Century Gothic;  
     color: white; 
 	text-decoration: none;
 }
@@ -114,22 +119,29 @@ a img {
 #header img{
 	display: block;
 	margin: 0 auto 10px;
-	width:300px;
+	width:360px;
 	height:60px;
-	position: absolute; top: 15px; left: 5%;
+	position: absolute; top: 15px; left: 3%;
 }
   
 body {
 	background-image: url("gracht.jpg");
 }
 
-#menu {
-	background-color:black;
-	font-size: 17px; font-family: Verdana;
+#login h1 {
+    font-family:Century Gothic;
+	font-size: 30px;
+}
+#login a {
+	font-family:Century Gothic;
+	font-size: 12px;
+}
+#login {
+	margin-top: 15px;
+	padding: 100px;
+	width: 400px;
+	height: 500px;
+	background-color: rgba(255,255,255,0.7);
 }
 
-#login {
-	margin-top: 200px;
-	
-}
 
