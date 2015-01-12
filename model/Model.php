@@ -119,7 +119,7 @@ class Model{
 					foreach($tables as $table){
 						var_dump($table);
 						//add the table id to the restaurant
-						$restaurant->tables[] = $table['id'];
+						//$restaurant->tables[] = $table['id'];
 					}
 				}
 				//fill the restaurant data
