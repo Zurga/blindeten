@@ -111,6 +111,7 @@ class Model{
 				var_dump($row);
 				//new restaurant object
 				$restaurant = new Restaurant;
+				var_dump($restaurant);
 
 				//check which table belong to the restaurant
 				$tableQ = 'SELECT id FROM `tables`' .
