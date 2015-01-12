@@ -17,7 +17,9 @@ class User {
 			return $this;
 		}
 		else{
-			$this->
+			//$this->
+		}
+	}
 
 	public function get_user($email_addr, $password){
 		$query = "SELECT user.id, user.name, user.sex ,".
