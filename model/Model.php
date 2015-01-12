@@ -1,7 +1,7 @@
 <?php
 //get db connection
 include_once 'dblogin.php';
-include_once 'Map.php';
+//include_once 'Map.php';
 include_once 'User.php';
 include_once 'Restaurant';
 
