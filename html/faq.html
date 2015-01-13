@@ -20,13 +20,29 @@
 </div>
 
 <div class="content">
-	<div class="formcontainer">
-		<form>
+	<div class="maincontent">
+		
 			<h1>FAQ</h1>
 			<br>
-			<p></p>
-			<br>
-		</form>
+		<h2><a href="javascript:showtext('cancel');" title="Hoe moet ik cancellen?">Hoe moet ik cancellen</a></h2>
+
+		<p id= "cancel" class="hidden">Ga dan naar de pagina "mijn reserveringen" klik op de link waar u reservering staat en vervolgens op cancel.</p>
+		
+		<script type="text/javascript">
+		function showtext(id){
+   			
+   			if(document.getElementById(id).style.display == 'none'){
+      		document.getElementById(id).style.display = 'block';
+   			}
+   		
+   		else{
+      	document.getElementById(id).style.display = 'none';      
+   		}
+		}
+		</script>	
+
+		<br>
+		
 	</div>
 </div>
 </body>
