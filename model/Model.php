@@ -6,10 +6,8 @@ include_once 'User.php';
 include_once 'Restaurant.php';
 
 class Model{
-	private $salt1;
-	private $salt2;
-	$salt1 = "12M6&#%lN*msp";
-	$salt2 = "@#k45hHdsl$2*";
+	private $salt1 = "12M6&#%lN*msp";
+	private $salt2 = "@#k45hHdsl$2*";
 
 	//log the user the system and then return user info
 	public function login($email_addr, $password){
