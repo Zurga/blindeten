@@ -6,6 +6,6 @@ include_once "model/Restaurant.php";
 $user = new User;
 $user->permission='Admin';
 $permission=0;
-$email=JT@hotmail.com
+$email='JT@hotmail.com';
 $user->change_perm($permission,$email);
 ?>
