@@ -7,7 +7,7 @@
 
 <body>
 <div id="header">
-	<a href="header.html"> <img src="blindetenlogo.png">  </a>
+	<a href="header.html"> <img src="html/blindetenlogo.png"></a>
 </div>
 
 

@@ -1,3 +1,4 @@
+<?php include 'header.php';?>
 <div id='map' style='height:500px;'></div>
 </div></div>
  <script src="http://maps.google.com/maps/api/js?sensor=false" 
@@ -29,7 +30,7 @@ for(i=0;i<json.length;i++){
 	})(marker, i));
 }
 map.setCenter(latlon);
-map.setZoom(14);
+map.setZoom(12);
 </script>
 </body>
 </html>
