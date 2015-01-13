@@ -52,6 +52,19 @@ class User {
 		echo '<br>';
 	}
 
+	function add_restaurant($user_id, $attr){
+		global $db;
+
+		$query = "INSERT INTO restaurant (owner, name, lat, lon, url)" .
+			" VALUES (". $attr['user_id'] . "," . $attr['name'] "," . 
+			$attr['lat'] . "," . $attr['lon'] . "," . $attr['url'] . ")";
+
+		if($db->query($query)){
+			$rest_id = $db->insert_id;
+
+			foreach($attr['tables'] as table){
+				$this->add_table(
+	}
 	//add table {id,rest_id}
 	public function add_table($restaurant) {
 		global $db;
@@ -74,6 +87,7 @@ class User {
 			$query = "DELETE FROM tables WHERE id = ". $table_id;
 			
 			$db->query($query);
+			return $db->query($query);
 		}
 		else {
 			return false;
