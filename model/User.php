@@ -73,13 +73,28 @@ class User {
 		if ($this->permission == "Admin" or $this->owner == $restaurant->id) {
 			$query = "DELETE FROM tables WHERE id = ". $table_id;
 			
-			echo $query;
-			return $db->query($query);
+			$db->query($query);
 		}
 		else {
 			return false;
 		}
 	}	
+	
+	public function change_perm ($permission,$email) {
+		global $db;
+		
+		if ($this->permission == "Admin") {
+			//TO DO user_id aanvragen
+			$user_query = "SELECT id FROM user WHERE email = '". $email ."'";
+			$query = "UPDATE user_perm SET perm_id = ". $permission .
+					" WHERE user_id = ". $user_query;
+					
+			$db->query($query);
+		}
+		else {
+			return false;
+		}
+	}
 }
 /*
 $model = 
