@@ -32,5 +32,4 @@ for(i=0;i<json.length;i++){
 map.setCenter(latlon);
 map.setZoom(12);
 </script>
-</body>
-</html>
+<?php include 'footer.php' ?>
