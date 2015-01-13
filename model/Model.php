@@ -6,15 +6,23 @@ include_once 'User.php';
 include_once 'Restaurant.php';
 
 class Model{
+	$salt1;
+	$salt2;
+	$salt1 = "12M6&#%lN*msp";
+	$salt2 = "@#k45hHdsl$2*";
+
 	//log the user the system and then return user info
 	public function login($email_addr, $password){
+		$salted = $this->salt1 . $password . $this->salt2
+		$epassword = crypt($salted);
+		
 		$query = "SELECT user.id, user.name, user.sex ,".
 			" user.birthdate, user.city, user.email, permission.name AS permission".
 			" FROM user".
 			" JOIN user_perm ON user.id = user_perm.user_id".
 			" JOIN permission ON user_perm.perm_id = permission.id".
 			" WHERE user.email ='" . $email_addr .
-			" ' AND user.password = '" . $password . "'";
+			" ' AND user.password = '" . $epassword . "'";
 		
 		$result = $db->query($query);
 		
@@ -33,26 +41,17 @@ class Model{
 		}
 	}
 
-	public function change_attr($user, $attr) {
-		global $db;
-		$query = "UPDATE user SET name = '".$attr['name']."', sex = '".$attr['sex']."',".
-			"birthdate = '".$attr['birthdate']."', city = '".$attr['city']."'". 
-			" WHERE email = '".$user->email."'";
-		echo $query;
-		
-		$result = $db->query($query);
-		
-		var_dump($result);
-		echo '<br>';
-	}
-	
+
+	//Create new account, receive associative array
 	public function add_account($attr){
 		global $db;
-
+		$salted = $this->salt1 . $attr=>password . $this->salt2
+		$password = crypt($salted);
+		
 		$query = "INSERT INTO user (name, email, birthdate, sex, password, city) ".
-			"VALUES (". $attr->name . "," . $attr->email . "," .
-			$attr->birthdate. "," . $attr->sex . "," . $attr->password . "," . 
-			$attr->city . ")";
+			"VALUES (". $attr=>name . "," . $attr=>email . "," .
+			$attr=>birthdate. "," . $attr=>sex . "," . $password . "," . 
+			$attr=>city . ")";
 	       	
 		$result	= $db->query($query);
 		if($result->num_rows > 0 ){
