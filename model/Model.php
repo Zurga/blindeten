@@ -43,7 +43,7 @@ class Model{
 	//Create new account, receive associative array
 	public function add_account($attr){
 		global $db;
-		$salted = $this->salt1 . $attr['password'] . $this->salt2
+		$salted = $this->salt1 . $attr['password'] . $this->salt2;
 		$password = crypt($salted);
 		
 		$query = "INSERT INTO user (name, email, birthdate, sex, password, city) ".
