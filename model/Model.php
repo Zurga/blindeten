@@ -11,7 +11,7 @@ class Model{
 
 	//log the user the system and then return user info
 	public function login($email_addr, $password){
-		$salted = $this->salt1 . $password . $this->salt2
+		$salted = $this->salt1 . $password . $this->salt2;
 		$epassword = crypt($salted);
 		
 		$query = "SELECT user.id, user.name, user.sex ,".
