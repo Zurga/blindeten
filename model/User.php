@@ -70,7 +70,7 @@ class User {
 		global $db;
 	
 		if ($this->permission == "Admin" or $this->owner == $restaurant->id) {
-			$query = "DELETE FROM tables WHERE id == ". $table_id[id];
+			$query = "DELETE FROM tables WHERE id = ". $table_id;
 			
 			echo $query;
 			return $db->query($query);
