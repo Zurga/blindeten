@@ -55,7 +55,7 @@ class User {
 	public function add_table($restaurant) {
 			global $db;
 			$query = "INSERT INTO tables (rest_id)".
-				"VALUES (" . $restaurant->rest_id . ")";
+				"VALUES (" . $restaurant->id . ")";
 			echo $query;
 		$result = $db->query($query);
 		var_dump($result);
