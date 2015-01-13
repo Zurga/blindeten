@@ -15,6 +15,7 @@ class Controller {
 
 		if($url== 'add_restaurant'){
 			$attr = $_POST[''];
+		}
 	}
 }
 ?>
