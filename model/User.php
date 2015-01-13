@@ -41,29 +41,30 @@ class User {
 
 	public function change_attr($attr) {
 		global $db;
+		
 		$query = "UPDATE user SET name = '".$attr['name']."', sex = '".$attr['sex']."',".
 			"birthdate = '".$attr['birthdate']."', city = '".$attr['city']."'". 
 			" WHERE email = '".$this->email."'";
-		echo $query;
 		
-		$result = $db->query($query);
-		//if($result = num_rows > 0 
-		var_dump($result);
-		echo '<br>';
+		return $db->query($query);
 	}
 
 	function add_restaurant($user_id, $attr){
 		global $db;
 
 		$query = "INSERT INTO restaurant (owner, name, lat, lon, url)" .
-			" VALUES (". $attr['user_id'] . "," . $attr['name'] "," . 
+			" VALUES (". $attr['user_id'] . "," . $attr['name'] . "," . 
 			$attr['lat'] . "," . $attr['lon'] . "," . $attr['url'] . ")";
 
 		if($db->query($query)){
 			$rest_id = $db->insert_id;
-
+			//TO DO add tables to restaurants
 			foreach($attr['tables'] as table){
+<<<<<<< HEAD
 				$this->add_table(
+=======
+				$this->add_table();
+>>>>>>> 9d1e63721e126f1bf68d9099c6ee1670004b7641
 			}
 		}
 	}
@@ -75,7 +76,7 @@ class User {
 			$query = "INSERT INTO tables (rest_id)".
 				"VALUES (" . $restaurant->id . ")";
 			$db->query($query);
-			var_dump($db->insert_id);
+			$db->insert_id;
 		}
 		else {
 			return false;
