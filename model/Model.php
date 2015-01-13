@@ -50,8 +50,9 @@ class Model{
 			"VALUES (". $attr['name'] . "," . $attr['email'] . "," .
 			$attr['birthdate']. "," . $attr['sex'] . "," . $password . "," . 
 			$attr['city'] . ")";
-	       	
+	       	echo $query;
 		$result	= $db->query($query);
+		var_dump($result);
 		if($result->num_rows > 0 ){
 			echo 'Yay888';
 		}
