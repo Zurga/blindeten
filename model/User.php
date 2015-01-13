@@ -62,7 +62,7 @@ class User {
 			return $db->query($query);
 		}
 		else {
-			return false
+			return false;
 		}
 	}
 	
@@ -76,7 +76,7 @@ class User {
 			return $db->query($query);
 		}
 		else {
-			return false
+			return false;
 		}
 	}	
 }
