@@ -130,12 +130,12 @@ class Model{
 				if ($tables = get_rows($db->query($tableQ))) {
 					foreach($tables as $table){
 						//add the table id to the restaurant
-						echo 'rest_id:';
-						var_dump($row['id']);
-						echo '<br/>';
-						var_dump($table);
-						echo '<br/>';
-						//$restaurant->tables[] = $table['id'];
+						if(gettype($table) == 'string'){
+							$restaurant->tables[] = $table;
+						}
+						else{
+							$restaurant->tables[] = $table['id'];
+						}
 					}
 				}
 				//fill the restaurant data
