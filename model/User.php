@@ -59,7 +59,7 @@ class User {
 		if ($this->permission == "Admin" or $this->owner == $restaurant->id) {
 			$query = "INSERT INTO tables (rest_id)".
 				"VALUES (" . $restaurant->id . ")";
-			return $db->query($query);
+			var_dump($db->insert_id);
 		}
 		else {
 			return false;
@@ -73,8 +73,7 @@ class User {
 			$query = "DELETE FROM tables WHERE id = ". $table_id;
 			
 			echo $query;
-			$db->query($query);
-			var_dump($db->insert_id);
+			return $db->query($query);
 		}
 		else {
 			return false;
