@@ -1,5 +1,5 @@
 <?php
-include_once "/../model/Model.php";
+include_once "model/Model.php";
 
 $model = new Model;
 $attr = array('name'=>'Rens Mester',
