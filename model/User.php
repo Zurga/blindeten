@@ -65,8 +65,8 @@ class User {
 			$query = "INSERT INTO tables (rest_id)".
 				"VALUES (" . $restaurant->rest_id . ")";
 			echo $query
-			$result = $db->query($query);
-			var_dump($result);
+		$result = $db->query($query);
+		var_dump($result);
 	
 	
 	}
