@@ -59,12 +59,26 @@ class User {
 		if ($this->permission == "Admin" or $this->owner == $restaurant->id) {
 			$query = "INSERT INTO tables (rest_id)".
 				"VALUES (" . $restaurant->id . ")";
+			return $db->query($query);
+		}
+		else {
+			return false
+		}
+	}
+	
+	public function delete_table ($restaurant, $table_id) {
+		global $db;
+	
+		if ($this->permission == "Admin" or $this->owner == $restaurant->id) {
+			$query = "DELETE FROM tables WHERE id == ". $table_id[id];
+			
 			echo $query;
 			return $db->query($query);
-			var_dump($result);
 		}
-	
-	}
+		else {
+			return false
+		}
+	}	
 }
 /*
 $model = 
