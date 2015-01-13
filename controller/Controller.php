@@ -10,8 +10,11 @@ class Controller {
 	}
 
 	public function invoke(){
-		$restaurants = $this->model->getRestaurants('Amsterdam');
+		$restaurants = $this->model->get_restaurants();
 		include '/view/map.php';
+
+		if($url== 'add_restaurant'){
+			$attr = $_POST[''];
 	}
 }
 ?>
