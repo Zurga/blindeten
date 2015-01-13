@@ -17,9 +17,7 @@
         <li><a href="registreer.html" title="Registreer">Registreer</a></li>  
 		<li><a href="login.html" title="Log in">Log in</a></li> 
 <br>
-
-
 </div>
+<div id="content">
+	<div class="maincontent">
 
-</body>
-</html>
