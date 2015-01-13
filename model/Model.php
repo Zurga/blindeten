@@ -45,8 +45,9 @@ class Model{
 		global $db;
 		$salted = $this->salt1 . $attr['password'] . $this->salt2;
 		$password = crypt($salted);
+		$date = explode($attr['birthdate']);
 
-		if(checkdate($attr['birthdate'])){
+		if(checkdate($date[1],$date[2], $date[0])){
 			$query = "INSERT INTO user (name, email, birthdate, sex, password, city) ".
 				"VALUES ('". $attr['name'] . "','" . $attr['email'] . "','" .
 				$attr['birthdate']. "','" . $attr['sex'] . "','" . $password . "','" . 
@@ -115,7 +116,7 @@ class Model{
 				if ($tables = get_rows($db->query($tableQ))) {
 					foreach($tables as $table){
 						//add the table id to the restaurant
-						//$restaurant->tables[] = $table['id'];
+						$restaurant->tables[] = $table['id'];
 					}
 				}
 				//fill the restaurant data
