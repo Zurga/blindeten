@@ -47,7 +47,7 @@ class Model{
 		$salted = $this->salt1 . $attr['password'] . $this->salt2;
 		$password = crypt($salted);
 
-		//create a date int array to check if the date
+		//create a date int array to check if the date exists
 		$date = explode('-',$attr['birthdate']);
 		array_walk($date, 'intval');
 
@@ -57,7 +57,14 @@ class Model{
 				$attr['birthdate']. "','" . $attr['sex'] . "','" . $password . "','" . 
 				$attr['city'] . "')";
 			echo $query;
-			return $db->query($query);
+			if ($db->query($query)) {
+				$query = "INSERT INTO user_perm (perm_id, user_id)".
+					"VALUES (2,)"; 
+			}
+			
+		}
+		else {
+			return false;
 		}
 	}
 
