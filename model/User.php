@@ -64,6 +64,8 @@ class User {
 
 			foreach($attr['tables'] as table){
 				$this->add_table(
+			}
+		}
 	}
 	//add table {id,rest_id}
 	public function add_table($restaurant) {
