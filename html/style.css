@@ -147,6 +147,7 @@ form {
 	text-align: center;
 }
 
+
 fieldset {
 	text-align: center;
 	}
@@ -155,6 +156,11 @@ form h1{
 	padding-top: 20px;
 	font-size: 30px;
 }
+
+form h2{
+		font-size: 12px;
+}
+
 form a{
 	font-size: 12px;
 }
