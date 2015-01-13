@@ -10,8 +10,11 @@ class Controller {
 	}
 
 	public function invoke(){
+		$root = $_SERVER['DOCUMENT_ROOT'];
+		include $root . '/html/header.php';
 		$restaurants = $this->model->get_restaurants();
-		include '/maptest.php';
+
+		include $root . '/html/map.php';
 
 		if($url== 'add_restaurant'){
 			$attr = $_POST[''];
