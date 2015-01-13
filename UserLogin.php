@@ -2,11 +2,11 @@
 include_once "model/Model.php";
 
 $model = new Model;
-$attr = array('name'=>'Rens Mosterd',
-'email'=>'rens.mosterd!@hotmail.com',
+$attr = array('name'=>'Jaap Testpersoon',
+'email'=>'JT@hotmail.com',
 'sex'=>'0',
-'birthdate'=>'1995-09-30',
-'city'=>'Hoorn',
+'birthdate'=>'1995-08-22',
+'city'=>'Urk',
 'password'=>'blabla');
 $user = $model->add_account($attr);
 
