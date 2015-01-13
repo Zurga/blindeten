@@ -3,7 +3,7 @@ include_once "model/Model.php";
 
 $model = new Model;
 $attr = array('name'=>'Rens Mosterd',
-'email'=>'rens.mosterd4@hotmail.com',
+'email'=>'rens.mosterd!@hotmail.com',
 'sex'=>'0',
 'birthdate'=>'1995-09-30',
 'city'=>'Hoorn',
