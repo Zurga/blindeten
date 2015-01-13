@@ -47,9 +47,9 @@ class Model{
 		$password = crypt($salted);
 		
 		$query = "INSERT INTO user (name, email, birthdate, sex, password, city) ".
-			"VALUES (". $attr['name'] . "," . $attr['email'] . "," .
-			$attr['birthdate']. "," . $attr['sex'] . "," . $password . "," . 
-			$attr['city'] . ")";
+			"VALUES ('". $attr['name'] . "','" . $attr['email'] . "','" .
+			$attr['birthdate']. "','" . $attr['sex'] . "','" . $password . "','" . 
+			$attr['city'] . "')";
 	       	echo $query;
 		$result	= $db->query($query);
 		var_dump($result);
