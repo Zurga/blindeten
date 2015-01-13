@@ -45,16 +45,15 @@ class Model{
 		global $db;
 		$salted = $this->salt1 . $attr['password'] . $this->salt2;
 		$password = crypt($salted);
-		
-		$query = "INSERT INTO user (name, email, birthdate, sex, password, city) ".
-			"VALUES ('". $attr['name'] . "','" . $attr['email'] . "','" .
-			$attr['birthdate']. "','" . $attr['sex'] . "','" . $password . "','" . 
-			$attr['city'] . "')";
-	       	echo $query;
-		$result	= $db->query($query);
-		var_dump($result);
-		if($result->num_rows > 0 ){
-			echo 'Yay888';
+
+		if(checkdate($attr['birtdate']){
+			$query = "INSERT INTO user (name, email, birthdate, sex, password, city) ".
+				"VALUES ('". $attr['name'] . "','" . $attr['email'] . "','" .
+				$attr['birthdate']. "','" . $attr['sex'] . "','" . $password . "','" . 
+				$attr['city'] . "')";
+			echo $query;
+			$result = $db->query($query);
+			var_dump($result);
 		}
 	}
 
