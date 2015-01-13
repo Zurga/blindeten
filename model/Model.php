@@ -46,7 +46,7 @@ class Model{
 		$salted = $this->salt1 . $attr['password'] . $this->salt2;
 		$password = crypt($salted);
 
-		if(checkdate($attr['birtdate']){
+		if(checkdate($attr['birtdate'])){
 			$query = "INSERT INTO user (name, email, birthdate, sex, password, city) ".
 				"VALUES ('". $attr['name'] . "','" . $attr['email'] . "','" .
 				$attr['birthdate']. "','" . $attr['sex'] . "','" . $password . "','" . 
