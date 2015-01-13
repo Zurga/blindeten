@@ -59,7 +59,17 @@ class User {
 		echo '<br>';
 	}
 
-
+	//add table {id,rest_id}
+	public function add_table($restaurant) {
+			global $db;
+			$query = "INSERT INTO tables (rest_id)".
+				"VALUES (" . $restaurant->rest_id . ")";
+			echo $query
+			$result = $db->query($query);
+			var_dump($result);
+	
+	
+	}
 }
 /*
 $model = 
