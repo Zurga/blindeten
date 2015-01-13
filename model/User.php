@@ -41,15 +41,12 @@ class User {
 
 	public function change_attr($attr) {
 		global $db;
+		
 		$query = "UPDATE user SET name = '".$attr['name']."', sex = '".$attr['sex']."',".
 			"birthdate = '".$attr['birthdate']."', city = '".$attr['city']."'". 
 			" WHERE email = '".$this->email."'";
-		echo $query;
 		
-		$result = $db->query($query);
-		//if($result = num_rows > 0 
-		var_dump($result);
-		echo '<br>';
+		return $db->query($query)
 	}
 
 	function add_restaurant($user_id, $attr){
@@ -61,9 +58,11 @@ class User {
 
 		if($db->query($query)){
 			$rest_id = $db->insert_id;
-
+			//TO DO add tables to restaurants
 			foreach($attr['tables'] as table){
-				$this->add_table(
+				$this->add_table();
+			}
+		}
 	}
 	//add table {id,rest_id}
 	public function add_table($restaurant) {
@@ -73,7 +72,7 @@ class User {
 			$query = "INSERT INTO tables (rest_id)".
 				"VALUES (" . $restaurant->id . ")";
 			$db->query($query);
-			var_dump($db->insert_id);
+			$db->insert_id;
 		}
 		else {
 			return false;
