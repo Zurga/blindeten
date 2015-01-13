@@ -127,6 +127,10 @@ a img {
 body {
 	background-image: url("gracht.jpg");
 }
+
+a {
+	color: rgb(71,69,68);
+}
 .content{
 	margin: 0 auto;
 	width: 980px;
@@ -135,8 +139,9 @@ body {
 .maincontent{
 	margin: 0 auto;
 	margin-top: 90px;
-	width: 37%;
+	width: 50%;
 	background-color: rgba(255,255,255,0.7);
+	padding: 30px;
 	}
 	
 form {

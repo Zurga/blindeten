@@ -2,12 +2,12 @@
 <html>
 <head> 
 	<title>BlinDeten</title>
-	<link rel="stylesheet" type="text/css" href="style.css"></link>
+	<link rel="stylesheet" type="text/css" href="/html/style.css"></link>
 </head>
 
 <body>
 <div id="header">
-	<a href="header.html"> <img src="blindetenlogo.png">  </a>
+	<a href="header.html"> <img src="html/blindetenlogo.png"></a>
 </div>
 
 
@@ -18,5 +18,5 @@
 		<li><a href="login.html" title="Log in">Log in</a></li> 
 <br>
 </div>
-</body>
-</html>
+<div id="content">
+	<div class="maincontent">

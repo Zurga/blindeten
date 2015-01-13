@@ -41,17 +41,29 @@ class User {
 
 	public function change_attr($attr) {
 		global $db;
+		
 		$query = "UPDATE user SET name = '".$attr['name']."', sex = '".$attr['sex']."',".
 			"birthdate = '".$attr['birthdate']."', city = '".$attr['city']."'". 
 			" WHERE email = '".$this->email."'";
-		echo $query;
 		
-		$result = $db->query($query);
-		//if($result = num_rows > 0 
-		var_dump($result);
-		echo '<br>';
+		return $db->query($query)
 	}
 
+	function add_restaurant($user_id, $attr){
+		global $db;
+
+		$query = "INSERT INTO restaurant (owner, name, lat, lon, url)" .
+			" VALUES (". $attr['user_id'] . "," . $attr['name'] "," . 
+			$attr['lat'] . "," . $attr['lon'] . "," . $attr['url'] . ")";
+
+		if($db->query($query)){
+			$rest_id = $db->insert_id;
+			//TO DO add tables to restaurants
+			foreach($attr['tables'] as table){
+				$this->add_table();
+			}
+		}
+	}
 	//add table {id,rest_id}
 	public function add_table($restaurant) {
 		global $db;
@@ -60,7 +72,7 @@ class User {
 			$query = "INSERT INTO tables (rest_id)".
 				"VALUES (" . $restaurant->id . ")";
 			$db->query($query);
-			var_dump($db->insert_id);
+			$db->insert_id;
 		}
 		else {
 			return false;
@@ -73,13 +85,29 @@ class User {
 		if ($this->permission == "Admin" or $this->owner == $restaurant->id) {
 			$query = "DELETE FROM tables WHERE id = ". $table_id;
 			
-			echo $query;
+			$db->query($query);
 			return $db->query($query);
 		}
 		else {
 			return false;
 		}
 	}	
+	
+	public function change_perm ($permission,$email) {
+		global $db;
+		
+		if ($this->permission == "Admin") {
+			//TO DO user_id aanvragen
+			$user_query = "SELECT id FROM user WHERE email = '". $email ."'";
+			$query = "UPDATE user_perm SET perm_id = ". $permission .
+					" WHERE user_id = (". $user_query .")";
+					
+			$db->query($query);
+		}
+		else {
+			return false;
+		}
+	}
 }
 /*
 $model = 

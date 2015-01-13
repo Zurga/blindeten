@@ -1,16 +1,8 @@
-<?php
-include($_SERVER['DOCUMENT_ROOT'] . '/model/Model.php');
-$model = new Model;
-$restaurants = $model->get_restaurants();
-//var_dump($restaurants);
-?>
-<html>
-<head>
+<?php include 'header.php';?>
+<div id='map' style='height:500px;'></div>
+</div></div>
  <script src="http://maps.google.com/maps/api/js?sensor=false" 
           type="text/javascript"></script>
-</head>
-<body>
-<div id='map' style='height:100%;'></div>
 <script>
 map = new google.maps.Map(document.getElementById('map'),{
 	zoom: 3,
@@ -38,7 +30,7 @@ for(i=0;i<json.length;i++){
 	})(marker, i));
 }
 map.setCenter(latlon);
-map.setZoom(14);
+map.setZoom(12);
 </script>
 </body>
 </html>

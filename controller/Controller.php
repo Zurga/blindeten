@@ -10,8 +10,10 @@ class Controller {
 	}
 
 	public function invoke(){
-		$restaurants = $this->model->getRestaurants('Amsterdam');
-		include '/view/map.php';
+		$root = $_SERVER['DOCUMENT_ROOT'];
+		$restaurants = $this->model->get_restaurants();
+
+		include $root . '/html/map.php';
 	}
 }
 ?>
