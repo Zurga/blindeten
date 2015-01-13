@@ -11,7 +11,6 @@ class Controller {
 
 	public function invoke(){
 		$root = $_SERVER['DOCUMENT_ROOT'];
-		include $root . '/html/header.php';
 		$restaurants = $this->model->get_restaurants();
 
 		include $root . '/html/map.php';
