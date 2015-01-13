@@ -12,14 +12,6 @@ class User {
 	public $city;
 	public $log_in;
 
-	function __construct($email, $pwd){
-		if ($this->get_user){
-			return $this;
-		}
-		else{
-			//$this->
-		}
-	}
 
 	public function get_user($id){
 		$query = "SELECT user.id, user.name, user.sex ,".
