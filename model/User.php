@@ -53,7 +53,7 @@ class User {
 		global $db;
 
 		$query = "INSERT INTO restaurant (owner, name, lat, lon, url)" .
-			" VALUES (". $attr['user_id'] . "," . $attr['name'] "," . 
+			" VALUES (". $attr['user_id'] . "," . $attr['name'] . "," . 
 			$attr['lat'] . "," . $attr['lon'] . "," . $attr['url'] . ")";
 
 		if($db->query($query)){
