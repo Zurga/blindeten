@@ -46,7 +46,7 @@ class User {
 			"birthdate = '".$attr['birthdate']."', city = '".$attr['city']."'". 
 			" WHERE email = '".$this->email."'";
 		
-		return $db->query($query)
+		return $db->query($query);
 	}
 
 	function add_restaurant($user_id, $attr){
