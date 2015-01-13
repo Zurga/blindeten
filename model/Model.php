@@ -43,13 +43,13 @@ class Model{
 	//Create new account, receive associative array
 	public function add_account($attr){
 		global $db;
-		$salted = $this->salt1 . $attr=>password . $this->salt2
+		$salted = $this->salt1 . $attr['password'] . $this->salt2
 		$password = crypt($salted);
 		
 		$query = "INSERT INTO user (name, email, birthdate, sex, password, city) ".
-			"VALUES (". $attr=>name . "," . $attr=>email . "," .
-			$attr=>birthdate. "," . $attr=>sex . "," . $password . "," . 
-			$attr=>city . ")";
+			"VALUES (". $attr['name'] . "," . $attr['email'] . "," .
+			$attr['birthdate']. "," . $attr['sex'] . "," . $password . "," . 
+			$attr['city'] . ")";
 	       	
 		$result	= $db->query($query);
 		if($result->num_rows > 0 ){
@@ -57,7 +57,7 @@ class Model{
 		}
 	}
 
-	public function booktable($user, $restaurant, $table_id, $time){
+	public function book_table($user, $restaurant, $table_id, $time){
 		global $db;
 		//get if the table id exsists
 		
@@ -93,7 +93,7 @@ class Model{
 	}
 
 	//get an array of restaurants objects
-	public function getRestaurants(){
+	public function get_restaurants(){
 		global $db;
 		$restaurants = array();
 
