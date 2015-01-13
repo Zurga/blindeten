@@ -60,11 +60,7 @@ class User {
 			$rest_id = $db->insert_id;
 			//TO DO add tables to restaurants
 			foreach($attr['tables'] as table){
-<<<<<<< HEAD
-				$this->add_table(
-=======
 				$this->add_table();
->>>>>>> 9d1e63721e126f1bf68d9099c6ee1670004b7641
 			}
 		}
 	}
