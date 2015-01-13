@@ -73,7 +73,8 @@ class User {
 			$query = "DELETE FROM tables WHERE id = ". $table_id;
 			
 			echo $query;
-			return $db->query($query);
+			$db->query($query);
+			var_dump($db->insert_id);
 		}
 		else {
 			return false;
