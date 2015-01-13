@@ -15,10 +15,6 @@ class Controller {
 		$restaurants = $this->model->get_restaurants();
 
 		include $root . '/html/map.php';
-
-		if($url== 'add_restaurant'){
-			$attr = $_POST[''];
-		}
 	}
 }
 ?>
