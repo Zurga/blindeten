@@ -61,7 +61,7 @@ class User {
 
 
 }
-
+/*
 $model = 
 $test->get_user('rens.mester@hotmail.com');
 var_dump($test);
@@ -73,6 +73,6 @@ echo '<br>';
 $test->change_attr($attr);
 
 var_dump($test->get_user('rens.mester@hotmail.com'));
-
  */
+
 ?>
