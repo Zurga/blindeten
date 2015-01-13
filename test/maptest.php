@@ -1,7 +1,7 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT'] . '/model/Model.php');
 $model = new Model;
-$restaurants = $model->getRestaurants();
+$restaurants = $model->get_restaurants();
 //var_dump($restaurants);
 ?>
 <html>
