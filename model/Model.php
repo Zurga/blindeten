@@ -32,6 +32,7 @@ class Model{
 			foreach($row as $key=>$val){
 				$user->$key = $val;
 			}
+			$user->logged_in = true;
 			return $user;
 		}
 		else{
@@ -40,11 +41,13 @@ class Model{
 	}
 
 
-	//Create new account, receive associative array
+	//Create new account with specified attributes, return true or with reason.
 	public function add_account($attr){
 		global $db;
 		$salted = $this->salt1 . $attr['password'] . $this->salt2;
 		$password = crypt($salted);
+
+		//create a date int array to check if the date
 		$date = explode('-',$attr['birthdate']);
 		array_walk($date, 'intval');
 
@@ -54,8 +57,7 @@ class Model{
 				$attr['birthdate']. "','" . $attr['sex'] . "','" . $password . "','" . 
 				$attr['city'] . "')";
 			echo $query;
-			$result = $db->query($query);
-			var_dump($result);
+			return $db->query($query);
 		}
 	}
 

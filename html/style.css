@@ -167,7 +167,7 @@ form h2{
 		font-size: 14px;
 }
 
-h2{
+h2, p{
 	font-size: 14px;
 	text-align: left;
 }
@@ -181,9 +181,6 @@ form a{
 	font-size: 14px;
 }
 
-p {
-	font-size: 12px;
-}
 #footer {
     list-style-type: none;  
 	margin-top: 70%;

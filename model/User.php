@@ -11,15 +11,8 @@ class User {
 	public $birthdate;
 	public $city;
 	public $log_in;
+	public $owner;
 
-	function __construct($email, $pwd){
-		if ($this->get_user){
-			return $this;
-		}
-		else{
-			//$this->
-		}
-	}
 
 	public function get_user($id){
 		$query = "SELECT user.id, user.name, user.sex ,".
@@ -59,7 +52,33 @@ class User {
 		echo '<br>';
 	}
 
-
+	//add table {id,rest_id}
+	public function add_table($restaurant) {
+		global $db;
+			
+		if ($this->permission == "Admin" or $this->owner == $restaurant->id) {
+			$query = "INSERT INTO tables (rest_id)".
+				"VALUES (" . $restaurant->id . ")";
+			return $db->query($query);
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public function delete_table ($restaurant, $table_id) {
+		global $db;
+	
+		if ($this->permission == "Admin" or $this->owner == $restaurant->id) {
+			$query = "DELETE FROM tables WHERE id = ". $table_id;
+			
+			echo $query;
+			return $db->query($query);
+		}
+		else {
+			return false;
+		}
+	}	
 }
 /*
 $model = 
