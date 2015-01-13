@@ -59,7 +59,7 @@ class Model{
 			echo $query;
 			if ($db->query($query)) {
 				$query = "INSERT INTO user_perm (perm_id, user_id)".
-					"VALUES (2, 
+					"VALUES (2,)"; 
 			}
 			
 		}
