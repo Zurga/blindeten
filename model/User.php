@@ -11,6 +11,7 @@ class User {
 	public $birthdate;
 	public $city;
 	public $log_in;
+	public $owner;
 
 
 	public function get_user($id){
@@ -53,13 +54,15 @@ class User {
 
 	//add table {id,rest_id}
 	public function add_table($restaurant) {
-			global $db;
+		global $db;
+			
+		if ($this->permission == "Admin" or $this->owner == $restaurant->id) {
 			$query = "INSERT INTO tables (rest_id)".
 				"VALUES (" . $restaurant->id . ")";
 			echo $query;
-		$result = $db->query($query);
-		var_dump($result);
-	
+			return $db->query($query);
+			var_dump($result);
+		}
 	
 	}
 }
