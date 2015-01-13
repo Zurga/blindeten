@@ -1,5 +1,5 @@
 <?php
-include('model/Model.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/model/Model.php');
 $model = new Model;
 $restaurants = $model->getRestaurants();
 //var_dump($restaurants);

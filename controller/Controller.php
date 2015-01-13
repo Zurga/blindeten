@@ -11,7 +11,7 @@ class Controller {
 
 	public function invoke(){
 		$restaurants = $this->model->get_restaurants();
-		include '/view/map.php';
+		include '/maptest.php';
 
 		if($url== 'add_restaurant'){
 			$attr = $_POST[''];
