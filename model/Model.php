@@ -45,7 +45,8 @@ class Model{
 		global $db;
 		$salted = $this->salt1 . $attr['password'] . $this->salt2;
 		$password = crypt($salted);
-		$date = explode($attr['birthdate'],'-');
+		$date = explode('-',$attr['birthdate']);
+		array_walk($date, 'intval');
 
 		if(checkdate($date[1],$date[2], $date[0])){
 			$query = "INSERT INTO user (name, email, birthdate, sex, password, city) ".
