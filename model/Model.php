@@ -6,8 +6,8 @@ include_once 'User.php';
 include_once 'Restaurant.php';
 
 class Model{
-	$salt1;
-	$salt2;
+	private $salt1;
+	private $salt2;
 	$salt1 = "12M6&#%lN*msp";
 	$salt2 = "@#k45hHdsl$2*";
 
