@@ -59,6 +59,7 @@ class User {
 		if ($this->permission == "Admin" or $this->owner == $restaurant->id) {
 			$query = "INSERT INTO tables (rest_id)".
 				"VALUES (" . $restaurant->id . ")";
+			$db->query;
 			var_dump($db->insert_id);
 		}
 		else {
