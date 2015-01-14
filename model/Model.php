@@ -4,6 +4,7 @@ include_once 'dblogin.php';
 //include_once 'Map.php';
 include_once 'User.php';
 include_once 'Restaurant.php';
+//include_once 'Booking.php';
 
 class Model{
 	private $salt1 = "12M6&#%lN*msp";
@@ -80,35 +81,45 @@ class Model{
 
 	public function book_table($user, $restaurant, $table_id, $time){
 		//check if the table belongs to the restaurant
+		echo $restaurant->tables;
 		if (in_array($table_id, $restaurant->tables)) {
 			//check if the booking does exists to determine
 			//if the booking is new or if the user books 
 			//to an existing table
+			echo 'table in restaurant';
 			$query = "SELECT id FROM bookings" .
 				" WHERE table_id = " . $table_id . 
-				" AND time = ". $time;
+				" AND time = " . $time . "AND user1 != ". $user->id;
 
 			if ($exists = get_rows($this->db->query($query))){
 				//it exists
-				$user1 = $exists['user1'];
+				echo 'booking exists';
 				$bookQ = "UPDATE bookings SET user2 = " . $user->id.
 					" WHERE id = " . $exists['id'];
-				return $user1;
 			}
 			else{
 				//write the booking to the database
+				echo 'booking does not exist';
 				$bookQ = "INSERT INTO bookings (table_id, user1, time)" .
 					" VALUES (" . $table_id . "," . $user->id . "," .
 					$time . ")";
-
-				return $this->db->query($bookQ);
+			}
+			if($this->db->query($bookQ)){
+				echo 'booking query';
+				$booking = new Booking($this->db->insert_id);
+				return $booking;
 			}
 		}
 		else{
+			echo 'not in restaurant';
 			return false;
 		}
 	}
 
+	public function add_history($user_id, $booking_id){
+		
+		
+		}
 	//get an array of restaurants objects
 	public function get_restaurants(){
 		global $db;
