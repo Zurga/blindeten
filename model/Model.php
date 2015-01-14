@@ -85,22 +85,26 @@ class Model{
 			//check if the booking does exists to determine
 			//if the booking is new or if the user books 
 			//to an existing table
+			echo 'table in restaurant';
 			$query = "SELECT id FROM bookings" .
 				" WHERE table_id = " . $table_id . 
 				" AND time = " . $time . "AND user1 != ". $user->id;
 
 			if ($exists = get_rows($this->db->query($query))){
 				//it exists
+				echo 'booking exists';
 				$bookQ = "UPDATE bookings SET user2 = " . $user->id.
 					" WHERE id = " . $exists['id'];
 			}
 			else{
 				//write the booking to the database
+				echo 'booking does not exist';
 				$bookQ = "INSERT INTO bookings (table_id, user1, time)" .
-					" VALUES (" . $table_id . "," . $user-id . "," .
+					" VALUES (" . $table_id . "," . $user->id . "," .
 					$time . ")";
 			}
 			if($this->db->query($bookQ)){
+				echo 'booking query';
 				$booking = new Booking($this->db->insert_id);
 				return $booking;
 			}
