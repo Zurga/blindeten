@@ -81,6 +81,7 @@ class Model{
 
 	public function book_table($user, $restaurant, $table_id, $time){
 		//check if the table belongs to the restaurant
+		echo $restaurant->tables;
 		if (in_array($table_id, $restaurant->tables)) {
 			//check if the booking does exists to determine
 			//if the booking is new or if the user books 
