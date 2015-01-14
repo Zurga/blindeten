@@ -10,10 +10,15 @@ class Controller {
 	}
 
 	public function invoke(){
+		if($_SERVER['DOCUMENT_ROOT'])
 		$root = $_SERVER['DOCUMENT_ROOT'];
 		$restaurants = $this->model->get_restaurants();
 
+	var_dump($_SERVER); 
 		include $root . '/html/map.php';
+		if ($_SERVER['REQUEST_URI'] == '/watisblindeten.html'){
+		       include $root . '/html/watisblindeten.php';
+	}
 	}
 }
 ?>
