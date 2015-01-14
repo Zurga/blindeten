@@ -9,6 +9,11 @@ class Model{
 	private $salt1 = "12M6&#%lN*msp";
 	private $salt2 = "@#k45hHdsl$2*";
 
+	function __construct(){
+		global $db;
+		$this->db = $db;
+	}
+
 	//log the user the system and then return user info
 	public function login($email_addr, $password){
 		$salted = $this->salt1 . $password . $this->salt2;
@@ -22,7 +27,7 @@ class Model{
 			" WHERE user.email ='" . $email_addr .
 			" ' AND user.password = '" . $epassword . "'";
 		
-		$result = $db->query($query);
+		$result = $this->db->query($query);
 		
 		//check if email exists in db
 		if($row = get_rows($result)){
@@ -43,7 +48,6 @@ class Model{
 
 	//Create new account with specified attributes, return true or with reason.
 	public function add_account($attr){
-		global $db;
 		$salted = $this->salt1 . $attr['password'] . $this->salt2;
 		$password = crypt($salted);
 
@@ -51,16 +55,18 @@ class Model{
 		$date = explode('-',$attr['birthdate']);
 		array_walk($date, 'intval');
 
+		//check if the date is valid
 		if(checkdate($date[1],$date[2], $date[0])){
+			//it is so add account
 			$query = "INSERT INTO user (name, email, birthdate, sex, password, city) ".
 				"VALUES ('". $attr['name'] . "','" . $attr['email'] . "','" .
 				$attr['birthdate']. "','" . $attr['sex'] . "','" . $password . "','" . 
 				$attr['city'] . "')";
-			echo $query;
-			if ($db->query($query)) {
+			
+			if ($this->db->query($query)) {
 				$query = "INSERT INTO user_perm (perm_id, user_id)".
 					"VALUES (2,". $db->insert_id .")"; 
-				$db->query($query);
+				$this->db->query($query);
 			}
 			else {
 				return false;
@@ -73,38 +79,34 @@ class Model{
 	}
 
 	public function book_table($user, $restaurant, $table_id, $time){
-		global $db;
-		//get if the table id exsists
-		
+		//check if the table belongs to the restaurant
 		if (in_array($table_id, $restaurant->tables)) {
-			$check_table = "SELECT * FROM bookings" .
-				       " WHERE table_id = " . $table_id . "AND ".
-				       " ";
-		}
+			//check if the booking does exists to determine
+			//if the booking is new or if the user books 
+			//to an existing table
+			$query = "SELECT id FROM bookings" .
+				" WHERE table_id = " . $table_id . "AND ".
+				" time = ". $time;
 
-		$tableQ = "SELECT DISTINCT  FROM tables" .
-			" WHERE id = " . $table_id;
-	
-		$result = $db->query($tableQ);
-		
-		if ($rows = get_rows($result)){
-			if ($rows["user1"] == NULL) {
-				$column = "user1";
+			if($exists = get_rows($this->db->($query))){
+				//it exists
+				$user1 = $exists['user1'];
+				$bookQ = "UPDATE bookings SET user2 = " . $user->id.
+					" WHERE id = " . $exists['id'];
+				return $user1;
 			}
-			else {
-				$column = "user2";
-			}
+			else{
+				//write the booking to the database
+				$bookQ = "INSERT INTO bookings (table_id, user1, time)" .
+					" VALUES (" . $table_id . "," . $user-id . "," .
+					$time . ")";
 
-			$bookQ = "UPDATE tables SET ".$column." = ".$user->id.
-					" , start_time = ".$time;
-			$result = $db->query($bookQ);
+				return $this->db->query($bookQ);
+			}
 		}
-		else {
+		else{
 			return false;
 		}
-			//todo find out in which column to place user
-			//and if table has two people send email to first user
-			//also put booking in the archive
 	}
 
 	//get an array of restaurants objects
