@@ -89,7 +89,8 @@ class Model{
 			echo 'table in restaurant';
 			$query = "SELECT id FROM bookings" .
 				" WHERE table_id = " . $table_id . 
-				" AND time = " . $time . "AND user1 != ". $user->id;
+				" AND time = '" . $time . "' AND user1 != ". $user->id;
+			echo $query;
 
 			if ($exists = get_rows($this->db->query($query))){
 				//it exists
@@ -101,9 +102,11 @@ class Model{
 				//write the booking to the database
 				echo 'booking does not exist';
 				$bookQ = "INSERT INTO bookings (table_id, user1, time)" .
-					" VALUES (" . $table_id . "," . $user->id . "," .
-					$time . ")";
+					" VALUES (" . $table_id . "," . $user->id . ",'" .
+					$time . "')";
 			}
+			echo '<br>';
+			echo $bookQ;
 			if($this->db->query($bookQ)){
 				echo 'booking query';
 				$booking = new Booking($this->db->insert_id);
