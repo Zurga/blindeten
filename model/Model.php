@@ -4,6 +4,7 @@ include_once 'dblogin.php';
 //include_once 'Map.php';
 include_once 'User.php';
 include_once 'Restaurant.php';
+//include_once 'Booking.php';
 
 class Model{
 	private $salt1 = "12M6&#%lN*msp";
@@ -86,22 +87,24 @@ class Model{
 			//to an existing table
 			$query = "SELECT id FROM bookings" .
 				" WHERE table_id = " . $table_id . 
-				" AND time = ". $time;
+				" AND time = " . $time . "AND user1 != ". $user->id;
 
 			if ($exists = get_rows($this->db->query($query))){
 				//it exists
 				$user1 = $exists['user1'];
 				$bookQ = "UPDATE bookings SET user2 = " . $user->id.
 					" WHERE id = " . $exists['id'];
-				return $user1;
 			}
 			else{
 				//write the booking to the database
 				$bookQ = "INSERT INTO bookings (table_id, user1, time)" .
 					" VALUES (" . $table_id . "," . $user-id . "," .
 					$time . ")";
-
-				return $this->db->query($bookQ);
+			}
+			if($this->db->query($bookQ)){
+				//	$booking = new Booking($this->db->insert_id);
+				$bookinng = true;
+				return $booking;
 			}
 		}
 		else{

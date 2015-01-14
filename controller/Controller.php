@@ -10,7 +10,7 @@ class Controller {
 	}
 
 	public function invoke(){
-		if($_SERVER['DOCUMENT_ROOT'])
+		if($_SERVER['REQUEST_URI'])
 		$root = $_SERVER['DOCUMENT_ROOT'];
 		$restaurants = $this->model->get_restaurants();
 
