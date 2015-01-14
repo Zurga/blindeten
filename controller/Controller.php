@@ -14,6 +14,8 @@ class Controller {
 		$restaurants = $this->model->get_restaurants();
 
 		include $root . '/html/map.php';
+		var_dump( $_SERVER['REQUEST_URI']); 
+		//if ($_SERVER['REQUEST_URI'] = 
 	}
 }
 ?>
