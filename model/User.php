@@ -1,6 +1,7 @@
 <?php
 
 include_once 'dbFunctions.php';
+include_once 'dblogin.php';
 
 class User {
 	private $db;
@@ -27,11 +28,8 @@ class User {
 			" JOIN permission ON user_perm.perm_id = permission.id" .
 			" WHERE user.id = " . $id;
 		
-		$result = $this->db->query($query);
-		
 		//check if email exists in db
-		if($row = get_rows($result)){
-			$row = $result->fetch_array(MYSQLI_ASSOC);
+		if($row = get_rows($this->db->query($query))){
 			//assign values to user based on mySQL columns
 			foreach($row as $key=>$val){
 				$this->$key = $val;
@@ -51,7 +49,7 @@ class User {
 		return $this->db->query($query);
 	}
 
-	function add_restaurant($user_id, $attr){
+	public function add_restaurant($user_id, $attr){
 		$query = "INSERT INTO restaurant (owner, name, lat, lon, url)" .
 			" VALUES (". $attr['user_id'] . "," . $attr['name'] . "," . 
 			$attr['lat'] . "," . $attr['lon'] . "," . $attr['url'] . ")";
@@ -62,6 +60,22 @@ class User {
 			//foreach($attr['tables'] as table){
 			//	$this->add_table();
 			//}
+		}
+	}
+	
+	public function delete_account($user_id) {
+		if ($this->permission == "Admin" or $this->id == $user_id) {
+			$query = "DELETE FROM user WHERE id = ". $user_id;
+			//if ($this->permission == "Owner") {
+				//delete_restaurant();
+			//}
+			//else {
+				//return false;
+			//}
+			return $this->db->query($query);
+		}
+		else {
+			return false;
 		}
 	}
 
@@ -91,7 +105,6 @@ class User {
 	
 	public function change_perm ($permission,$email) {
 		if ($this->permission == "Admin") {
-			//TO DO user_id aanvragen
 			$user_query = "SELECT id FROM user WHERE email = '". $email ."'";
 			$query = "UPDATE user_perm SET perm_id = ". $permission .
 					" WHERE user_id = (". $user_query .")";

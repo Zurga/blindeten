@@ -35,7 +35,8 @@ function sanitize ($attr) {
 		$sanitized = $attr;
 		$sanitized = mysql_real_escape_string($attr);
 	}
+	
 	return $sanitized;
-	var_dump($sanitized);
+	
 }
 ?>

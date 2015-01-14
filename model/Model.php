@@ -98,7 +98,7 @@ class Model{
 			else{
 				//write the booking to the database
 				$bookQ = "INSERT INTO bookings (table_id, user1, time)" .
-					" VALUES (" . $table_id . "," . $user-id . "," .
+					" VALUES (" . $table_id . "," . $user->id . "," .
 					$time . ")";
 			}
 			if($this->db->query($bookQ)){

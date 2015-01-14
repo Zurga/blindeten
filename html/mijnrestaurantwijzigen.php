@@ -26,17 +26,17 @@
 		<br>
 		<form>	
 		<fieldset id="inputs">
-			<li><p>Naam:</p><br><br>
-			<input id="name" name="input['name']" type="text" placeholder="Naam" required></p></li>
+			<li><p>Naam Restaurant:</p><br><br>
+			<p><input id="name" name="input['name']" type="text" placeholder="Naam Restaurant" ></p></li>
 			<br>
-			<li><p><input type="radio" name="input['sex']" value="male" >Man</p></li>
-		    <li><p><input type="radio" name="input['sex']" value="female" >Vrouw</p></li> 
+			<li><p>Aantal tafels:</p><br><br>
+			<p><input id="tables" name="input['tables']" type="number" placeholder="1,2,3 etc." ></p></li>
 			<br>
-			<li><p>Geboortedatum:</p><br><br>
-			<input id="birthdate" name="input['birthdate']" type="date" placeholder="Geboortedatum" required></p></li>
+			<li><p>Website URL:</p><br><br>
+			<p><input id="url" name="input['url']" type="text" placeholder="www.mijnrestaurant.nl" ></p></li>
 			<br>
-			<li><p>Woonplaats:</p><br><br>
-			<input id="city" name="input['city']" type="text" placeholder="Woonplaats" required></p></li>
+			<li><p>Locatie Restaurant:</p><br><br>
+			<p><input id="location" name="input['location']" type="text" placeholder="Het adres" ></p></li>
 			<br>
 			<br>
 			<br>
