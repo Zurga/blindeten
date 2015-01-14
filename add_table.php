@@ -1,6 +1,7 @@
 <?php
 $root = $_SERVER['DOCUMENT_ROOT'];
 include $root . '/model/User.php';
+include $root . '/model/Restaurant.php';
 
 $user = new User(2);
 $restaurant = new Restaurant;
