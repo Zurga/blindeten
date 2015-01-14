@@ -17,8 +17,8 @@ class Controller {
 	var_dump($_SERVER); 
 		include $root . '/html/map.php';
 		if ($_SERVER['REQUEST_URI'] = '/watisblindeten.html'){
-		       include $root . 'html/watisblindeten.php'
-		}
+		       include $root . 'html/watisblindeten.php';
+	}
 	}
 }
 ?>
