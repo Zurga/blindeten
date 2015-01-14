@@ -4,7 +4,7 @@ include_once 'dblogin.php';
 //include_once 'Map.php';
 include_once 'User.php';
 include_once 'Restaurant.php';
-//include_once 'Booking.php';
+include_once 'Booking.php';
 
 class Model{
 	private $salt1 = "12M6&#%lN*msp";
