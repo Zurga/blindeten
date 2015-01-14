@@ -103,6 +103,19 @@ class User {
 		}
 	}	
 	
+	public function delete_restaurant ($rest_id) {
+		if ($this->permission == "Admin" or $this->owner == $rest_id) {
+			$query = "DELETE FROM restaurant WHERE id = ". $rest_id;
+			$table_query = "DELETE FROM tables WHERE rest_id = ". $rest_id;
+			
+			$this->db->query($query);
+			$this->db->query($table_query);
+		}
+		else {
+			return false;
+		}
+	}
+	
 	public function change_perm ($permission,$email) {
 		if ($this->permission == "Admin") {
 			$user_query = "SELECT id FROM user WHERE email = '". $email ."'";
