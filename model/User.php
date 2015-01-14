@@ -103,6 +103,7 @@ class User {
 		}
 	}	
 	
+	//Dit is nu test verwijder 'test_'
 	public function delete_restaurant ($rest_id) {
 		if ($this->permission == "Admin" or $this->owner == $rest_id) {
 			$query = "DELETE FROM test_restaurant WHERE id = ". $rest_id;
