@@ -48,7 +48,7 @@ class Model{
 
 	//Create new account with specified attributes, return true or with reason.
 	public function add_account($attr){
-		$salted = $this->salt1 . $attr['password'] . $this->salt2;
+		$salted = $this->salt1 . $attr['email'] . $attr['password'] . $this->salt2;
 		$password = crypt($salted);
 
 		//create a date int array to check if the date exists
