@@ -27,13 +27,10 @@ class User {
 			" JOIN user_perm ON user.id = user_perm.user_id" .
 			" JOIN permission ON user_perm.perm_id = permission.id" .
 			" WHERE user.id = " . $id;
-		$result = $this->db->query($query);
-		var_dump($result);
 		
 		//check if email exists in db
 		if($row = get_rows($this->db->query($query))){
 			//assign values to user based on mySQL columns
-			var_dump($row);
 			foreach($row as $key=>$val){
 				$this->$key = $val;
 			}
@@ -67,8 +64,6 @@ class User {
 	}
 	
 	public function delete_account($user_id) {
-		echo 'this'.$this->id;
-		echo 'userid'.$user_id;
 		if ($this->permission == "Admin" or $this->id == $user_id) {
 			$query = "DELETE FROM user WHERE id = ". $user_id;
 			//if ($this->permission == "Owner") {
@@ -77,7 +72,6 @@ class User {
 			//else {
 				//return false;
 			//}
-			echo $query;
 			return $this->db->query($query);
 		}
 		else {
