@@ -1,6 +1,7 @@
 <?php
 
 include_once 'dbFunctions.php';
+include_once 'dbLogin.php';
 
 class User {
 	private $db;
@@ -28,7 +29,7 @@ class User {
 			" WHERE user.id = " . $id;
 		var_dump($db);
 		var_dump($this->db);
-		/*$result = $db->query($query);
+		$result = $db->query($query);
 		
 		//check if email exists in db
 		if($row = get_rows($result)){
@@ -41,7 +42,7 @@ class User {
 		}
 		else{
 			return false; 
-		}*/
+		}
 	}
 
 	public function change_attr($attr) {
