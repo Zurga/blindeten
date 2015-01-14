@@ -110,6 +110,7 @@ class Model{
 			}
 		}
 		else{
+			echo 'not in restaurant';
 			return false;
 		}
 	}
