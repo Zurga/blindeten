@@ -7,8 +7,8 @@ $test2 = 'This is a test';
 $test3 = array('query'=>'OR "1"');
 $test4 = 'OR "1"';
 
-$sanitize($test1);
-$sanitize($test2);
-$sanitize($test3);
-$sanitize($test4);
+sanitize($test1);
+sanitize($test2);
+sanitize($test3);
+sanitize($test4);
 ?>
