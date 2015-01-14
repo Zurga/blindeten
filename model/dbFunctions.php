@@ -23,4 +23,18 @@ function set_var($var, $object){
 		$object->$key = $val;
 	}
 }
+
+function sanitize ($attr) {
+	if (is_array($attr)) {
+		$sanitized = array();
+		foreach($attr as $key=>$val) {
+			$sanitized[$key] = mysql_real_escape_string($val);
+		}
+	}
+	else {
+		$sanitized = $attr;
+		$sanitized = mysql_real_escape_string($attr);
+	}
+	return $sanitized;
+}
 ?>
