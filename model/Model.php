@@ -91,19 +91,17 @@ class Model{
 
 			if ($exists = get_rows($this->db->query($query))){
 				//it exists
-				$user1 = $exists['user1'];
 				$bookQ = "UPDATE bookings SET user2 = " . $user->id.
 					" WHERE id = " . $exists['id'];
 			}
 			else{
 				//write the booking to the database
 				$bookQ = "INSERT INTO bookings (table_id, user1, time)" .
-					" VALUES (" . $table_id . "," . $user->id . "," .
+					" VALUES (" . $table_id . "," . $user-id . "," .
 					$time . ")";
 			}
 			if($this->db->query($bookQ)){
-				//	$booking = new Booking($this->db->insert_id);
-				$bookinng = true;
+				$booking = new Booking($this->db->insert_id);
 				return $booking;
 			}
 		}
@@ -112,6 +110,10 @@ class Model{
 		}
 	}
 
+	public function add_history($user_id, $booking_id){
+		
+		
+		}
 	//get an array of restaurants objects
 	public function get_restaurants(){
 		global $db;
