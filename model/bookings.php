@@ -1,6 +1,6 @@
 <?php
 
-class Restaurant{
+class Booking{
 	public $id;
 	public $table_id;
 	public $user1;
