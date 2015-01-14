@@ -3,6 +3,7 @@
 include_once 'dbFunctions.php';
 
 class User {
+	private $db;
 	public $name;
 	public $id;
 	public $permission;
@@ -14,20 +15,23 @@ class User {
 	public $owner;
 
 
-	public function get_user($id){
-		$query = "SELECT user.id, user.name, user.sex ,".
-			" user.birthdate, user.city, user.email, permission.name AS permission".
-			" FROM user".
-			" JOIN user_perm ON user.id = user_perm.user_id".
-			" JOIN permission ON user_perm.perm_id = permission.id".
-			" WHERE user.id =" . $id;
+	public function __construct($id){
+		global $db;
+		$this->db = $db;
+
+		$query = "SELECT user.id, user.name, user.sex ," .
+			" user.birthdate, user.city, user.email," .
+		        " permission.name AS permission".
+			" FROM user" .
+			" JOIN user_perm ON user.id = user_perm.user_id" .
+			" JOIN permission ON user_perm.perm_id = permission.id" .
+			" WHERE user.id = " . $id;
 		
-		$result = $db->query($query);
+		$result = $this->db->query($query);
 		
 		//check if email exists in db
 		if($row = get_rows($result)){
 			$row = $result->fetch_array(MYSQLI_ASSOC);
-			$user = new User();
 			//assign values to user based on mySQL columns
 			foreach($row as $key=>$val){
 				$this->$key = $val;
@@ -40,39 +44,34 @@ class User {
 	}
 
 	public function change_attr($attr) {
-		global $db;
-		
 		$query = "UPDATE user SET name = '".$attr['name']."', sex = '".$attr['sex']."',".
 			"birthdate = '".$attr['birthdate']."', city = '".$attr['city']."'". 
 			" WHERE email = '".$this->email."'";
 		
-		return $db->query($query);
+		return $this->db->query($query);
 	}
 
 	function add_restaurant($user_id, $attr){
-		global $db;
-
 		$query = "INSERT INTO restaurant (owner, name, lat, lon, url)" .
 			" VALUES (". $attr['user_id'] . "," . $attr['name'] . "," . 
 			$attr['lat'] . "," . $attr['lon'] . "," . $attr['url'] . ")";
 
-		if($db->query($query)){
-			$rest_id = $db->insert_id;
+		if($this->db->query($query)){
+			$rest_id = $this->db->insert_id;
 			//TO DO add tables to restaurants
-			foreach($attr['tables'] as table){
-				$this->add_table();
-			}
+			//foreach($attr['tables'] as table){
+			//	$this->add_table();
+			//}
 		}
 	}
+
 	//add table {id,rest_id}
-	public function add_table($restaurant) {
-		global $db;
-			
+	public function add_table($restaurant){
 		if ($this->permission == "Admin" or $this->owner == $restaurant->id) {
 			$query = "INSERT INTO tables (rest_id)".
 				"VALUES (" . $restaurant->id . ")";
-			$db->query($query);
-			$db->insert_id;
+			$this->db->query($query);
+			$this->db->insert_id;
 		}
 		else {
 			return false;
@@ -80,13 +79,10 @@ class User {
 	}
 	
 	public function delete_table ($restaurant, $table_id) {
-		global $db;
-	
 		if ($this->permission == "Admin" or $this->owner == $restaurant->id) {
 			$query = "DELETE FROM tables WHERE id = ". $table_id;
 			
-			$db->query($query);
-			return $db->query($query);
+			return $this->db->query($query);
 		}
 		else {
 			return false;
@@ -94,15 +90,13 @@ class User {
 	}	
 	
 	public function change_perm ($permission,$email) {
-		global $db;
-		
 		if ($this->permission == "Admin") {
 			//TO DO user_id aanvragen
 			$user_query = "SELECT id FROM user WHERE email = '". $email ."'";
 			$query = "UPDATE user_perm SET perm_id = ". $permission .
 					" WHERE user_id = (". $user_query .")";
 					
-			$db->query($query);
+			return $this->db->query($query);
 		}
 		else {
 			return false;
