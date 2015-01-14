@@ -33,7 +33,6 @@ class User {
 		
 		//check if email exists in db
 		if($row = get_rows($result)){
-			$row = $result->fetch_array(MYSQLI_ASSOC);
 			//assign values to user based on mySQL columns
 			foreach($row as $key=>$val){
 				$this->$key = $val;
