@@ -30,6 +30,7 @@ function sanitize ($attr) {
 		for ($attr as $key=>$val) {
 			$sanitized[$key] = mysql_real_escape_string($val);
 		}
+	}
 	else {
 		$sanitized = $attr;
 		$sanitized = mysql_real_escape_string($attr);
