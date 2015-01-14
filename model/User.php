@@ -82,7 +82,7 @@ class User {
 	//add table {id,rest_id}
 	public function add_table($restaurant){
 		if ($this->permission == "Admin" or $this->owner == $restaurant->id) {
-			$query = "INSERT INTO tables (rest_id)".
+			$query = "INSERT INTO test_tables (rest_id)".
 				"VALUES (" . $restaurant->id . ")";
 			$this->db->query($query);
 			$this->db->insert_id;
