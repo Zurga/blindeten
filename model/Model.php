@@ -12,7 +12,6 @@ class Model{
 	function __construct(){
 		global $db;
 		$this->db = $db;
-		var_dump($this->db);
 	}
 
 	//log the user the system and then return user info
