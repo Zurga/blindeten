@@ -126,6 +126,7 @@ a img {
   
 body {
 	background-image: url("gracht.jpg");
+	background-repeat: no-repeat;
 }
 
 a {
@@ -182,6 +183,12 @@ h3{
 	text-align: center;
 }
 
+h4 {
+	font-size: 14px;
+	text-align: right;
+	padding: 10px;
+}
+
 form a{
 	font-size: 14px;
 }
@@ -207,7 +214,7 @@ form li p{
 	font-family: Century Gothic;  
 	
 }
-#footer ul li{ 
+#footer ul li{
     display: inline;  
     margin: 0;
 }
