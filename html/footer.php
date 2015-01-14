@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head> 
-	<title>BlinDeten</title>
-	<link rel="stylesheet" type="text/css" href="style.css"></link>
-</head>
-
-<body>
-
 <div id="footer">
 	<ul>
         <li><a href="faq.html" title="FAQ">FAQ</a></li>  
