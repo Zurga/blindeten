@@ -7,14 +7,14 @@
 		<br>
 		<form>	
 		<fieldset id="inputs">
-			<li><p>Naam:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><input id="naam" type="text" placeholder="Naam" required></p></li>
+			<li><p>Naam:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><input id="name" name="input['name']" type="text" placeholder="Naam" required></p></li>
 			<br>
-			<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p><input type="radio" name="sex" value="male" >Man</p></li>
-		    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p><input type="radio" name="sex" value="female" >Vrouw</p></li> 
+			<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p><input type="radio" name="input['sex']" value="male" >Man</p></li>
+		    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p><input type="radio" name="input['sex']" value="female" >Vrouw</p></li> 
 			<br>
-			<li><p>Geboortedatum:</p><input id="geboortedatum" type="date" placeholder="Geboortedatum" required></p></li>
+			<li><p>Geboortedatum:</p><input id="birthdate" name="input['birthdate']" type="date" placeholder="Geboortedatum" required></p></li>
 			<br>
-			<li><p>Woonplaats:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><input id="woonplaats" type="text" placeholder="Woonplaats" required></p></li>
+			<li><p>Woonplaats:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><input id="city" name="input['city']" type="text" placeholder="Woonplaats" required></p></li>
 			<br>
 			<br>
 			<br>
