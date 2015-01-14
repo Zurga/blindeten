@@ -28,9 +28,10 @@ class User {
 			" JOIN permission ON user_perm.perm_id = permission.id" .
 			" WHERE user.id = " . $id;
 		$result = $this->db->query($query);
+		var_dump($result);
 		
 		//check if email exists in db
-		if($row = get_rows($result)){
+		if($row = get_rows($this->db->query($query))){
 			//assign values to user based on mySQL columns
 			var_dump($row);
 			foreach($row as $key=>$val){
