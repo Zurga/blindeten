@@ -27,7 +27,7 @@ function set_var($var, $object){
 function sanitize ($attr) {
 	if (is_array($attr)) {
 		$sanitized = array();
-		for ($attr as $key=>$val) {
+		foreach($attr as $key=>$val) {
 			$sanitized[$key] = mysql_real_escape_string($val);
 		}
 	}
