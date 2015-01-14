@@ -32,6 +32,7 @@ class User {
 		//check if email exists in db
 		if($row = get_rows($result)){
 			//assign values to user based on mySQL columns
+			var_dump($row);
 			foreach($row as $key=>$val){
 				$this->$key = $val;
 			}
