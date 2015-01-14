@@ -90,6 +90,7 @@ class Model{
 			$query = "SELECT id FROM bookings" .
 				" WHERE table_id = " . $table_id . 
 				" AND time = " . $time . "AND user1 != ". $user->id;
+			echo $query;
 
 			if ($exists = get_rows($this->db->query($query))){
 				//it exists
