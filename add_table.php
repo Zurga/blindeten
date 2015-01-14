@@ -5,7 +5,7 @@ include $root . '/model/Restaurant.php';
 
 $user = new User(2);
 $restaurant = new Restaurant;
-$restaurant->id=2;
+$restaurant->id=1;
 $attr = array('rest_id'=>'2');
 $user->add_table($restaurant);
 
