@@ -26,8 +26,9 @@ class User {
 			" JOIN user_perm ON user.id = user_perm.user_id" .
 			" JOIN permission ON user_perm.perm_id = permission.id" .
 			" WHERE user.id = " . $id;
-		
-		$result = $db->query($query);
+		var_dump($db);
+		var_dump($this->db);
+		/*$result = $db->query($query);
 		
 		//check if email exists in db
 		if($row = get_rows($result)){
@@ -40,7 +41,7 @@ class User {
 		}
 		else{
 			return false; 
-		}
+		}*/
 	}
 
 	public function change_attr($attr) {
