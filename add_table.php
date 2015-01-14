@@ -9,7 +9,7 @@ $restaurant->id=1;
 $attr = array('rest_id'=>'2');
 $user->add_table($restaurant);
 
-for ($i = 1; $i <= 10; $i++) {
+for ($i = 1; $i <= 5; $i++) {
 	$user->add_table($restaurant);
 }
 ?>
