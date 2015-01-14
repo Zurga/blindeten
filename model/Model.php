@@ -86,10 +86,10 @@ class Model{
 			//if the booking is new or if the user books 
 			//to an existing table
 			$query = "SELECT id FROM bookings" .
-				" WHERE table_id = " . $table_id . "AND ".
-				" time = ". $time;
+				" WHERE table_id = " . $table_id . 
+				" AND time = ". $time;
 
-			if($exists = get_rows($this->db->($query))){
+			if ($exists = get_rows($this->db->($query))){
 				//it exists
 				$user1 = $exists['user1'];
 				$bookQ = "UPDATE bookings SET user2 = " . $user->id.
