@@ -65,6 +65,8 @@ class User {
 	}
 	
 	public function delete_account($user_id) {
+		echo 'this'.$this->id;
+		echo 'userid'.$user_id;
 		if ($this->permission == "Admin" or $this->id == $user_id) {
 			$query = "DELETE FROM user WHERE id = ". $user_id;
 			//if ($this->permission == "Owner") {
@@ -73,6 +75,7 @@ class User {
 			//else {
 				//return false;
 			//}
+			echo $query;
 			return $this->db->query($query);
 		}
 		else {
