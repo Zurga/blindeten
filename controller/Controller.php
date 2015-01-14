@@ -13,8 +13,8 @@ class Controller {
 		$root = $_SERVER['DOCUMENT_ROOT'];
 		$restaurants = $this->model->get_restaurants();
 
+		var_dump($_GET); 
 		include $root . '/html/map.php';
-		var_dump( $_SERVER['REQUEST_URI']); 
 		//if ($_SERVER['REQUEST_URI'] = 
 	}
 }
