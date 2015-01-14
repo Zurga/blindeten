@@ -27,7 +27,7 @@ class User {
 			" JOIN permission ON user_perm.perm_id = permission.id" .
 			" WHERE user.id = " . $id;
 		
-		$result = $this->db->query($query);
+		$result = $db->query($query);
 		
 		//check if email exists in db
 		if($row = get_rows($result)){
