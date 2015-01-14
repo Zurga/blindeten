@@ -1,7 +1,7 @@
 <?php
 
 include_once 'dbFunctions.php';
-include_once 'dbConnect.php';
+include_once 'dblogin.php';
 
 class User {
 	private $db;
