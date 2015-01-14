@@ -2,7 +2,7 @@
 <html>
 <head> 
 	<title>BlinDeten</title>
-	<link rel="stylesheet" type="text/css" href="/html/style.css"></link>
+	<link rel="stylesheet" type="text/css" href="style.css"></link>
 </head>
 
 <body>
@@ -18,5 +18,3 @@
 		<li><a href="login.html" title="Log in">Log in</a></li> 
 <br>
 </div>
-<div id="content">
-	<div class="maincontent">
