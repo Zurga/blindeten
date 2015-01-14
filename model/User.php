@@ -91,7 +91,6 @@ class User {
 	
 	public function change_perm ($permission,$email) {
 		if ($this->permission == "Admin") {
-			//TO DO user_id aanvragen
 			$user_query = "SELECT id FROM user WHERE email = '". $email ."'";
 			$query = "UPDATE user_perm SET perm_id = ". $permission .
 					" WHERE user_id = (". $user_query .")";
