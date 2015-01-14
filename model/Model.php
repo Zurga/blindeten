@@ -102,8 +102,8 @@ class Model{
 				//write the booking to the database
 				echo 'booking does not exist';
 				$bookQ = "INSERT INTO bookings (table_id, user1, time)" .
-					" VALUES (" . $table_id . "," . $user->id . "," .
-					$time . ")";
+					" VALUES (" . $table_id . "," . $user->id . ",'" .
+					$time . "')";
 			}
 			echo '<br>';
 			echo $bookQ;
