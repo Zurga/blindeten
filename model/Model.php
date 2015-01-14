@@ -105,6 +105,8 @@ class Model{
 					" VALUES (" . $table_id . "," . $user->id . "," .
 					$time . ")";
 			}
+			echo '<br>';
+			echo $bookQ;
 			if($this->db->query($bookQ)){
 				echo 'booking query';
 				$booking = new Booking($this->db->insert_id);
