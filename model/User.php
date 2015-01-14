@@ -51,7 +51,7 @@ class User {
 		return $this->db->query($query);
 	}
 
-	function add_restaurant($user_id, $attr){
+	public function add_restaurant($user_id, $attr){
 		$query = "INSERT INTO restaurant (owner, name, lat, lon, url)" .
 			" VALUES (". $attr['user_id'] . "," . $attr['name'] . "," . 
 			$attr['lat'] . "," . $attr['lon'] . "," . $attr['url'] . ")";
@@ -62,6 +62,22 @@ class User {
 			//foreach($attr['tables'] as table){
 			//	$this->add_table();
 			//}
+		}
+	}
+	
+	public function delete_account($user_id) {
+		if ($this->permission == "Admin" or $this->id == $user_id) {
+			$query = "DELETE FROM user WHERE id = ". $user_id;
+			//if ($this->permission == "Owner") {
+				//delete_restaurant();
+			//}
+			//else {
+				//return false;
+			//}
+			$this->db->query($query);
+		}
+		else {
+			return false;
 		}
 	}
 
