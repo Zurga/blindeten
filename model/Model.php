@@ -63,6 +63,7 @@ class Model{
 			//it exists
 			if ($exists = get_rows($this->db->query($query))){
 				//check if the user is booking the same table again
+				var_dump($exists);
 				if($exists['user1'] == $user->id){
 					return false;
 				}
