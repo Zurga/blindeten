@@ -3,6 +3,7 @@
 	<div class="content">
 	<div class="maincontent">
 		<h1>Mijn Account</h1>
+		<br>
 		<p>Naam:<?php echo $user->name; ?></p>
 		<p>Geslacht:<?php echo $user->sex; ?></p>
 		<p>Geboortedatum:<?php echo $user->birthdate; ?></p>
@@ -19,6 +20,7 @@ echo '
 <div class="content">
 	<div class="maincontent">
 		<h1>Mijn Restaurant</h1>
+		<br>
 		<p>Naam: '. $restaurant->name .'</p>
 		<p>URL: <a href="'.$restaurant->url .'">'.$restaurant->url.'</a></p>
 		<p>Aantal tafels: '. $restaurant->tables .'</p>
