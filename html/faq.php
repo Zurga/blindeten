@@ -24,7 +24,7 @@
 
 		<br>
 
-		<h3>Voor andere vragen kunt u altijd mailen, zie <a href="contact.html" title="contact pagina">contact.</a></h3>
+		<h3>Voor andere vragen kunt u altijd mailen, zie <a href="contact.php" title="contact pagina">contact</a></h3>
 
 		<script type="text/javascript">
 		function showtext(id){

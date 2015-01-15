@@ -29,9 +29,7 @@
 			
 			<fieldset id="actions">
 				<br>
-				<a href="">Wachtwoord vergeten?</a> 
-				<br>
-				<a href="login.html">Inloggen</a>
+				<a href="login.php">Inloggen</a>
 				<br>
 				<br>
 				<input type="submit" id="submit" value="Registreer">
