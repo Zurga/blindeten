@@ -57,7 +57,7 @@ class Model{
 			echo 'table in restaurant';
 			$query = "SELECT id, user1 FROM bookings" .
 				" WHERE table_id = " . $table_id . 
-				" AND time = '" . $time;
+				" AND time = '" . $time ."'";
 			echo $query;
 			
 			//it exists
