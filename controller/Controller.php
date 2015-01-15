@@ -12,7 +12,7 @@ class Controller {
 	public function invoke(){
 		$urlRoutes = array(
 			'/\/$/' => 'index',
-			'/\/account\/'=> 'account',
+			'/\/account\//'=> 'account',
 			'/\/admin\//' => 'admin');
 
 		$root = $_SERVER['DOCUMENT_ROOT'];
