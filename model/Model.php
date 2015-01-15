@@ -55,17 +55,22 @@ class Model{
 			//if the booking is new or if the user books 
 			//to an existing table
 			echo 'table in restaurant';
-			$query = "SELECT id FROM bookings" .
+			$query = "SELECT id, user1 FROM bookings" .
 				" WHERE table_id = " . $table_id . 
-				" AND time = '" . $time . "' AND user1 != ". $user->id;
+				" AND time = '" . $time;
 			echo $query;
-			var_dump(get_rows($this->db->query($query)));
-
+			
+			//it exists
 			if ($exists = get_rows($this->db->query($query))){
-				//it exists
+				//check if the user is booking the same table again
+				if($exists['user1'] == $user->id){
+					return false;
+				}
+				else{
 				echo 'booking exists';
 				$bookQ = "UPDATE bookings SET user2 = " . $user->id.
 					" WHERE id = " . $exists['id'];
+				}
 			}
 			else{
 				//write the booking to the database
