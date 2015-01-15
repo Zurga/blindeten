@@ -96,7 +96,7 @@ class Model{
 		global $db;
 		$restaurants = array();
 
-		$query = 'SELECT id,' .
+		$query = 'SELECT id' .
 			' FROM restaurant';
 		
 		$result = $db->query($query);
