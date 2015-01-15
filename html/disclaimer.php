@@ -29,7 +29,7 @@
 				<br>
 				Nadere informatie
 				<br>
-				Indien u nog vragen of twijfels heeft kunt u <a href="contact.html" title="contact opnemen">contact</a> met ons opnemen of bezoek de website van <a href="http://www.internetrechten.nl" title="Nunc Ius website">Nunc Ius</a> die voor ons deze disclaimer heeft opgesteld. 
+				Indien u nog vragen of twijfels heeft kunt u <a href="contact.php" title="contact opnemen">contact</a> met ons opnemen of bezoek de website van <a href="http://www.internetrechten.nl" title="Nunc Ius website">Nunc Ius</a> die voor ons deze disclaimer heeft opgesteld. 
 				<br>
 				<br>
 				Wij en Nunc Ius behouden ons alle rechten voor
