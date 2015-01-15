@@ -19,7 +19,8 @@ class Restaurant{
 		$this->db = $db;
 
 		$query = "SELECT restaurant.name, restaurant.lat, restaurant.lon," .
-			" restaurant.street, restaurant.city, restaurant.url";
+			" restaurant.street, restaurant.city, restaurant.url" .
+			" FROM ;
 
 		if($row = get_rows($this->db->query($query))){
 		}
