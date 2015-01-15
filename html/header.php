@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head> 
-	<title>BlinDeten</title>
+	<title><?php echo $title; ?> | BlinDeten</title>
 	<link rel="stylesheet" type="text/css" href="/html/style.css"></link>
 </head>
 
