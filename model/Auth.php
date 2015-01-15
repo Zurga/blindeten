@@ -41,5 +41,16 @@ class{
 	}
 
 	public function check_login(){
-		if($_SESSION['COOKIE']){
+		if(isset($_SESSION['logged_in'])){
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public function logout() {
+		session_destroy();
+		session_start();
+	}
 }
