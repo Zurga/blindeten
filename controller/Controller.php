@@ -17,7 +17,7 @@ class Controller {
 		$request = $_SERVER['REQUEST_URI'];
 		
 		foreach($urlRoutes as $route=>$controller_name){
-			if(preg_match($route, $request){
+			if(preg_match($route, $request)){
 				$controller = $controller_name;
 			}
 		}
