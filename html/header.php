@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head> 
-	<title>BlinDeten</title>
-	<link rel="stylesheet" type="text/css" href="html/style.css"></link>
+	<title><?php echo $title; ?> | BlinDeten</title>
+	<link rel="stylesheet" type="text/css" href="/html/style.css"></link>
 </head>
 
 <body>
 <div id="header">
-	<a href="header.php"> <img src="html/blindetenlogo.png"></a>
+	<a href="/"> <img src="html/blindetenlogo.png"></a>
 </div>
 
 

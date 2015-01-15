@@ -3,10 +3,10 @@
 	<div class="content">
 	<div class="maincontent">
 		<h1>Mijn Account</h1>
-		<p>Naam:<?php $user->name; ?></p>
-		<p>Geslacht:<?php $user->sex; ?></p>
-		<p>Geboortedatum:<?php $user->birthdate; ?></p>
-		<p>Woonplaats:<?php $user->city; ?></p>
+		<p>Naam:<?php echo $user->name; ?></p>
+		<p>Geslacht:<?php echo $user->sex; ?></p>
+		<p>Geboortedatum:<?php echo $user->birthdate; ?></p>
+		<p>Woonplaats:<?php echo $user->city; ?></p>
 		<p><a href="/account/edit.php" title="Gegevens wijzigen">Gegevens wijzigen</a>
 		<br>		
 		<a href="wachtwoordveranderen.php" title="Wachtwoord veranderen">Wachtwoord veranderen</a>
@@ -19,10 +19,10 @@
 <div class="content">
 	<div class="maincontent">
 		<h1>Mijn Restaurant</h1>
-		<p>Naam:<?php $restaurant->name; ?></p>
-		<p>URL:<?php $restaurant->url; ?></p>
-		<p>Aantal tafels:<?php $restaurant->tables; ?></p>
-		<p>Adres:<?php $restaurant->street,$restaurant->number, $restaurant->zipcode, $restaurant->city; ?></p>
+		<p>Naam:<?php echo $restaurant->name; ?></p>
+		<p>URL:<?php echo $restaurant->url; ?></p>
+		<p>Aantal tafels:<?php echo $restaurant->tables; ?></p>
+		<p>Adres:<?php echo $restaurant->street; echo $restaurant->number; echo $restaurant->zipcode; echo $restaurant->city; ?></p>
 		<p><a href="/account/edit.php" title="Gegevens wijzigen">Gegevens wijzigen</a>
 		<br>		
 		<a href="wachtwoordveranderen.php" title="Wachtwoord veranderen">Wachtwoord veranderen</a>
