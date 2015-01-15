@@ -127,6 +127,7 @@ a img {
 body {
 	background-image: url("gracht.jpg");
 	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 a {
@@ -212,8 +213,14 @@ form li p{
 	display: inline;  
 	vertical-align: top;
 	display: inline-block
+<<<<<<< HEAD
+=======
 }
-
+form p {
+	 display: inline;  
+     margin: 0;
+>>>>>>> a2a3ec125bd043813ed0f1230f74ccc6f54c0aa2
+}
 #footer {
     list-style-type: none;  
 	margin-top: 20%;
