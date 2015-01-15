@@ -135,6 +135,6 @@ class Model{
 		$query = "SELECT user_id, date, time, restaurant_id ".
 			"FROM history WHERE id = ". $user->id;
 		
-		return $db->query($query);
+		var_dump($db->query($query));
 	}
 }
