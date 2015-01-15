@@ -18,6 +18,6 @@ if($request == '/account/login.php' & empty($_POST)){
 else{
 	include_once $root . '/model/Auth.php';
 	$login = new Login;
-	$login->login($_POST['email'], $_POST['password']);
+	var_dump($login->login($_POST['email'], $_POST['password']));
 }
 ?>
