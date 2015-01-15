@@ -38,8 +38,6 @@ map.setZoom(12);
 
 <div class="sidecontent">
 		
-	
-
 </div>
 
 
