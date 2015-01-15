@@ -23,7 +23,7 @@ class Controller {
 		}
 
 		if (!empty($controller)){
-			require $root . '/controllers' . $controller. '.php';
+			require $root . '/controller/' . $controller. '.php';
 		}
 		else{
 			echo 'page not found';
