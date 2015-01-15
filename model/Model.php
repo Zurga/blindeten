@@ -59,6 +59,7 @@ class Model{
 				" WHERE table_id = " . $table_id . 
 				" AND time = '" . $time . "' AND user1 != ". $user->id;
 			echo $query;
+			var_dump(get_rows($this->db->query($query)));
 
 			if ($exists = get_rows($this->db->query($query))){
 				//it exists
