@@ -26,7 +26,7 @@ class Restaurant{
 			" FROM restaurant WHERE id = " . $id;
 
 		if($row = get_rows($this->db->query($query))){
-			set_vars($row, $this);
+			set_var($row, $this);
 			return $this;
 		}
 	}
