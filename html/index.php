@@ -36,4 +36,21 @@ map.setCenter(latlon);
 map.setZoom(12);
 </script>
 
+<div class="content">
+	<div class="maincontent">
+		<div class="sidecontent">
+		
+	
+
+</div>
+	</div>
+		</div>
+
+
+
+
+
+
+
+
 <?php include 'footer.php' ?>
