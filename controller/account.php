@@ -11,6 +11,6 @@ if($request == '/account/'){
 	include $root . '/html/show.php';
 }
 if($request == '/account/login.php'){
-	include $root . '/htm/login.php';
+	include $root . '/html/login.php';
 }
 ?>
