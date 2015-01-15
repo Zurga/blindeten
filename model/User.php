@@ -22,7 +22,7 @@ class User {
 
 		$query = "SELECT user.id, user.name, user.sex ," .
 			" user.birthdate, user.city, user.email," .
-		        " permission.name AS permission".
+		        " user.owner, permission.name AS permission".
 			" FROM user" .
 			" JOIN user_perm ON user.id = user_perm.user_id" .
 			" JOIN permission ON user_perm.perm_id = permission.id" .

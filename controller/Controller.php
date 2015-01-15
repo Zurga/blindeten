@@ -10,15 +10,26 @@ class Controller {
 	}
 
 	public function invoke(){
-		if($_SERVER['REQUEST_URI'])
+		$urlRoutes = array(
+			'/' => 'index',
+			'/account/'=> 'account');
 		$root = $_SERVER['DOCUMENT_ROOT'];
-		$restaurants = $this->model->get_restaurants();
+		$request = $_SERVER['REQUEST_URI'];
+		var_dump($request);
+		foreach($urlRoutes as $route=>$controller_name){
+			if($route == $request){
+				$controller = $controller_name;
+			}
+		}
 
-	var_dump($_SERVER); 
-		include $root . '/html/map.php';
-		if ($_SERVER['REQUEST_URI'] == '/watisblindeten.html'){
-		       include $root . '/html/watisblindeten.php';
-	}
+		if (!empty($controller)){
+			require $root . '/controller/' . $controller. '.php';
+		}
+		else{
+			echo 'page not found';
+		}	
+
+
 	}
 }
 ?>
