@@ -4,6 +4,9 @@ include_once 'dblogin.php';
 include_once 'dbFunctions.php';
 
 class Login{
+	private $salt1 = "12M6&#%lN*msp";
+	private $salt2 = "@#k45hHdsl$2*";
+	
 	function __construct(){
 		global $db;
 		$this->db = $db;
