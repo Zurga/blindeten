@@ -2,7 +2,7 @@
 <html>
 <head> 
 	<title><?php echo $title; ?> | BlinDeten</title>
-	<link rel="stylesheet" type="text/css" href="style.css"></link>
+	<link rel="stylesheet" type="text/css" href="/html/style.css"></link>
 </head>
 
 <body>

@@ -1,4 +1,5 @@
 <?php include 'header.php';?>
+
 <div class="content">
 	<div class="maincontent">
 <div id='map' style='height:500px;'></div>
@@ -34,4 +35,5 @@ for(i=0;i<json.length;i++){
 map.setCenter(latlon);
 map.setZoom(12);
 </script>
+
 <?php include 'footer.php' ?>
