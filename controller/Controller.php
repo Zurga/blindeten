@@ -12,8 +12,8 @@ class Controller {
 	public function invoke(){
 		$urlRoutes = array(
 			'/\/$/' => 'index',
-			'/\/account//'=> 'account',
-			'/\/admin//' => 'admin');
+			'/\/account\/'=> 'account',
+			'/\/admin\//' => 'admin');
 
 		$root = $_SERVER['DOCUMENT_ROOT'];
 		$request = $_SERVER['REQUEST_URI'];
