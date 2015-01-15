@@ -20,7 +20,7 @@ class Restaurant{
 
 		$query = "SELECT restaurant.name, restaurant.lat, restaurant.lon," .
 			" restaurant.street, restaurant.city, restaurant.url" .
-			" FROM ;
+			" FROM ";
 
 		if($row = get_rows($this->db->query($query))){
 		}
