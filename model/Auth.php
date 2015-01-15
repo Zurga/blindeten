@@ -3,7 +3,7 @@
 include_once 'dblogin.php';
 include_once 'dbFunctions';
 
-class{
+class Login{
 	function __construct(){
 		global $db;
 		$this->db = $db;
@@ -33,6 +33,7 @@ class{
 				$user->$key = $val;
 			}
 			$user->logged_in = true;
+			$_SESSION['logged_in'] = true;
 			return $user;
 		}
 		else{

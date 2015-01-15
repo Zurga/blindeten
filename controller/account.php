@@ -11,7 +11,12 @@ if($request == '/account/'){
 
 	include $root . '/html/show.php';
 }
-if($request == '/account/login.php'){
+if($request == '/account/login.php' & !isset($_POST)){
 	include $root . '/html/login.php';
+}
+else{
+	include_once $root . '/model/Auth.php';
+	$login = new Login;
+	$login->login($_POST['email'], $_POST['password']);
 }
 ?>
