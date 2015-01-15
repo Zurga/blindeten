@@ -12,7 +12,7 @@ if($request == '/account/'){
 
 	include $root . '/html/show.php';
 }
-if($request == '/account/login.php' & !isset($_POST)){
+if($request == '/account/login.php' & empty($_POST)){
 	include $root . '/html/login.php';
 }
 else{
