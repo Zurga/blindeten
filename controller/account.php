@@ -1,5 +1,6 @@
 <?php
 var_dump($_SERVER);
+var_dump($_POST);
 if($request == '/account/'){
 	$user = new User(4);
 	$title = 'Account';
