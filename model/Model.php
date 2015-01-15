@@ -15,8 +15,6 @@ class Model{
 		$this->db = $db;
 	}
 
-
-
 	//Create new account with specified attributes, return true or with reason.
 	public function add_account($attr){
 		$salted = $this->salt1 . $attr['email'] . $attr['password'] . $this->salt2;
