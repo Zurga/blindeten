@@ -5,7 +5,7 @@
 		<h1>Mijn Account</h1>
 		<br>
 		<p>Naam: <?php echo $user->name; ?></p>
-		<p>Geslacht: <?php echo $user->sex; ?></p>
+		<p>Geslacht: <?php if ($user->sex == 0) {echo "man"} else {echo "vrouw"} ?></p>
 		<p>Geboortedatum: <?php echo $user->birthdate; ?></p>
 		<p>Woonplaats: <?php echo $user->city; ?></p>
 		<p><a href="/account/edit.php" title="Gegevens wijzigen">Gegevens wijzigen</a>
