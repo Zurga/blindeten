@@ -45,6 +45,15 @@ class Model{
 			return false; 
 		}
 	}
+	
+	public function get_history($user) {
+		$query = "SELECT user_id, date, time, restaurant_id".
+				" WHERE id = ". $user->id;
+		
+		$result = $this->db->query($query);
+		
+		//id, user_id, date, time, restaurant_id
+	}
 
 
 	//Create new account with specified attributes, return true or with reason.
