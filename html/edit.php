@@ -8,16 +8,16 @@
 		<form>	
 		<fieldset id="inputs">
 			<li><p>Naam:</p><br><br>
-			<input id="name" name="input['name']" type="text" placeholder="<?php $user->name ?>" required></p></li>
+			<input id="name" name="input['name']" type="text" placeholder="<?php $user->name ?>"></p></li>
 			<br>
 			<li><p><input type="radio" name="input['sex']" value="male" >Man</p></li>
 		    <li><p><input type="radio" name="input['sex']" value="female" >Vrouw</p></li> 
 			<br>
 			<li><p>Geboortedatum:</p><br><br>
-			<input id="birthdate" name="input['birthdate']" type="date" placeholder="Geboortedatum" required></p></li>
+			<input id="birthdate" name="input['birthdate']" type="date" placeholder="Geboortedatum"></p></li>
 			<br>
 			<li><p>Woonplaats:</p><br><br>
-			<input id="city" name="input['city']" type="text" placeholder="Woonplaats" required></p></li>
+			<input id="city" name="input['city']" type="text" placeholder="Woonplaats"></p></li>
 			<br>
 			<br>
 			<br>

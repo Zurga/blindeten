@@ -2,14 +2,13 @@
 <html>
 <head> 
 	<title><?php echo $title; ?> | BlinDeten</title>
-	<link rel="stylesheet" type="text/css" href="/html/style.css"></link>
+	<link rel="stylesheet" type="text/css" href="style.css"></link>
 </head>
 
 <body>
 <div id="header">
 	<a href="/"> <img src="html/blindetenlogo.png"></a>
 </div>
-
 
 <div id="menu">
     <ul>
