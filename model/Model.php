@@ -104,6 +104,7 @@ class Model{
 		if ($rows = get_rows($result)) {
 			foreach($rows as $row) {
 				//new restaurant object
+				var_dump($row);
 				$restaurant = new Restaurant($row['id']);
 
 				//check which table belong to the restaurant
