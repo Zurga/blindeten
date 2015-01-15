@@ -141,10 +141,20 @@ a {
 .maincontent{
 	margin: 0 auto;
 	margin-top: 90px;
+	margin-left: 3%;
 	width: 50%;
 	background-color: rgba(255,255,255,0.7);
 	padding: 30px;
-	}
+}
+
+.sidecontent {
+	margin: 0 auto;
+	margin-top: 90px;
+	margin-right: 3%;
+	width: 30%;
+	background-color: rgba(255,255,255,0.7);
+	padding: 30px;
+}
 	
 form {
 	margin-top: 1.5%;
@@ -210,6 +220,7 @@ form p {
 	 display: inline;  
      margin: 0;
 }
+
 #footer {
     list-style-type: none;  
 	margin-top: 20%;
