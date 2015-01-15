@@ -1,7 +1,7 @@
 <?php
 
 include_once 'dblogin.php';
-include_once 'dbFunctions';
+include_once 'dbFunctions.php';
 
 class Login{
 	function __construct(){
