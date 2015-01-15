@@ -7,10 +7,10 @@
 			<br>
 			
 			<fieldset id="inputs">
-				<input id="email" type="text" placeholder="E-mail" required>   
+				<input id="email" name="input['e-mail']" type="text" placeholder="E-mail" required>   
 				<br>
 				<br>
-				<input id="wachtwoord" type="password" placeholder="Wachtwoord" required>
+				<input id="password" name="input['password']" type="password" placeholder="Wachtwoord" required>
 			</fieldset>
 			
 			<fieldset id="actions">
