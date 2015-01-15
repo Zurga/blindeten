@@ -11,13 +11,15 @@ class Controller {
 
 	public function invoke(){
 		$urlRoutes = array(
-			'/' => 'index',
-			'/account/'=> 'account');
+			'/\/$' => 'index',
+			'/\/account/*'=> 'account',
+			'/\/admin/*' => 'admin');
+
 		$root = $_SERVER['DOCUMENT_ROOT'];
 		$request = $_SERVER['REQUEST_URI'];
 		var_dump($request);
 		foreach($urlRoutes as $route=>$controller_name){
-			if($route == $request){
+			if(preg_match($route, $request)){
 				$controller = $controller_name;
 			}
 		}
@@ -28,8 +30,6 @@ class Controller {
 		else{
 			echo 'page not found';
 		}	
-
-
 	}
 }
 ?>

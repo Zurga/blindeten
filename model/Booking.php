@@ -11,8 +11,7 @@ class Booking{
 		global $db;
 		$this->db = $db;
 
-		$query = "SELECT id, table_id, user1 ," .
-			" user2, time".
+		$query = "SELECT id, table_id, time".
 			" FROM bookings" .
 			" WHERE id = " . $id;
 		

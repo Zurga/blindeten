@@ -36,6 +36,5 @@ function sanitize ($attr) {
 	}
 	
 	return $sanitized;
-	
 }
 ?>
