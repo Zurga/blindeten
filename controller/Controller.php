@@ -9,10 +9,10 @@ class Controller {
 		$this->model = new Model;
 	}
 
-	$urlRoutes = array(
-		'/^\$/' => 'index',
-		'/^\account\/$/'=> 'account');
 	public function invoke(){
+		$urlRoutes = array(
+			'/^\$/' => 'index',
+			'/^\account\/$/'=> 'account');
 		$root = $_SERVER['DOCUMENT_ROOT'];
 		$request = $_SERVER['REQUEST_URI'];
 		
