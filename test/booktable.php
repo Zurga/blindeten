@@ -5,7 +5,7 @@ include_once $root ."model/Model.php";
 include_once $root ."model/User.php";
 include_once $root ."model/Restaurant.php";
 
-$user = new User(4);
+$user = new User(2);
 $restaurant = new Restaurant(2);
 $model = new Model;
 $restaurant->tables=array(4,5);
