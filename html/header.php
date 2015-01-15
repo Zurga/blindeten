@@ -7,7 +7,7 @@
 
 <body>
 <div id="header">
-	<a href="header.php"> <img src="html/blindetenlogo.png"></a>
+	<a href="/"> <img src="html/blindetenlogo.png"></a>
 </div>
 
 
