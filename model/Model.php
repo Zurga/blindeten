@@ -96,8 +96,7 @@ class Model{
 		global $db;
 		$restaurants = array();
 
-		$query = 'SELECT restaurant.id,restaurant.name,' .
-			' restaurant.lat, restaurant.lon, restaurant.url' .
+		$query = 'SELECT id,' .
 			' FROM restaurant';
 		
 		$result = $db->query($query);
@@ -105,7 +104,7 @@ class Model{
 		if ($rows = get_rows($result)) {
 			foreach($rows as $row) {
 				//new restaurant object
-				$restaurant = new Restaurant;
+				$restaurant = new Restaurant($row['id']);
 
 				//check which table belong to the restaurant
 				$tableQ = 'SELECT id FROM `tables`' .
