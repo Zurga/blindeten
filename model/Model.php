@@ -34,7 +34,7 @@ class Model{
 			
 			if ($this->db->query($query)) {
 				$query = "INSERT INTO user_perm (perm_id, user_id)".
-					"VALUES (2,". $db->insert_id .")"; 
+					"VALUES (2,". $this->db->insert_id .")"; 
 				$this->db->query($query);
 			}
 			else {
