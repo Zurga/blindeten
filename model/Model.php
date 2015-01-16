@@ -19,6 +19,7 @@ class Model{
 	public function add_account($attr){
 		$salted = $this->salt1 . $attr['email'] . $attr['password'] . $this->salt2;
 		$password = hash('sha256', $salted);
+		echo $password;
 
 		//create a date int array to check if the date exists
 		$date = explode('-',$attr['birthdate']);
