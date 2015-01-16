@@ -138,15 +138,34 @@ a {
 	width: 980px;
 }
 
-.maincontent{
+.maincontent {
 	margin: 0 auto;
 	margin-top: 90px;
-	margin-left: -9%;
 	width: 50%;
 	background-color: rgba(255,255,255,0.7);
 	padding: 30px;
 }
 
+.homemap{
+	margin: 0 auto;
+	margin-top: 90px;
+	margin-left: 90px;
+	width: 50%;
+	background-color: rgba(255,255,255,0.7);
+	padding: 30px;
+	float: left
+}
+
+.sidecontent {
+	margin-top: 90px;
+	background-color: rgba(255,255,255,0.7);
+	padding: 200px;
+	padding-bottom: 37%;
+	float: right;
+	margin-right: 90px;
+	
+	
+}
 
 form {
 	margin-top: 1.5%;
