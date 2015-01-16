@@ -232,6 +232,10 @@ form p {
      margin: 0;
 }
 
+#map {
+	height:200px;
+}
+
 #footer {
     list-style-type: none;  
 	margin-top: 70%;
