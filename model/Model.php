@@ -132,8 +132,8 @@ class Model{
 	
 	public function get_history($user) {
 		global $db;
-		$query = "SELECT user_id, date, time, restaurant_id ".
-			"FROM history WHERE id = ". $user->id;
+		$query = "SELECT date, time, restaurant_id ".
+			"FROM history WHERE user_id = ". $user->id;
 		
 		var_dump($db->query($query));
 	}
