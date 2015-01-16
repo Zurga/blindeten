@@ -1,8 +1,8 @@
 <?php include 'header.php';?>
 
 <div class="sidecontent"></div>
-	
-		<div id='map' style='height:500px</div>
+	<div id="content"></div>
+		<div id='map' style='height:500px>
 		
 <div class="homemap">
  <script src="http://maps.google.com/maps/api/js?sensor=false" 
@@ -37,5 +37,6 @@ map.setCenter(latlon);
 map.setZoom(12);
 </script>
 </div>	
+	</div>
 		
 <?php include 'footer.php' ?>
