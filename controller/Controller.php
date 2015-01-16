@@ -13,7 +13,10 @@ class Controller {
 		$urlRoutes = array(
 			'/\/$/' => 'index',
 			'/\/account\//'=> 'account',
-			'/\/admin\//' => 'admin');
+			'/\/admin\//' => 'admin',
+			'/\/about\//' => 'about',
+			'/\/ajax\//' => 'ajax'
+			);
 
 		$root = $_SERVER['DOCUMENT_ROOT'];
 		$request = $_SERVER['REQUEST_URI'];

@@ -6,11 +6,13 @@
 	</div>
 		</div>
 	<div class="sidecontent">
+		<--!TODO create 
 	</div>
 	</div>
 
- <script src="http://maps.google.com/maps/api/js?sensor=false" 
+<script src="http://maps.google.com/maps/api/js?sensor=false" 
           type="text/javascript"></script>
+<script scr="/js/functions.js"></script>
 <script>
 map = new google.maps.Map(document.getElementById('map'),{
 	zoom: 3,
@@ -34,6 +36,11 @@ for(i=0;i<json.length;i++){
 		return function(){
 			infowindow.setContent(json[i].name);
 			infowindow.open(map,marker);
+			restaurant = json[i].id;
+			get_output('calendar', 
+			
+
+
 		}
 	})(marker, i));
 }
