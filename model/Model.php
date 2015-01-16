@@ -135,6 +135,6 @@ class Model{
 		$query = "SELECT date, time, restaurant_id ".
 			"FROM history WHERE user_id = ". $user->id;
 		
-		return $db->query($query);
+		return get_rows($db->query($query));
 	}
 }
