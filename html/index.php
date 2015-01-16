@@ -1,10 +1,14 @@
 <?php include 'header.php';?>
 
-<div class="sidecontent"></div>
-	<div id="content"></div>
-		<div id='map' style='height:500px>
-		
-<div class="homemap">
+<div id="content">
+	<div class="homemap">
+		<div id='map'>
+	</div>
+		</div>
+	<div class="sidecontent">
+	</div>
+	</div>
+
  <script src="http://maps.google.com/maps/api/js?sensor=false" 
           type="text/javascript"></script>
 <script>
@@ -36,7 +40,5 @@ for(i=0;i<json.length;i++){
 map.setCenter(latlon);
 map.setZoom(12);
 </script>
-</div>	
-	</div>
 		
 <?php include 'footer.php' ?>
