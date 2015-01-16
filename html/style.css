@@ -150,6 +150,7 @@ a {
 	margin: 0 auto;
 	margin-top: 90px;
 	margin-left: 90px;
+	margin-right: 40px;
 	width: 50%;
 	background-color: rgba(255,255,255,0.7);
 	padding: 30px;
@@ -159,12 +160,9 @@ a {
 .sidecontent {
 	margin-top: 90px;
 	background-color: rgba(255,255,255,0.7);
-	padding: 63px;
+	padding: 200px;
 	padding-bottom: 37%;
-	float: right;
-	margin-right: 90px;
-	
-	
+	float: left;	
 }
 
 form {
