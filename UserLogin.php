@@ -1,7 +1,7 @@
 <?php
 include_once "model/Model.php";
 include_once "model/Auth.php";
-
+session_start();
 $model = new Model;
 $auth = new Login;
 $attr = array('name'=>'Jaap Testpersoon',
@@ -13,4 +13,5 @@ $attr = array('name'=>'Jaap Testpersoon',
 $user = new User($model->add_account($attr));
 $auth->Login($user->email, 'blabla');
 var_dump($_SESSION);
+$user->delete_account($user->id);
 ?>
