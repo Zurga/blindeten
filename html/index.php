@@ -37,7 +37,7 @@ for(i=0;i<json.length;i++){
 			infowindow.setContent(json[i].name);
 			infowindow.open(map,marker);
 			restaurant = json[i].id;
-			get_output('calendar', 
+			//get_output('calendar', restaurant); 
 			
 
 
