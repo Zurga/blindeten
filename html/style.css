@@ -228,8 +228,8 @@ form p {
 	opacity: 0.7;
 	background-color: black;
 	text-align: center;
-	font-family: Century Gothic;  
-	
+	font-family: Century Gothic;
+	position: bottom;
 }
 #footer ul li{
     display: inline;  
