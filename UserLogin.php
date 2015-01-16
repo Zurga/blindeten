@@ -12,5 +12,5 @@ $attr = array('name'=>'Jaap Testpersoon',
 'password'=>'blabla');
 $user = new User($model->add_account($attr));
 
-echo $auth->Login($user->email, $user->password);
+echo $auth->Login($user->email, 'blabla');
 ?>
