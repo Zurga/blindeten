@@ -15,7 +15,6 @@
 	<a href="/"> <img src="html/blindetenlogo.png"></a>
 </div>
 
-
 <div id="menu">
     <ul>
         <li><a href="watisblindeten.php" title="Wat is BlinDeten?">Wat is BlinDeten?</a></li>  

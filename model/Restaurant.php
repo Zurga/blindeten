@@ -10,21 +10,25 @@ class Restaurant{
 	public $lon;
 	public $street;
 	public $number;
+	public $zipcode;
 	public $city;
 	public $url;
 	public $tables;
+	
 
 	function __construct($id){
 		global $db;
 		$this->db = $db;
 
 		$query = "SELECT restaurant.name, restaurant.lat, restaurant.lon," .
-			" restaurant.street, restaurant.city, restaurant.url" .
-			" FROM ";
+			" restaurant.street, restaurant.zipcode ,restaurant.city," .
+		        " restaurant.url" .
+			" FROM restaurant WHERE id = " . $id;
 
 		if($row = get_rows($this->db->query($query))){
+			set_var($row, $this);
+			return $this;
 		}
-
 	}
 }
 ?>

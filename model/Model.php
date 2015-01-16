@@ -18,7 +18,8 @@ class Model{
 	//Create new account with specified attributes, return true or with reason.
 	public function add_account($attr){
 		$salted = $this->salt1 . $attr['email'] . $attr['password'] . $this->salt2;
-		$password = crypt($salted);
+		$password = hash('sha256', $salted);
+		echo $password;
 
 		//create a date int array to check if the date exists
 		$date = explode('-',$attr['birthdate']);
@@ -34,8 +35,9 @@ class Model{
 			
 			if ($this->db->query($query)) {
 				$query = "INSERT INTO user_perm (perm_id, user_id)".
-					"VALUES (2,". $db->insert_id .")"; 
+					"VALUES (2,". $this->db->insert_id .")"; 
 				$this->db->query($query);
+				return $this->db->insert_id;
 			}
 			else {
 				return false;
@@ -49,40 +51,37 @@ class Model{
 
 	public function book_table($user, $restaurant, $table_id, $time){
 		//check if the table belongs to the restaurant
-		echo $restaurant->tables;
 		if (in_array($table_id, $restaurant->tables)) {
 			//check if the booking does exists to determine
 			//if the booking is new or if the user books 
 			//to an existing table
-			echo 'table in restaurant';
-			$query = "SELECT id FROM bookings" .
+			$query = "SELECT id, user1 FROM bookings" .
 				" WHERE table_id = " . $table_id . 
-				" AND time = '" . $time . "' AND user1 != ". $user->id;
-			echo $query;
-
+				" AND time = '" . $time ."'";
+			
+			//it exists
 			if ($exists = get_rows($this->db->query($query))){
-				//it exists
-				echo 'booking exists';
+				//check if the user is booking the same table again
+				if($exists['user1'] == $user->id){
+					return false;
+				}
+				else{
 				$bookQ = "UPDATE bookings SET user2 = " . $user->id.
 					" WHERE id = " . $exists['id'];
+				}
 			}
 			else{
 				//write the booking to the database
-				echo 'booking does not exist';
 				$bookQ = "INSERT INTO bookings (table_id, user1, time)" .
 					" VALUES (" . $table_id . "," . $user->id . ",'" .
 					$time . "')";
 			}
-			echo '<br>';
-			echo $bookQ;
 			if($this->db->query($bookQ)){
-				echo 'booking query';
 				$booking = new Booking($this->db->insert_id);
 				return $booking;
 			}
 		}
 		else{
-			echo 'not in restaurant';
 			return false;
 		}
 	}
@@ -96,8 +95,7 @@ class Model{
 		global $db;
 		$restaurants = array();
 
-		$query = 'SELECT restaurant.id,restaurant.name,' .
-			' restaurant.lat, restaurant.lon, restaurant.url' .
+		$query = 'SELECT id' .
 			' FROM restaurant';
 		
 		$result = $db->query($query);
@@ -105,7 +103,7 @@ class Model{
 		if ($rows = get_rows($result)) {
 			foreach($rows as $row) {
 				//new restaurant object
-				$restaurant = new Restaurant;
+				$restaurant = new Restaurant($row['id']);
 
 				//check which table belong to the restaurant
 				$tableQ = 'SELECT id FROM `tables`' .
@@ -132,5 +130,13 @@ class Model{
 			}
 			return $restaurants;
 		}
+	}
+	
+	public function get_history($user) {
+		global $db;
+		$query = "SELECT date, time, restaurant_id ".
+			"FROM history WHERE user_id = ". $user->id;
+		
+		return get_rows($db->query($query));
 	}
 }

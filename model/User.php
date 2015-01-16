@@ -12,7 +12,6 @@ class User {
 	public $sex;
 	public $birthdate;
 	public $city;
-	public $log_in;
 	public $owner;
 
 

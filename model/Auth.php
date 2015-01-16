@@ -1,9 +1,12 @@
 <?php
 
 include_once 'dblogin.php';
-include_once 'dbFunctions';
+include_once 'dbFunctions.php';
 
-class{
+class Login{
+	private $salt1 = "12M6&#%lN*msp";
+	private $salt2 = "@#k45hHdsl$2*";
+	
 	function __construct(){
 		global $db;
 		$this->db = $db;
@@ -11,7 +14,7 @@ class{
 	//log the user the system and then return user info
 	public function login($email_addr, $password){
 		$salted = $this->salt1 . $email_addr . $password . $this->salt2;
-		$epassword = crypt($salted);
+		$epassword = hash('sha256', $salted);
 	
 		$query = "SELECT user.id, user.name, user.sex ,".
 			" user.birthdate, user.city, user.email, ".
@@ -21,11 +24,12 @@ class{
 			" JOIN permission ON user_perm.perm_id = permission.id".
 			" WHERE user.email = '" . $email_addr .
 			" ' AND user.password = '" . $epassword . "'";
-		
+		echo $query;
 		$result = $this->db->query($query);
 	 
 		//check if email exists in db
 		if($row = get_rows($result)){
+			var_dump($query);
 			$row = $result->fetch_array(MYSQLI_ASSOC);
 			$user = new User();
 			//assign values to user based on mySQL columns
@@ -33,6 +37,7 @@ class{
 				$user->$key = $val;
 			}
 			$user->logged_in = true;
+			$_SESSION['logged_in'] = true;
 			return $user;
 		}
 		else{
@@ -41,5 +46,16 @@ class{
 	}
 
 	public function check_login(){
-		if($_SESSION['COOKIE']){
+		if(isset($_SESSION['logged_in'])){
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public function logout() {
+		session_destroy();
+		session_start();
+	}
 }

@@ -1,17 +1,17 @@
 <?php
 include_once "model/Model.php";
-
+include_once "model/Auth.php";
+session_start();
 $model = new Model;
+$auth = new Login;
 $attr = array('name'=>'Jaap Testpersoon',
-'email'=>'JT@hotmail.com',
+'email'=>'JT4@hotmail.com',
 'sex'=>'0',
 'birthdate'=>'1995-08-22',
 'city'=>'Urk',
 'password'=>'blabla');
-$user = $model->add_account($attr);
-
-
-
-
-
+$user = new User($model->add_account($attr));
+$auth->Login($user->email, 'blabla');
+var_dump($_SESSION);
+$user->delete_account($user->id);
 ?>
