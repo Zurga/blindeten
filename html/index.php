@@ -1,7 +1,9 @@
 <?php include 'header.php';?>
+<div class="sidecontent">
 
+</div>
 <div id="content">
-	<div class="maincontent">
+	<div class="homemap">
 		<div id='map' style='height:500px;'>
 
  <script src="http://maps.google.com/maps/api/js?sensor=false" 
@@ -39,7 +41,4 @@ map.setZoom(12);
 	</div>
 		</div>
 		
-<div class="homemap">
-
-</div>
 <?php include 'footer.php' ?>
