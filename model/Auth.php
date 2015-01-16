@@ -24,11 +24,12 @@ class Login{
 			" JOIN permission ON user_perm.perm_id = permission.id".
 			" WHERE user.email = '" . $email_addr .
 			" ' AND user.password = '" . $epassword . "'";
-		
+		echo $query;
 		$result = $this->db->query($query);
 	 
 		//check if email exists in db
 		if($row = get_rows($result)){
+			var_dump($query);
 			$row = $result->fetch_array(MYSQLI_ASSOC);
 			$user = new User();
 			//assign values to user based on mySQL columns
