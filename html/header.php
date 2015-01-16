@@ -13,7 +13,7 @@
 <div id="menu">
     <ul>
         <li><a href="/text/info.php" title="Wat is BlinDeten?">Wat is BlinDeten?</a></li>  
-        <li><a href="/account/registrer.php" title="Registreer">Registreer</a></li>  
+        <li><a href="/account/register.php" title="Registreer">Registreer</a></li>  
 		<li><a href="/account/login.php" title="Log in">Log in</a></li> 
 <br>
 </div>
