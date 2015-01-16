@@ -1,0 +1,31 @@
+<?php include 'header.php';?>
+
+<div class="content">
+	<div class="maincontent">
+		<h1>Gegevens veranderen</h1>
+		<br>
+		<br>
+		<form>	
+		<fieldset id="inputs">
+			<li><p>Naam:</p><br><br>
+			<input id="name" name="input['name']" type="text" placeholder="Naam" required></p></li>
+			<br>
+			<li><p><input type="radio" name="input['sex']" value="male" >Man</p></li>
+		    <li><p><input type="radio" name="input['sex']" value="female" >Vrouw</p></li> 
+			<br>
+			<li><p>Geboortedatum:</p><br><br>
+			<input id="birthdate" name="input['birthdate']" type="date" placeholder="Geboortedatum" required></p></li>
+			<br>
+			<li><p>Woonplaats:</p><br><br>
+			<input id="city" name="input['city']" type="text" placeholder="Woonplaats" required></p></li>
+			<br>
+			<br>
+			<br>
+			<li><input type="submit" id="submit" value="Gegevens opslaan"></p></li>
+		</fieldset>	
+		</form>
+			 
+	</div>
+</div>
+
+<?php include 'footer.php';?>

@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head> 
+<<<<<<< HEAD
+	<title>BlinDeten</title>
+	<link rel="stylesheet" type="text/css" href="html/style.css"></link>
+=======
 	<title><?php echo $title; ?> | BlinDeten</title>
 	<link rel="stylesheet" type="text/css" href="/html/style.css"></link>
+>>>>>>> a2a3ec125bd043813ed0f1230f74ccc6f54c0aa2
 </head>
 
 <body>

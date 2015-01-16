@@ -18,7 +18,8 @@ class Model{
 	//Create new account with specified attributes, return true or with reason.
 	public function add_account($attr){
 		$salted = $this->salt1 . $attr['email'] . $attr['password'] . $this->salt2;
-		$password = hash('sha256', $attr['password']);
+		$password = hash('sha256', $salted);
+		echo $password;
 
 		//create a date int array to check if the date exists
 		$date = explode('-',$attr['birthdate']);
@@ -36,6 +37,7 @@ class Model{
 				$query = "INSERT INTO user_perm (perm_id, user_id)".
 					"VALUES (2,". $this->db->insert_id .")"; 
 				$this->db->query($query);
+				return $this->db->insert_id;
 			}
 			else {
 				return false;

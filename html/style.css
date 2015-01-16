@@ -135,7 +135,7 @@ a {
 }
 .content{
 	margin: 0 auto;
-	width: 980px;
+	width: 80%;
 }
 
 .maincontent {
@@ -147,24 +147,37 @@ a {
 }
 
 .homemap{
-	margin: 0 auto;
-	margin-top: 90px;
+<<<<<<< HEAD
 	margin-left: 90px;
+	margin-top: 90px;
+	width: 50%;
+	background-color: rgba(255,255,255,0.7);
+	padding: 30px;
+	float: left;
+}
+
+#map {
+	height:500px;
+	width:100%;
+}
+
+.sidecontent{
+	margin-top: 90px;
+	width: 5%;
+	background-color: rgba(255,255,255,0.7);
+	padding: 200px;
+	padding-bottom: 38.4%;
+	float: right;
+	margin-right: 90px;
+	}	
+
+
+.sidecontent {
+	margin: 90px 40px 0 90px; 
 	width: 50%;
 	background-color: rgba(255,255,255,0.7);
 	padding: 30px;
 	float: left
-}
-
-.sidecontent {
-	margin-top: 90px;
-	background-color: rgba(255,255,255,0.7);
-	padding: 200px;
-	padding-bottom: 37%;
-	float: right;
-	margin-right: 90px;
-	
-	
 }
 
 form {
@@ -226,15 +239,22 @@ form li p{
 	display: inline;  
 	vertical-align: top;
 	display: inline-block
+
 }
 form p {
 	 display: inline;  
      margin: 0;
+
+}
+
+#map {
+	height:500px;
+	width:100%;
 }
 
 #footer {
     list-style-type: none;  
-	margin-top: 20%;
+	margin-top: 70%;
 	padding: 5px;
 	opacity: 0.7;
 	background-color: black;
