@@ -3,7 +3,7 @@ include_once "model/Model.php";
 include_once "model/Auth.php";
 
 $model = new Model;
-$auth = new Auth;
+$auth = new Login;
 $attr = array('name'=>'Jaap Testpersoon',
 'email'=>'JT3@hotmail.com',
 'sex'=>'0',
