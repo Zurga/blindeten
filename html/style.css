@@ -233,7 +233,8 @@ form p {
 }
 
 #map {
-	height:200px;
+	height:500px;
+	width:100%;
 }
 
 #footer {
