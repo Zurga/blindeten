@@ -20,18 +20,15 @@ echo '
 <div class="content">
 	<div class="maincontent">
 		<h1>Mijn Restaurant</h1>
-<<<<<<< HEAD
 		<p>Naam:' . <?php echo $restaurant->name; ?> .'</p>
 		<p>URL:'.<?php echo $restaurant->url; ?> .'</p>
 		<p>Aantal tafels:'.<?php echo $restaurant->tables; ?>.'</p>
 		<p>Adres:'.<?php echo $restaurant->street; echo $restaurant->number; echo $restaurant->zipcode; echo $restaurant->city; ?>.'</p>
-=======
 		<br>
 		<p>Naam: '. $restaurant->name .'</p>
 		<p>URL: <a href="'.$restaurant->url .'">'.$restaurant->url.'</a></p>
 		<p>Aantal tafels: '. $restaurant->tables .'</p>
 		<p>Adres: '. $restaurant->street.' '.$restaurant->number.'<br>'. $restaurant->zipcode.' '. $restaurant->city.'</p>	
->>>>>>> f4ce71375e5e4c4d7d814abfd987224973b419dc
 		<p><a href="/account/edit.php" title="Gegevens wijzigen">Gegevens wijzigen</a>
 		<br>		
 		<a href="wachtwoordveranderen.php" title="Wachtwoord veranderen">Wachtwoord veranderen</a>
@@ -39,10 +36,5 @@ echo '
 	</div>
 </div>';
 } ?>
-<<<<<<< HEAD
 	
-<<?php include 'footer.php';?>
-=======
-
 <?php include 'footer.php';?>
->>>>>>> f4ce71375e5e4c4d7d814abfd987224973b419dc
