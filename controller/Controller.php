@@ -20,7 +20,7 @@ class Controller {
 
 		$root = $_SERVER['DOCUMENT_ROOT'];
 		$request = $_SERVER['REQUEST_URI'];
-		var_dump($request);
+//		var_dump($request);
 		foreach($urlRoutes as $route=>$controller_name){
 			if(preg_match($route, $request)){
 				$controller = $controller_name;
