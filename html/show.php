@@ -20,11 +20,6 @@ echo '
 <div class="content">
 	<div class="maincontent">
 		<h1>Mijn Restaurant</h1>
-		<p>Naam:' . <?php echo $restaurant->name; ?> .'</p>
-		<p>URL:'.<?php echo $restaurant->url; ?> .'</p>
-		<p>Aantal tafels:'.<?php echo $restaurant->tables; ?>.'</p>
-		<p>Adres:'.<?php echo $restaurant->street; echo $restaurant->number; echo $restaurant->zipcode; echo $restaurant->city; ?>.'</p>
-		<br>
 		<p>Naam: '. $restaurant->name .'</p>
 		<p>URL: <a href="'.$restaurant->url .'">'.$restaurant->url.'</a></p>
 		<p>Aantal tafels: '. $restaurant->tables .'</p>
