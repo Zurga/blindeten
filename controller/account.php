@@ -21,6 +21,6 @@ else{
 //	var_dump($_POST);
 //	echo '<br/>';
 //	var_dump($login->login($_POST['email'], $_POST['password']));
-	header("Location : http://ik35.webdb.fnwi.uva.nl");
+	header("Location: http://ik35.webdb.fnwi.uva.nl");
 }
 ?>
