@@ -3,7 +3,7 @@
 function get_rows($result){
 	if ($result->num_rows == 1){
 		$row = $result->fetch_assoc();
-		return $row;
+		return array($row);
 	}
 	else if($result->num_rows > 1){
 		$rows = array();

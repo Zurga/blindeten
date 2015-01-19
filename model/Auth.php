@@ -39,6 +39,7 @@ class Login{
 			}
 			$user->logged_in = true;
 			$_SESSION['logged_in'] = true;
+			$_SESSION['id'] = $user->id;
 			return $user;
 		}
 		else{
