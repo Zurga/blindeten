@@ -128,5 +128,12 @@ class User {
 			return false;
 		}
 	}
+	
+	public function age() {
+		date_default_timezone_set('Europe/Amsterdam');
+		$age = date_create($this->birthdate)->diff(date_create('today'))->y;
+    
+		return $age;
+	}
 }
 ?>
