@@ -11,6 +11,6 @@ function test_mail($user) {
 	mail($to,$subject,$message,$headers);
 }
 
-$user = new User(2);
+$user = new User(4);
 test_mail($user);
 ?>
