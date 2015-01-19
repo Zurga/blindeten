@@ -5,12 +5,12 @@ include_once $root . '/model/User.php';
 function test_mail($user) {
 	$to = $user->email;
 	$subject = 'BlinDeten';
-	$message = 'Hoihoi Laura';
+	$message = 'Hoihoi';
 	$headers = 'From: info@blindeten.nl';
 	
 	mail($to,$subject,$message,$headers);
 }
 
-$user = new User(5);
+$user = new User(2);
 test_mail($user);
 ?>
