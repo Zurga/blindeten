@@ -102,6 +102,13 @@ class Model{
 				" VALUES (". $user->id .",". $booking['restaurant_id'] .",'".
 				$booking['time']. "')";
 			$this->db->query($hist_query);
+			
+			if (time() > strtotime($booking['time'])) {
+				return true;
+			}
+			else {
+				return false;
+			}
 		}
 	}
 	
