@@ -212,6 +212,10 @@ h2, p{
 	text-align: left;
 }
 
+h2 a{
+	font-size: 14px;
+}
+
 h3{
 	font-size: 14px;
 	text-align: center;
@@ -273,6 +277,7 @@ form p {
 }
 .hidden {
 	display: none;
+	font-size: 14px;
 }
 	
 
