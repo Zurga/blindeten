@@ -10,9 +10,7 @@
 	<a href="/"><img src="html/blindetenlogo.png"></a>
 </div>
 
-<?php 
-$login = true;
-if (($login == false)){ 
+<?php if (($login == false)){ 
 echo '
 <div id="menu">
     <ul>
