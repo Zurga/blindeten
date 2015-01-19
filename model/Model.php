@@ -142,11 +142,11 @@ class Model{
 					}
 				}
 				//fill the restaurant data
-				foreach($row as $key=>$val){
-					$restaurant->$key = $val;
-				}
+				//foreach($row as $key=>$val){
+			//		$restaurant->$key = $val;
+				//}
 				//$rest = set_var($row, $restaurant);
-				var_dump($rest);
+				//var_dump($rest);
 				$restaurants[] = $restaurant;
 			}
 			return $restaurants;
