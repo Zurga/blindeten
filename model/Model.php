@@ -97,7 +97,7 @@ class Model{
 		$booking = $query_result->fetch_assoc();
 		var_dump($booking);
 		$hist_query = "INSERT INTO 'history (user_id,".
-			"bookings_time,restaurant_id)".
+			"restaurant_id,bookings_time)".
 			" VALUES (". $user->id .",". $booking['restaurant_id'] .",'".
 			$booking['time']. "')";
 		$db->query($hist_query);
