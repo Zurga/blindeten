@@ -15,15 +15,14 @@ class Login{
 	public function login($email_addr, $password){
 		$salted = $this->salt1 . $email_addr . $password . $this->salt2;
 		$epassword = hash('sha256', $salted);
-	
-		$query = "SELECT user.id,".
+		
+		$query = "SELECT user.id".
 			" FROM user".
 			" WHERE user.email = '" . $email_addr .
 			" ' AND user.password = '" . $epassword . "'";
-		
+			
 		$result = get_rows($this->db->query($query));
-	 
-		if($
+		if($result){
 			$_SESSION['logged_in'] = true;
 			$_SESSION['id'] = $user->id;
 			return $user;
