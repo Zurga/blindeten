@@ -147,6 +147,7 @@ class Model{
 				//}
 				//$rest = set_var($row, $restaurant);
 				//var_dump($rest);
+				var_dump($restaurant);
 				$restaurants[] = $restaurant;
 			}
 			return $restaurants;
