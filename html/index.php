@@ -3,22 +3,28 @@
 <div id="content">
 	
 	<div id="wrapper">
+	
 	<div class="homemap">
+		<h1> Selecteer een restaurant<h1><br>
 		<div id='map'>
 	</div>
 		</div>
 	<div class="sidecontent">
+		<h1>Reserveer hier!</h1>
+		
+		<ul>
 		<?php foreach ($restaurants as $restaurant) {
 			echo "<li>";
-			echo $restaurant->name;
+			echo $restaurant->name."<br>";
+			echo '<div id="'.$restaurant->id.'"" class="hidden">';
 			echo $restaurant->street;
 			echo $restaurant->number;
 			echo $restaurant->zipcode;
 			echo $restaurant->city; 
-			echo $restaurant->url;
-			echo $restaurant->id;
+			echo $restaurant->url.'</div>';
 			echo "</li>";
-		}  ?>
+		}  ?> 
+	</ul>
 	</div>
 	</div>
 	</div>
