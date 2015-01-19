@@ -6,7 +6,8 @@ include_once $root . '/model/Auth.php';
 
 if($request == '/account/show.php'){
 	$title = 'Account';
-	
+	$user = new User
+	$age
 	if($user->owner != 0){
 		$restaurant = new Restaurant($user->owner);
 	}
@@ -21,6 +22,6 @@ else{
 	var_dump($_POST);
 	echo '<br/>';
 	var_dump($login->login($_POST['email'], $_POST['password']));
-	header("Location: http://ik35.webdb.fnwi.uva.nl");
+//	header("Location: http://ik35.webdb.fnwi.uva.nl");
 }
 ?>

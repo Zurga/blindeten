@@ -15,19 +15,33 @@
 		<ul>
 		<?php foreach ($restaurants as $restaurant) {
 			echo "<li>";
-			echo '<h2>'.$restaurant->name.'<h2>'."<br>";
-			echo '<div id="'.$restaurant->id.'"" class="hidden">';
-			echo $restaurant->street;
-			echo $restaurant->number;
-			echo $restaurant->zipcode;
-			echo $restaurant->city; 
-			echo $restaurant->url.'</div>';
+			echo '<h2><a href="javascript:showtext('.$restaurant->id.');">'.$restaurant->name.'</a><h2><br>';
+			echo '<div id="'.$restaurant->id.'" class="hidden">';
+			echo $restaurant->street." ";
+			echo $restaurant->number."<br>";
+			echo $restaurant->zipcode." ";
+			echo $restaurant->city."<br>"; 
+			echo $restaurant->url.'<br></div>';
 			echo "</li>";
 		}  ?> 
 	</ul>
 	</div>
 	</div>
 	</div>
+
+
+<script type="text/javascript">
+		function showtext(id){
+   			
+   			if(document.getElementById(id).style.display == 'none'){
+      		document.getElementById(id).style.display = 'block';
+   			}
+   		
+   		else{
+      	document.getElementById(id).style.display = 'none';      
+   		}
+		}
+		</script>
 
 <script src="http://maps.google.com/maps/api/js?sensor=false" 
           type="text/javascript"></script>
