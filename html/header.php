@@ -12,7 +12,8 @@
 
 <?php 
 $login = true
-if(($login = false)){ 
+if(isset($login = false)){ 
+echo '
 <div id="menu">
     <ul>
         <li><a href="/text/info.php" title="Wat is BlinDeten?">Wat is BlinDeten?</a></li>  
@@ -20,17 +21,17 @@ if(($login = false)){
 	<li><a href="/account/login.php" title="Log in">Log in</a></li> 
 </ul>
 <br>
-</div>
+</div> ';
 } 
 
 else {
-
+echo '
 <div id="menu">
     <ul>
         <li><a href="/text/info.php" title="Wat is BlinDeten?">Wat is BlinDeten?</a></li>  
         <li><a href="/account/show.php" title="Mijn account">Mijn account</a></li>  
 	</ul>
 <br>
-</div>
+</div> ';
 
 } ?>
