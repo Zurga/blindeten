@@ -133,9 +133,13 @@ class Model{
 					' WHERE rest_id = ' . $row['id'];
 
 				if($tables = get_rows($this->db->query($tableQ))){
-					foreach($tables as $table){
-						//add the table id to the restaurant
-						$restaurant->tables[] = $table['id'];
+					if(type($tables) == 'string'){
+						$restaurant = $table;
+					}else{
+						foreach($tables as $table){
+							//add the table id to the restaurant
+							$restaurant->tables[] = $table['id'];
+						}
 					}
 				}
 				//fill the restaurant data
