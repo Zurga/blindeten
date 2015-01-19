@@ -52,7 +52,7 @@ map = new google.maps.Map(document.getElementById('map'),{
 	center: new google.maps.LatLng(52, 4)
 });
 //create json from the model
-var json = [ <?php foreach($restaurants as $marker){echo json_encode($marker) . ',';}?>]
+var json = [ <?php foreach($restaurants as $marker){echo json_encode($marker) . ',';}?>];
 
 for(i=0;i<json.length;i++){
 	//create lonlat for each restaurant
@@ -71,7 +71,7 @@ for(i=0;i<json.length;i++){
 			infowindow.open(map,marker);
 			restaurant = json[i].id;
 			//get_output('calendar', restaurant); 
-			
+			showtext(restaurant);
 
 
 		}
