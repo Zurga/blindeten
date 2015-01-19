@@ -5,7 +5,7 @@ include $root . '/model/Model.php';
 
 $model = new Model;
 $user = new User(2);
-$booking_id = 1;
-var_dump($model->add_history($user,$booking_id));
+//$booking_id = 1;
+var_dump($model->add_history($user));
 
 ?>
