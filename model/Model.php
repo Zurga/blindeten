@@ -88,20 +88,22 @@ class Model{
 		}
 	}
 
+	//TO DO fixen
 	public function add_history($user, $booking_id){	
-		global $db;
+		
 		//select correct booking, move to history, del booking
 		$query = "SELECT restaurant_id,time FROM bookings WHERE user1 = ".
 			$user->id." or user2 = ". $user->id;
 			
-		$query_result = $db->query($query);
-		$booking = $query_result->fetch_assoc();
-		var_dump($booking);
-		$hist_query = "INSERT INTO 'history (user_id,".
-			"restaurant_id,bookings_time)".
-			" VALUES (". $user->id .",". $booking['restaurant_id'] .",'".
-			$booking['time']. "')";
-		$db->query($hist_query);
+		
+		if ($booking = get_rows($this->db->query($query)) {;
+			var_dump($booking);
+			$hist_query = "INSERT INTO history (user_id,".
+				"restaurant_id,bookings_time)".
+				" VALUES (". $user->id .",". $booking['restaurant_id'] .",'".
+				$booking['time']. "')";
+			$this->db->query($hist_query);
+		}
 	}
 	
 	//get an array of restaurants objects
