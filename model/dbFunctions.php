@@ -21,6 +21,7 @@ function set_var($var, $object){
 	foreach($var as $key=>$val){
 		$object->$key = $val;
 	}
+	return $object;
 }
 
 function sanitize ($attr) {
