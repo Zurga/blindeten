@@ -124,15 +124,19 @@ class Model{
 		//$result = $this->db->query($query);
 		
 		if ($rows = get_rows($this->db->query($query))) {
+			echo '<br>';
+			var_dump($rows);
 			foreach($rows as $row) {
 				//new restaurant object
 				$restaurant = new Restaurant($row['id']);
+				echo '<br>';
+				var_dump($restaurant);
 
 				//check which table belong to the restaurant
 				$tableQ = 'SELECT id FROM `tables`' .
 					' WHERE rest_id = ' . $row['id'];
 
-				if ($tables = get_rows($this->db->query($tableQ))) {
+				if($tables = get_rows($this->db->query($tableQ))){
 					foreach($tables as $table){
 						//add the table id to the restaurant
 						$restaurant->tables[] = $table['id'];
