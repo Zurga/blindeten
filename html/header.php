@@ -12,7 +12,7 @@
 
 <?php 
 $login = true
-if(isset($login = false)){ 
+if (isset($login = false)){ 
 echo '
 <div id="menu">
     <ul>
