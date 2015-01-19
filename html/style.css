@@ -135,7 +135,7 @@ a {
 }
 .content{
 	margin: 0 auto;
-	width: 980px;
+	width: 80%;
 }
 
 .maincontent {
@@ -147,19 +147,34 @@ a {
 }
 
 .homemap{
-	margin: 90px 40px 0 90px; 
-	width: 50%;
+	margin-left: 2.5%;
+	margin-top: 90px;
+	margin-right: 2.5% ;
+	width: 55%;
 	background-color: rgba(255,255,255,0.7);
 	padding: 30px;
-	float: left
+	float: left;
 }
 
+#map {
+	height:500px;
+	width:100%;
+}
+
+
 .sidecontent {
-	margin-top: 90px;
+	margin-top: 90px; 
+	width: 37.5%;
 	background-color: rgba(255,255,255,0.7);
-	padding: 200px;
-	padding-bottom: 37%;
-	float: left;	
+	padding: 30px;
+	float: left;
+	font-size: 16px;
+}
+
+.wrapper {
+	width: 95%; 
+	margin: 0 auto;
+	background-color: transparent; 
 }
 
 form {
@@ -221,10 +236,12 @@ form li p{
 	display: inline;  
 	vertical-align: top;
 	display: inline-block
+
 }
 form p {
 	 display: inline;  
      margin: 0;
+
 }
 
 #map {

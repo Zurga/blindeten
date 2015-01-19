@@ -14,6 +14,7 @@ class Login{
 	//log the user the system and then return user info
 	public function login($email_addr, $password){
 		$salted = $this->salt1 . $email_addr . $password . $this->salt2;
+		echo $salted;
 		$epassword = hash('sha256', $salted);
 	
 		$query = "SELECT user.id, user.name, user.sex ,".

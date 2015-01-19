@@ -30,5 +30,10 @@ class Restaurant{
 			return $this;
 		}
 	}
+
+	function get_bookings(){
+		$query = "SELECT id FROM bookings WHERE time =";
+	}
+
 }
 ?>

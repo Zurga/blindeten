@@ -1,10 +1,10 @@
 <?php
-var_dump($_POST);
-echo '<br>';
-var_dump($_SESSION);
+//var_dump($_POST);
+//echo '<br>';
+//var_dump($_SESSION);
 include_once $root . '/model/Auth.php';
 
-if($request == '/account/'){
+if($request == '/account/show.php'){
 	$title = 'Account';
 	
 	if($user->owner != 0){
@@ -21,5 +21,6 @@ else{
 	var_dump($_POST);
 	echo '<br/>';
 	var_dump($login->login($_POST['email'], $_POST['password']));
+	header("Location: http://ik35.webdb.fnwi.uva.nl");
 }
 ?>

@@ -34,10 +34,11 @@ class Model{
 				$attr['city'] . "')";
 			
 			if ($this->db->query($query)) {
+				$id = $this->db->insert_id;
 				$query = "INSERT INTO user_perm (perm_id, user_id)".
 					"VALUES (2,". $this->db->insert_id .")"; 
 				$this->db->query($query);
-				return $this->db->insert_id;
+				return $id;
 			}
 			else {
 				return false;
@@ -72,9 +73,10 @@ class Model{
 			}
 			else{
 				//write the booking to the database
-				$bookQ = "INSERT INTO bookings (table_id, user1, time)" .
-					" VALUES (" . $table_id . "," . $user->id . ",'" .
-					$time . "')";
+				$bookQ = "INSERT INTO bookings (restaurant_id,".
+					" table_id, user1, time)" .
+					" VALUES (". $restaurant->id ."," . $table_id . "," .
+					$user->id . ",'" . $time . "')";
 			}
 			if($this->db->query($bookQ)){
 				$booking = new Booking($this->db->insert_id);
@@ -86,10 +88,22 @@ class Model{
 		}
 	}
 
-	public function add_history($user_id, $booking_id){
-		
-		
-		}
+	public function add_history($user, $booking_id){	
+		global $db;
+		//select correct booking, move to history, del booking
+		$query = "SELECT restaurant_id,time FROM bookings WHERE user1 = ".
+			$user->id." or user2 = ". $user->id;
+			
+		$query_result = $db->query($query);
+		$booking = $query_result->fetch_assoc();
+		var_dump($booking);
+		$hist_query = "INSERT INTO 'history (user_id,".
+			"restaurant_id,bookings_time)".
+			" VALUES (". $user->id .",". $booking['restaurant_id'] .",'".
+			$booking['time']. "')";
+		$db->query($hist_query);
+	}
+	
 	//get an array of restaurants objects
 	public function get_restaurants(){
 		global $db;
@@ -134,7 +148,7 @@ class Model{
 	
 	public function get_history($user) {
 		global $db;
-		$query = "SELECT date, time, restaurant_id ".
+		$query = "SELECT bookings_time, restaurant_id ".
 			"FROM history WHERE user_id = ". $user->id;
 		
 		return get_rows($db->query($query));

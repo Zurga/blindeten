@@ -1,16 +1,37 @@
 <?php include 'header.php';?>
 
 <div id="content">
+	
+	<div id="wrapper">
+	
 	<div class="homemap">
+		<h1> Selecteer een restaurant:<h1>
 		<div id='map'>
 	</div>
 		</div>
 	<div class="sidecontent">
+		<h1>Reserveer hier:</h1><br>
+		
+		<ul>
+		<?php foreach ($restaurants as $restaurant) {
+			echo "<li>";
+			echo '<h2>'.$restaurant->name.'<h2>'."<br>";
+			echo '<div id="'.$restaurant->id.'"" class="hidden">';
+			echo $restaurant->street;
+			echo $restaurant->number;
+			echo $restaurant->zipcode;
+			echo $restaurant->city; 
+			echo $restaurant->url.'</div>';
+			echo "</li>";
+		}  ?> 
+	</ul>
+	</div>
 	</div>
 	</div>
 
- <script src="http://maps.google.com/maps/api/js?sensor=false" 
+<script src="http://maps.google.com/maps/api/js?sensor=false" 
           type="text/javascript"></script>
+<script scr="/js/functions.js"></script>
 <script>
 map = new google.maps.Map(document.getElementById('map'),{
 	zoom: 3,
@@ -34,6 +55,11 @@ for(i=0;i<json.length;i++){
 		return function(){
 			infowindow.setContent(json[i].name);
 			infowindow.open(map,marker);
+			restaurant = json[i].id;
+			//get_output('calendar', restaurant); 
+			
+
+
 		}
 	})(marker, i));
 }
