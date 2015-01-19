@@ -11,7 +11,7 @@
 </div>
 
 <?php 
-$login = true
+$login = true;
 if (isset($login = false)){ 
 echo '
 <div id="menu">
@@ -22,7 +22,7 @@ echo '
 </ul>
 <br>
 </div> ';
-} 
+}
 
 else {
 echo '
