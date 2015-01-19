@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<title><?php echo $title; ?> | BlinDeten</title>
+	<link rel="stylesheet" type="text/css" href="style.css"></link>
+	<script type="text/javascript">
+	function saveEdits() {
+
+	//get the editable element
+	var editElem = document.getElementById("edit");
+
+	//get the edited element content
+	var userVersion = editElem.innerHTML;
+
+	//save the content to local storage
+	localStorage.userEdits = userVersion;
+
+	//write a confirmation to the user
+	document.getElementById("update").innerHTML="Opgeslagen!";
+	
+	function checkEdits() {
+
+	//find out if the user has previously saved edits
+	if(localStorage.userEdits!=null)
+	document.getElementById("edit").innerHTML = localStorage.userEdits;
+}
+}
+	</script>
+	
+</head>
+
+<body onload="checkEdits()">
+<div id="header">
+	<a href="/"><img src="html/blindetenlogo.png"></a>
+</div>
+
+<div id="menu">
+    <ul>
+        <li><a href="/text/info.php" title="Wat is BlinDeten?">Wat is BlinDeten?</a></li>  
+        <li><a href="/account/register.php" title="Registreer">Registreer</a></li>  
+		<li><a href="/account/login.php" title="Log in">Log in</a></li> 
+
+<br>
+</div>
+
+<div class="content">
+	<div class="maincontent">
+<div id="edit" contenteditable="true">	
+
+	<h1>Wat is BlinDeten?</h1><br>
+			
+		<h2>
+			Zin om uit eten te gaan? Maar u bent alleen en wilt nieuwe mensen ontmoeten? Of gewoon gezellig met iemand uit eten gaan? <br><br>
+			Dan bent u bij ons aan het goede adres! </br>
+			<br><br>
+
+		<b><h3>Hoe werkt het?</h3></b></br>
+
+			Heel simpel! Op het kaartje ziet u de verschillende restaurants staan waar u kunt reserveren. Bent u de eerste die ergens reserveert, dan moet u nog even geduld hebben. Wanneer er een persoon bij u aan tafel schuift krijgen jullie beiden een bevestigingsmail en wensen wij jullie een gezellig diner toe!</br>
+
+			<br><h3>Voor vragen zie de <a href="faq.php" title="Frequently Asked Questions">FAQ</a></h3></br>
+		</h2><br>
+		<input type="button" value="Tekst opslaan" onclick="saveEdits()"/>
+		<div id="update"> - Wijzig tekst en klik op opslaan</div>
+		
+		
+	</div>
+</div>
+</div>
+<div id="footer">
+	<ul>
+        <li><a href="faq.php" title="FAQ">FAQ</a></li>  
+        <li><a href="disclaimer.php" title="Disclaimer">Disclaimer</a></li>  
+		<li><a href="termsofuse.php" title="Terms of Use">Terms Of Use</a></li>
+		<li><a href="contact.php" title="Contact">Contact</a></li>
+	</ul>
+</div>
+
+</body>
+</html>
