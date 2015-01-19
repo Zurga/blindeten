@@ -121,7 +121,7 @@ class Model{
 		$query = 'SELECT id' .
 			' FROM restaurant';
 		
-		$result = $this->db->query($query);
+		//$result = $this->db->query($query);
 		
 		if ($rows = get_rows($this->db->query($query))) {
 			foreach($rows as $row) {
