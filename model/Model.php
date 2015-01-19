@@ -126,7 +126,6 @@ class Model{
 		$result = $this->db->query($query);
 		
 		if ($rows = get_rows($result)) {
-			var_dump($rows);
 			foreach($rows as $row) {
 				//new restaurant object
 				$restaurant = new Restaurant($row['id']);
@@ -147,9 +146,9 @@ class Model{
 				//}
 				//$rest = set_var($row, $restaurant);
 				//var_dump($rest);
-				var_dump($restaurant);
 				$restaurants[] = $restaurant;
 			}
+			var_dump($restaurant);
 			return $restaurants;
 		}
 	}
