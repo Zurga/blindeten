@@ -19,7 +19,7 @@ class Booking{
 		
 		if($row = get_rows($this->db->query($query))){
 			//assign values to user based on mySQL columns
-			$this = set_var($row, $this);
+			set_var($row, $this);
 			return $this;
 		}
 		else{
