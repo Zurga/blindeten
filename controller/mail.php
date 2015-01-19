@@ -5,7 +5,7 @@ include_once $root . '/model/User.php';
 ini_set('display_errors',1);
 
 function test_mail($user) {
-	$to = $user->email;
+	$to = 'rens.mester@gmail.com'; //$user->email;
 	$subject = 'mail.php';
 	$message = 'HALLO DIT IS EEN TEST';
 	$headers = 'From: Jim.lemmers@gmail.com';
