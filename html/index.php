@@ -15,7 +15,7 @@
 		<ul>
 		<?php foreach ($restaurants as $restaurant) {
 			echo "<li>";
-			echo '<h1>'.$restaurant->name.'<h1>'."<br>";
+			echo '<h2>'.$restaurant->name.'<h2>'."<br>";
 			echo '<div id="'.$restaurant->id.'"" class="hidden">';
 			echo $restaurant->street;
 			echo $restaurant->number;
