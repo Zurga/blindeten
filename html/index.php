@@ -8,7 +8,17 @@
 	</div>
 		</div>
 	<div class="sidecontent">
-		<--!TODO create 
+		<?php foreach ($restaurants as $restaurant) {
+			echo "<li>";
+			echo $restaurant->name;
+			echo $restaurant->street;
+			echo $restaurant->number;
+			echo $restaurant->zipcode;
+			echo $restaurant->city; 
+			echo $restaurant->url;
+			echo $restaurant->id;
+			echo "</li>"
+		}
 	</div>
 	</div>
 	</div>
