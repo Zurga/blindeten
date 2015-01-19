@@ -124,13 +124,9 @@ class Model{
 		//$result = $this->db->query($query);
 		
 		if ($rows = get_rows($this->db->query($query))) {
-			echo '<br>';
-			var_dump($rows);
 			foreach($rows as $row) {
 				//new restaurant object
 				$restaurant = new Restaurant($row['id']);
-				echo '<br>';
-				var_dump($restaurant);
 
 				//check which table belong to the restaurant
 				$tableQ = 'SELECT id FROM `tables`' .
@@ -150,7 +146,6 @@ class Model{
 				//var_dump($rest);
 				$restaurants[] = $restaurant;
 			}
-			var_dump($restaurant);
 			return $restaurants;
 		}
 	}
