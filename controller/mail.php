@@ -10,5 +10,5 @@ function test_mail($user) {
 }
 
 $user = new User(4);
-$test_mail($user);
+test_mail($user);
 ?>
