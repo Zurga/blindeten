@@ -23,3 +23,14 @@ function set_output(id){
 		document.getElementById(id).innerHtml = http_object.responseText;
 	}
 }	
+
+function showtext(id){
+   			
+if(document.getElementById(id).style.display == 'none'){
+    document.getElementById(id).style.display = 'block';
+   	}
+   		
+else{
+      	document.getElementById(id).style.display = 'none';      
+   		}
+		}

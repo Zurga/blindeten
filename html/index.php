@@ -3,25 +3,45 @@
 <div id="content">
 	
 	<div id="wrapper">
+	
 	<div class="homemap">
+		<h1> Selecteer een restaurant:<h1>
 		<div id='map'>
 	</div>
 		</div>
 	<div class="sidecontent">
+		<h1>Reserveer hier:</h1><br>
+		
+		<ul>
 		<?php foreach ($restaurants as $restaurant) {
 			echo "<li>";
-			echo $restaurant->name;
-			echo $restaurant->street;
-			echo $restaurant->number;
-			echo $restaurant->zipcode;
-			echo $restaurant->city; 
-			echo $restaurant->url;
-			echo $restaurant->id;
+			echo '<h2><a href="javascript:showtext('.$restaurant->id.');">'.$restaurant->name.'</a><h2><br>';
+			echo '<div id="'.$restaurant->id.'" class="hidden">';
+			echo $restaurant->street." ";
+			echo $restaurant->number."<br>";
+			echo $restaurant->zipcode." ";
+			echo $restaurant->city."<br>"; 
+			echo $restaurant->url.'</div>';
 			echo "</li>";
-		}  ?>
+		}  ?> 
+	</ul>
 	</div>
 	</div>
 	</div>
+
+
+<script type="text/javascript">
+		function showtext(id){
+   			
+   			if(document.getElementById(id).style.display == 'none'){
+      		document.getElementById(id).style.display = 'block';
+   			}
+   		
+   		else{
+      	document.getElementById(id).style.display = 'none';      
+   		}
+		}
+		</script>
 
 <script src="http://maps.google.com/maps/api/js?sensor=false" 
           type="text/javascript"></script>
