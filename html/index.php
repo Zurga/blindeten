@@ -39,7 +39,7 @@
    			
    			for (var i = 0; i < elements.length; i++) {
     			
-    			if (elements[id].id != id) {
+    			if (elements[i].id != id) {
     				elements[i].style.display = "none";	
     			}
 			}
