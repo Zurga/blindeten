@@ -94,7 +94,7 @@ class Model{
 		$query = 'SELECT id' .
 			' FROM restaurant';
 		
-		$result = $this->db->query($query);
+		//$result = $this->db->query($query);
 		
 		if ($rows = get_rows($this->db->query($query))) {
 			foreach($rows as $row) {
@@ -105,21 +105,24 @@ class Model{
 				$tableQ = 'SELECT id FROM `tables`' .
 					' WHERE rest_id = ' . $row['id'];
 
-				if ($tables = get_rows($this->db->query($tableQ))) {
-					foreach($tables as $table){
-						//add the table id to the restaurant
-						$restaurant->tables[] = $table['id'];
+				if($tables = get_rows($this->db->query($tableQ))){
+					if(type($tables) == 'string'){
+						$restaurant = $table;
+					}else{
+						foreach($tables as $table){
+							//add the table id to the restaurant
+							$restaurant->tables[] = $table['id'];
+						}
 					}
 				}
 				//fill the restaurant data
-				//foreach($row as $key=>$val){
-			//		$restaurant->$key = $val;
-				//}
+				foreach($row as $key=>$val){
+					$restaurant->$key = $val;
+				}
 				//$rest = set_var($row, $restaurant);
 				//var_dump($rest);
 				$restaurants[] = $restaurant;
 			}
-			var_dump($restaurant);
 			return $restaurants;
 		}
 	}
