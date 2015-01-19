@@ -21,7 +21,7 @@
 			echo $restaurant->number."<br>";
 			echo $restaurant->zipcode." ";
 			echo $restaurant->city."<br>"; 
-			echo $restaurant->url.'</div>';
+			echo $restaurant->url.'<br></div>';
 			echo "</li>";
 		}  ?> 
 	</ul>
