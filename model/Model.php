@@ -94,21 +94,22 @@ class Model{
 		$query = "SELECT restaurant_id,time FROM bookings WHERE user1 = ".
 			$user->id." or user2 = ". $user->id;
 			
-		
-		if ($booking = get_rows($this->db->query($query))){ 
-			var_dump($booking);
-			$hist_query = "INSERT INTO history (user_id,".
-				"restaurant_id,bookings_time)".
+		if (time() > strtotime($booking['time'])) {
+			if ($booking = get_rows($this->db->query($query))){ 
+				var_dump($booking);
+				$hist_query = "INSERT INTO history (user_id,".
+					"restaurant_id,bookings_time)".
 				" VALUES (". $user->id .",". $booking['restaurant_id'] .",'".
-				$booking['time']. "')";
+			$booking['time']. "')";
 			$this->db->query($hist_query);
-			
-			if (time() > strtotime($booking['time'])) {
-				return true;
+			return true;
 			}
 			else {
 				return false;
-			}
+			}	
+		}
+		else {
+			return false;
 		}
 	}
 	
