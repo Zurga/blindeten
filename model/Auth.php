@@ -23,7 +23,7 @@ class Login{
 		
 		$result = get_rows($this->db->query($query));
 	 
-		if($
+		if($result){
 			$_SESSION['logged_in'] = true;
 			$_SESSION['id'] = $user->id;
 			return $user;
