@@ -4,13 +4,13 @@ include_once $root . '/model/User.php';
 
 function test_mail($user) {
 	$to = $user->email;
-	$subject = 'mail.php';
-	$message = 'HALLO DIT IS EEN TEST';
-	$headers = 'From: Jim.lemmers@gmail.com';
+	$subject = 'BlinDeten';
+	$message = 'Hoihoi Laura';
+	$headers = 'From: info@blindeten.nl';
 	
 	mail($to,$subject,$message,$headers);
 }
 
-$user = new User(4);
-var_dump(test_mail($user));
+$user = new User(5);
+test_mail($user);
 ?>
