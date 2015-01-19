@@ -29,7 +29,7 @@ echo '
 <div id="menu">
     <ul>
         <li><a href="/text/info.php" title="Wat is BlinDeten?">Wat is BlinDeten?</a></li>  
-        <li><a href="/account/show.php" title="Mijn account">Mijn account</a></li>  
+        <li><a href="/account/show.php" title="Mijn Account">Mijn account</a></li>  
 	</ul>
 <br>
 </div> ';
