@@ -38,7 +38,10 @@
       		elements = document.getElementsByClassName("hidden");
    			
    			for (var i = 0; i < elements.length; i++) {
-    			elements[i].style.display = "none";
+    			
+    			if (elements[id].id != id) {
+    				elements[i].style.display = "none";	
+    			}
 			}
    			}
    		
