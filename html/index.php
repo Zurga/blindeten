@@ -21,7 +21,7 @@
 			echo $restaurant->number."<br>";
 			echo $restaurant->zipcode." ";
 			echo $restaurant->city."<br>"; 
-			echo '<a href="'.$restaurant->url.'">'.$restaurant->url.'</a><br><br><br>';
+			echo '<a href="'.$restaurant->url.'">'.$restaurant->url.'</a><br><br>';
 			echo 'g_calendarObject = new JsDatePick({';
         			'useMode:1,';
         			'isStripped:true,';
@@ -33,7 +33,7 @@
         			'var obj = g_calendarObject.getSelectedDay();';
     
         			'alert("a date was just selected and the date is : " + obj.day + "/" + obj.month + "/" + obj.year);';
-    				'});'.'</div>';
+    				'});'.'</div><br>';
 			echo "</li>";
 		}  ?> 
 	</ul>
