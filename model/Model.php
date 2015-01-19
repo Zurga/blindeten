@@ -118,13 +118,12 @@ class Model{
 	
 	//get an array of restaurants objects
 	public function get_restaurants(){
-		global $db;
 		$restaurants = array();
 
 		$query = 'SELECT id' .
 			' FROM restaurant';
 		
-		$result = $db->query($query);
+		$result = $this->db->query($query);
 		
 		if ($rows = get_rows($result)) {
 			foreach($rows as $row) {
