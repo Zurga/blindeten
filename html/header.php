@@ -11,9 +11,8 @@
 </div>
 
 <?php 
- $login = true 
- if(($login = false)){ 
-
+$login = true
+if(($login = false)){ 
 <div id="menu">
     <ul>
         <li><a href="/text/info.php" title="Wat is BlinDeten?">Wat is BlinDeten?</a></li>  
@@ -22,6 +21,7 @@
 </ul>
 <br>
 </div>
+} 
 
 else {
 
