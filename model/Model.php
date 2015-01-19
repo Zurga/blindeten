@@ -116,15 +116,14 @@ class Model{
 	
 	//get an array of restaurants objects
 	public function get_restaurants(){
-		global $db;
 		$restaurants = array();
 
 		$query = 'SELECT id' .
 			' FROM restaurant';
 		
-		$result = $db->query($query);
+		$result = $this->db->query($query);
 		
-		if ($rows = get_rows($result)) {
+		if ($rows = get_rows($this->db->query($query))) {
 			foreach($rows as $row) {
 				//new restaurant object
 				$restaurant = new Restaurant($row['id']);
@@ -133,25 +132,21 @@ class Model{
 				$tableQ = 'SELECT id FROM `tables`' .
 					' WHERE rest_id = ' . $row['id'];
 
-				if ($tables = get_rows($db->query($tableQ))) {
+				if ($tables = get_rows($this->db->query($tableQ))) {
 					foreach($tables as $table){
 						//add the table id to the restaurant
-						if(gettype($table) == 'string'){
-							$restaurant->tables[] = $table;
-						}
-						else{
-							$restaurant->tables[] = $table['id'];
-						}
+						$restaurant->tables[] = $table['id'];
 					}
 				}
 				//fill the restaurant data
-				foreach($row as $key=>$val){
-					$restaurant->$key = $val;
-				}
+				//foreach($row as $key=>$val){
+			//		$restaurant->$key = $val;
+				//}
 				//$rest = set_var($row, $restaurant);
 				//var_dump($rest);
 				$restaurants[] = $restaurant;
 			}
+			var_dump($restaurant);
 			return $restaurants;
 		}
 	}
