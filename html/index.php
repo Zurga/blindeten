@@ -15,7 +15,7 @@
 		<ul>
 		<?php foreach ($restaurants as $restaurant) {
 			echo "<li>";
-			echo '<h2><a href="javascript:showtext('.$restaurant->id.');">'.$restaurant->name.'</a><h2><br>';
+			echo '<h2><a href="javascript:showtext('.$restaurant->id.');">'.$restaurant->name.'</a></h2><br>';
 			echo '<div id="'.$restaurant->id.'" class="hidden" style="display:none">';
 			echo $restaurant->street." ";
 			echo $restaurant->number."<br>";
