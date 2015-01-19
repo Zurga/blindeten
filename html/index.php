@@ -1,12 +1,15 @@
 <?php include 'header.php';?>
 
 <div id="content">
+	
+	<div id="wrapper">
 	<div class="homemap">
 		<div id='map'>
 	</div>
 		</div>
 	<div class="sidecontent">
 		<--!TODO create 
+	</div>
 	</div>
 	</div>
 

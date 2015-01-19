@@ -93,10 +93,10 @@ class Model{
 		$query = "SELECT restaurant_id,time FROM bookings WHERE user1 = ".
 			$user->id." or user2 = ". $user->id;
 			
-		$booking = $db->query($query);
-		
-		$hist_query = "INSERT INTO 'history ('user_id',".
-			"'bookings_time','restaurant_id')".
+		$booking = fetch_array($db->query($query));
+		var_dump(get_rows($booking));
+		$hist_query = "INSERT INTO 'history (user_id,".
+			"bookings_time,restaurant_id)".
 			" VALUES (". $user->id .",". $booking['restaurant_id'] .",'".
 			$booking['time']. "')";
 		$db->query($hist_query);
