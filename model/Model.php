@@ -34,10 +34,11 @@ class Model{
 				$attr['city'] . "')";
 			
 			if ($this->db->query($query)) {
+				$id = $this->db->insert_id;
 				$query = "INSERT INTO user_perm (perm_id, user_id)".
 					"VALUES (2,". $this->db->insert_id .")"; 
 				$this->db->query($query);
-				return $this->db->insert_id;
+				return $id;
 			}
 			else {
 				return false;
