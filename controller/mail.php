@@ -2,6 +2,8 @@
 $root = $_SERVER['DOCUMENT_ROOT'];
 include_once $root . '/model/User.php';
 
+ini_set('display_errors',1)
+
 function test_mail($user) {
 	$to = $user->email;
 	$subject = 'mail.php';
@@ -11,6 +13,6 @@ function test_mail($user) {
 	mail($to,$subject,$message,$headers);
 }
 
-$user = new User(3);
+$user = new User(2);
 test_mail($user);
 ?>
