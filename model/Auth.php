@@ -16,7 +16,7 @@ class Login{
 		$salted = $this->salt1 . $email_addr . $password . $this->salt2;
 		$epassword = hash('sha256', $salted);
 		echo $epassword;	
-		$query = "SELECT user.id,".
+		$query = "SELECT user.id".
 			" FROM user".
 			" WHERE user.email = '" . $email_addr .
 			" ' AND user.password = '" . $epassword . "'";
