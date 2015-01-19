@@ -6,8 +6,8 @@ include_once $root . '/model/Auth.php';
 
 if($request == '/account/show.php'){
 	$title = 'Account';
-	$user = new User
-	$age
+	//$user = new User
+	//$age
 	if($user->owner != 0){
 		$restaurant = new Restaurant($user->owner);
 	}
