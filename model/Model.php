@@ -125,7 +125,7 @@ class Model{
 		
 		$result = $this->db->query($query);
 		
-		if ($rows = get_rows($result)) {
+		if ($rows = get_rows($this->db->query($query))) {
 			foreach($rows as $row) {
 				//new restaurant object
 				$restaurant = new Restaurant($row['id']);
