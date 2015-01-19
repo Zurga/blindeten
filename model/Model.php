@@ -106,7 +106,7 @@ class Model{
 					' WHERE rest_id = ' . $row['id'];
 
 				if($tables = get_rows($this->db->query($tableQ))){
-					if(type($tables) == 'string'){
+					if(gettype($tables) == 'string'){
 						$restaurant = $table;
 					}else{
 						foreach($tables as $table){
