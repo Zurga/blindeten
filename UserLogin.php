@@ -11,6 +11,7 @@ $attr = array('name'=>'Jaap Testpersoon',
 'city'=>'Urk',
 'password'=>'blabla');
 $user = new User($model->add_account($attr));
+var_dump($user);
 $auth->Login($user->email, 'blabla');
 var_dump($_SESSION);
 $user->delete_account($user->id);
