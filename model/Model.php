@@ -139,14 +139,14 @@ class Model{
 					foreach($tables as $table){
 						//add the table id to the restaurant
 						$restaurant->tables[] = $table['id'];
-						}
 					}
+				}
 				//fill the restaurant data
 				foreach($row as $key=>$val){
 					$restaurant->$key = $val;
 				}
 				//$rest = set_var($row, $restaurant);
-				//var_dump($rest);
+				var_dump($rest);
 				$restaurants[] = $restaurant;
 			}
 			return $restaurants;
