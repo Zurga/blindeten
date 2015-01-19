@@ -89,6 +89,8 @@
 				trademarks and/or trade dress of BlinDeten, and may not be copied, 
 				imitated or used, in whole or in part, without prior written 
 				permission from BlinDeten.
+				<br><br>
+				15. As an restaurant owner, you cannot reserve at your own restaurant.
 				<br>
 				
 			</h2>

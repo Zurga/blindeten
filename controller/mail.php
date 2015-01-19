@@ -7,8 +7,10 @@ function test_mail($user) {
 	$subject = 'mail.php';
 	$message = 'HALLO DIT IS EEN TEST';
 	$headers = 'From: Jim.lemmers@gmail.com';
+	
+	mail($to,$subject,$message,$headers);
 }
 
-$user = new User(4);
-$test_mail($user);
+$user = new User(3);
+test_mail($user);
 ?>

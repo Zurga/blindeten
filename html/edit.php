@@ -22,6 +22,8 @@
 			<br>
 			<br>
 			<li><input type="submit" id="submit" value="Gegevens opslaan"></p></li>
+			<br>
+			<li><input type="submit" id="submit" value="Account verwijderen"></p></li>
 		</fieldset>	
 		</form>
 		
@@ -52,6 +54,8 @@
 			<br>
 			<br>
 			<li><input type="submit" id="submit" value="Gegevens opslaan"></p></li>
+			<br>
+			<li><input type="submit" id="submit" value="Account verwijderen"></p></li>
 		</fieldset>	
 		</form>
 	</div>

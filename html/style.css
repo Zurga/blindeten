@@ -169,7 +169,8 @@ a {
 	padding: 30px;
 	float: left;
 	font-size: 16px;
-	overflow: scroll;
+	overflow: auto;
+	height: 640px;
 }
 
 .wrapper {
