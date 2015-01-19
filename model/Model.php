@@ -95,8 +95,8 @@ class Model{
 			
 		$booking = $db->query($query);
 		var_dump(get_rows($booking));
-		$hist_query = "INSERT INTO 'history ('user_id',".
-			"'bookings_time','restaurant_id')".
+		$hist_query = "INSERT INTO 'history (user_id,".
+			"bookings_time,restaurant_id)".
 			" VALUES (". $user->id .",". $booking['restaurant_id'] .",'".
 			$booking['time']. "')";
 		$db->query($hist_query);
