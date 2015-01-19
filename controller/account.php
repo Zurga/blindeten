@@ -14,7 +14,6 @@ if($request == '/account/show.php'){
 
 	include $root . '/html/show.php';
 }
-if 
 if($request == '/account/login.php' & empty($_POST)){
 	include $root . '/html/login.php';
 }
