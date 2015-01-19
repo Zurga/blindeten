@@ -19,7 +19,6 @@ class Model{
 	public function add_account($attr){
 		$salted = $this->salt1 . $attr['email'] . $attr['password'] . $this->salt2;
 		$password = hash('sha256', $salted);
-		echo $password;
 
 		//create a date int array to check if the date exists
 		$date = explode('-',$attr['birthdate']);
@@ -96,7 +95,7 @@ class Model{
 			$user->id." or user2 = ". $user->id;
 			
 		
-		if ($booking = get_rows($this->db->query($query)) {;
+		if ($booking = get_rows($this->db->query($query))){ 
 			var_dump($booking);
 			$hist_query = "INSERT INTO history (user_id,".
 				"restaurant_id,bookings_time)".
