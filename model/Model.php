@@ -88,7 +88,7 @@ class Model{
 	}
 
 	//TO DO fixen
-	public function add_history($user, $booking_id){	
+	public function add_history($user){	
 		
 		//select correct booking, move to history, del booking
 		$query = "SELECT restaurant_id,time FROM bookings WHERE user1 = ".
