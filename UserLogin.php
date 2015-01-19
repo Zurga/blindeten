@@ -11,10 +11,18 @@ $attr = array('name'=>'Jaap Testpersoon',
 'city'=>'Urk',
 'password'=>'blabla');
 $id = $model->add_account($attr);
-echo $id;
+echo '<br/>';
+echo 'id:'. $id;
 $user = new User($id);
+echo '<br/>';
+echo '<br/>';
 var_dump($user);
 $auth->Login($user->email, 'blabla');
+echo '<br/>';
+echo '<br/>';
 var_dump($_SESSION);
+echo '<br/>';
+echo '<br/>';
+echo '<br/>';
 $user->delete_account($id);
 ?>
