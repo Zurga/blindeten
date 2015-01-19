@@ -126,6 +126,7 @@ class Model{
 		$result = $this->db->query($query);
 		
 		if ($rows = get_rows($result)) {
+			var_dump($rows);
 			foreach($rows as $row) {
 				//new restaurant object
 				$restaurant = new Restaurant($row['id']);
