@@ -1,7 +1,7 @@
 <?php
 //var_dump($_POST);
 //echo '<br>';
-//var_dump($_SESSION);
+var_dump($_SESSION);
 include_once $root . '/model/Auth.php';
 
 if($request == '/account/show.php'){
