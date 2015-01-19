@@ -27,7 +27,7 @@ else{
 		header("Location: http://ik35.webdb.fnwi.uva.nl");
 	}
 	else{
-		include $root . 'html/login.php';
+		include $root . '/html/login.php';
 	}
 }
 ?>
