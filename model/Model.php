@@ -95,18 +95,20 @@ class Model{
 			$user->id." or user2 = ". $user->id;
 			
 		if ($booking = get_rows($this->db->query($query))) {
-			if (time() > strtotime($booking['time'])){ 
-				var_dump($booking);
-				$hist_query = "INSERT INTO history (user_id,".
-					"restaurant_id,bookings_time)".
-				" VALUES (". $user->id .",". $booking['restaurant_id'] .",'".
-			$booking['time']. "')";
-			$this->db->query($hist_query);
-			return true;
+			foreach ($bookings as $booking) {
+				if (time() > strtotime($booking['time'])){ 
+					var_dump($booking);
+					$hist_query = "INSERT INTO history (user_id,".
+						"restaurant_id,bookings_time)".
+					" VALUES (". $user->id .",". $booking['restaurant_id'] .",'".
+				$booking['time']. "')";
+				$this->db->query($hist_query);
+				return true;
+				}
+				else {
+					return false;
+				}	
 			}
-			else {
-				return false;
-			}	
 		}
 		else {
 			return false;
