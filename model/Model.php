@@ -94,8 +94,8 @@ class Model{
 		$query = "SELECT restaurant_id,time FROM bookings WHERE user1 = ".
 			$user->id." or user2 = ". $user->id;
 			
-		if (time() > strtotime($booking['time'])) {
-			if ($booking = get_rows($this->db->query($query))){ 
+		if ($booking = get_rows($this->db->query($query))) {
+			if (time() > strtotime($booking['time'])){ 
 				var_dump($booking);
 				$hist_query = "INSERT INTO history (user_id,".
 					"restaurant_id,bookings_time)".
