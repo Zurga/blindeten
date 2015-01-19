@@ -33,7 +33,7 @@
         			'var obj = g_calendarObject.getSelectedDay();';
     
         			'alert("a date was just selected and the date is : " + obj.day + "/" + obj.month + "/" + obj.year);';
-    				'});'.'</div>';
+    				'});'.'</div><br>';
 			echo "</li>";
 		}  ?> 
 	</ul>
