@@ -134,7 +134,7 @@ class Model{
 				$tableQ = 'SELECT id FROM `tables`' .
 					' WHERE rest_id = ' . $row['id'];
 
-				if ($tables = get_rows($db->query($tableQ))) {
+				if ($tables = get_rows($this->db->query($tableQ))) {
 					foreach($tables as $table){
 						//add the table id to the restaurant
 						if(gettype($table) == 'string'){
