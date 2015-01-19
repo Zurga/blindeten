@@ -2,7 +2,7 @@
 $root = $_SERVER['DOCUMENT_ROOT'];
 include_once $root . '/model/User.php';
 
-ini_set('display_errors',1)
+ini_set('display_errors',1);
 
 function test_mail($user) {
 	$to = $user->email;
