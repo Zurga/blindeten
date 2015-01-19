@@ -4,7 +4,7 @@
 //var_dump($_SESSION);
 include_once $root . '/model/Auth.php';
 
-if($request == '/account/'){
+if($request == '/account/show.php'){
 	$title = 'Account';
 	
 	if($user->owner != 0){
