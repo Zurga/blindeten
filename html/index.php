@@ -18,7 +18,7 @@
 			echo $restaurant->url;
 			echo $restaurant->id;
 			echo "</li>";
-		}
+		}  ?>
 	</div>
 	</div>
 	</div>
