@@ -95,7 +95,7 @@ class Model{
 			$user->id." or user2 = ". $user->id;
 			
 		
-		if ($booking = get_rows($this->db->query($query)){ 
+		if ($booking = get_rows($this->db->query($query))){ 
 			var_dump($booking);
 			$hist_query = "INSERT INTO history (user_id,".
 				"restaurant_id,bookings_time)".
