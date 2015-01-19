@@ -90,20 +90,21 @@ class Model{
 	//TO DO fixen
 	public function add_history($user){	
 		
-		//select correct booking, move to history, del booking
+		//select correct booking, move to history, delete booking
 		$query = "SELECT restaurant_id,time FROM bookings WHERE user1 = ".
 			$user->id." or user2 = ". $user->id;
 			
 		if ($bookings = get_rows($this->db->query($query))) {
 			foreach ($bookings as $booking) {
+				//check if time of booking has passed
 				if (time() > strtotime($booking['time'])){ 
 					var_dump($booking);
 					$hist_query = "INSERT INTO history (user_id,".
 						"restaurant_id,bookings_time)".
-					" VALUES (". $user->id .",". $booking['restaurant_id'] .",'".
-				$booking['time']. "')";
-				$this->db->query($hist_query);
-				return true;
+						" VALUES (". $user->id .",". $booking['restaurant_id'] .",'".
+					$booking['time']. "')";
+					$this->db->query($hist_query);
+					return true;
 				}
 				else {
 					return false;
