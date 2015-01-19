@@ -6,7 +6,7 @@ function test_mail($user) {
 	$to = $user->email;
 	$subject = 'BlinDeten';
 	$message = 'Hoihoi';
-	$headers = 'From: info@blindeten.nl';
+	$headers = 'From: jim.lemmers@gmail.com';
 	
 	mail($to,$subject,$message,$headers);
 }
