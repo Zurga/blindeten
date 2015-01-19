@@ -4,9 +4,9 @@ include_once $root . '/model/User.php';
 
 function test_mail($user) {
 	$to = $user->email;
-	$subject = 'BlinDeten';
-	$message = 'Hoihoi';
-	$headers = 'From: jim.lemmers@gmail.com';
+	$subject = 'mail.php';
+	$message = 'HALLO DIT IS EEN TEST';
+	$headers = 'From: Jim.lemmers@gmail.com';
 	
 	mail($to,$subject,$message,$headers);
 }
