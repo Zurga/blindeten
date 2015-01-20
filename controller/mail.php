@@ -16,6 +16,7 @@ function test_mail($user,$mail_id) {
 	$message = $mail_info['message'];
 	$headers = 'From: Jim.lemmers@gmail.com';
 	$message = str_replace('\r\n',"\r\n",$message);	
+	$message = str_replace('%user%',$user->name,$message);
 	mail($to,$subject,$message,$headers);
 }
 
