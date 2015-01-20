@@ -15,7 +15,7 @@
 		<ul>
 		<?php foreach ($restaurants as $restaurant) {
 			echo "<li>";
-			echo '<h2><a href="javascript:showtext('.$restaurant->id.');get_calender('.$restaurant->id.');">'.$restaurant->name.'</a></h2><br>';
+			echo '<h2><a href="javascript:showtext('.$restaurant->id.');get_calendar('.$restaurant->id.');">'.$restaurant->name.'</a></h2><br>';
 			echo '<div id="'.$restaurant->id.'" class="hidden" style="display:none">';
 			echo $restaurant->street." ";
 			echo $restaurant->number."<br>";
@@ -53,19 +53,22 @@
 		}
 
 
-		function get_calender(id){
-					g_calendarObject = new JsDatePick({
+		function get_calendar(id){
+
+				calendardiv = document.getElementById(id).getElementsByClassName("JsDatePickBox");
+
+				if(calendardiv == []){
+					calendar = new JsDatePick({
         			useMode:1,
         			isStripped:true,
         			target: id,
 	  				cellColorScheme:"armygreen"
-    				});
-    
-    				g_calendarObject.setOnSelectedDelegate(function(){
-        			var obj = g_calendarObject.getSelectedDay();
+    				}); 
+    				calendar.setOnSelectedDelegate(function(){
+        			var obj = calendar.getSelectedDay();
     
         			alert("a date was just selected and the date is : " + obj.day + "/" + obj.month + "/" + obj.year);
-    				});}
+    				});} }
 		</script>
 
 <script src="http://maps.google.com/maps/api/js?sensor=false" 
