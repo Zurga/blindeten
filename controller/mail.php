@@ -2,7 +2,7 @@
 $root = $_SERVER['DOCUMENT_ROOT'];
 include_once $root . '/model/User.php';
 include_once "dblogin.php";
-include_once "dbFunctions";
+include_once $root . "/model/dbFunctions";
 
 ini_set('display_errors',1);
 
