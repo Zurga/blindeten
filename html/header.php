@@ -15,8 +15,8 @@
 </div>
 
 <?php 
-$login = true;
-if ($login == false){ 
+$logged_in = check_login();
+if (logged_in == false){ 
 echo '
 <div id="menu">
     <ul>
@@ -28,7 +28,7 @@ echo '
 </div> ';
 }
 
-if ($login == true){
+if (logged_in == true){
 echo '
 <div id="menu">
     <ul>
