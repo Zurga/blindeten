@@ -14,7 +14,7 @@
 </div>
 
 <?php 
-$login = true;
+//$login = true;
 if (($login == false)){ 
 echo '
 <div id="menu">

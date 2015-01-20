@@ -9,8 +9,7 @@ ini_set('display_errors',1);
 function test_mail($user,$mail_id) {
 	global $db;
 	$query = "SELECT * FROM mail WHERE id=". $mail_id;
-	$bquery = "SELECT id FROM bookings WHERE user1=".$user->id." or user2=".$user->id;
-	
+		
 	$mail_info = get_rows($db->query($query));
 	$to = "rens.mester@gmail.com";//$user->email
 	$subject = $mail_info['subject'];
