@@ -11,7 +11,7 @@ function test_mail($user,$mail_id) {
 	$query = "SELECT * FROM mail WHERE id=". $mail_id;
 	
 	$mail_info = get_rows($db->query($query));
-	$to = "jim.lemmers@gmail.com"//$user->email;
+	$to = "jim.lemmers@gmail.com";//$user->email
 	$subject = $mail_info['subject'];
 	$message = $mail_info['message'];
 	$headers = 'From: Jim.lemmers@gmail.com';
