@@ -28,7 +28,7 @@ if ($request == '/account/logout') {
 	header("Location: http://ik35.webdb.fnwi.uva.nl");
 }	
 
-if($request == '/account/login.php' & $logged_in == false){
+if($request == '/account/login.php' & $logged_in == false & empty($_POST)){
 	include $root . '/html/login.php';
 }
 else{
