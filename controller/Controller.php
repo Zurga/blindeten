@@ -1,6 +1,7 @@
 <?php
 
 include_once 'model/Model.php';
+include_once 'model/Auth.php';
 
 class Controller {
 	public $model;
@@ -10,6 +11,8 @@ class Controller {
 	}
 
 	public function invoke(){
+		$auth = new Login;
+		$logged_in = $auth->check_login();
 		$urlRoutes = array(
 			'/\/$/' => 'index',
 			'/\/account\//'=> 'account',
