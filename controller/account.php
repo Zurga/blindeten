@@ -7,7 +7,7 @@ $logged_in = $auth->check_login();
 var_dump($logged_in);
 
 if($request == '/account/show.php'){
-	if($_SESSION['logged_in']){
+	if($logged_in){
 		$title = 'Account';
 		$user = new User($_SESSION['id']);
 		//$age
