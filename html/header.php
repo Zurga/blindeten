@@ -14,7 +14,9 @@
 	<a href="/"><img src="html/blindetenlogo.png"></a>
 </div>
 
-<?php 
+<?php
+$root = $_SERVER['DOCUMENT_ROOT'];
+include $root . "/model/auth.php"
 $logged_in = check_login();
 if (check_login == false){ 
 echo '
