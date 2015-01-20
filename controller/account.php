@@ -18,7 +18,7 @@ if($request == '/account/show.php'){
 
 if ($request == '/account/logout') {
 	$login = new Login;
-	$login->log_out();
+	$login->logout();
 	header("Location: http://ik35.webdb.fnwi.uva.nl");
 }	
 
