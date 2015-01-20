@@ -15,22 +15,7 @@
 </div>
 
 <?php
-$root = $_SERVER['DOCUMENT_ROOT'];
-include $root . "/model/auth.php";
-$logged_in = check_login();
-if (check_login == false){ 
-echo '
-<div id="menu">
-    <ul>
-        <li><a href="/text/info.php" title="Wat is BlinDeten?">Wat is BlinDeten?</a></li>  
-        <li><a href="/account/register.php" title="Registreer">Registreer</a></li>  
-	<li><a href="/account/login.php" title="Log in">Log in</a></li> 
-</ul>
-<br>
-</div> ';
-}
-
-if (check_login == true){
+if ($logged_in){ 
 echo '
 <div id="menu">
     <ul>
@@ -41,5 +26,16 @@ echo '
 	</ul>
 <br>
 </div> ';
+}
 
+else {
+echo '
+<div id="menu">
+    <ul>
+        <li><a href="/text/info.php" title="Wat is BlinDeten?">Wat is BlinDeten?</a></li>  
+        <li><a href="/account/register.php" title="Registreer">Registreer</a></li>  
+	<li><a href="/account/login.php" title="Log in">Log in</a></li> 
+</ul>
+<br>
+</div> ';
 } ?>
