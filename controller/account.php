@@ -1,9 +1,6 @@
 <?php
 //var_dump($_POST);
 //echo '<br>';
-include_once $root . '/model/Auth.php';
-$auth = new Login;
-$logged_in = $auth->check_login();
 
 if($request == '/account/show.php'){ 
 	if($logged_in){
@@ -32,6 +29,7 @@ if ($request == '/account/logout') {
 if($request == '/account/login.php' & $logged_in == false){
 	include $root . '/html/login.php';
 }
+
 if($request == '/account/set_login'){
 	$login = new Login;
 	if($login->login($_POST['email'], $_POST['password'])){
