@@ -14,21 +14,8 @@
 	<a href="/"><img src="html/blindetenlogo.png"></a>
 </div>
 
-<?php 
-$login = true;
-if ($login == false){ 
-echo '
-<div id="menu">
-    <ul>
-        <li><a href="/text/info.php" title="Wat is BlinDeten?">Wat is BlinDeten?</a></li>  
-        <li><a href="/account/register.php" title="Registreer">Registreer</a></li>  
-	<li><a href="/account/login.php" title="Log in">Log in</a></li> 
-</ul>
-<br>
-</div> ';
-}
-
-if ($login == true){
+<?php
+if ($logged_in){ 
 echo '
 <div id="menu">
     <ul>
@@ -39,5 +26,16 @@ echo '
 	</ul>
 <br>
 </div> ';
+}
 
+else {
+echo '
+<div id="menu">
+    <ul>
+        <li><a href="/text/info.php" title="Wat is BlinDeten?">Wat is BlinDeten?</a></li>  
+        <li><a href="/account/register.php" title="Registreer">Registreer</a></li>  
+	<li><a href="/account/login.php" title="Log in">Log in</a></li> 
+</ul>
+<br>
+</div> ';
 } ?>
