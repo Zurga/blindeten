@@ -42,7 +42,8 @@ function get_http_Object(){
         else if (window.XMLHttpRequest) 
 	     	return new XMLHttpRequest();
         else {
-              alert("Your browser does not support AJAX.");/                                 return null;
+		alert("Your browser does not support AJAX.");
+		return null;
         }
 }
 function get_output(which, input){
