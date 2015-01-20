@@ -6,10 +6,12 @@ $auth = new Login;
 $logged_in = $auth->check_login();
 var_dump($logged_in);
 
-if($request == '/account/show.php'){
+if($request == '/account/show.php'){ 
 	if($logged_in){
 		$title = 'Account';
+		var_dump($_SESSION['id']);
 		$user = new User($_SESSION['id']);
+		var_dump($user);
 		//$age
 		if($user->owner != 0){
 			$restaurant = new Restaurant($user->owner);
