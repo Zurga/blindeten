@@ -1,7 +1,7 @@
 <?php include 'header.php';?>
 
 
-<script type="text/javascript">
+<script>
 function showtext(id){
 	if(document.getElementById(id).style.display == 'none'){
       		document.getElementById(id).style.display = 'block';
