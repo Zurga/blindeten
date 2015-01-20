@@ -4,7 +4,7 @@
 include_once $root . '/model/Auth.php';
 $auth = new Login;
 $logged_in = $auth->check_login();
-echo $logged_in;
+var_dump($logged_in);
 
 if($request == '/account/show.php'){
 	if($_SESSION['logged_in']){
