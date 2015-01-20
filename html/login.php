@@ -2,7 +2,7 @@
 
 <div class="content">
 	<div class="maincontent">
-		<form action='set_login.php' method='post'>
+		<form action='set_login' method='post'>
 			<h1>Log In</h1>
 			<br>
 			

@@ -30,10 +30,10 @@ if ($request == '/account/logout') {
 	header("Location: http://ik35.webdb.fnwi.uva.nl");
 }	
 
-if($request == '/account/login.php' & $logged_in == false & empty($_POST)){
+if($request == '/account/login.php' & $logged_in == false){
 	include $root . '/html/login.php';
 }
-else{
+if($request == '/account/set_login'){
 	$login = new Login;
 	if($login->login($_POST['email'], $_POST['password'])){
 		header("Location: http://ik35.webdb.fnwi.uva.nl");
