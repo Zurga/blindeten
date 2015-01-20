@@ -57,7 +57,7 @@
 
 				calendardiv = document.getElementById(id).getElementsByClassName("JsDatePickBox");
 
-				if(calendardiv == []){
+				if(calendardiv.length == 0){
 					calendar = new JsDatePick({
         			useMode:1,
         			isStripped:true,
