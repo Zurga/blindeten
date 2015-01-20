@@ -21,5 +21,5 @@ function test_mail($user,$mail_id) {
 }
 
 $user = new User(2);
-test_mail($user, 4);
+test_mail($user, 2);
 ?>
