@@ -13,7 +13,6 @@ if($request == '/account/show.php'){
 		if($user->owner != 0){
 			$restaurant = new Restaurant($user->owner);
 		}
-
 		include $root . '/html/show.php';
 	}
 }
@@ -28,12 +27,11 @@ if ($request == '/account/logout') {
 	header("Location: http://ik35.webdb.fnwi.uva.nl");
 }	
 
-if($request == '/account/login.php' & empty($_POST) & $_SESSION['logged_in'] == false){
+if($request == '/account/login.php' & $logged_in == false){
 	include $root . '/html/login.php';
 }
 else{
 	$login = new Login;
-	echo '<br/>';
 	if($login->login($_POST['email'], $_POST['password'])){
 		header("Location: http://ik35.webdb.fnwi.uva.nl");
 	}
