@@ -98,17 +98,7 @@ function set_output(id){
 	}
 }	
 
-function showtext(id){
-   			
-if(document.getElementById(id).style.display == 'none'){
-    document.getElementById(id).style.display = 'block';
-   	}
-   		
-else{
-      	document.getElementById(id).style.display = 'none';      
-   		}
-		}
-		</script>
+</script>
 
 <script src="http://maps.google.com/maps/api/js?sensor=false" 
           type="text/javascript"></script>
