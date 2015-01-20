@@ -16,6 +16,12 @@ if($request == '/account/show.php'){
 	}
 }
 
+if ($request == '/account/logout') {
+	$login = new Login;
+	$login->logout();
+	header("Location: http://ik35.webdb.fnwi.uva.nl");
+}	
+
 if($request == '/account/login.php' & empty($_POST) & $_SESSION['logged_in'] == false){
 	include $root . '/html/login.php';
 }

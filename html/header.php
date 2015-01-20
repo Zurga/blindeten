@@ -15,7 +15,7 @@
 </div>
 
 <?php 
-//$login = true;
+$login = true;
 if ($login == false){ 
 echo '
 <div id="menu">
@@ -35,7 +35,7 @@ echo '
         <li><a href="/text/info.php" title="Wat is BlinDeten?">Wat is BlinDeten?</a></li>  
         <li><a href="/account/show.php" title="Mijn Account">Mijn Account</a></li>
 		<li><a href="/account/mijnreserveringen.php" title="Mijn Account">Mijn Reserveringen</a></li>
-		
+		<li><a href="/account/logout" title="Uitloggen">Uitloggen</a></li>
 	</ul>
 <br>
 </div> ';
