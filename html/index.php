@@ -22,18 +22,18 @@
 			echo $restaurant->zipcode." ";
 			echo $restaurant->city."<br>"; 
 			echo '<a href="'.$restaurant->url.'">'.$restaurant->url.'</a><br><br>';
-			echo 'g_calendarObject = new JsDatePick({';
-        			'useMode:1,';
-        			'isStripped:true,';
-        			'target:"aFieldId",';
-	  				'cellColorScheme:"armygreen"';
-    				'});';
+			echo '<script>g_calendarObject = new JsDatePick({
+        			useMode:1,
+        			isStripped:true,
+        			target:"aFieldId",
+	  				cellColorScheme:"armygreen"
+    				});
     
-    				'g_calendarObject.setOnSelectedDelegate(function(){';
-        			'var obj = g_calendarObject.getSelectedDay();';
+    				g_calendarObject.setOnSelectedDelegate(function(){
+        			var obj = g_calendarObject.getSelectedDay();
     
-        			'alert("a date was just selected and the date is : " + obj.day + "/" + obj.month + "/" + obj.year);';
-    				'});'.'</div><br>';
+        			alert("a date was just selected and the date is : " + obj.day + "/" + obj.month + "/" + obj.year);
+    				});</script></div><br>';
 			echo "</li>";
 		}  ?> 
 	</ul>
