@@ -18,6 +18,10 @@ if($request == '/account/show.php'){
 	}
 }
 
+if($request == '/account/register.php') {
+	include $root . '/html/register.php';
+}
+
 if ($request == '/account/logout') {
 	$login = new Login;
 	$login->logout();

@@ -5,7 +5,7 @@
 		<form>
 			
 			<h1>Registreer</h1><br>
-			<fieldset id="inputs">
+			<fieldset id="inputs" method='post'>
 				<input id="name" name="input['name']" type="text" placeholder="Naam" required>  
 				<br>
 				<br>
