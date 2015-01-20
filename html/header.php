@@ -15,12 +15,12 @@
 
 <?php 
 //$login = true;
-if (($login == false)){ 
+if ($login == false){ 
 echo '
 <div id="menu">
     <ul>
         <li><a href="/text/info.php" title="Wat is BlinDeten?">Wat is BlinDeten?</a></li>  
-        <li><a href="/account/registreer.php" title="Registreer">Registreer</a></li>  
+        <li><a href="/account/register.php" title="Registreer">Registreer</a></li>  
 	<li><a href="/account/login.php" title="Log in">Log in</a></li> 
 </ul>
 <br>
