@@ -15,30 +15,14 @@
 		<ul>
 		<?php foreach ($restaurants as $restaurant) {
 			echo "<li>";
-			echo '<h2><a href="javascript:showtext('.$restaurant->id.');get_calender();">'.$restaurant->name.'</a></h2><br>';
+			echo '<h2><a href="javascript:showtext('.$restaurant->id.');get_calender('.$restaurant->id.');">'.$restaurant->name.'</a></h2><br>';
 			echo '<div id="'.$restaurant->id.'" class="hidden" style="display:none">';
 			echo $restaurant->street." ";
 			echo $restaurant->number."<br>";
 			echo $restaurant->zipcode." ";
 			echo $restaurant->city."<br>"; 
 			echo '<a href="'.$restaurant->url.'">'.$restaurant->url.'</a><br><br>';
-			echo '<script>
-
-					function get_calender(){
-					g_calendarObject = new JsDatePick({
-        			useMode:1,
-        			isStripped:true,
-        			target:"aFieldId",
-	  				cellColorScheme:"armygreen"
-    				});
-    
-    				g_calendarObject.setOnSelectedDelegate(function(){
-        			var obj = g_calendarObject.getSelectedDay();
-    
-        			alert("a date was just selected and the date is : " + obj.day + "/" + obj.month + "/" + obj.year);
-    				});}
-
-					</script></div><br>';
+			echo '</div><br>';
 			
 			echo "</li>";
 		}  ?> 
@@ -67,6 +51,21 @@
       	document.getElementById(id).style.display = 'none';      
    		}
 		}
+
+
+		function get_calender(id){
+					g_calendarObject = new JsDatePick({
+        			useMode:1,
+        			isStripped:true,
+        			target: id,
+	  				cellColorScheme:"armygreen"
+    				});
+    
+    				g_calendarObject.setOnSelectedDelegate(function(){
+        			var obj = g_calendarObject.getSelectedDay();
+    
+        			alert("a date was just selected and the date is : " + obj.day + "/" + obj.month + "/" + obj.year);
+    				});}
 		</script>
 
 <script src="http://maps.google.com/maps/api/js?sensor=false" 
