@@ -28,7 +28,6 @@ function get_calendar(id){
     		calendar.setOnSelectedDelegate(function(){
         		var obj = calendar.getSelectedDay();
         		get_output("calendar", id);
-        		set_output(id);
     
         	alert("a date was just selected and the date is : " + obj.day + "/" + obj.month + "/" + obj.year);
     		});
@@ -52,7 +51,7 @@ function get_output(which, input){
 		http_object.open('GET', "ajax/"+ which + "?input=" + input,
 				true);
 		http_object.send(null);
-		http_object.onreadystatechange = set_output(id);
+		http_object.onreadystatechange = set_output(input);
 	}
 }
 
