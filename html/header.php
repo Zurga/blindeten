@@ -27,7 +27,7 @@ echo '
 </div> ';
 }
 
-else {
+if ($login == true){
 echo '
 <div id="menu">
     <ul>
