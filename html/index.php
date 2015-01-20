@@ -62,7 +62,7 @@
         			useMode:1,
         			isStripped:true,
         			target: id,
-	  				cellColorScheme:"armygreen"
+	  				cellColorScheme:"ocean_blue"
     				}); 
     				calendar.setOnSelectedDelegate(function(){
         			var obj = calendar.getSelectedDay();
