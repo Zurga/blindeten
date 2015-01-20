@@ -33,44 +33,38 @@
 
 
 <script type="text/javascript">
-		function showtext(id){
-   			
-   			if(document.getElementById(id).style.display == 'none'){
+function showtext(id){
+	if(document.getElementById(id).style.display == 'none'){
       		document.getElementById(id).style.display = 'block';
       		elements = document.getElementsByClassName("hidden");
-   			
-   			for (var i = 0; i < elements.length; i++) {
-    			
+   		for (var i = 0; i < elements.length; i++) {
     			if (elements[i].id != id) {
     				elements[i].style.display = "none";	
     			}
-			}
-   			}
-   		
-   		else{
-      	document.getElementById(id).style.display = 'none';      
-   		}
 		}
+   	}
+   	else{
+      		document.getElementById(id).style.display = 'none';      
+   	}
+}
 
-
-		function get_calendar(id){
-
-				calendardiv = document.getElementById(id).getElementsByClassName("JsDatePickBox");
-
-				if(calendardiv.length == 0){
-					calendar = new JsDatePick({
-        			useMode:1,
-        			isStripped:true,
-        			target: id,
-	  				cellColorScheme:"ocean_blue"
-    				}); 
-    				calendar.setOnSelectedDelegate(function(){
-        			var obj = calendar.getSelectedDay();
-        			get_output("calendar", id) ; 
-        			set_output(id); 
+function get_calendar(id){
+	calendardiv = document.getElementById(id).getElementsByClassName("JsDatePickBox");
+	if(calendardiv.length == 0){
+		calendar = new JsDatePick({
+        	useMode:1,
+        	isStripped:true,
+        	target: id,
+	  	cellColorScheme:"ocean_blue"}); 
+    		calendar.setOnSelectedDelegate(function(){
+        		var obj = calendar.getSelectedDay();
+        		get_output("calendar", id);
+        		set_output(id);
     
-        			alert("a date was just selected and the date is : " + obj.day + "/" + obj.month + "/" + obj.year);
-    				});} }
+        	alert("a date was just selected and the date is : " + obj.day + "/" + obj.month + "/" + obj.year);
+    		});
+	} 
+}
 
 // Get the HTTP Object
 function get_http_Object(){
@@ -102,7 +96,7 @@ function set_output(id){
 
 <script src="http://maps.google.com/maps/api/js?sensor=false" 
           type="text/javascript"></script>
-<script scr="/js/functions.js"></script>
+<script src="/js/functions.js"></script>
 <script>
 map = new google.maps.Map(document.getElementById('map'),{
 	zoom: 3,
