@@ -36,7 +36,7 @@ function get_calendar(id){
 }
 
 // Get the HTTP Object
-function get_http_Object(){
+function get_http_object(){
 	if (window.ActiveXObject) 
 		return new ActiveXObject("Microsoft.XMLHTTP");
         else if (window.XMLHttpRequest) 
