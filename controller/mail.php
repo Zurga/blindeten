@@ -1,8 +1,8 @@
 <?php
 $root = $_SERVER['DOCUMENT_ROOT'];
 include_once $root . '/model/User.php';
-include_once "dblogin.php";
-include_once $root . "/model/dbFunctions";
+//include_once "dblogin.php";
+include_once $root . "/model/dbFunctions.php";
 
 ini_set('display_errors',1);
 
