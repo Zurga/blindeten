@@ -16,7 +16,7 @@ class Controller {
 		//set variables for use in other controllers
 		$auth = new Auth;
 		$logged_in = $auth->check_login();
-		$index = $_SERVER['SERVER_NAME'];
+		$index = 'http://' . $_SERVER['SERVER_NAME'];
 		var_dump($index);
 
 		if($logged_in){
