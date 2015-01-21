@@ -18,6 +18,12 @@ if($request == '/account/edit.php'){
 	include $root . '/html/edit.php';
 }
 
+//Save user data
+if($request == '/account/save_data'){
+	$attr = $_POST['input'];
+	change_attr($attr);
+}
+
 //User request register.php
 if($request == '/account/register.php') {
 	include $root . '/html/register.php';
@@ -36,6 +42,8 @@ if($request == '/account/register'){
 		);*/
 	$model = new Model;
 	$attr = $_POST['input'];
+	$bday= $attr['year'].'-'.$attr['month'].'-'.$attr['day'];
+	$attr["birthday"] = $bday;
 	var_dump($attr);
 	if($model->add_account($attr)){
 		include $root . '/html/index.php';
