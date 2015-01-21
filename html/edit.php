@@ -1,12 +1,5 @@
 <?php include 'header.php';?>
 
-<script>
-	var data = <?php echo json_encode($user);?>;
-	for(var key in data){ 
-		data[key];
-		document.getElementById(key).value = data[key];
-	}
-</script>
 
 <div class="content">
 	<div class="maincontent">
@@ -77,5 +70,12 @@
 <?php } ?>
 	</div>
 </div>
+
+<script>
+	var data = <?php echo json_encode($user);?>;
+	for(var key in data){ 
+		document.getElementById(key).value = data[key];
+	}
+</script>
 
 <?php include 'footer.php';?>
