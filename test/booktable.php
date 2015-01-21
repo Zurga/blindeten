@@ -13,14 +13,14 @@ echo '<br/>';
 function get_row($result){
 if ($result->num_rows == 1){
 		$row = $result->fetch_assoc();
-		var_dump($row);
+		return array(row);
 	}
 else if($result->num_rows > 1){
 	$rows = array();
 	while ($row = $result->fetch_assoc()){
 		$rows[] = $row;
 	}
-	var_dump($rows);
+	return $rows;
 }
 
 else{
@@ -28,7 +28,7 @@ else{
 }
 }
 
-get_row($db->query($query));
+var_dump(get_row($db->query($query)));
 /*
 $user = new User(2);
 vddar_dump($user);
