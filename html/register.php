@@ -12,6 +12,9 @@
 				<input id="email" name="input[email]" type="text" placeholder="E-mail" required>   
 				<br>
 				<br>
+				<input id="city" name="input[city]" type="text" placeholder="City" required> 
+				<br>
+				<br>
 				<input id="password" name="input[password]" type="password" placeholder="Wachtwoord" required>
 				<br>
 				<br>
