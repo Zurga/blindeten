@@ -5,7 +5,7 @@
 		<h1>Gegevens veranderen</h1>
 		<br>
 		<br>
-		<form action='delete_account' method='post'>	
+		<form action='save_data' method='post'>
 		<fieldset id="inputs">
 			<li><p>Naam:</p><br><br>
 			<input id="name" name="input[name]" type="text" placeholder="<?php echo $user->name; ?>"></p></li>
@@ -21,10 +21,12 @@
 			<br>
 			<br>
 			<br>
-			<form action='save_data' method='post'>
-			<li><input type="submit" id="submit" value="Gegevens opslaan"></p></li></form>
+			<li><input type="submit" id="submit" value="Gegevens opslaan"></p></li>
+			</form>
 			<br>
+			<form action='delete_account' method='post'>
 			<li><input type="submit" id="submit" value="Account verwijderen"></p></li>
+			</form>
 		</fieldset>	
 		</form>
 		
