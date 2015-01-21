@@ -21,7 +21,8 @@ if($request == '/account/edit.php'){
 //Save user data
 if($request == '/account/save_data'){
 	$attr = $_POST['input'];
-	change_attr($attr);
+	$user->change_attr($attr);
+	include $root . '/html/show.php';
 }
 
 //User request register.php
