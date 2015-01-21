@@ -10,6 +10,7 @@
 		<p>Woonplaats: <?php echo $user->city; ?></p>
 		<p><a href="/account/edit.php" title="Gegevens wijzigen">Gegevens wijzigen</a>
 		<br>		
+		<br>
 		<a href="wachtwoordveranderen.php" title="Wachtwoord veranderen">Wachtwoord veranderen</a>
 		</p>		
 	</div>

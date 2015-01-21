@@ -5,7 +5,7 @@
 		<h1>Gegevens veranderen</h1>
 		<br>
 		<br>
-		<form>	
+		<form action='delete_account' method='post'>	
 		<fieldset id="inputs">
 			<li><p>Naam:</p><br><br>
 			<input id="name" name="input[name]" type="text" placeholder="<?php echo $user->name; ?>"></p></li>
@@ -23,7 +23,7 @@
 			<br>
 			<li><input type="submit" id="submit" value="Gegevens opslaan"></p></li>
 			<br>
-			<li><input type="submit" id="submit" action='delete_account' method='post' value="Account verwijderen"></p></li>
+			<li><input type="submit" id="submit" value="Account verwijderen"></p></li>
 		</fieldset>	
 		</form>
 <?php if(isset($restaurant)){ ?>	
