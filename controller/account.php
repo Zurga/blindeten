@@ -26,8 +26,8 @@ if($request == '/account/save_data'){
 	var_dump($attr);
 	if($user->change_attr($attr)){
 		include $root . '/html/show.php';
+	}
 }
-
 //User request register.php
 if($request == '/account/register.php') {
 	include $root . '/html/register.php';
