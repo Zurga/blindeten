@@ -18,7 +18,9 @@
 			<br>
 			<br>
 			<li><p>Geboortedatum:</p><br><br>
-			<input id="birthdate" name="input[birthdate]" type="date" placeholder="<?php echo $user->birthdate; ?>"></p></li>
+			<input id="day" name="input[day]" type="day" size="2" maxlength="2" max="31" placeholder="Dag" required>
+			<input id="month" name="input[month]" type="month" size="5" maxlength="2" max="12" placeholder="Maand" required>
+			<input id="year" name="input[year]" type="year" size="4" maxlength="4" max="1997" placeholder="Jaar" required>
 			<br>
 			<li><p>Woonplaats:</p><br><br>
 			<input id="city" name="input[city]" type="text" placeholder="<?php echo $user->city; ?>"></p></li>
