@@ -27,6 +27,20 @@ class Booking{
 		}
 	}
 	
-
+	public function get_bookings ($object) {
+		global $db;
+		
+		if (get_class($object) == 'User') {
+			$query = "SELECT * FROM bookings WHERE user1 = ". $user->id .
+			" or user2 = ". $user->id;
+		}
+		if (get_class($object) == 'Restaurant') {
+			$query = "SELECT * FROM bookings WHERE restaurant_id = ". $restaurant->id;
+		}
+		else {
+			return false;
+		}
+		
+		return get_rows($this->db->query($query));
 }
 ?>
