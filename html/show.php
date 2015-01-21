@@ -8,6 +8,8 @@
 		<p>Geslacht: <?php if ($user->sex == 0) {echo 'Man';} else {echo 'Vrouw';} ?></p>
 		<p>Geboortedatum: <?php echo $user->birthdate; ?></p>
 		<p>Woonplaats: <?php echo $user->city; ?></p>
+		<br>
+		<br>
 		<p><a href="/account/edit.php" title="Gegevens wijzigen">Gegevens wijzigen</a>
 		<br>		
 		<br>
