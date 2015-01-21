@@ -13,7 +13,6 @@ class User {
 	public $birthdate;
 	public $city;
 	public $owner;
-	private $db;
 
 	//fills the user class objects with data
 	public function __construct($id){
