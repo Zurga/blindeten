@@ -1,7 +1,9 @@
 <?php
 //var_dump($_POST);
 //echo '<br>';
+$root= $_SERVER['DOCUMENT_ROOT'];
 include_once $root . '/model/Auth.php';
+
 
 if($request == '/account/show.php'){
 	if($_SESSION['logged_in']){
