@@ -67,6 +67,7 @@ if($request == '/account/set_login'){
 	else{
 		header("Location: ". $index . "/account/login.php");
 	}
+}
 
 
 ?>
