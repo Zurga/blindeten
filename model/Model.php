@@ -29,6 +29,7 @@ class Model{
 				$attr['birthdate']. "','" . $attr['sex'] . "','" . $password . "','" . 
 				$attr['city'] . "')";
 			
+			//permission
 			if ($db->query($query)) {
 				$id = $db->insert_id;
 				$query = "INSERT INTO user_perm (perm_id, user_id)".
@@ -122,6 +123,24 @@ class Model{
 		global $db;
 		$query = "SELECT bookings_time, restaurant_id ".
 			"FROM history WHERE user_id = ". $user->id;
+		
+		return get_rows($db->query($query));
+	}
+	
+	public function get_bookings ($object) {
+		global $db;
+		var_dump($object);
+		
+		if (get_class($object) == 'User') {
+			$query = "SELECT * FROM bookings WHERE user1 = ". $object->id .
+			" or user2 = ". $object->id;
+		}
+		if (get_class($object) == 'Restaurant') {
+			$query = "SELECT * FROM bookings WHERE restaurant_id = ". $object->id;
+		}
+		else {
+			return false;
+		}
 		
 		return get_rows($db->query($query));
 	}

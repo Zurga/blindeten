@@ -1,10 +1,14 @@
 <?php
 $root = $_SERVER['DOCUMENT_ROOT'];
-include_once '/model/User.php';
-include_once '/model/Restaurant.php';
+include $root . '/model/User.php';
+include $root . '/model/Restaurant.php';
+include $root . '/model/Model.php';
+
 
 $user = new User(2);
 $rest = new Restaurant(6);
-var_dump(get_bookings($user));
+$model = new Model;
+
+var_dump($model->get_bookings($user));
 
 ?>
