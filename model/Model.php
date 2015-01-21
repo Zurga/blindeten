@@ -107,11 +107,12 @@ class Model{
 					' WHERE rest_id = ' . $row['id'];
 
 				if($tables = get_rows($this->db->query($tableQ))){
-					if(gettype($tables) == 'string'){
-						$restaurant = $table;
-					}else{
 						foreach($tables as $table){
+							if(gettype($table) == 'string'){
+							$restaurant = $table;
 							//add the table id to the restaurant
+							}
+							else{
 							$restaurant->tables[] = $table['id'];
 						}
 					}
