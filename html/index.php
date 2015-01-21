@@ -83,7 +83,7 @@ function set_output(id){
 			echo $restaurant->number."<br>";
 			echo $restaurant->zipcode." ";
 			echo $restaurant->city."<br>"; 
-			echo '<a href="'.$restaurant->url.'">Website</a>';
+			echo '<a target="_blank" href="'.$restaurant->url.'">Website</a>';
 			echo '</div>';
 			
 			echo "</li>";

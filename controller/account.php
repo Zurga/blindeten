@@ -60,7 +60,7 @@ if($request == '/account/login.php'){
 if($request == '/account/set_login'){
 	if($auth->login($_POST['email'], $_POST['password'])){
 		//include $root . '/html/index.php';
-		header('Location: http://ik35.webdb.uva.nl/');
+		header('Location: http://ik35.webdb.fnwi.uva.nl/');
 	}
 }
 ?>
