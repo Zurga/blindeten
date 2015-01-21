@@ -53,7 +53,7 @@ if($request == '/account/login.php'){
 		include $root . '/html/login.php';
 	}
 	else {
-		include $root . '/html/index.php';
+		header('Location: http://ik35.webdb.uva.nl/');
 	}
 }
 

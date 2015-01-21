@@ -136,7 +136,7 @@ class User {
 	}
 	
 	public function age() {
-		date_default_timezone_set('Europe/Amsterdam');
+	date_default_timezone_set('Europe/Amsterdam');
 		$age = date_create($this->birthdate)->diff(date_create('today'))->y;
     
 		return $age;
