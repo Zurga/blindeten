@@ -25,6 +25,7 @@ class Auth{
 		if($result){
 			$_SESSION['logged_in'] = true;
 			$_SESSION['id'] = $result['id'];
+			return true;
 		}
 		else{
 			return false; 

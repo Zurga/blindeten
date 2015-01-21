@@ -8,8 +8,11 @@
 		<p>Geslacht: <?php if ($user->sex == 0) {echo 'Man';} else {echo 'Vrouw';} ?></p>
 		<p>Geboortedatum: <?php echo $user->birthdate; ?></p>
 		<p>Woonplaats: <?php echo $user->city; ?></p>
+		<br>
+		<br>
 		<p><a href="/account/edit.php" title="Gegevens wijzigen">Gegevens wijzigen</a>
 		<br>		
+		<br>
 		<a href="wachtwoordveranderen.php" title="Wachtwoord veranderen">Wachtwoord veranderen</a>
 		</p>		
 	</div>
@@ -26,6 +29,7 @@ echo '
 		<p>Adres: '. $restaurant->street.' '.$restaurant->number.'<br>'. $restaurant->zipcode.' '. $restaurant->city.'</p>	
 		<p><a href="/account/edit.php" title="Gegevens wijzigen">Gegevens wijzigen</a>
 		<br>		
+		<br>
 		<a href="wachtwoordveranderen.php" title="Wachtwoord veranderen">Wachtwoord veranderen</a>
 		</p>		
 	</div>
