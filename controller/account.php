@@ -1,13 +1,12 @@
 <?php
 //var_dump($_POST);
 //echo '<br>';
+include_once $root . '/model/Auth.php';
 
-if($request == '/account/show.php'){ 
-	if($logged_in){
+if($request == '/account/show.php'){
+	if($_SESSION['logged_in']){
 		$title = 'Account';
-		var_dump($_SESSION['id']);
 		$user = new User($_SESSION['id']);
-		var_dump($user);
 		//$age
 		if($user->owner != 0){
 			$restaurant = new Restaurant($user->owner);
@@ -46,6 +45,7 @@ if ($request == '/account/logout') {
 	header("Location: http://ik35.webdb.fnwi.uva.nl");
 }	
 
+<<<<<<< HEAD
 //User request login.php
 if($request == '/account/login.php'){
 	if($logged_in == false){
@@ -59,8 +59,17 @@ if($request == '/account/login.php'){
 if($request == '/account/set_login'){
 	if($auth->login($_POST['email'], $_POST['password'])){
 		include $root . '/html/index.php';}
+=======
+if($request == '/account/login.php' & $logged_in == false & empty($_POST)){
+	include $root . '/html/login.php';
+}
+else{
+	$login = new Login;
+	if($logged_in =  $login->login($_POST['email'], $_POST['password'])){
+		header("Location: http://ik35.webdb.fnwi.uva.nl");
+	}
+>>>>>>> 60abb8acb0c187bc4c418c8f836a47671eaf8d63
 	else{
-		echo 'niet gelukt';
 		include $root . '/html/login.php';
 	}
 }
