@@ -33,7 +33,7 @@ if($request == '/account/register'){
 		"password" => $_POST['password'],
 		"city" => $_POST['city']
 		);*/
-	$attr = $_POST[input];
+	$attr = $_POST['input'];
 	var_dump($attr);
 	if($model->add_account($attr)){
 		include $root . '/html/index.php';
