@@ -57,8 +57,8 @@
 			<li><input type="submit" id="submit" value="Account verwijderen"></p></li>
 		</fieldset>	
 		</form>
+<?php } ?>
 	</div>
 </div>
-<?php } ?>
 
 <?php include 'footer.php';?>
