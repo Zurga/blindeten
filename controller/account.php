@@ -3,6 +3,7 @@
 //echo '<br>';
 $root= $_SERVER['DOCUMENT_ROOT'];
 include_once $root . '/model/Auth.php';
+include $root . '/model/Model.php';
 
 
 if($request == '/account/show.php'){
