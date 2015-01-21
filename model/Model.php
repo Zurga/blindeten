@@ -10,13 +10,9 @@ class Model{
 	private $salt1 = "12M6&#%lN*msp";
 	private $salt2 = "@#k45hHdsl$2*";
 
-	function __construct(){
-		global $db;
-		$this->db = $db;
-	}
-
 	//Create new account with specified attributes, return true or with reason.
 	public function add_account($attr){
+		global $db;
 		$salted = $this->salt1 . $attr['email'] . $attr['password'] . $this->salt2;
 		$password = hash('sha256', $salted);
 
@@ -32,11 +28,11 @@ class Model{
 				$attr['birthdate']. "','" . $attr['sex'] . "','" . $password . "','" . 
 				$attr['city'] . "')";
 			
-			if ($this->db->query($query)) {
-				$id = $this->db->insert_id;
+			if ($db->query($query)) {
+				$id = $db->insert_id;
 				$query = "INSERT INTO user_perm (perm_id, user_id)".
-					"VALUES (2,". $this->db->insert_id .")"; 
-				$this->db->query($query);
+					"VALUES (2,". $db->insert_id .")"; 
+				$db->query($query);
 				return $id;
 			}
 			else {
@@ -50,6 +46,7 @@ class Model{
 	}
 
 	public function book_table($user, $restaurant, $table_id, $time){
+		global $db;
 		//check if the table belongs to the restaurant
 		if (in_array($table_id, $restaurant->tables)) {
 			//check if the booking does exists to determine
@@ -60,7 +57,7 @@ class Model{
 				" AND time = '" . $time ."'";
 			
 			//it exists
-			if ($exists = get_rows($this->db->query($query))){
+			if ($exists = get_rows($db->query($query))){
 				//check if the user is booking the same table again
 				if($exists['user1'] == $user->id){
 					return false;
@@ -77,8 +74,8 @@ class Model{
 					" VALUES (". $restaurant->id ."," . $table_id . "," .
 					$user->id . ",'" . $time . "')";
 			}
-			if($this->db->query($bookQ)){
-				$booking = new Booking($this->db->insert_id);
+			if($db->query($bookQ)){
+				$booking = new Booking($db->insert_id);
 				return $booking;
 			}
 		}
@@ -89,14 +86,13 @@ class Model{
 
 	//get an array of restaurants objects
 	public function get_restaurants(){
+		global $db;
 		$restaurants = array();
 
 		$query = 'SELECT id' .
 			' FROM restaurant';
 		
-		//$result = $this->db->query($query);
-		
-		if ($rows = get_rows($this->db->query($query))) {
+		if ($rows = get_rows($db->query($query))) {
 			foreach($rows as $row) {
 				//new restaurant object
 				$restaurant = new Restaurant($row['id']);
@@ -105,7 +101,7 @@ class Model{
 				$tableQ = 'SELECT id FROM `tables`' .
 					' WHERE rest_id = ' . $row['id'];
 
-				if($tables = get_rows($this->db->query($tableQ))){
+				if($tables = get_rows($db->query($tableQ))){
 					if(gettype($tables) == 'string'){
 						$restaurant = $table;
 					}else{
@@ -115,12 +111,6 @@ class Model{
 						}
 					}
 				}
-				//fill the restaurant data
-				//foreach($row as $key=>$val){
-				//	$restaurant->$key = $val;
-				//}
-				//$rest = set_var($row, $restaurant);
-				//var_dump($rest);
 				$restaurants[] = $restaurant;
 			}
 			return $restaurants;

@@ -18,16 +18,13 @@ class Restaurant{
 
 	function __construct($id){
 		global $db;
-		$this->db = $db;
 
 		$query = "SELECT restaurant.name, restaurant.lat, restaurant.lon," .
 			" restaurant.street, restaurant.zipcode ,restaurant.city," .
 		        " restaurant.url" .
 			" FROM restaurant WHERE id = " . $id;
 
-		if($row = get_rows($this->db->query($query))){
-			echo 'restaurant contstruct<br>';
-			var_dump($row);
+		if($row = get_rows($db->query($query))){
 			foreach($row as $key => $val){
 				$this->$key = $val; 
 			}
