@@ -7,11 +7,12 @@
     <link rel="stylesheet" type="text/css" media="all" href="/html/jsDatePick_ltr.min.css" />
     <script type="text/javascript" src="/js/jsDatePick.min.1.3.js"></script>
 <!--script type="text/javascript" src="/js/functions.js"></script-->
+
 </head>
 
 <body>
 <div id="header">
-	<a href="/"><img src="html/blindetenlogo.png"></a>
+	<a href="/"><img src="/html/blindetenlogo.png"></a>
 </div>
 
 <?php
