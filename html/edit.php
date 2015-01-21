@@ -1,11 +1,10 @@
 <?php include 'header.php';?>
 
 <script>
-	var data = <?php echo json_encode($user);?>
+	var data = <?php echo json_encode($user);?>;
 	for(key in data){ 
 		data[key];
 		document.getElementById(key).value = data[key];
-
 	}
 </script>
 
