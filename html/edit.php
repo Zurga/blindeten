@@ -11,7 +11,7 @@
 			<input id="name" name="input[name]" type="text" placeholder="<?php echo $user->name; ?>"></p></li>
 			<br>
 			<br>
-			<select>
+			<select name="input[sex]">
 			<option value="0" >Man</option>
 			<option value="1" >Vrouw</option>
 			</select>
