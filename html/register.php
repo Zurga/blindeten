@@ -2,7 +2,7 @@
 
 <div class="content">
 	<div class="maincontent">
-		<form>
+		<form action='register' method='post'>
 			
 			<h1>Registreer</h1><br>
 			<fieldset id="inputs" method='post'>
@@ -29,7 +29,7 @@
 			
 			<fieldset id="actions">
 				<br>
-				<a href="login.php">Inloggen</a>
+				<a href="/account/login.php">Inloggen</a>
 				<br>
 				<br>
 				<input type="submit" id="submit" value="Registreer">
