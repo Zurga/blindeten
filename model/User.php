@@ -141,5 +141,31 @@ class User {
     
 		return $age;
 	}
+	
+	public function cancel_booking($booking_id) {
+		global $db;
+		
+		$booking = new Booking($booking_id);
+		
+		if ($booking->user1 == $this->id) {
+			if ($booking->user2 != 0) {
+				$delquery = "UPDATE bookings SET user1 = ". $booking->user2 .
+				", user2 = 0 WHERE booking_id = ". $booking_id;
+				
+			}
+			else {
+				$delquery = "DELETE FROM bookings WHERE id = ". $booking_id;
+			}
+		}
+		elseif ($booking->user2 == $this->id) {
+			$delquery = "UPDATE bookings SET user2 = 0 WHERE booking_id = ". 
+			$booking_id;
+		}
+		else {
+			return false;
+		}
+		
+		$this->db->query($delquery);
+	}
 }
 ?>
