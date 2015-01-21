@@ -6,14 +6,18 @@ include_once 'model/User.php';
 
 class Controller {
 	public $model;
+	public $index;
 
 	public function __construct(){
 		$this->model = new Model;
 	}
 
 	public function invoke(){
+		//set variables for use in other controllers
 		$auth = new Auth;
 		$logged_in = $auth->check_login();
+		$index = $_SERVER['SERVER_NAME'];
+		var_dump($index);
 
 		if($logged_in){
 			$user = new User($_SESSION['id']);
