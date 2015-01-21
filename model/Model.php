@@ -97,9 +97,13 @@ class Model{
 		//$result = $this->db->query($query);
 		
 		if ($rows = get_rows($this->db->query($query))) {
+			var_dump($rows);
+			echo '<br>';
 			foreach($rows as $row) {
 				//new restaurant object
 				$restaurant = new Restaurant($row['id']);
+				var_dump($restaurant);
+				echo '<br>';
 
 				//check which table belong to the restaurant
 				$tableQ = 'SELECT id FROM `tables`' .
