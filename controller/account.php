@@ -39,7 +39,7 @@ if($request == '/account/register'){
 	else{
 		include $root . '/html/register.php';
 	}
-
+}
 if ($request == '/account/logout') {
 	$auth->logout();
 	header("Location: http://ik35.webdb.fnwi.uva.nl");
@@ -52,18 +52,21 @@ if($request == '/account/login.php'){
 	}
 	else {
 		include $root . '/html/index.php';
-
+	}
+}
 
 //User pressed login button
 if($request == '/account/set_login'){
 	if($auth->login($_POST['email'], $_POST['password'])){
-		include $root . '/html/index.php';}
+		include $root . '/html/index.php';
+	}
+}
 
 if($request == '/account/login.php' & $logged_in == false & empty($_POST)){
 	include $root . '/html/login.php';
 }
 else{
-	$login = new Login;
+	$auth = new Login;
 	if($logged_in =  $login->login($_POST['email'], $_POST['password'])){
 		header("Location: http://ik35.webdb.fnwi.uva.nl");
 	}
