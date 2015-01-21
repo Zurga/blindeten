@@ -56,9 +56,7 @@ class User {
 		if($this->db->query($query)){
 			$rest_id = $this->db->insert_id;
 			$query = "INSERT INTO tables (rest_id) VALUES (" . $rest_id . ")";
-
-			$this->db->query(
-			
+			$this->db->query($query);
 		}
 	}
 	
