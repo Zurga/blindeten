@@ -13,6 +13,11 @@ class Controller {
 	public function invoke(){
 		$auth = new Login;
 		$logged_in = $auth->check_login();
+
+		if($logged_in){
+			$user = new User($_SESSION['id']);
+		}
+
 		$urlRoutes = array(
 			'/\/$/' => 'index',
 			'/\/account\//'=> 'account',
@@ -29,7 +34,7 @@ class Controller {
 				$controller = $controller_name;
 			}
 		}
-
+		
 		if (!empty($controller)){
 			require $root . '/controller/' . $controller. '.php';
 		}

@@ -3,7 +3,7 @@
 include_once 'dblogin.php';
 include_once 'dbFunctions.php';
 
-class Login{
+class Auth{
 	private $salt1 = "12M6&#%lN*msp";
 	private $salt2 = "@#k45hHdsl$2*";
 	
