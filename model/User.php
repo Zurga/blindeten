@@ -161,7 +161,7 @@ class User {
 			return false;
 		}
 		echo $delquery;
-		$this->db->query($delquery);
+		return $this->db->query($delquery);
 	}
 }
 ?>
