@@ -58,7 +58,6 @@ class User {
 			$query = "INSERT INTO tables (rest_id) VALUES (" . $rest_id . ")";
 
 			$this->db->query($query);
-			}
 		}
 	}
 	
