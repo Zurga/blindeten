@@ -27,6 +27,7 @@
 			<li><input type="submit" id="submit" value="Account verwijderen"></p></li>
 		</fieldset>	
 		</form>
+		
 <?php if(isset($restaurant)){ ?>	
 		<form action='edit' method='post'>	
 		<fieldset id="inputs">

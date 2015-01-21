@@ -21,8 +21,11 @@ if($request == '/account/edit.php'){
 //Save user data
 if($request == '/account/save_data'){
 	$attr = $_POST['input'];
-	$user->change_attr($attr);
-	include $root . '/html/show.php';
+	$bday= $attr['year'].'-'.$attr['month'].'-'.$attr['day'];
+	$attr['birthdate'] = $bday;
+	var_dump($attr);
+	if($user->change_attr($attr)){
+		include $root . '/html/show.php';
 }
 
 //User request register.php
