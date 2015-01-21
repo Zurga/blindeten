@@ -13,6 +13,7 @@ class User {
 	public $birthdate;
 	public $city;
 	public $owner;
+	private $db;
 
 	//fills the user class objects with data
 	public function __construct($id){
@@ -57,7 +58,7 @@ class User {
 			$rest_id = $this->db->insert_id;
 			$query = "INSERT INTO tables (rest_id) VALUES (" . $rest_id . ")";
 
-			$this->db->query(
+			$this->db->query($query);
 			}
 		}
 	}
