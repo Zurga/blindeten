@@ -2,7 +2,7 @@
 
 <script>
 	var data = <?php echo json_encode($user);?>;
-	for(key in data){ 
+	for(var key in data){ 
 		data[key];
 		document.getElementById(key).value = data[key];
 	}
