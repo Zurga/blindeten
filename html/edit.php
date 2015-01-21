@@ -21,7 +21,8 @@
 			<br>
 			<br>
 			<br>
-			<li><input type="submit" id="submit" value="Gegevens opslaan"></p></li>
+			<form action='save_data' method='post'>
+			<li><input type="submit" id="submit" value="Gegevens opslaan"></p></li></form>
 			<br>
 			<li><input type="submit" id="submit" value="Account verwijderen"></p></li>
 		</fieldset>	
