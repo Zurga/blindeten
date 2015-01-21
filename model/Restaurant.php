@@ -26,6 +26,8 @@ class Restaurant{
 			" FROM restaurant WHERE id = " . $id;
 
 		if($row = get_rows($this->db->query($query))){
+			echo 'restaurant contstruct<br>';
+			var_dump($row);
 			foreach($row as $key => $val){
 				$this->$key = $val; 
 			}
