@@ -69,5 +69,10 @@ if($request == '/account/set_login'){
 	}
 }
 
-
+//User pressed delete account
+if($request == '/account/delete_account'){
+	$auth->logout();
+	$user->delete_account($user->id);
+	header("Location: ". $index);
+}
 ?>

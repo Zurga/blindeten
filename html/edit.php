@@ -27,7 +27,7 @@
 		</fieldset>	
 		</form>
 <?php if(isset($restaurant)){ ?>	
-		<form>	
+		<form action='edit' method='post'>	
 		<fieldset id="inputs">
 			<li><p>Naam Restaurant:</p><br><br>
 			<p><input id="name" name="input[name]" type="text" placeholder="<?php echo $restaurant->name; ?>" ></p></li>
@@ -54,7 +54,7 @@
 			<br>
 			<li><input type="submit" id="submit" value="Gegevens opslaan"></p></li>
 			<br>
-			<li><input type="submit" id="submit" value="Account verwijderen"></p></li>
+			<li><input type="submit" id="submit" action='delete_account' method='post' value="Account verwijderen"></p></li>
 		</fieldset>	
 		</form>
 <?php } ?>
