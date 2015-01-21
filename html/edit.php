@@ -18,7 +18,7 @@
 			<br>
 			<br>
 			<li><p>Geboortedatum:</p><br><br>
-			<input id="birthdate" name="input[birthdate]" type="date" placeholder="Geboortedatum"></p></li>
+			<input id="birthdate" name="input[birthdate]" type="date" placeholder="<?php echo $user->birthdate; ?>"></p></li>
 			<br>
 			<li><p>Woonplaats:</p><br><br>
 			<input id="city" name="input[city]" type="text" placeholder="<?php echo $user->city; ?>"></p></li>
