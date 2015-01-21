@@ -71,6 +71,7 @@ if($request == '/account/set_login'){
 
 //User pressed delete account
 if($request == '/account/delete_account'){
+	var_dump($user->id)
 	$auth->logout();
 	$user->delete_account($user->id);
 	header("Location: ". $index);
