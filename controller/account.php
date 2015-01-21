@@ -39,7 +39,7 @@ if($request == '/account/register'){
 	$attr = $_POST['input'];
 	var_dump($attr);
 	if($model->add_account($attr)){
-		include $root . '/html/index.php';
+		include $root . '/html/login.php';
 	}
 	else{
 		include $root . '/html/register.php';
