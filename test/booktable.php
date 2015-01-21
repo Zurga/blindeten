@@ -10,7 +10,7 @@ global $db;
 $query = "SELECT * from user_perm WHERE 1";
 var_dump($result);
 echo '<br/>';
-function get_rows($result){
+function get_row($result){
 if ($result->num_rows == 1){
 		$row = $result->fetch_assoc();
 		var_dump($row);
@@ -28,7 +28,7 @@ else{
 }
 }
 
-get_rows($db->query($query));
+get_row($db->query($query));
 /*
 $user = new User(2);
 vddar_dump($user);
