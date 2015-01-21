@@ -22,6 +22,7 @@
 			<input id="month" name="input[month]" type="month" size="5" maxlength="2" max="12" placeholder="Maand" required>
 			<input id="year" name="input[year]" type="year" size="4" maxlength="4" max="1997" placeholder="Jaar" required>
 			<br>
+			<br>
 			<li><p>Woonplaats:</p><br><br>
 			<input id="city" name="input[city]" type="text" placeholder="<?php echo $user->city; ?>"></p></li>
 			<br>
