@@ -139,6 +139,10 @@ class User {
 		
 		$booking = new Booking($booking_id);
 		
+		var_dump($booking->user1);
+		var_dump($booking->user2);
+		var_dump($this->id);
+		
 		if ($booking->user1 == $this->id) {
 			if ($booking->user2 != 0) {
 				$delquery = "UPDATE bookings SET user1 = ". $booking->user2 .
