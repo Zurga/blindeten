@@ -8,10 +8,9 @@ include_once $root ."model/dblogin.php";
 global $db;
 
 $query = "SELECT * from user_perm WHERE 1";
-$result =  $db->query($query);
 var_dump($result);
 echo '<br/>';
-
+function get_rows($result){
 if ($result->num_rows == 1){
 		$row = $result->fetch_assoc();
 		var_dump($row);
@@ -27,6 +26,9 @@ else if($result->num_rows > 1){
 else{
 	return false;
 }
+}
+
+get_rows($db->query($query));
 /*
 $user = new User(2);
 vddar_dump($user);
