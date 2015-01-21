@@ -59,7 +59,7 @@ if($request == '/account/login.php'){
 }
 
 //User pressed login button
-if($request == '/account/set_login.php'){
+if($request == '/account/set_login'){
 	if($auth->login($_POST['email'], $_POST['password'])){
 		//include $root . '/html/index.php';
 		header("Location: ". $index);
@@ -67,5 +67,6 @@ if($request == '/account/set_login.php'){
 	else{
 		header("Location: ". $index . "/account/login.php");
 	}
-}
+
+
 ?>
