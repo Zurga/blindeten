@@ -4,7 +4,7 @@
 $root= $_SERVER['DOCUMENT_ROOT'];
 include_once $root . '/model/Auth.php';
 
-
+//show the user information
 if($request == '/account/show.php'){
 	if($_SESSION['logged_in']){
 		$title = 'Account';
@@ -15,6 +15,11 @@ if($request == '/account/show.php'){
 		}
 		include $root . '/html/show.php';
 	}
+}
+
+//the user wants to edit the iformation
+if($request == '/account/edit.php'){
+	include $root . '/html/edit.php'
 }
 
 //User request register.php
