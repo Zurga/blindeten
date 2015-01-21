@@ -14,6 +14,7 @@ class Model{
 	public function __construct(){
 		global $db;
 		$this->db = $db;
+	}
 
 	//Create new account with specified attributes, return true or with reason.
 	public function add_account($attr){
