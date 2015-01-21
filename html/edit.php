@@ -30,9 +30,9 @@
 			<input id="month" name="input[month]" type="month" size="5" maxlength="2" max="12" placeholder="Maand">
 			<input id="year" name="input[year]" type="year" size="4" maxlength="4" max="1997" placeholder="Jaar" >
 			<br>
+			<br>
 			<li><p>Woonplaats:</p><br><br>
 			<input id="city" name="input[city]" type="text" placeholder="<?php echo $user->city; ?>"></p></li>
-			<br>
 			<br>
 			<br>
 			<li><input type="submit" id="submit" value="Gegevens opslaan"></p></li>
