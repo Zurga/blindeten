@@ -1,0 +1,167 @@
+<?php
+
+include_once 'dbFunctions.php';
+include_once 'dblogin.php';
+
+class User {
+	private $db;
+	public $name;
+	public $id;
+	public $permission;
+	public $email;
+	public $sex;
+	public $birthdate;
+	public $city;
+	public $owner;
+
+	//fills the user class objects with data
+	public function __construct($id){
+		global $db;
+		$this->db = $db;
+
+		//query from the database
+		$query = "SELECT user.id, user.name, user.sex ," .
+			" user.birthdate, user.city, user.email," .
+		        " user.owner, permission.name AS permission".
+			" FROM user" .
+			" JOIN user_perm ON user.id = user_perm.user_id" .
+			" JOIN permission ON user_perm.perm_id = permission.id" .
+			" WHERE user.id = " . $id;
+		
+		if($row = get_rows($this->db->query($query))){
+			//assign values to user based on mySQL columns
+			foreach($row as $key=>$val){
+				$this->$key = $val;
+			}
+			return $this;
+		}
+		else{
+			return false; 
+		}
+	}
+
+	public function change_attr($attr) {
+		$query = "UPDATE user SET name = '".$attr['name']."', sex = '".$attr['sex']."',".
+			"birthdate = '".$attr['birthdate']."', city = '".$attr['city']."'". 
+			" WHERE email = '".$this->email."'";
+		
+		return $this->db->query($query);
+	}
+
+	public function add_restaurant($user_id, $attr){
+		$query = "INSERT INTO restaurant (owner, name, lat, lon, url)" .
+			" VALUES (". $attr['user_id'] . "," . $attr['name'] . "," . 
+			$attr['lat'] . "," . $attr['lon'] . "," . $attr['url'] . ")";
+
+		if($this->db->query($query)){
+			$rest_id = $this->db->insert_id;
+			$query = "INSERT INTO tables (rest_id) VALUES (" . $rest_id . ")";
+			$this->db->query($query);
+		}
+	}
+	
+	public function delete_account($user_id) {
+		if ($this->permission == "Admin" or $this->id == $user_id) {
+			$query = "DELETE FROM user WHERE id = ". $user_id;
+			//if ($this->permission == "Owner") {
+				//delete_restaurant();
+			//}
+			//else {
+				//return false;
+			//}
+			return $this->db->query($query);
+		}
+		else {
+			return false;
+		}
+	}
+
+	//add table {id,rest_id}
+	public function add_table($restaurant){
+		if ($this->permission == "Admin" or $this->owner == $restaurant->id) {
+			$query = "INSERT INTO test_tables (rest_id)".
+				"VALUES (" . $restaurant->id . ")";
+			$this->db->query($query);
+			$this->db->insert_id;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public function delete_table ($restaurant, $table_id) {
+		if ($this->permission == "Admin" or $this->owner == $restaurant->id) {
+			$query = "DELETE FROM tables WHERE id = ". $table_id;
+			
+			return $this->db->query($query);
+		}
+		else {
+			return false;
+		}
+	}	
+	
+	//Dit is nu test verwijder 'test_'
+	public function delete_restaurant ($rest_id) {
+		if ($this->permission == "Admin" or $this->owner == $rest_id) {
+			$query = "DELETE FROM test_restaurant WHERE id = ". $rest_id;
+			$table_query = "DELETE FROM test_tables WHERE rest_id = ". $rest_id;
+			
+			$this->db->query($query);
+			$this->db->query($table_query);
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public function change_perm ($permission,$email) {
+		if ($this->permission == "Admin") {
+			$user_query = "SELECT id FROM user WHERE email = '". $email ."'";
+			$query = "UPDATE user_perm SET perm_id = ". $permission .
+					" WHERE user_id = (". $user_query .")";
+					
+			return $this->db->query($query);
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public function age() {
+	date_default_timezone_set('Europe/Amsterdam');
+		$age = date_create($this->birthdate)->diff(date_create('today'))->y;
+    
+		return $age;
+	}
+	
+	public function cancel_booking($booking_id) {
+		global $db;
+		
+		$booking = new Booking($booking_id);
+		
+		var_dump($booking->user1);
+		var_dump($booking->user2);
+		var_dump($this->id);
+		
+		if ($booking->user1 == $this->id) {
+			if ($booking->user2 != 0) {
+				$delquery = "UPDATE bookings SET user1 = ". $booking->user2 .
+				", user2 = 0 WHERE id = ". $booking_id;
+				
+			}
+			else {
+				$delquery = "DELETE FROM bookings WHERE id = ". $booking_id;
+			}
+		}
+		elseif ($booking->user2 == $this->id) {
+			$delquery = "UPDATE bookings SET user2 = 0 WHERE id = ". 
+			$booking_id;
+		}
+		else {
+			return false;
+		}
+		echo $delquery;
+		return $this->db->query($delquery);
+	}
+}
+?>
