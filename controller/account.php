@@ -3,9 +3,8 @@
 //echo '<br>';
 $root= $_SERVER['DOCUMENT_ROOT'];
 include_once $root . '/model/Auth.php';
-include $root . '/model/Model.php';
 
-
+//show the user information
 if($request == '/account/show.php'){
 	if($_SESSION['logged_in']){
 		$title = 'Account';
@@ -16,6 +15,11 @@ if($request == '/account/show.php'){
 		}
 		include $root . '/html/show.php';
 	}
+}
+
+//the user wants to edit the iformation
+if($request == '/account/edit.php'){
+	include $root . '/html/edit.php';
 }
 
 //User request register.php
@@ -34,8 +38,12 @@ if($request == '/account/register'){
 		"password" => $_POST['password'],
 		"city" => $_POST['city']
 		);*/
+<<<<<<< HEAD
 	$model = new Model
 	$attr = $_POST[input];
+=======
+	$attr = $_POST['input'];
+>>>>>>> 8429d34287ca866ff0bde8884f9036ebb0fc9bb8
 	var_dump($attr);
 	if($model->add_account($attr)){
 		include $root . '/html/index.php';
