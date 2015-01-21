@@ -26,8 +26,10 @@
 				<input id="year" name="input[year]" type="year" size="4" maxlength="4" max="1997" placeholder="Jaar" required>
 				<br>
 				<br>
+				<select>
 				<option value="Man">Man</option>
 			    <option value="Vrouw">Vrouw</option>
+				</select>
 			</fieldset>
 			
 			<fieldset id="actions">
