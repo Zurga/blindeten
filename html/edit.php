@@ -10,8 +10,8 @@
 			<li><p>Naam:</p><br><br>
 			<input id="name" name="input[name]" type="text" placeholder="<?php echo $user->name; ?>"></p></li>
 			<br>
-			<li><p><input type="radio" name="input[sex]" value="male" >Man</p></li>
-		    	<li><p><input type="radio" name="input[sex]" value="female" >Vrouw</p></li> 
+			<li><p><option value="Man">Man</option></p></li>
+			<li><p><option value="Vrouw">Vrouw</option></p></li>
 			<br>
 			<li><p>Geboortedatum:</p><br><br>
 			<input id="birthdate" name="input[birthdate]" type="date" placeholder="Geboortedatum"></p></li>

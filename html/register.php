@@ -26,8 +26,8 @@
 				<input id="year" name="input[year]" type="year" size="4" maxlength="4" max="1997" placeholder="Jaar" required>
 				<br>
 				<br>
-				<input type="radio" name="input[sex]" value="male" checked>Man
-				<input type="radio" name="input[sex]" value="female">Vrouw
+				<option value="Man">Man</option>
+			    <option value="Vrouw">Vrouw</option>
 			</fieldset>
 			
 			<fieldset id="actions">
