@@ -29,6 +29,7 @@ class Model{
 				$attr['birthdate']. "','" . $attr['sex'] . "','" . $password . "','" . 
 				$attr['city'] . "')";
 			
+			//permission
 			if ($db->query($query)) {
 				$id = $db->insert_id;
 				$query = "INSERT INTO user_perm (perm_id, user_id)".
