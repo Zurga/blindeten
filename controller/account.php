@@ -42,7 +42,7 @@ if($request == '/account/register'){
 	$model = new Model;
 	$attr = $_POST['input'];
 	$bday = $attr["year"].'-'.$attr["month"].'-'.$attr["day"];
-	$attr[$birthdate] = $bday;
+	$attr['birthdate'] = $bday;
 	var_dump($attr);
 	if($model->add_account($attr)){
 		include $root . '/html/index.php';
