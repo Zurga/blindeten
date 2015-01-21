@@ -160,7 +160,7 @@ class User {
 		else {
 			return false;
 		}
-		
+		echo $delquery;
 		$this->db->query($delquery);
 	}
 }
