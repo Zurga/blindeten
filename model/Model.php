@@ -129,7 +129,7 @@ class Model{
 	
 	public function get_bookings ($object) {
 		global $db;
-		var_dump($object);
+		var_dump(get_class($object));
 		
 		if (get_class($object) == 'User') {
 			$query = "SELECT * FROM bookings WHERE user1 = ". $object->id .
