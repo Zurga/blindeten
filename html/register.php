@@ -27,8 +27,8 @@
 				<br>
 				<br>
 				<select>
-				<option value="Man">Man</option>
-			    <option value="Vrouw">Vrouw</option>
+				<option value="0" type="sex">Man</option>
+			    <option value="1" type="sex">Vrouw</option>
 				<br>
 				</select>
 			</fieldset>
