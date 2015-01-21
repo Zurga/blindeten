@@ -1,5 +1,14 @@
 <?php include 'header.php';?>
 
+<script>
+	var data = <?php echo json_encode($user);?>
+	for(key in data){ 
+		data[key];
+		document.getElementById(key).value = data[key];
+
+	}
+</script>
+
 <div class="content">
 	<div class="maincontent">
 		<h1>Gegevens veranderen</h1>
@@ -10,7 +19,6 @@
 			<li><p>Naam:</p><br><br>
 			<input id="name" name="input[name]" type="text" placeholder="<?php echo $user->name; ?>"></p></li>
 			<br>
-			<br>
 			<select name="input[sex]">
 			<option value="0" >Man</option>
 			<option value="1" >Vrouw</option>
@@ -18,14 +26,13 @@
 			<br>
 			<br>
 			<li><p>Geboortedatum:</p><br><br>
-			<input id="day" name="input[day]" type="day" size="2" maxlength="2" max="31" placeholder="Dag" required>
-			<input id="month" name="input[month]" type="month" size="5" maxlength="2" max="12" placeholder="Maand" required>
-			<input id="year" name="input[year]" type="year" size="4" maxlength="4" max="1997" placeholder="Jaar" required>
+			<input id="day" name="input[day]" type="day" size="2" maxlength="2" max="31" placeholder="Dag" >
+			<input id="month" name="input[month]" type="month" size="5" maxlength="2" max="12" placeholder="Maand">
+			<input id="year" name="input[year]" type="year" size="4" maxlength="4" max="1997" placeholder="Jaar" >
 			<br>
 			<br>
 			<li><p>Woonplaats:</p><br><br>
 			<input id="city" name="input[city]" type="text" placeholder="<?php echo $user->city; ?>"></p></li>
-			<br>
 			<br>
 			<br>
 			<li><input type="submit" id="submit" value="Gegevens opslaan"></p></li>
