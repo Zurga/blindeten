@@ -11,7 +11,7 @@ if($request == '/account/show.php'){
 		$restaurant = new Restaurant($user->owner);
 		}
 	include $root . '/html/show.php';
-}
+	}
 
 //the user wants to edit the iformation
 if($request == '/account/edit.php'){
@@ -63,6 +63,9 @@ if($request == '/account/set_login.php'){
 	if($auth->login($_POST['email'], $_POST['password'])){
 		//include $root . '/html/index.php';
 		header("Location: ". $index);
+	}
+	else{
+		header("Location: ". $index . "/account/login.php");
 	}
 }
 ?>
