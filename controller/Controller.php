@@ -17,7 +17,6 @@ class Controller {
 		$auth = new Auth;
 		$logged_in = $auth->check_login();
 		$index = 'http://' . $_SERVER['SERVER_NAME'];
-		var_dump($index);
 
 		if($logged_in){
 			$user = new User($_SESSION['id']);
