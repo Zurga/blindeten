@@ -13,6 +13,7 @@ class Model{
 	//Create new account with specified attributes, return true or with reason.
 	public function add_account($attr){
 		global $db;
+		//Password Encryption
 		$salted = $this->salt1 . $attr['email'] . $attr['password'] . $this->salt2;
 		$password = hash('sha256', $salted);
 
