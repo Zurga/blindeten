@@ -1,25 +1,21 @@
 <?php
 //var_dump($_POST);
 //echo '<br>';
-$root= $_SERVER['DOCUMENT_ROOT'];
+$root = $_SERVER['DOCUMENT_ROOT'];
 include_once $root . '/model/Auth.php';
 
 //show the user information
 if($request == '/account/show.php'){
-	if($_SESSION['logged_in']){
-		$title = 'Account';
-		$user = new User($_SESSION['id']);
-		//$age
-		if($user->owner != 0){
-			$restaurant = new Restaurant($user->owner);
+	//$age
+	if($user->owner != 0){
+		$restaurant = new Restaurant($user->owner);
 		}
-		include $root . '/html/show.php';
+	include $root . '/html/show.php';
 	}
 }
 
 //the user wants to edit the iformation
 if($request == '/account/edit.php'){
-	var_dump($user);
 	include $root . '/html/edit.php';
 }
 
@@ -41,8 +37,6 @@ if($request == '/account/register'){
 		);*/
 	$model = new Model;
 	$attr = $_POST['input'];
-	$bday = $attr["year"].'-'.$attr["month"].'-'.$attr["day"];
-	$attr['birthdate'] = $bday;
 	var_dump($attr);
 	if($model->add_account($attr)){
 		include $root . '/html/index.php';
@@ -53,7 +47,7 @@ if($request == '/account/register'){
 }
 if ($request == '/account/logout') {
 	$auth->logout();
-	header("Location: http://ik35.webdb.fnwi.uva.nl");
+	header("Location: ". $index);
 }	
 
 //User request login.php
@@ -69,7 +63,7 @@ if($request == '/account/login.php'){
 if($request == '/account/set_login.php'){
 	if($auth->login($_POST['email'], $_POST['password'])){
 		//include $root . '/html/index.php';
-		header("Location: http://ik35.webdb.fnwi.uva.nl");
+		header("Location: ". $index);
 	}
 }
 ?>
