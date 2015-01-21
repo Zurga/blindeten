@@ -11,7 +11,6 @@ if($request == '/account/show.php'){
 		$restaurant = new Restaurant($user->owner);
 		}
 	include $root . '/html/show.php';
-	}
 }
 
 //the user wants to edit the iformation
@@ -39,7 +38,7 @@ if($request == '/account/register'){
 	$attr = $_POST['input'];
 	var_dump($attr);
 	if($model->add_account($attr)){
-		include $root . '/html/login.php';
+		include $root . '/html/index.php';
 	}
 	else{
 		include $root . '/html/register.php';
