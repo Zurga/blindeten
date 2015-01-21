@@ -56,6 +56,7 @@ class User {
 
 		if($db->query($query)){
 			$rest_id = $db->insert_id;
+			$qeury;
 			//TO DO add tables to restaurants
 			//foreach($attr['tables'] as table){
 			//	$this->add_table();

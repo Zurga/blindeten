@@ -64,10 +64,10 @@ if($request == '/account/login.php'){
 }
 
 //User pressed login button
-if($request == '/account/set_login'){
+if($request == '/account/set_login.php'){
 	if($auth->login($_POST['email'], $_POST['password'])){
 		//include $root . '/html/index.php';
-		header("Location: http://ik35.webdb.fnwi.uva.nl/");
+		header("Location: http://ik35.webdb.fnwi.uva.nl");
 	}
 }
 ?>
