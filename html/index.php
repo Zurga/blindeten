@@ -1,6 +1,4 @@
 <?php include 'header.php';?>
-
-
 <script>
 function showtext(id){
 	if(document.getElementById(id).style.display == 'none'){
@@ -85,7 +83,6 @@ function set_output(id){
 			echo $restaurant->city."<br>"; 
 			echo '<a target="_blank" href="'.$restaurant->url.'">Website</a>';
 			echo '</div>';
-			
 			echo "</li>";
 		}  ?> 
 	</ul>
