@@ -3,6 +3,7 @@
 //echo '<br>';
 $root= $_SERVER['DOCUMENT_ROOT'];
 include_once $root . '/model/Auth.php';
+include $root . '/model/Model.php';
 
 //show the user information
 if($request == '/account/show.php'){
@@ -38,6 +39,7 @@ if($request == '/account/register'){
 		"password" => $_POST['password'],
 		"city" => $_POST['city']
 		);*/
+	$model = new Model
 	$attr = $_POST['input'];
 	var_dump($attr);
 	if($model->add_account($attr)){
