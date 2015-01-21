@@ -43,4 +43,5 @@ class Booking{
 		
 		return get_rows($this->db->query($query));
 }
+}
 ?>
