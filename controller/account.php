@@ -16,25 +16,49 @@ if($request == '/account/show.php'){
 	}
 }
 
+//User request register.php
 if($request == '/account/register.php') {
 	include $root . '/html/register.php';
 }
 
+//User pressed register button
+if($request == '/account/register'){
+/*
+	$attr = array(
+		"name" => $_POST['name'],
+		"email"=> $_POST['email'],
+		"birthdate" => $_POST['birthdate'],
+		"sex" => $_POST['sex'],
+		"password" => $_POST['password'],
+		"city" => $_POST['city']
+		);*/
+	$attr = $_POST[input];
+	var_dump($attr);
+	if($model->add_account($attr)){
+		include $root . '/html/index.php';
+	}
+	else{
+		include $root . '/html/register.php';
+	}
+
 if ($request == '/account/logout') {
-	$login = new Login;
-	$login->logout();
+	$auth->logout();
 	header("Location: http://ik35.webdb.fnwi.uva.nl");
 }	
 
-if($request == '/account/login.php' & $logged_in == false){
-	include $root . '/html/login.php';
-}
-
-if($request == '/account/set_login'){
-	$login = new Login;
-	if($login->login($_POST['email'], $_POST['password'])){
-		header("Location: http://ik35.webdb.fnwi.uva.nl");
+//User request login.php
+if($request == '/account/login.php'){
+	if($logged_in == false){
+		include $root . '/html/login.php';
 	}
+	else {
+		include $root . '/html/index.php';
+
+
+//User pressed login button
+if($request == '/account/set_login'){
+	if($auth->login($_POST['email'], $_POST['password'])){
+		include $root . '/html/index.php';}
 	else{
 		echo 'niet gelukt';
 		include $root . '/html/login.php';

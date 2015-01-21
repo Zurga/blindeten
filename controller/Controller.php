@@ -11,7 +11,7 @@ class Controller {
 	}
 
 	public function invoke(){
-		$auth = new Login;
+		$auth = new Auth;
 		$logged_in = $auth->check_login();
 		$urlRoutes = array(
 			'/\/$/' => 'index',
