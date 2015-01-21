@@ -1,5 +1,13 @@
 <?php include 'header.php';?>
 
+<script>
+	var data = <?php echo json_encode($user);?>
+	for(key in data){ 
+		data[key];
+		document.getElementById(key).value = data[key];
+
+	}
+</script>
 
 <div class="content">
 	<div class="maincontent">
@@ -11,18 +19,11 @@
 			<li><p>Naam:</p><br><br>
 			<input id="name" name="input[name]" type="text" placeholder="<?php echo $user->name; ?>"></p></li>
 			<br>
-			<br>
-			<select name="input[sex]">
-			<option value="0" >Man</option>
-			<option value="1" >Vrouw</option>
-			</select>
-			<br>
+			<li><p><input type="radio" name="input[sex]" value="male" >Man</p></li>
+		    	<li><p><input type="radio" name="input[sex]" value="female" >Vrouw</p></li> 
 			<br>
 			<li><p>Geboortedatum:</p><br><br>
-			<input id="day" name="input[day]" type="day" size="2" maxlength="2" max="31" placeholder="Dag" >
-			<input id="month" name="input[month]" type="month" size="5" maxlength="2" max="12" placeholder="Maand">
-			<input id="year" name="input[year]" type="year" size="4" maxlength="4" max="1997" placeholder="Jaar">
-			<br>
+			<input id="birthdate" name="input[birthdate]" type="date" placeholder="Geboortedatum"></p></li>
 			<br>
 			<li><p>Woonplaats:</p><br><br>
 			<input id="city" name="input[city]" type="text" placeholder="<?php echo $user->city; ?>"></p></li>
