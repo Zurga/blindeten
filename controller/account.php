@@ -35,7 +35,7 @@ if($request == '/account/register'){
 		"city" => $_POST['city']
 		);*/
 	$model = new Model
-	$attr = $_POST['input'];
+	$attr = $_POST[input];
 	var_dump($attr);
 	if($model->add_account($attr)){
 		include $root . '/html/index.php';
