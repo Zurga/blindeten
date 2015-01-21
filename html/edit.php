@@ -12,8 +12,8 @@
 			<br>
 			<br>
 			<select>
-			<option value="Man">Man</option>
-			<option value="Vrouw">Vrouw</option>
+			<option value="0" >Man</option>
+			<option value="1" >Vrouw</option>
 			</select>
 			<br>
 			<br>
