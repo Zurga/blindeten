@@ -23,9 +23,8 @@ if($request == '/account/save_data'){
 	$attr = $_POST['input'];
 	$bday= $attr['year'].'-'.$attr['month'].'-'.$attr['day'];
 	$attr['birthdate'] = $bday;
-	var_dump($attr);
 	if($user->change_attr($attr)){
-		include $root . '/html/show.php';
+		header("Location: ". $index . "/account/show.php");
 	}
 }
 //User request register.php
