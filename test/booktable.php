@@ -7,7 +7,7 @@ include_once $root ."model/Restaurant.php";
 include_once $root ."model/dblogin.php";
 global $db;
 
-$query = "SELECT * from user_perm WHERE 1";
+$query = "SELECT * from user WHERE id = 2";
 var_dump($result);
 echo '<br/>';
 function get_row($result){
