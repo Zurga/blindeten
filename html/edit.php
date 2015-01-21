@@ -19,8 +19,10 @@
 			<li><p>Naam:</p><br><br>
 			<input id="name" name="input[name]" type="text" placeholder="<?php echo $user->name; ?>"></p></li>
 			<br>
-			<li><p><input type="radio" name="input[sex]" value="male" >Man</p></li>
-		    	<li><p><input type="radio" name="input[sex]" value="female" >Vrouw</p></li> 
+			<select name="input[sex]">
+			<option value="0" >Man</option>
+			<option value="1" >Vrouw</option>
+			</select>
 			<br>
 			<li><p>Geboortedatum:</p><br><br>
 			<input id="birthdate" name="input[birthdate]" type="date" placeholder="Geboortedatum"></p></li>
