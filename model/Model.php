@@ -100,9 +100,6 @@ class Model{
 			foreach($rows as $row) {
 				//new restaurant object
 				$restaurant = new Restaurant($row['id']);
-				echo 'restaurant';
-				var_dump($restaurant);
-				echo '<br>';
 
 				//check which table belong to the restaurant
 				$tableQ = 'SELECT id FROM `tables`' .
