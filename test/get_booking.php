@@ -9,6 +9,6 @@ $user = new User(2);
 $rest = new Restaurant(6);
 $model = new Model;
 
-var_dump($model->get_bookings($user));
+var_dump($model->get_bookings($rest));
 
 ?>

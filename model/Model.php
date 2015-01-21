@@ -135,7 +135,7 @@ class Model{
 			$query = "SELECT * FROM bookings WHERE user1 = ". $object->id .
 			" or user2 = ". $object->id;
 		}
-		if (get_class($object) == 'Restaurant') {
+		else if (get_class($object) == 'Restaurant') {
 			$query = "SELECT * FROM bookings WHERE restaurant_id = ". $object->id;
 		}
 		else {
