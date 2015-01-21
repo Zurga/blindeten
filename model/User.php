@@ -2,7 +2,6 @@
 
 include_once 'dbFunctions.php';
 include_once 'dblogin.php';
-include_once 'Booking.php';
 
 class User {
 	private $db;
