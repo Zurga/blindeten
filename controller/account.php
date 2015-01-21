@@ -66,7 +66,7 @@ if($request == '/account/login.php' & $logged_in == false & empty($_POST)){
 	include $root . '/html/login.php';
 }
 else{
-	$login = new Login;
+	$auth = new Login;
 	if($logged_in =  $login->login($_POST['email'], $_POST['password'])){
 		header("Location: http://ik35.webdb.fnwi.uva.nl");
 	}
