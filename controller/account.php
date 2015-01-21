@@ -35,6 +35,7 @@ if($request == '/account/register'){
 		"city" => $_POST['city']
 		);*/
 	$attr = $_POST[input];
+	$model = new Model
 	var_dump($attr);
 	if($model->add_account($attr)){
 		include $root . '/html/index.php';
@@ -59,6 +60,7 @@ if($request == '/account/login.php'){
 
 //User pressed login button
 if($request == '/account/set_login'){
+	
 	if($auth->login($_POST['email'], $_POST['password'])){
 		//include $root . '/html/index.php';
 		header('Location: http://ik35.webdb.uva.nl/');
