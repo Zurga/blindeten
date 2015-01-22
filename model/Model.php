@@ -152,6 +152,7 @@ class Model{
 				$bookings[] = new Booking($row['id']);
 			}
 		return $bookings;
+		}
 	}
 	
 	public function select_id($user_email) {
