@@ -3,6 +3,7 @@
 //echo '<br>';
 $root = $_SERVER['DOCUMENT_ROOT'];
 include_once $root . '/model/Auth.php';
+include $root . '/controller/mail.php';
 
 //show the user information
 if($request == '/account/show.php'){
@@ -94,5 +95,6 @@ if($request == '/account/change_password.php') {
 
 //User forgot password
 if($request == '/account/forgot_password'){
-	
+	send_mail($user,5);
+}
 ?>
