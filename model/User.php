@@ -114,7 +114,7 @@ class User {
 		}
 	}
 	
-	public function change_perm ($permission,$email) {
+	public function change_perm ($permission, $email) {
 		if ($this->permission == "Admin") {
 			$user_query = "SELECT id FROM user WHERE email = '". $email ."'";
 			$query = "UPDATE user_perm SET perm_id = ". $permission .
