@@ -1,16 +1,5 @@
 <?php include 'header.php';?>
 
-<<<<<<< HEAD
-<script>
-	var data = <?php echo json_encode($user);?>
-	for(key in data){ 
-		data[key];
-		document.getElementById(key).value = data[key];
-	}
-</script>
-=======
->>>>>>> 5ad09a1fc27a2fd2cdd3fba39c324db04cf796a7
-
 <div class="content">
 	<div class="maincontent">
 		<h1>Gegevens veranderen</h1>
@@ -21,7 +10,7 @@
 			<li><p>Naam:</p><br><br>
 			<input id="name" name="input[name]" type="text" placeholder="<?php echo $user->name; ?>"></p></li>
 			<br>
-			<select name="input[sex]">
+			<select id= "sex" name="input[sex]">
 			<option value="0" >Man</option>
 			<option value="1" >Vrouw</option>
 			</select>
