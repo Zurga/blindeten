@@ -99,6 +99,10 @@ if($request == '/account/save_new_password'){
 }
 
 //User forgot password
+if($request == '/account/forgot_password.php') {
+	include $root . '/html/forgot_password.php';
+}
+
 if($request == '/account/forgot_password'){
 	send_mail($user,5);
 	$new_passw = $dbFunctions->encrypt($user,$new_passw);
