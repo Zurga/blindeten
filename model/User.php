@@ -60,9 +60,9 @@ class User {
 		}
 	}
 	
-	public function delete_account($user_id) {
-		if ($this->permission == "Admin" or $this->id == $user_id) {
-			$query = "DELETE FROM user WHERE id = ". $user_id;
+	public function delete_account($email) {
+		if ($this->permission == "Admin" or $this->email == $email) {
+			$query = "DELETE FROM user WHERE email = '". $email . "'";
 			//if ($this->permission == "Owner") {
 				//delete_restaurant();
 			//}
