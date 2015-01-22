@@ -12,7 +12,7 @@ function new_string($length) {
     $char_len = strlen($characters);
     $random_string = '';
     for ($i = 0; $i < $length; $i++) {
-        $random_string = $characters[rand(0, $char_len - 1)];
+        $random_string .= $characters[rand(0, $char_len - 1)];
     }
     return $random_string;
 }
