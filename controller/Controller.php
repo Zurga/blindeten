@@ -9,12 +9,9 @@ class Controller {
 	public $model;
 	public $index;
 
-	public function __construct(){
-		$this->model = new Model;
-	}
-
 	public function invoke(){
 		//set variables for use in other controllers
+		$model = new Model;
 		$auth = new Auth;
 		$logged_in = $auth->check_login();
 		$index = 'http://' . $_SERVER['SERVER_NAME'];

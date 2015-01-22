@@ -101,6 +101,7 @@ if($request == '/account/change_password.php') {
 }
 //Save new password
 if($request == '/account/save_new_password'){
+	$model->change_password($user->id, encrypt($user,$_POST['new_password']));
 	header("Location: ". $index);
 }
 
@@ -111,6 +112,7 @@ if($request == '/account/forgot_password.php') {
 
 if($request == '/account/forgot_password'){
 	$email = $_POST['email'];
-	$this->model->forgot_password($email);
+	$model->forgot_password($email);
+	header("Location: ". $index);
 }
 ?>

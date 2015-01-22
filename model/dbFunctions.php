@@ -42,12 +42,23 @@ function sanitize ($attr) {
 	return $sanitized;
 }
 
-function encrypt($user,$passw) {
+function encrypt($user, $passw) {
 	$salt1 = "12M6&#%lN*msp";
 	$salt2 = "@#k45hHdsl$2*";
 	$salted = $salt1 . $user->email . $passw . $salt2;
 	$password = hash('sha256', $salted);
 	
 	return $password;
+}
+
+//http://bit.ly/1zD8sG9
+function new_string($length) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $char_len = strlen($characters);
+    $random_string = '';
+    for ($i = 0; $i < $length; $i++) {
+        $random_string .= $characters[rand(0, $char_len - 1)];
+    }
+    return $random_string;
 }
 ?>

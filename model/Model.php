@@ -157,15 +157,22 @@ class Model{
 	
 	public function forgot_password($email) {
 		$query = "SELECT id FROM user WHERE email='". $email."'";
-		echo $query;
 		
 		if($row = get_rows($this->db->query($query))){
 			$user = new User($row['id']);
 			//5 = forgot password mail
-			send_mail($user, 5);
+			$password = new_string(8);
+			send_mail($user, 5, $password);
+			$e_passwd = encrypt($user, $password);
+			$this->change_password($row['id'], $e_passwd);
 			return true;
 		}
 		return false;
+	}
+	
+	public function change_password($user_id, $new_passw) {
+		$query = "UPDATE user SET password = '". $new_passw ."' WHERE id= ".$user_id;
+		$this->db->query($query);
 	}
 }
 ?>

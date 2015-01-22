@@ -4,24 +4,8 @@ include_once $root . '/model/User.php';
 //include_once "dblogin.php";
 include_once $root . "/model/dbFunctions.php";
 
-ini_set('display_errors',1);
-
-//http://bit.ly/1zD8sG9
-function new_string($length) {
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $char_len = strlen($characters);
-    $random_string = '';
-    for ($i = 0; $i < $length; $i++) {
-        $random_string .= $characters[rand(0, $char_len - 1)];
-    }
-    return $random_string;
-}
-
-$new_passw = new_string(8);
-
-function send_mail($user,$mail_id) {
+function send_mail($user,$mail_id, $data=NULL) {
 	global $db;	
-	$new_passw = new_string(8);	
 	$query = "SELECT * FROM mail WHERE id=". $mail_id;
 		
 	$mail_info = get_rows($db->query($query));
@@ -31,7 +15,7 @@ function send_mail($user,$mail_id) {
 	$headers = 'From: Jim.lemmers@gmail.com';
 	$message = str_replace('\r\n',"\r\n",$message);	
 	$message = str_replace('%user%',$user->name,$message);
-	$message = str_replace('%password%',$new_passw,$message);
+	$message = str_replace('%password%', $data, $message);
 	mail($to,$subject,$message,$headers);
 }
 
