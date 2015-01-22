@@ -50,4 +50,15 @@ function encrypt($user,$passw) {
 	
 	return $password;
 }
+
+//http://bit.ly/1zD8sG9
+function new_string($length) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $char_len = strlen($characters);
+    $random_string = '';
+    for ($i = 0; $i < $length; $i++) {
+        $random_string .= $characters[rand(0, $char_len - 1)];
+    }
+    return $random_string;
+}
 ?>
