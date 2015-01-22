@@ -6,7 +6,7 @@
 
 if($request == '/ajax/booking'){
 	$restaurant = new Restaurant($_GET['input']);
-	if (!isset($_GET['date']){
+	if (!isset($_GET['date'])){
 		$bookings = $model->get_bookings($restaurant);
 	}
 	echo json_encode($bookings);
