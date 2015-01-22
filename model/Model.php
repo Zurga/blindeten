@@ -134,6 +134,7 @@ class Model{
 		if (get_class($object) == 'User') {
 			$query = "SELECT * FROM bookings WHERE user1 = ". $object->id .
 			" or user2 = ". $object->id;
+			    //add the date to the query if it is set
 		}
 		else if (get_class($object) == 'Restaurant') {
 			$query = "SELECT * FROM bookings WHERE restaurant_id = ". $object->id;
@@ -142,6 +143,9 @@ class Model{
 			return false;
 		}
 		
+		if(isset($date))){
+			$query = $query . ' AND time = ' . $date;
+		}
 		return get_rows($this->db->query($query));
 	}
 }
