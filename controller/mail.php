@@ -22,7 +22,7 @@ function send_mail($user,$mail_id) {
 	$query = "SELECT * FROM mail WHERE id=". $mail_id;
 		
 	$mail_info = get_rows($db->query($query));
-	$to = $user->email;
+	$to = 'rens.mester@gmail.com';//$user->email;
 	$subject = $mail_info['subject'];
 	$message = $mail_info['message'];
 	$headers = 'From: Jim.lemmers@gmail.com';
