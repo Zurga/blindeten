@@ -3,7 +3,7 @@
 //check if the user ask for the info page
 if($request == '/text/info.php'){
 	$title = "Wat is BlinDeten?";
-	include $root.'/html/watisblindeten.php';
+	include $root.'/html/info.php';
 }
 
 if($request == '/text/faq.php'){
