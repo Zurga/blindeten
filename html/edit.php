@@ -72,13 +72,19 @@
 
 <script>
 	var data = <?php echo json_encode($user);?>;
+	var day = data["birthdate"].substring(8,10);	
+	var month = data["birthdate"].substring(5,7);
+	var year = data["birthdate"].substring(0,4);
+
 		document.getElementById("name").value = data["name"];
 
 		document.getElementById("sex").value = data["sex"];
 	
-		document.getElementById("day").value = data["day"];
+		document.getElementById("day").value = day;
 
-		document.getElementById("month").value = data["month"];
+		document.getElementById("month").value = month;
+
+		document.getElementById("month").value = year;
 
 		document.getElementById("city").value = data["city"];
 </script>
