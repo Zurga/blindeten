@@ -9,6 +9,7 @@ include_once $root . '/model/dbFunctions.php';
 
 //show the user information
 if($request == '/account/show.php'){
+	$title = "Mijn account";
 	//$age
 	if($user->owner != 0){
 		$restaurant = new Restaurant($user->owner);
@@ -18,6 +19,7 @@ if($request == '/account/show.php'){
 
 //the user wants to edit the iformation
 if($request == '/account/edit.php'){
+	$title = "Account wijzigen";
 	include $root . '/html/edit.php';
 }
 
@@ -32,6 +34,7 @@ if($request == '/account/save_data'){
 }
 //User request register.php
 if($request == '/account/register.php') {
+	$title = "Registeren"
 	include $root . '/html/register.php';
 }
 
