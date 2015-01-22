@@ -17,7 +17,7 @@
 				<br>
 				<a href="forgot_password.php">Wachtwoord vergeten?</a> 
 				<br>
-				<a href="/account/registreer.php">Registreren</a>
+				<a href="/account/register.php">Registreren</a>
 				<br>
 				<br>
 				<input type="submit" id="submit" value="Log in">
