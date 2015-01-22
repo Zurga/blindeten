@@ -24,7 +24,7 @@
 				<br>
 				
 				<form action="delete_account" method= "POST">
-					<input id="email" name="input[email]" type="text" placeholder="E-mail" required>   
+					<input id="email" name="email" type="text" placeholder="E-mail" required>   
 					<br>
 					<br>
 					<input type="submit" id="submit" value="Account verwijderen">
