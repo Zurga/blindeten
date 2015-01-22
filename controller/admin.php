@@ -6,19 +6,19 @@ if($request == '/admin/admin.php'){
 }
 
 if($request == '/admin/change_permission'){
-	$user->change_perm()
+	$user->change_perm();
 }
 
 if($request == 'admin/delete_account'){
-	$user->delete_account()
+	$user->delete_account();
 }
 
 if($request == 'admin/delete_restaurant'){
-	$user->delete_restaurant()
+	$user->delete_restaurant();
 }
 
 if($request == 'admin/add_restaurant'){
-	$user->add_restaurant()
+	$user->add_restaurant();
 }
 
 
