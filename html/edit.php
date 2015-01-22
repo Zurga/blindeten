@@ -71,24 +71,16 @@
 </div>
 
 <script>
-	var data_name = <?php echo json_encode($user);?>;
-		document.getElementById("name").value = data_name[name];
+	var data = <?php echo json_encode($user);?>;
+		document.getElementById("name").value = data["name"];
 
-	var data_sex = <?php echo json_encode($user);?>;
-		document.getElementById("sex").value = data_sex[sex];
+		document.getElementById("sex").value = data["sex"];
+	
+		document.getElementById("day").value = data["day"];
 
-	var data_day = <?php echo json_encode($user);?>;
-		document.getElementById("day").value = data_day[day];
+		document.getElementById("month").value = data["month"];
 
-
-	var data_month = <?php echo json_encode($user);?>;
-		document.getElementById("month").value = data_month[month];
-
-	var data_year = <?php echo json_encode($user);?>;
-		document.getElementById("year").value = data_year[year];
-
-	var data_city = <?php echo json_encode($user);?>;
-		document.getElementById("city").value = data_city[city];
+		document.getElementById("city").value = data["city"];
 </script>
 
 <?php include 'footer.php';?>
