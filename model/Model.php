@@ -143,7 +143,7 @@ class Model{
 			return false;
 		}
 		
-		if(isset($date))){
+		if(isset($date)){
 			$query = $query . ' AND time = ' . $date;
 		}
 		return get_rows($this->db->query($query));
