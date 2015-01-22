@@ -2,7 +2,7 @@
 
 if($request == '/admin/admin.php'){
 	$title = "Admin";
-	include $root . "admin.php"
+	include $root . "/html/admin.php";
 }
 
 ?>
