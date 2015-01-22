@@ -98,5 +98,6 @@ if($request == '/account/change_password.php') {
 //User forgot password
 if($request == '/account/forgot_password'){
 	send_mail($user,5);
+	$query = "UPDATE user SET password= ".$new_passw." WHERE id= ".$user->id;
 }
 ?>
