@@ -28,17 +28,6 @@
 			<br>
 			<input type="submit" id="submit" value="Account verwijderen">
 		</form>
-				<br>
-				<br>
-				<br>
-				
-				
-				<form action="delete_account" method= "POST">
-					<input id="email" name="email" type="text" placeholder="E-mail" required>   
-					<br>
-					<br>
-					<input type="submit" id="submit" value="Account verwijderen">
-				</form>
 
 		<form action = "delete_restaurant" method= "POST">
 			<select name="rest_id">
