@@ -25,7 +25,7 @@ function send_mail($user,$mail_id) {
 	$query = "SELECT * FROM mail WHERE id=". $mail_id;
 		
 	$mail_info = get_rows($db->query($query));
-	$to = 'rens.mester@gmail.com';//$user->email;
+	$to = $user->email;
 	$subject = $mail_info['subject'];
 	$message = $mail_info['message'];
 	$headers = 'From: Jim.lemmers@gmail.com';
@@ -35,6 +35,4 @@ function send_mail($user,$mail_id) {
 	mail($to,$subject,$message,$headers);
 }
 
-$user = new User(3);
-send_mail($user, 5);
 ?>
