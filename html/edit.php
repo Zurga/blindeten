@@ -63,6 +63,7 @@
 			<br>
 			<li><input type="submit" id="submit" value="Gegevens opslaan"></p></li>
 			<br>
+			<br>
 			<li><input type="submit" id="submit" value="Account verwijderen"></p></li>
 		</fieldset>	
 		</form>
