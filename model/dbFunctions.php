@@ -42,7 +42,7 @@ function sanitize ($attr) {
 	return $sanitized;
 }
 
-function encrypt($user,$passw) {
+function encrypt($user, $passw) {
 	$salt1 = "12M6&#%lN*msp";
 	$salt2 = "@#k45hHdsl$2*";
 	$salted = $salt1 . $user->email . $passw . $salt2;
