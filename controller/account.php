@@ -94,7 +94,9 @@ if($request == '/account/change_password.php') {
 	include $root . '/html/change_password.php';
 }
 //Save new password
-
+if($request == '/account/save_new_password'){
+	header("Location: ". $index);
+}
 
 //User forgot password
 if($request == '/account/forgot_password'){
