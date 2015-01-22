@@ -1,6 +1,7 @@
 <?php
 
-if($request == '/admin/admin.php'){
+
+if($request == '/admin/admin.php' or $request == '/admin/'){
 	$title = "Admin";
 	include $root . "/html/admin.php";
 }
