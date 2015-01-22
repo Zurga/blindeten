@@ -68,6 +68,7 @@ if ($request == '/account/logout') {
 
 //User request login.php
 if($request == '/account/login.php'){
+	$title = "Login";
 	if($logged_in == false){
 		include $root . '/html/login.php';
 	}
