@@ -20,8 +20,6 @@
 			</form>
 				
 				<br>
-				<br>
-				<br>
 				
 				<form action="delete_account" method= "POST">
 					<input id="email" name="email" type="text" placeholder="E-mail" required>   
