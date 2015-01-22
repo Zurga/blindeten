@@ -14,6 +14,7 @@
 			    	<option value="1">Admin</option>
 			    	<option value="2">User</option>
 			    	</select>
+					<br>
 					<input type="submit" id="submit" value="Opslaan">
 			</form>
 				
