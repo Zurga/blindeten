@@ -15,7 +15,7 @@ if($request == '/admin/change_permission'){
 
 if($request == '/admin/delete_account'){
 	$email = $_POST['email'];
-	$user->delete_account($email));
+	$user->delete_account($email);
 	header("Location: ". $index . '/admin/');
 }
 
