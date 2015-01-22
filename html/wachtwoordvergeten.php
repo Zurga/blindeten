@@ -4,7 +4,7 @@
 		<h1>Wachtwoord vergeten</h1>
 		<br>
 		<br>
-		<form>	
+		<form action= "forgot_password" method= "post">	
 		<fieldset id="inputs">
 			<li><p>E-mail:&nbsp;&nbsp;</p><input id="email" name="input['email']" type="text" placeholder="E-mail" required></li>
 			<br>
