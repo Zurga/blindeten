@@ -1,16 +1,5 @@
 <?php include 'header.php';?>
 
-<<<<<<< HEAD
-<script>
-	var data = <?php echo json_encode($user);?>
-	for(key in data){ 
-		data[key];
-		document.getElementById(key).value = data[key];
-	}
-</script>
-=======
->>>>>>> 5ad09a1fc27a2fd2cdd3fba39c324db04cf796a7
-
 <div class="content">
 	<div class="maincontent">
 		<h1>Gegevens veranderen</h1>
@@ -21,7 +10,7 @@
 			<li><p>Naam:</p><br><br>
 			<input id="name" name="input[name]" type="text" placeholder="<?php echo $user->name; ?>"></p></li>
 			<br>
-			<select name="input[sex]">
+			<select id= "sex" name="input[sex]">
 			<option value="0" >Man</option>
 			<option value="1" >Vrouw</option>
 			</select>
@@ -82,33 +71,16 @@
 </div>
 
 <script>
-	var data_name = <?php echo json_encode($user);?>;
-	for(var key in data_name){ 
-		document.getElementById(key).value = data_name[key];
-	}
+	var data = <?php echo json_encode($user);?>;
+		document.getElementById("name").value = data["name"];
 
-	//var data_sex = ????
+		document.getElementById("sex").value = data["sex"];
+	
+		document.getElementById("day").value = data["day"];
 
-	var data_day = <?php echo json_encode($user);?>;
-	for (var key in data_day){
-		document.getElementById(key).value = data_day[key];
-	}
+		document.getElementById("month").value = data["month"];
 
-	var data_month = <?php echo json_encode($user);?>;
-	for (var key in data_month){
-		document.getElementById(key).value = data_month[key];
-	}
-
-	var data_year = <?php echo json_encode($user);?>;
-	for (var key in data_year){
-		document.getElementById(key).value = data_year[key];
-	}
-
-	var data_city = <?php echo json_encode($user);?>;
-	for (var key in data_city){
-		document.getElementById(key).value = data_city[key];
-	}
-
+		document.getElementById("city").value = data["city"];
 </script>
 
 <?php include 'footer.php';?>

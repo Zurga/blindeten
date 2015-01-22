@@ -3,6 +3,7 @@
 //echo '<br>';
 $root = $_SERVER['DOCUMENT_ROOT'];
 include_once $root . '/model/Auth.php';
+include $root . '/controller/mail.php';
 
 //show the user information
 if($request == '/account/show.php'){
@@ -87,8 +88,15 @@ if($request == '/account/delete_account'){
 	$user->delete_account($user->id);
 	header("Location: ". $index);
 }
+//Change password
+if($request == '/account/change_password.php') {
+	include $root . '/html/change_password.php';
+}
+//Save new password
+
 
 //User forgot password
 if($request == '/account/forgot_password'){
-	
+	send_mail($user,5);
+}
 ?>

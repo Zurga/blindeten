@@ -15,7 +15,7 @@
 			
 			<fieldset id="actions">
 				<br>
-				<a href="wachtwoordvergeten.php">Wachtwoord vergeten?</a> 
+				<a href="forgot_password.php">Wachtwoord vergeten?</a> 
 				<br>
 				<a href="registreer.php">Registreren</a>
 				<br>
