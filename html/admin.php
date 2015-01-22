@@ -15,6 +15,7 @@
 			    	<option value="2">User</option>
 			    	</select>
 					<br>
+					<br>
 					<input type="submit" id="submit" value="Opslaan">
 			</form>
 				
