@@ -5,7 +5,7 @@
 	//include $root . '/html/calendar.php';
 
 if($request == '/ajax/booking'){
-	$restaurant = new Restaurant($_GET['input']);
+	$restaurant = new Restaurant($_POST['input']);
 	if (!isset($_GET['date'])){
 		$bookings = $model->get_bookings($restaurant);
 	}

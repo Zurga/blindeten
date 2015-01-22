@@ -43,12 +43,12 @@ function get_http_object(){
 		return null;
         }
 }
+
 function get_output(which, input){
 	http_object = get_http_object();
 	if (http_object != null){
-		http_object.open('GET', "ajax/"+ which + "?input=" + input,
-				true);
-		http_object.send(null);
+		http_object.open('POST', "ajax/"+ which, true);
+		http_object.send({'input': input});
 		http_object.onreadystatechange = set_output(input);
 	}
 }
