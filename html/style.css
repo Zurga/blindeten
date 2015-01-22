@@ -123,7 +123,13 @@ a img {
 	height:8%;
 	position: absolute; top: 15px; left: 3%;
 }
-  
+
+html { 
+  background: url('gracht.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
 body {
 	background-image: url("gracht.jpg");
 	background-repeat: no-repeat;
