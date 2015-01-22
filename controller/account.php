@@ -34,7 +34,7 @@ if($request == '/account/save_data'){
 }
 //User request register.php
 if($request == '/account/register.php') {
-	$title = "Registeren"
+	$title = "Registeren";
 	include $root . '/html/register.php';
 }
 
