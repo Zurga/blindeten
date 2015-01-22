@@ -158,7 +158,8 @@ class Model{
 	public function forgot_password($email) {
 		$query = "SELECT id FROM user WHERE email=". $email;
 		var_dump($email);
-		$user_id = get_rows($this->db->query($query)); 
+		$user_id = get_rows(var_dump($this->db->query($query))); 
+		
 		var_dump($user_id);
 		$user = new User($user_id);
 		//5 = forgot password mail
