@@ -9,6 +9,7 @@ if($request == '/admin/change_permission'){
 	$permission = $_POST["permission"];
 	$email = $_POST['email'];
 	$user->change_perm($permission, $email);
+	include $root."/html/admin.php";
 }
 
 if($request == 'admin/delete_account'){
