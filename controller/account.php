@@ -4,7 +4,7 @@
 $root = $_SERVER['DOCUMENT_ROOT'];
 include_once $root . '/model/Auth.php';
 include $root . '/controller/mail.php';
-include_once $root .'/model/dbFunctions.php';
+include_once $root . '/model/dbFunctions.php';
 
 
 //show the user information
@@ -106,7 +106,7 @@ if($request == '/account/forgot_password.php') {
 
 if($request == '/account/forgot_password'){
 	send_mail($user,5);
-	$new_passw = $dbFunctions->encrypt($user,$new_passw);
+	$new_passw = encrypt($user,$new_passw);
 	$query = "UPDATE user SET password= ".$new_passw." WHERE id= ".$user->id;
 }
 ?>
