@@ -162,14 +162,14 @@ class Model{
 			$user = new User($row['id']);
 			//5 = forgot password mail
 			send_mail($user, 5);
-			change_password($user_id);
+			$this->change_password($user_id);
 			return true;
 		}
 		return false;
 	}
 	
 	public function change_password($user_id) {
-		$query = "UPDATE user SET password = ".$new_passw." WHERE id= ".$user_id;
+		$query = "UPDATE user SET password = '".$new_passw."' WHERE id= ".$user_id;
 		$this->db->query($query);
 	}
 }
