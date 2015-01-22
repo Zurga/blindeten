@@ -6,7 +6,7 @@
 		<br>
 		<form action= "forgot_password" method= "post">	
 		<fieldset id="inputs">
-			<li><p>E-mail:&nbsp;&nbsp;</p><input id="email" name="input[email]" type="text" placeholder="E-mail" required></li>
+			<li><p>E-mail:&nbsp;&nbsp;</p><input id="email" name="email" type="text" placeholder="E-mail" required></li>
 			<br>
 			<br>
 			<li><input type="submit" id="submit" value="Verstuur e-mail"></li>
