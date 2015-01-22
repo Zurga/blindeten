@@ -21,11 +21,11 @@ echo '
 <div id="menu">
     <ul>
         <li><a href="/text/info.php" title="Wat is BlinDeten?">Wat is BlinDeten?</a></li>  
-        <li><a href="/account/show.php" title="Mijn Account">Mijn Account</a></li>'
-        if ($user->permission == 1){
-            echo '<li><a href="/admin/admin.php" title="Admin pagina">Admin</a></li>'
+        <li><a href="/account/show.php" title="Mijn Account">Mijn Account</a></li>';
+        if ($user->permission == "Admin"){
+            echo '<li><a href="/admin/admin.php" title="Admin pagina">Admin</a></li>';
         }
-        '<li><a href="/account/mijnreserveringen.php" title="Mijn Account">Mijn Reserveringen</a></li>
+        echo '<li><a href="/account/mijnreserveringen.php" title="Mijn Account">Mijn Reserveringen</a></li>
 		<li><a href="/account/logout" title="Uitloggen">Uitloggen</a></li>
 	</ul>
 <br>
