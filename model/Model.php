@@ -155,11 +155,13 @@ class Model{
 		}
 	}
 	
-	public function select_id($email) {
+	public function forgot_password($email) {
 		$query = "SELECT id FROM user WHERE email=". $email;
 		$user_id = $db->query($query);
 	
-		return $user_i;
+		$user = new User($user_id);
+		//5 = forgot password mail
+		send_mail($user,5);
 	}
 }
 ?>	
