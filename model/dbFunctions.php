@@ -1,7 +1,6 @@
 <?php
 //return all rows or one
-$root = $_SERVER['DOCUMENT_ROOT'];
-include $root . '/model/User.php';
+
 
 function get_rows($result){
 	
