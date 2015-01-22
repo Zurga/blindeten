@@ -1,12 +1,5 @@
 <?php
-//var_dump($_POST);
-//echo '<br>';
-$root = $_SERVER['DOCUMENT_ROOT'];
-include_once $root . '/model/Auth.php';
 include $root . '/controller/mail.php';
-include_once $root . '/model/dbFunctions.php';
-include_once $root . '/model/Model.php';
-
 
 //show the user information
 if($request == '/account/show.php'){
