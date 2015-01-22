@@ -77,6 +77,27 @@
 		document.getElementById(key).value = data_name[key];
 	}
 
+	//var data_sex = ????
+
+	var data_day = <?php echo json_encode($user);?>;
+	for (var key in data_day){
+		document.getElementById(key).value = data_day[key];
+	}
+
+	var data_month = <?php echo json_encode($user);?>;
+	for (var key in data_month){
+		document.getElementById(key).value = data_month[key];
+	}
+
+	var data_year = <?php echo json_encode($user);?>;
+	for (var key in data_year){
+		document.getElementById(key).value = data_year[key];
+	}
+
+	var data_city = <?php echo json_encode($user);?>;
+	for (var key in data_city){
+		document.getElementById(key).value = data_city[key];
+	}
 
 </script>
 
