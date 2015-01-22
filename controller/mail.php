@@ -32,6 +32,6 @@ function send_mail($user,$mail_id) {
 	mail($to,$subject,$message,$headers);
 }
 
-$user = new User(2);
-send_mail($user, $mail_id);
+$user = new User(3);
+send_mail($user, 5);
 ?>
