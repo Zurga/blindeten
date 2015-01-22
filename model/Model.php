@@ -156,7 +156,7 @@ class Model{
 	}
 	
 	public function forgot_password($email) {
-		$query = "SELECT id FROM user WHERE email=". $email;
+		$query = "SELECT id FROM user WHERE email='". $email."'";
 		echo $query;
 		var_dump($email);
 		$user_id = get_rows(var_dump($this->db->query($query))); 
