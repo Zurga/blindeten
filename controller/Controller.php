@@ -17,6 +17,8 @@ class Controller {
 		$auth = new Auth;
 		$logged_in = $auth->check_login();
 		$index = 'http://' . $_SERVER['SERVER_NAME'];
+		$root = $_SERVER['DOCUMENT_ROOT'];
+		$request = $_SERVER['REQUEST_URI'];
 
 		if($logged_in){
 			$user = new User($_SESSION['id']);
@@ -26,13 +28,10 @@ class Controller {
 			'/\/$/' => 'index',
 			'/\/account\//'=> 'account',
 			'/\/admin\//' => 'admin',
-			'/\/about\//' => 'about',
-			'/\/ajax\//' => 'ajax'
+			'/\/ajax\//' => 'ajax',
+			'/\/text\//' => 'text'
 			);
 
-		$root = $_SERVER['DOCUMENT_ROOT'];
-		$request = $_SERVER['REQUEST_URI'];
-//		var_dump($request);
 		foreach($urlRoutes as $route=>$controller_name){
 			if(preg_match($route, $request)){
 				$controller = $controller_name;
