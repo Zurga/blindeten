@@ -6,6 +6,17 @@ include_once $root . "/model/dbFunctions.php";
 
 ini_set('display_errors',1);
 
+//http://bit.ly/1zD8sG9
+function new_string($length) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $char_len = strlen($characters);
+    $random_string = '';
+    for ($i = 0; $i < $length; $i++) {
+        $random_string = $characters[rand(0, $char_len - 1)];
+    }
+    return $random_string;
+}
+
 function send_mail($user,$mail_id) {
 	global $db;
 	$query = "SELECT * FROM mail WHERE id=". $mail_id;
