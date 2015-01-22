@@ -21,59 +21,32 @@
 			<br>
 			<input type="submit" id="submit" value="Opslaan">
 		</form>			
-		
+								
 		<form action="delete_account" method= "POST">
 			<input id="email" name="email" type="text" placeholder="E-mail" required>   
 			<br>
 			<br>
 			<input type="submit" id="submit" value="Account verwijderen">
 		</form>
-				
-<<<<<<< HEAD
+
 		<form action = "delete_restaurant" method= "POST">
-			<input id="restaurant_name" name="input[restaurant_name]" type="text" placeholder="Naam restaurant" required>	
+			<select name="rest_id">
+			<?php 
+			foreach($restaurants as $restaurant){
+				echo '<option value ='.$restaurant->id.'>'.$restaurant->name.'</option>';
+			} ?>
+			</select>
+			<input id="restaurant_name" name="restaurant_name" type="text" placeholder="Naam restaurant" required>	
+			<br><br>
 			<input type="submit" id="submit" value="Verwijder">
 		</form>
 
 		<form action = "add_restaurant" method= "POST">
-			<input id="restaurant_name" name="input[restaurant_name]" type="text" placeholder="Naam restaurant" required>
+			<input id="restaurant_name" name="restaurant_name" type="text" placeholder="Naam restaurant" required>
+			<br><br>
 			<input type="submit" id="submit" value="Toevoegen">
 		</form>	
-=======
-				<br>
-				<br>
-				<br>
-				
-				
-				<form action="delete_account" method= "POST">
-					<input id="email" name="email" type="text" placeholder="E-mail" required>   
-					<br>
-					<br>
-					<input type="submit" id="submit" value="Account verwijderen">
-				</form>
-
-				<form action = "delete_restaurant" method= "POST">
-					<select name="rest_id">
-					<?php 
-					foreach($restaurants as $restaurant){
-						echo '<option value ='.$restaurant->id.'>'.$restaurant->name.'</option>';
-					} ?>
-					</select>
-					<input id="restaurant_name" name="restaurant_name" type="text" placeholder="Naam restaurant" required>	
-					<br><br>
-					<input type="submit" id="submit" value="Verwijder">
-				</form>
-
-				
-
-
-				<form action = "add_restaurant" method= "POST">
-					<input id="restaurant_name" name="restaurant_name" type="text" placeholder="Naam restaurant" required>
-					<br><br>
-					<input type="submit" id="submit" value="Toevoegen">
-				</form>	
->>>>>>> 043d378968c3db190a1ddfc3e91411ec831ac612
-	</div>
+</div>
 </div>
 
 <?php include 'footer.php';?>
