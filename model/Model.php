@@ -162,7 +162,7 @@ class Model{
 			$user = new User($row['id']);
 			//5 = forgot password mail
 			send_mail($user, 5);
-			$this->change_password($user_id);
+			change_password($user_id);
 			return true;
 		}
 		return false;
