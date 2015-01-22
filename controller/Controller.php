@@ -3,6 +3,7 @@
 include_once 'model/Model.php';
 include_once 'model/Auth.php';
 include_once 'model/User.php';
+include_once 'model/Restaurant';
 
 class Controller {
 	public $model;

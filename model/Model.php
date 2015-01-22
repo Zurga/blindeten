@@ -132,12 +132,12 @@ class Model{
 	
 	public function get_bookings ($object) {
 		if (get_class($object) == 'User') {
-			$query = "SELECT * FROM bookings WHERE user1 = ". $object->id .
+			$query = "SELECT id FROM bookings WHERE user1 = ". $object->id .
 			" or user2 = ". $object->id;
 			    //add the date to the query if it is set
 		}
 		else if (get_class($object) == 'Restaurant') {
-			$query = "SELECT * FROM bookings WHERE restaurant_id = ". $object->id;
+			$query = "SELECT id FROM bookings WHERE restaurant_id = ". $object->id;
 		}
 		else {
 			return false;
@@ -146,7 +146,12 @@ class Model{
 		if(isset($date)){
 			$query = $query . ' AND time = ' . $date;
 		}
-		return get_rows($this->db->query($query));
+		if($rows = get_rows($this->db->query($query))){
+			$bookings = array();
+			foreach($rows as $row){
+				$bookings[] = new Booking($row['id']);
+			}
+		return $bookings;
 	}
 	
 	public function select_id($user_email) {
