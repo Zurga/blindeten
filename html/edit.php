@@ -5,7 +5,6 @@
 	for(key in data){ 
 		data[key];
 		document.getElementById(key).value = data[key];
-
 	}
 </script>
 
