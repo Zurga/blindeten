@@ -74,28 +74,21 @@
 	var data_name = <?php echo json_encode($user);?>;
 		document.getElementById("name").value = data_name[name];
 
-	//var data_sex = ????
+	var data_sex = <?php echo json_encode($user);?>;
+		document.getElementById("sex").value = data_sex[sex];
 
 	var data_day = <?php echo json_encode($user);?>;
-	for (var key in data_day){
-		document.getElementById(key).value = data_day[key];
-	}
+		document.getElementById("day").value = data_day[day];
+
 
 	var data_month = <?php echo json_encode($user);?>;
-	for (var key in data_month){
-		document.getElementById(key).value = data_month[key];
-	}
+		document.getElementById("month").value = data_month[month];
 
 	var data_year = <?php echo json_encode($user);?>;
-	for (var key in data_year){
-		document.getElementById(key).value = data_year[key];
-	}
+		document.getElementById("year").value = data_year[year];
 
 	var data_city = <?php echo json_encode($user);?>;
-	for (var key in data_city){
-		document.getElementById(key).value = data_city[key];
-	}
-
+		document.getElementById("city").value = data_city[city];
 </script>
 
 <?php include 'footer.php';?>
