@@ -109,8 +109,7 @@ if($request == '/account/forgot_password.php') {
 
 if($request == '/account/forgot_password'){
 	$email = $_POST['email'];
-	$query = "SELECT id FROM user WHERE email=". $email;
-	$user = new User($db->query($query));
+	$user = new User(select_id($user_email));
 	send_mail($user,5);
 	$new_passw = encrypt($user,$new_passw);
 	$newpquery = "UPDATE user SET password= ".$new_passw." WHERE id= ".$user->id;

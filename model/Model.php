@@ -148,4 +148,13 @@ class Model{
 		}
 		return get_rows($this->db->query($query));
 	}
+	
+	public function select_id($user_email) {
+		$query = "SELECT id FROM user WHERE email=". $user_email;
+		$user = new User($db->query($query));
+	
+		return $user;
+	}
 }
+?>	
+	
