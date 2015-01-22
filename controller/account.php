@@ -115,4 +115,5 @@ if($request == '/account/forgot_password'){
 	$model->forgot_password($email);
 	header("Location: ". $index);
 }
+
 ?>
