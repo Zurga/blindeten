@@ -72,7 +72,7 @@
 
 <script>
 	var data_name = <?php echo json_encode($user);?>;
-		document.getElementById("name").value = data_name[key];
+		document.getElementById("name").value = data_name[name];
 
 	//var data_sex = ????
 
