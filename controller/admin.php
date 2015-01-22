@@ -13,7 +13,7 @@ if($request == '/admin/change_permission'){
 
 }
 
-if($request == 'admin/delete_account'){
+if($request == '/admin/delete_account'){
 	var_dump($_POST);
 
 	$email = $_POST['email'];
@@ -22,12 +22,12 @@ if($request == 'admin/delete_account'){
 	header("Location: ". $index . '/admin/');
 }
 
-if($request == 'admin/delete_restaurant'){
+if($request == '/admin/delete_restaurant'){
 	$user->delete_restaurant();
 	header("Location: ". $index . '/admin/');
 }
 
-if($request == 'admin/add_restaurant'){
+if($request == '/admin/add_restaurant'){
 	$user->add_restaurant();
 	header("Location: ". $index . '/admin/');
 }
