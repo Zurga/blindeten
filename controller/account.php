@@ -20,8 +20,14 @@ if($request == '/account/show.php'){
 
 //the user wants to edit the iformation
 if($request == '/account/edit.php'){
-	$title = "Account wijzigen";
-	include $root . '/html/edit.php';
+	if ($logged_in == true) {
+		$title = "Account wijzigen";
+		include $root . '/html/edit.php';
+	}
+	else {
+		header("Location: ". $index . "/account/login.php");
+	}
+		
 }
 
 //Save user data
