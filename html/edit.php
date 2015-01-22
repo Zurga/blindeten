@@ -84,7 +84,7 @@
 
 		document.getElementById("month").value = month;
 
-		document.getElementById("month").value = year;
+		document.getElementById("year").value = year;
 
 		document.getElementById("city").value = data["city"];
 </script>
