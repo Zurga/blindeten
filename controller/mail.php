@@ -17,13 +17,11 @@ function new_string($length) {
     return $random_string;
 }
 
-$new_passw = new_string(8)
+$new_passw = new_string(8);
 
 function send_mail($user,$mail_id) {
-	global $db;
-	
-	$new_passw = new_string(8)
-	
+	global $db;	
+	$new_passw = new_string(8);	
 	$query = "SELECT * FROM mail WHERE id=". $mail_id;
 		
 	$mail_info = get_rows($db->query($query));
