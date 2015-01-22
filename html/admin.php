@@ -18,6 +18,7 @@
 			    	</select>
 					<br>
 					<br>
+					<br>
 					<input type="submit" id="submit" value="Opslaan">
 			</form>
 				
@@ -26,7 +27,6 @@
 				<br>
 				
 				
-
 				<form action="delete_account" method= "POST">
 					<input id="email" name="email" type="text" placeholder="E-mail" required>   
 					<br>
