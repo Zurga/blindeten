@@ -28,18 +28,6 @@
 			<br>
 			<input type="submit" id="submit" value="Account verwijderen">
 		</form>
-				
-<<<<<<< HEAD
-		<form action = "delete_restaurant" method= "POST">
-			<input id="restaurant_name" name="input[restaurant_name]" type="text" placeholder="Naam restaurant" required>	
-			<input type="submit" id="submit" value="Verwijder">
-		</form>
-
-		<form action = "add_restaurant" method= "POST">
-			<input id="restaurant_name" name="input[restaurant_name]" type="text" placeholder="Naam restaurant" required>
-			<input type="submit" id="submit" value="Toevoegen">
-		</form>	
-=======
 				<br>
 				<br>
 				<br>
@@ -72,7 +60,6 @@
 					<br><br>
 					<input type="submit" id="submit" value="Toevoegen">
 				</form>	
->>>>>>> 043d378968c3db190a1ddfc3e91411ec831ac612
 	</div>
 </div>
 
