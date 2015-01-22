@@ -1,4 +1,5 @@
 <?php
+$root = $_SERVER['DOCUMENT_ROOT'];
 include $root . '/controller/mail.php';
 
 //show the user information
