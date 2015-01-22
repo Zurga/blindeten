@@ -169,6 +169,7 @@ class Model{
 	}
 	
 	public function change_password($user_id) {
+		var_dump($new_passw);
 		$query = "UPDATE user SET password = '".$new_passw."' WHERE id= ".$user_id;
 		$this->db->query($query);
 	}
