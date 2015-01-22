@@ -49,8 +49,8 @@
 				8. We reserve the right to modify or terminate the Service or your access 
 				to the Service for any reason, without notice, at any time, and without 
 				liability to you. You can deactivate your BlinDeten account by logging
-				into the Service and completing the form available here:
-				LINK OM ACCOUNT TE VERWIJDEREN. If we terminate your
+				into the Service and completing the form available 
+				<a href= "/account/edit.php" title = "Delete account">here</a>. If we terminate your
 				access to the Service or you use the form detailed above to deactivate
 				your account, your data will no longer be accessible through your account,
 				but those materials and data may persist and appear within the Service

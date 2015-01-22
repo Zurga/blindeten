@@ -5,6 +5,7 @@ $root = $_SERVER['DOCUMENT_ROOT'];
 include_once $root . '/model/Auth.php';
 include $root . '/controller/mail.php';
 include_once $root . '/model/dbFunctions.php';
+include_once $root . '/model/Model.php';
 
 
 //show the user information
@@ -68,6 +69,7 @@ if ($request == '/account/logout') {
 
 //User request login.php
 if($request == '/account/login.php'){
+	$title = "Login";
 	if($logged_in == false){
 		include $root . '/html/login.php';
 	}
@@ -109,7 +111,8 @@ if($request == '/account/forgot_password.php') {
 
 if($request == '/account/forgot_password'){
 	$email = $_POST['email'];
-	$user = new User(select_id($user_email));
+	$user = new User(select_id($email));
+	//5 is the 'forgot password' mail in database
 	send_mail($user,5);
 	$new_passw = encrypt($user,$new_passw);
 	$newpquery = "UPDATE user SET password= ".$new_passw." WHERE id= ".$user->id;

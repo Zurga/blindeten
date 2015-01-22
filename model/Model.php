@@ -155,11 +155,11 @@ class Model{
 		}
 	}
 	
-	public function select_id($user_email) {
-		$query = "SELECT id FROM user WHERE email=". $user_email;
-		$user = new User($db->query($query));
+	public function select_id($email) {
+		$query = "SELECT id FROM user WHERE email=". $email;
+		$user_id = $db->query($query);
 	
-		return $user;
+		return $user_i;
 	}
 }
 ?>	
