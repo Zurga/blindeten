@@ -45,8 +45,7 @@ function sanitize ($attr) {
 function encrypt($user,$passw) {
 	$salt1 = "12M6&#%lN*msp";
 	$salt2 = "@#k45hHdsl$2*";
-	
-	$salted = $this->salt1 . $user->email . $passw . $this->salt2;
+	$salted = $salt1 . $user->email . $passw . $salt2;
 	$password = hash('sha256', $salted);
 	
 	return $password;
