@@ -1,5 +1,8 @@
 <?php
 //return all rows or one
+$root = $_SERVER['DOCUMENT_ROOT'];
+include $root . '/model/User.php';
+
 function get_rows($result){
 	
 	if ($result->num_rows == 1){
@@ -38,5 +41,15 @@ function sanitize ($attr) {
 	}
 	
 	return $sanitized;
+}
+
+function encrypt($user,$passw) {
+	$salt1 = "12M6&#%lN*msp";
+	$salt2 = "@#k45hHdsl$2*";
+	
+	$salted = $this->salt1 . $user->email . $passw . $this->salt2;
+	$password = hash('sha256', $salted);
+	
+	return $password;
 }
 ?>
