@@ -4,6 +4,7 @@
 $root = $_SERVER['DOCUMENT_ROOT'];
 include_once $root . '/model/Auth.php';
 include $root . '/controller/mail.php';
+include $root .'/model/dbFunctions.php';
 
 
 //show the user information
