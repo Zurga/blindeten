@@ -13,6 +13,7 @@
 				<select>
 			    <option value="Owner">Owner</option>
 			    <option value="Admin">Admin</option>
+			    <option value="User">User</option>
 			    </select>
 				<br>
 				<br>
