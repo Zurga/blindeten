@@ -87,6 +87,10 @@ if($request == '/account/delete_account'){
 	$user->delete_account($user->id);
 	header("Location: ". $index);
 }
+//Change password
+if($request == '/account/change_password.php') {
+	include $root . '/html/change_password.php';
+}
 
 //User forgot password
 if($request == '/account/forgot_password'){
