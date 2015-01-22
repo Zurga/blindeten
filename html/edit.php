@@ -72,10 +72,12 @@
 </div>
 
 <script>
-	var data_naam = <?php echo json_encode($user);?>;
-	for(var key in data_naam){ 
-		document.getElementById(key).value = data_naam[key];
+	var data_name = <?php echo json_encode($user);?>;
+	for(var key in data_name){ 
+		document.getElementById(key).value = data_name[key];
 	}
+
+
 </script>
 
 <?php include 'footer.php';?>
