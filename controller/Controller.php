@@ -21,6 +21,7 @@ class Controller {
 		$root = $_SERVER['DOCUMENT_ROOT'];
 		$request = $_SERVER['REQUEST_URI'];
 
+		//get user info if logged in
 		if($logged_in){
 			$user = new User($_SESSION['id']);
 		}
