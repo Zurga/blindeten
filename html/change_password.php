@@ -5,7 +5,7 @@
 		<h1>Wachtwoord veranderen</h1>
 		<br>
 		<br>
-		<form>	
+		<form action="save_new_password" method="post">	
 		<fieldset id="inputs">
 			<li><p>Huidig wachtwoord:&nbsp;&nbsp;</p><input id="current_password" name="input['password']" type="password" placeholder="Huidig wachtwoord" required></li>
 			<br>

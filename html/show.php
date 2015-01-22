@@ -13,7 +13,7 @@
 		<p><a href="/account/edit.php" title="Gegevens wijzigen">Gegevens wijzigen</a>
 		<br>		
 		<br>
-		<a href="change_password.php" title="Wachtwoord veranderen">Wachtwoord veranderen</a>
+		<a href="/account/change_password.php" title="Wachtwoord veranderen">Wachtwoord veranderen</a>
 		</p>		
 	</div>
 </div>

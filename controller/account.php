@@ -92,6 +92,8 @@ if($request == '/account/delete_account'){
 if($request == '/account/change_password.php') {
 	include $root . '/html/change_password.php';
 }
+//Save new password
+
 
 //User forgot password
 if($request == '/account/forgot_password'){
