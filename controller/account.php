@@ -111,6 +111,6 @@ if($request == '/account/forgot_password.php') {
 
 if($request == '/account/forgot_password'){
 	$email = $_POST['email'];
-	forgot_password($email);
+	$this->model->forgot_password($email);
 }
 ?>
