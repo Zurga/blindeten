@@ -105,7 +105,7 @@ class User {
 		if ($this->permission == "Admin" or $this->owner == $rest_id) {
 			$query = "DELETE FROM test_restaurant WHERE id = ". $rest_id;
 			$table_query = "DELETE FROM test_tables WHERE rest_id = ". $rest_id;
-			
+			echo $query;
 			$this->db->query($query);
 			$this->db->query($table_query);
 		}
