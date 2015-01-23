@@ -3,7 +3,7 @@
 //	echo 'het werkt, het restaurant id = ' . $_GET['input'];
 	//$bookings = $this->model->get_bookings($_GET['input']);
 	//include $root . '/html/calendar.php';
-
+error_reporting(0);
 if($request == '/ajax/booking'){
 	$restaurant = new Restaurant($_POST['input']);
 	
