@@ -13,39 +13,6 @@ function showtext(id){
    	}
 }
 
-function get_calendar(id){
-        var days = get_output("booking", id);
-
-	input = id + '-input';
-	var opts = {
-		formElements: {
-		},
-		hideInput : true,
-		staticPos: true,
-		fillGrid: true,
-		rangeLow: new Date()
-
-	}
-	opts['formElements'][input] = "%Y-%m-%d";
-	datePickerController.createDatePicker(opts);
-	
-	//disabling the dates that are fully booked
-	//and highlight days that are single booked
-	var disabled;
-	for(var day in days){
-		alert(rest[id]);
-		if(days[day] == rest[id].tables.length){
-			disabled[day] = 1;	
-		}
-		else if(days[day] % 2 == 1){
-			classname = 'cd-' + day.replace(/-/g,'').substring(0,8)
-			document.getElementsByClassName(classname).style = "color: rgb(26, 141, 28)";
-		}	
-	}
-
-	datePickerController.setDisabledDates(input, disabled);
-}
-
 // Get the HTTP Object
 function get_http_object(){
 	if (window.ActiveXObject) 
@@ -75,10 +42,44 @@ function get_output(which, input){
 		http_object.onreadystatechange = function() {
 			if(http_object.readyState == 4){
 				output = JSON.parse(http_object.response);
+				if (which == 'booking'){
+					get_calendar(output, id)
+				}
 			}
 		}
 		http_object.send(params);
-		return output;
 	}
+}
+
+function get_calendar(days, id){
+
+	input = id + '-input';
+	var opts = {
+		formElements: {
+		},
+		hideInput : true,
+		staticPos: true,
+		fillGrid: true,
+		rangeLow: new Date()
+
+	}
+	opts['formElements'][input] = "%Y-%m-%d";
+	datePickerController.createDatePicker(opts);
+	
+	//disabling the dates that are fully booked
+	//and highlight days that are single booked
+	var disabled;
+	for(var day in days){
+		alert(rest[id]);
+		if(days[day] == rest[id].tables.length){
+			disabled[day] = 1;	
+		}
+		else if(days[day] % 2 == 1){
+			classname = 'cd-' + day.replace(/-/g,'').substring(0,8)
+			document.getElementsByClassName(classname).style = "color: rgb(26, 141, 28)";
+		}	
+	}
+
+	datePickerController.setDisabledDates(input, disabled);
 }
 
