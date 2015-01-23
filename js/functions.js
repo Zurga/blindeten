@@ -30,7 +30,7 @@ function get_calendar(id){
 			input : "%Y-%m-%d",
 			nopopup : true
 		},
-		disabledDates: disabled,
+		disabledDates= disabled,
 	}
 	datePickerController.createDatePicker(opts);
 	datePickerController.setDisabledDates(input, disabledDates);
