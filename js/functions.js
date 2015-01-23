@@ -32,7 +32,6 @@ function get_calendar(id){
 		staticPos: true,
 		fillGrid: true
 	}
-	alert(opts);
 	opts['formElements'][input] = "%Y-%m-%d";
 	datePickerController.createDatePicker(opts);
 	//datePickerController.setDisabledDates(input, disabled);
