@@ -9,6 +9,9 @@
 				<input id="name" name="input[name]" type="text" placeholder="Naam" required>  
 				<br>
 				<br>
+				<input id="surname" name="input[surname]" type="text" placeholder="Achternaam" required>
+				<br>
+				<br>
 				<input id="email" name="input[email]" type="text" placeholder="E-mail" required>   
 				<br>
 				<br>
