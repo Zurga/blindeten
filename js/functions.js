@@ -29,6 +29,8 @@ function get_calendar(id){
 		formElements: {
 		},
 		hideInput : true,
+		staticPos: true,
+		fillGrid: true
 	}
 	alert(opts);
 	opts['formElements'][input] = "%Y-%m-%d";
