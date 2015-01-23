@@ -48,7 +48,7 @@ function get_output(which, input){
 
 		//http://www.openjs.com/articles/ajax_xmlhttp_using_post.php
 		//Send the proper header information along with the request
-		http_object.setRequestHeader("Content-type", "application/json");
+		http_object.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		http_object.setRequestHeader("Content-length", params.length);
 		http_object.setRequestHeader("Connection", "close");
 		
