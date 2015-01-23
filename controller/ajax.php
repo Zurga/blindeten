@@ -14,6 +14,7 @@ if($request == '/ajax/booking'){
 	$days = array();
 	if(!empty($bookings)){
 		foreach($bookings as $booking){
+			var_dump($booking->time);
 			$days[$booking->time] += 1;
 		}
 	}
