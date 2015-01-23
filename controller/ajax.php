@@ -12,9 +12,10 @@ if($request == '/ajax/booking'){
 	}
 	header('Content-Type: application/json');
 	$days = array();
-	foreach($bookings as $booking){
-		$days[$booking->time] += 1;
+	if(!empty($bookings)){
+		foreach($bookings as $booking){
+			$days[$booking->time] += 1;
+		}
 	}
-
 	echo json_encode($days);
 }
