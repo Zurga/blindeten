@@ -30,7 +30,7 @@ function get_calendar(id){
 			nopopup : true
 		}
 	}
-	opts[input] = "%Y-%m-%d";
+	opts['FormElements'][input] = "%Y-%m-%d";
 	datePickerController.createDatePicker(opts);
 	//datePickerController.setDisabledDates(input, disabled);
 }
