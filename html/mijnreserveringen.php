@@ -7,7 +7,7 @@
 		<br>
 		<br>
 		<p>Datum en Tijd: <?php echo $booking->time; ?></p>
-		<p>Met: <?php if (is_null($booking->user2)) {
+		<p>Met: <?php var_dump($booking); if (is_null($booking->user2)) {
 		echo 'Er heeft nog niemand aangeschoven.';
 		} else {if ($booking->user2->sex == 0) {
 		echo 'Man ';
