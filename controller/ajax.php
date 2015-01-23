@@ -12,6 +12,7 @@ if($request == '/ajax/booking'){
 	}
 	header('Content-Type: application/json');
 	$days = array();
+	var_dump($bookings);
 	if(!empty($bookings)){
 		foreach($bookings as $booking){
 			var_dump($booking->time);
