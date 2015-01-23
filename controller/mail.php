@@ -9,9 +9,6 @@ function send_mail($user,$mail_id, $data=NULL) {
 	$query = "SELECT * FROM mail WHERE id=". $mail_id;
 		
 	$mail_info = get_rows($db->query($query));
-	
-	var_dump($mail_info);
-	
 	$to = $user->email;
 	$subject = $mail_info['subject'];
 	$message = $mail_info['message'];
@@ -24,7 +21,7 @@ function send_mail($user,$mail_id, $data=NULL) {
 	$message = str_replace('%user%',$user->name,$message);
 	$message = str_replace('%password%', $data, $message);
 	
-	mail($to,$subject,$message,$headers);
+	var_dump(mail($to,$subject,$message,$headers));
 }
 
 ?>
