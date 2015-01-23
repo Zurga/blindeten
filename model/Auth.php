@@ -2,10 +2,9 @@
 
 include_once 'dblogin.php';
 include_once 'dbFunctions.php';
+include_once 'User.php';
 
 class Auth{
-	private $salt1 = "12M6&#%lN*msp";
-	private $salt2 = "@#k45hHdsl$2*";
 	
 	function __construct(){
 		global $db;
@@ -13,8 +12,7 @@ class Auth{
 	}
 	//log the user the system and then return user info
 	public function login($email_addr, $password){
-		$salted = $this->salt1 . $email_addr . $password . $this->salt2;
-		$epassword = hash('sha256', $salted);
+		$epassword = encrypt($email_addr, $password);
 		
 		$query = "SELECT user.id".
 			" FROM user".
@@ -32,6 +30,7 @@ class Auth{
 		}
 	}
 
+	//Check if logged in
 	public function check_login(){
 		if(isset($_SESSION['logged_in'])){
 			return true;
@@ -41,6 +40,7 @@ class Auth{
 		}
 	}
 	
+	//Logout
 	public function logout() {
 		session_destroy();
 		session_start();
