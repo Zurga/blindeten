@@ -340,7 +340,7 @@ form p {
 }
 
 #footer {
- 	margin-top: 10%;
+ 	margin: 0 auto;
 	padding: 5px;
 	text-align: center;
 }
