@@ -39,13 +39,13 @@ map = new google.maps.Map(document.getElementById('map'),{
 	center: new google.maps.LatLng(52, 4)
 });
 //create rest from the model
-var restaurants = { <?php foreach($restaurants as $restaurant){
+var rest = { <?php foreach($restaurants as $restaurant){
 	echo $restaurant->id . ':'. json_encode($restaurant) . ',';}?>};
 
-for(var rest in restaurants){
-	if(restaurants.hasOwnProperty(rest)){
+for(var i in rest){
+	if(restaurants.hasOWnProperty(rest)){
 		//create lonlat for each restaurant
-		var latlon = new google.maps.LatLng(rest.lat, rest.lon);
+		var latlon = new google.maps.LatLng(rest[i].lat, rest[i].lon);
 		marker = new google.maps.Marker({
 			position: latlon,
 			map: map
@@ -54,17 +54,17 @@ for(var rest in restaurants){
 
 		//todo create icon for the marker
 		//creating the popup for each restaurant
-		google.maps.event.addListener(marker, 'click', (function(marker){
+		google.maps.event.addListener(marker, 'click', (function(marker, i){
 			return function(){
-				infowindow.setContent(rest.name);
+				infowindow.setContent(rest[i].name);
 				infowindow.open(map,marker);
-				restaurant = rest.id;
+				restaurant = rest[i].id;
 				//get_output('calendar', restaurant); 
 				showtext(restaurant);
 
 
 			}
-		})(marker));
+		})(marker, i));
 	}
 }
 map.setCenter(latlon);
