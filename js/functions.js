@@ -17,15 +17,13 @@ function get_calendar(id){
         days = get_output("booking", id);
 	
 	div = document.getElementById(id + '-input');
-	div.classList.add('display-inline dateformat-Y-ds-m-ds-d');
+	div.className += ' display-inline dateformat-Y-ds-m-ds-d';
 
 	for(var day in days){
 		if(days[day] > 1){
-			div.classList.add('disable-' + day) 
+			div.className += ' disable-' + day;
 		}
 	}
-
- 
 }
 
 // Get the HTTP Object
