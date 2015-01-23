@@ -21,6 +21,7 @@
 			echo $restaurant->zipcode." ";
 			echo $restaurant->city."<br>"; 
 			echo '<a target="_blank" href="'.$restaurant->url.'">Website</a>';
+			echo '<input id="' . $restaurant->id . '-input" name="date"  style="visibility:hidden"></input>';
 			echo '</div>';
 			echo "</li>";
 		}  ?> 
