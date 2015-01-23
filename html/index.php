@@ -43,7 +43,7 @@ var restaurants = { <?php foreach($restaurants as $restaurant){
 	echo $restaurant->id . ':'. rest_encode($restaurant) . ',';}?>};
 
 for(var rest in restaurants){
-	if(restaurants.hasOWnProperty(restaurant)){
+	if(restaurants.hasOWnProperty(rest)){
 		//create lonlat for each restaurant
 		var latlon = new google.maps.LatLng(rest[i].lat, rest[i].lon);
 		marker = new google.maps.Marker({
