@@ -8,6 +8,7 @@ class Booking{
 	public $user1;
 	public $user2;
 	public $time;
+	private $db;
 	
 	public function __construct($id){
 		global $db;
