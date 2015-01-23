@@ -31,6 +31,7 @@ function get_calendar(id){
 			input: "%Y-%m-%d"
 		}
 	}
+	alert(opts);
 	datePickerController.createDatePicker(opts);
 	//datePickerController.setDisabledDates(input, disabled);
 }
