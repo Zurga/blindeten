@@ -1,0 +1,529 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    
+    
+    <title>datePicker/datepicker.min.css at master · freqdec/datePicker · GitHub</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-144.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144.png">
+    <meta property="fb:app_id" content="1401488693436528">
+
+      <meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="freqdec/datePicker" name="twitter:title" /><meta content="datePicker - An attempt at writing a flexible, framework free, feature-rich and accessible datepicker" name="twitter:description" /><meta content="https://avatars2.githubusercontent.com/u/11193?v=3&amp;s=400" name="twitter:image:src" />
+<meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="https://avatars2.githubusercontent.com/u/11193?v=3&amp;s=400" property="og:image" /><meta content="freqdec/datePicker" property="og:title" /><meta content="https://github.com/freqdec/datePicker" property="og:url" /><meta content="datePicker - An attempt at writing a flexible, framework free, feature-rich and accessible datepicker" property="og:description" />
+
+      <meta name="browser-stats-url" content="/_stats">
+    <link rel="assets" href="https://assets-cdn.github.com/">
+    <link rel="conduit-xhr" href="https://ghconduit.com:25035">
+    
+    <meta name="pjax-timeout" content="1000">
+    
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="selected-link" value="repo_source" data-pjax-transient>
+      <meta name="google-analytics" content="UA-3769691-2">
+
+    <meta content="collector.githubapp.com" name="octolytics-host" /><meta content="collector-cdn.github.com" name="octolytics-script-host" /><meta content="github" name="octolytics-app-id" /><meta content="52AD88FA:1D6F:64253A8:54C2AEE5" name="octolytics-dimension-request_id" />
+    
+    <meta content="Rails, view, blob#show" name="analytics-event" />
+
+    
+    
+    <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+
+
+    <meta content="authenticity_token" name="csrf-param" />
+<meta content="C+LWkLR5zmxDKbdzAdmRF3zATc1NsrLroglc68BJBgXLNJ7dPHhWx8bknxM5wJiXhGOsHiJCoqOaFD5WQbZ0gw==" name="csrf-token" />
+
+    <link href="https://assets-cdn.github.com/assets/github-3b24b9ac37e087c9b13ad8d84820250a93a4fd610eb6e7535e8b12d0cb87836d.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="https://assets-cdn.github.com/assets/github2-0adb277c3e0f5609666d7512f78f267969a5308b562c1ff52296b9f0502ae547.css" media="all" rel="stylesheet" type="text/css" />
+    
+    
+
+
+    <meta http-equiv="x-pjax-version" content="596976bda9133448b226ab995e1baeb1">
+
+      
+  <meta name="description" content="datePicker - An attempt at writing a flexible, framework free, feature-rich and accessible datepicker">
+  <meta name="go-import" content="github.com/freqdec/datePicker git https://github.com/freqdec/datePicker.git">
+
+  <meta content="11193" name="octolytics-dimension-user_id" /><meta content="freqdec" name="octolytics-dimension-user_login" /><meta content="2273619" name="octolytics-dimension-repository_id" /><meta content="freqdec/datePicker" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="2273619" name="octolytics-dimension-repository_network_root_id" /><meta content="freqdec/datePicker" name="octolytics-dimension-repository_network_root_nwo" />
+  <link href="https://github.com/freqdec/datePicker/commits/master.atom" rel="alternate" title="Recent Commits to datePicker:master" type="application/atom+xml">
+
+  </head>
+
+
+  <body class="logged_out  env-production linux vis-public page-blob">
+    <a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+    <div class="wrapper">
+      
+      
+      
+      
+
+
+      
+      <div class="header header-logged-out" role="banner">
+  <div class="container clearfix">
+
+    <a class="header-logo-wordmark" href="https://github.com/" ga-data-click="(Logged out) Header, go to homepage, icon:logo-wordmark">
+      <span class="mega-octicon octicon-logo-github"></span>
+    </a>
+
+    <div class="header-actions" role="navigation">
+        <a class="button primary" href="/join" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Sign up</a>
+      <a class="button" href="/login?return_to=%2Ffreqdec%2FdatePicker%2Fblob%2Fmaster%2Fcss%2Fdatepicker.min.css" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
+    </div>
+
+    <div class="site-search repo-scope js-site-search" role="search">
+      <form accept-charset="UTF-8" action="/freqdec/datePicker/search" class="js-site-search-form" data-global-search-url="/search" data-repo-search-url="/freqdec/datePicker/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+  <input type="text"
+    class="js-site-search-field is-clearable"
+    data-hotkey="s"
+    name="q"
+    placeholder="Search"
+    data-global-scope-placeholder="Search GitHub"
+    data-repo-scope-placeholder="Search"
+    tabindex="1"
+    autocapitalize="off">
+  <div class="scope-badge">This repository</div>
+</form>
+    </div>
+
+      <ul class="header-nav left" role="navigation">
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="/explore" data-ga-click="(Logged out) Header, go to explore, text:explore">Explore</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="/features" data-ga-click="(Logged out) Header, go to features, text:features">Features</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://enterprise.github.com/" data-ga-click="(Logged out) Header, go to enterprise, text:enterprise">Enterprise</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="/blog" data-ga-click="(Logged out) Header, go to blog, text:blog">Blog</a>
+          </li>
+      </ul>
+
+  </div>
+</div>
+
+
+
+      <div id="start-of-content" class="accessibility-aid"></div>
+          <div class="site" itemscope itemtype="http://schema.org/WebPage">
+    <div id="js-flash-container">
+      
+    </div>
+    <div class="pagehead repohead instapaper_ignore readability-menu">
+      <div class="container">
+        
+<ul class="pagehead-actions">
+
+
+  <li>
+      <a href="/login?return_to=%2Ffreqdec%2FdatePicker"
+    class="minibutton with-count star-button tooltipped tooltipped-n"
+    aria-label="You must be signed in to star a repository" rel="nofollow">
+    <span class="octicon octicon-star"></span>
+    Star
+  </a>
+
+    <a class="social-count js-social-count" href="/freqdec/datePicker/stargazers">
+      118
+    </a>
+
+  </li>
+
+    <li>
+      <a href="/login?return_to=%2Ffreqdec%2FdatePicker"
+        class="minibutton with-count js-toggler-target fork-button tooltipped tooltipped-n"
+        aria-label="You must be signed in to fork a repository" rel="nofollow">
+        <span class="octicon octicon-repo-forked"></span>
+        Fork
+      </a>
+      <a href="/freqdec/datePicker/network" class="social-count">
+        38
+      </a>
+    </li>
+</ul>
+
+        <h1 itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public">
+          <span class="mega-octicon octicon-repo"></span>
+          <span class="author"><a href="/freqdec" class="url fn" itemprop="url" rel="author"><span itemprop="title">freqdec</span></a></span><!--
+       --><span class="path-divider">/</span><!--
+       --><strong><a href="/freqdec/datePicker" class="js-current-repository" data-pjax="#js-repo-pjax-container">datePicker</a></strong>
+
+          <span class="page-context-loader">
+            <img alt="" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </span>
+
+        </h1>
+      </div><!-- /.container -->
+    </div><!-- /.repohead -->
+
+    <div class="container">
+      <div class="repository-with-sidebar repo-container new-discussion-timeline  ">
+        <div class="repository-sidebar clearfix">
+            
+<nav class="sunken-menu repo-nav js-repo-nav js-sidenav-container-pjax js-octicon-loaders"
+     role="navigation"
+     data-pjax="#js-repo-pjax-container"
+     data-issue-count-url="/freqdec/datePicker/issues/counts">
+  <ul class="sunken-menu-group">
+    <li class="tooltipped tooltipped-w" aria-label="Code">
+      <a href="/freqdec/datePicker" aria-label="Code" class="selected js-selected-navigation-item sunken-menu-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /freqdec/datePicker">
+        <span class="octicon octicon-code"></span> <span class="full-word">Code</span>
+        <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>    </li>
+
+      <li class="tooltipped tooltipped-w" aria-label="Issues">
+        <a href="/freqdec/datePicker/issues" aria-label="Issues" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /freqdec/datePicker/issues">
+          <span class="octicon octicon-issue-opened"></span> <span class="full-word">Issues</span>
+          <span class="js-issue-replace-counter"></span>
+          <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>      </li>
+
+    <li class="tooltipped tooltipped-w" aria-label="Pull Requests">
+      <a href="/freqdec/datePicker/pulls" aria-label="Pull Requests" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g p" data-selected-links="repo_pulls /freqdec/datePicker/pulls">
+          <span class="octicon octicon-git-pull-request"></span> <span class="full-word">Pull Requests</span>
+          <span class="js-pull-replace-counter"></span>
+          <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>    </li>
+
+
+  </ul>
+  <div class="sunken-menu-separator"></div>
+  <ul class="sunken-menu-group">
+
+    <li class="tooltipped tooltipped-w" aria-label="Pulse">
+      <a href="/freqdec/datePicker/pulse" aria-label="Pulse" class="js-selected-navigation-item sunken-menu-item" data-selected-links="pulse /freqdec/datePicker/pulse">
+        <span class="octicon octicon-pulse"></span> <span class="full-word">Pulse</span>
+        <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>    </li>
+
+    <li class="tooltipped tooltipped-w" aria-label="Graphs">
+      <a href="/freqdec/datePicker/graphs" aria-label="Graphs" class="js-selected-navigation-item sunken-menu-item" data-selected-links="repo_graphs repo_contributors /freqdec/datePicker/graphs">
+        <span class="octicon octicon-graph"></span> <span class="full-word">Graphs</span>
+        <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>    </li>
+  </ul>
+
+
+</nav>
+
+              <div class="only-with-full-nav">
+                
+  
+<div class="clone-url open"
+  data-protocol-type="http"
+  data-url="/users/set_protocol?protocol_selector=http&amp;protocol_type=clone">
+  <h3><span class="text-emphasized">HTTPS</span> clone URL</h3>
+  <div class="input-group js-zeroclipboard-container">
+    <input type="text" class="input-mini input-monospace js-url-field js-zeroclipboard-target"
+           value="https://github.com/freqdec/datePicker.git" readonly="readonly">
+    <span class="input-group-button">
+      <button aria-label="Copy to clipboard" class="js-zeroclipboard minibutton zeroclipboard-button" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+    </span>
+  </div>
+</div>
+
+  
+<div class="clone-url "
+  data-protocol-type="subversion"
+  data-url="/users/set_protocol?protocol_selector=subversion&amp;protocol_type=clone">
+  <h3><span class="text-emphasized">Subversion</span> checkout URL</h3>
+  <div class="input-group js-zeroclipboard-container">
+    <input type="text" class="input-mini input-monospace js-url-field js-zeroclipboard-target"
+           value="https://github.com/freqdec/datePicker" readonly="readonly">
+    <span class="input-group-button">
+      <button aria-label="Copy to clipboard" class="js-zeroclipboard minibutton zeroclipboard-button" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+    </span>
+  </div>
+</div>
+
+
+
+<p class="clone-options">You can clone with
+  <a href="#" class="js-clone-selector" data-protocol="http">HTTPS</a> or <a href="#" class="js-clone-selector" data-protocol="subversion">Subversion</a>.
+  <a href="https://help.github.com/articles/which-remote-url-should-i-use" class="help tooltipped tooltipped-n" aria-label="Get help on which URL is right for you.">
+    <span class="octicon octicon-question"></span>
+  </a>
+</p>
+
+
+
+                <a href="/freqdec/datePicker/archive/master.zip"
+                   class="minibutton sidebar-button"
+                   aria-label="Download the contents of freqdec/datePicker as a zip file"
+                   title="Download the contents of freqdec/datePicker as a zip file"
+                   rel="nofollow">
+                  <span class="octicon octicon-cloud-download"></span>
+                  Download ZIP
+                </a>
+              </div>
+        </div><!-- /.repository-sidebar -->
+
+        <div id="js-repo-pjax-container" class="repository-content context-loader-container" data-pjax-container>
+          
+
+<a href="/freqdec/datePicker/blob/7c8bdf4bc0e098116784094d8ceb7c8cb980a612/css/datepicker.min.css" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
+
+<!-- blob contrib key: blob_contributors:v21:1fd406b17e9412ca32e8e886d95a7c38 -->
+
+<div class="file-navigation js-zeroclipboard-container">
+  
+<div class="select-menu js-menu-container js-select-menu left">
+  <span class="minibutton select-menu-button js-menu-target css-truncate" data-hotkey="w"
+    data-master-branch="master"
+    data-ref="master"
+    title="master"
+    role="button" aria-label="Switch branches or tags" tabindex="0" aria-haspopup="true">
+    <span class="octicon octicon-git-branch"></span>
+    <i>branch:</i>
+    <span class="js-select-button css-truncate-target">master</span>
+  </span>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax aria-hidden="true">
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <span class="select-menu-title">Switch branches/tags</span>
+        <span class="octicon octicon-x js-menu-close" role="button" aria-label="Close"></span>
+      </div> <!-- /.select-menu-header -->
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="branches" class="js-select-menu-tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="tags" class="js-select-menu-tab">Tags</a>
+            </li>
+          </ul>
+        </div><!-- /.select-menu-tabs -->
+      </div><!-- /.select-menu-filters -->
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/freqdec/datePicker/blob/gh-pages/css/datepicker.min.css"
+                 data-name="gh-pages"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="gh-pages">gh-pages</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item selected">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/freqdec/datePicker/blob/master/css/datepicker.min.css"
+                 data-name="master"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="master">master</a>
+            </div> <!-- /.select-menu-item -->
+        </div>
+
+          <div class="select-menu-no-results">Nothing to show</div>
+      </div> <!-- /.select-menu-list -->
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div> <!-- /.select-menu-list -->
+
+    </div> <!-- /.select-menu-modal -->
+  </div> <!-- /.select-menu-modal-holder -->
+</div> <!-- /.select-menu -->
+
+  <div class="button-group right">
+    <a href="/freqdec/datePicker/find/master"
+          class="js-show-file-finder minibutton empty-icon tooltipped tooltipped-s"
+          data-pjax
+          data-hotkey="t"
+          aria-label="Quickly jump between files">
+      <span class="octicon octicon-list-unordered"></span>
+    </a>
+    <button aria-label="Copy file path to clipboard" class="js-zeroclipboard minibutton zeroclipboard-button" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+  </div>
+
+  <div class="breadcrumb js-zeroclipboard-target">
+    <span class='repo-root js-repo-root'><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/freqdec/datePicker" class="" data-branch="master" data-direction="back" data-pjax="true" itemscope="url"><span itemprop="title">datePicker</span></a></span></span><span class="separator">/</span><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/freqdec/datePicker/tree/master/css" class="" data-branch="master" data-direction="back" data-pjax="true" itemscope="url"><span itemprop="title">css</span></a></span><span class="separator">/</span><strong class="final-path">datepicker.min.css</strong>
+  </div>
+</div>
+
+<include-fragment class="commit commit-loader file-history-tease" src="/freqdec/datePicker/contributors/master/css/datepicker.min.css">
+  <div class="file-history-tease-header">
+    Fetching contributors&hellip;
+  </div>
+
+  <div class="participation">
+    <p class="loader-loading"><img alt="" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32-EAF2F5.gif" width="16" /></p>
+    <p class="loader-error">Cannot retrieve contributors at this time</p>
+  </div>
+</include-fragment>
+<div class="file-box">
+  <div class="file">
+    <div class="meta clearfix">
+      <div class="info file-name">
+          <span>6 lines (6 sloc)</span>
+          <span class="meta-divider"></span>
+        <span>16.915 kb</span>
+      </div>
+      <div class="actions">
+        <div class="button-group">
+          <a href="/freqdec/datePicker/raw/master/css/datepicker.min.css" class="minibutton " id="raw-url">Raw</a>
+            <a href="/freqdec/datePicker/blame/master/css/datepicker.min.css" class="minibutton js-update-url-with-hash">Blame</a>
+          <a href="/freqdec/datePicker/commits/master/css/datepicker.min.css" class="minibutton " rel="nofollow">History</a>
+        </div><!-- /.button-group -->
+
+
+            <a class="octicon-button disabled tooltipped tooltipped-w" href="#"
+               aria-label="You must be signed in to make or propose changes"><span class="octicon octicon-pencil"></span></a>
+
+          <a class="octicon-button danger disabled tooltipped tooltipped-w" href="#"
+             aria-label="You must be signed in to make or propose changes">
+          <span class="octicon octicon-trashcan"></span>
+        </a>
+      </div><!-- /.actions -->
+    </div>
+    
+
+  <div class="blob-wrapper data type-css">
+      <table class="highlight tab-size-8 js-file-line-container">
+      <tr>
+        <td id="L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="LC1" class="blob-code js-file-line"><span class="pl-c">/* </span></td>
+      </tr>
+      <tr>
+        <td id="L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="LC2" class="blob-code js-file-line"><span class="pl-c">   Replace &quot;http://www.yourdomain.com/the/path/to/the/images/&quot; with the </span></td>
+      </tr>
+      <tr>
+        <td id="L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="LC3" class="blob-code js-file-line"><span class="pl-c">   absolute path to the folder in which you have uploaded the images on your </span></td>
+      </tr>
+      <tr>
+        <td id="L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="LC4" class="blob-code js-file-line"><span class="pl-c">   server and then delete this comment! </span></td>
+      </tr>
+      <tr>
+        <td id="L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="LC5" class="blob-code js-file-line"><span class="pl-c">*/</span></td>
+      </tr>
+      <tr>
+        <td id="L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="LC6" class="blob-code js-file-line">.fd-hidden-input{display:none}.fd-screen-reader{position:absolute;left:-999em;top:auto;width:1px;height:1px;overflow:hidden;-moz-outline:0 none;outline:0 none}.date-picker{position:absolute;z-index:9999;text-align:center;font:900 .8em/1em &quot;HelveticaNeue-Light&quot;,&quot;Helvetica Neue Light&quot;,&quot;Helvetica Neue&quot;,Helvetica,Verdana,Arial,&quot;Lucida Grande&quot;,sans-serif;background:transparent;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;opacity:1;-webkit-transition:opacity .75s ease-in-out;-moz-transition:opacity .75s ease-in-out;-ms-transition:opacity .75s ease-in-out;-o-transition:opacity .75s ease-in-out;transition:opacity .75s ease-in-out}.date-picker div{border:1px solid rgba(255,255,255,0.8);border-radius:.8em}.date-picker.fd-dp-fade{opacity:0}.static-datepicker{position:relative;top:5px;left:0;margin-bottom:1.5em}.iehack{position:absolute;background:#fff;z-index:9998;padding:0;margin:0;border:0;display:none}.date-picker-control span{display:block;width:18px;height:18px;overflow:hidden;margin:auto 0;resize:none;outline:0}.date-picker-button-active span,.date-picker-control:focus span,.date-picker-control:hover span,.date-picker-control:active span{outline:0;box-shadow:0 0 5px rgba(40,130,170,0.7);border-radius:2px}.date-picker-control:link,.date-picker-control:visited{position:relative;display:-moz-inline-box;border:0 none;padding:0;margin:0 4px;background-color:transparent;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAB+CAYAAAAp+EF2AAAD8ElEQVRo3u2Zu0scXxTHz8zcXR0H8UnEIpXyQ8TGaJNCFAlqEUyTMlUaWTC/IoR0vxQ2vz8hfZJGIki2URARkkbxhSJq4avI7uqK7x2V9XF/93v83WGzmIezKVLcL1zmvubcc+49w352xurr63tZW1s7EI1GPSkloVxfX5Ou55f8sYuLCz+TybwRMNLf3++dn5+jk8vl5eU39Ww2G/TlX6+urrzZ2dkBAU9gZGVlBZ08If+qC9r5Y6WlpeQ4jmf/714oI9orhCuOj49peXmZDg4OCDo6OqKSkhKswm0stL+/T5WVlWTbNvchVLQxhjpsiEgkQm1tbWwANy8uLlJ9fT2Vl5dzGzePjY1RR0cH1zFvfX2dOjs7ybIs2tjYoOHhYbLhHizrmyBcc0tuH25GKLhCqMOGQEgTExMcKzQ1NUX/vntHjoiS1l8lxbwYdHJywl4cHh5y3/b2NteF53kcGjYQK66urtL1wzYSKjQtMfyRuru7eRz7hT1FG8L8oaEhsmEAljFJb/Bt0uMoOiwdGmxwaOPj48FebG1tUTqRIqfYDSaXp1I0MjLCdZXFtLa2xp7BSCKRuDnxWCwmVZxSnYZU8Ut1QjKVSkl1rFJtolSTZTweD9o7OztydHRUai0sLMiWlhYpckPTp5J7YmgLIQhpokPMVRAakml6eppc1+WbsJG+73Pq64TE4wNDqOs80qeIMHGSAqvV1dUFmQsjjY2NQeZCu7u71NzcHGQ5rq2trUH+wYbARKxeVVXFhlCHERQtpAjGtYeYU11dze2ysrKbFFEe+Ol02kNCYlIymeRnDZN1/DjJmZkZbus8gnGMbW5u0unpqW8pF1/W1NQMKPc8TOQHULCjwROPvqKiIq5jQYSv2zCiUuANGRkZGRl9R5ZiyGcK/2KK3NyQDHmmfn3fgiFjiiHdAhjSVQwZA0O6v4EhXcOQIRiSQSudZjrRAt7dmSHn5uaooaGBKioqAg9Qurq6fsiQ4jaG1GHk8uKdGRJuK/Tjk9NaWloKQvseQ3Jo7e3tvCcwNjk5SU1NTQEvoYA8enp6uL63t0fz8/NBaDjlwcFBMgz5awx5phLQLZAhz8CQzxRDxpR7bkiGPFMp8Nb8RhgZGRn9iCHNe0jDkIYhzXtI8x7SvIc0MjIyuhNDPn/x9NP9qsbeomgxhWHI7MU5HWa/xgWMvOj/mwpgSJqZlb0CnhTKkMKJkmHIkN+y3394T8Xql1QrEomG+5b9+MkjevCgmRxbqJVtev3qn59+y76dIS2HjdgolhOOIUEeXwY+M23chGPxzeZb9p/EkBk/w39iCmFI/9QnMOSnezX3eiMiQmEYEkaSiWT8P0zZxbn5chQoAAAAAElFTkSuQmCC);background-repeat:no-repeat;background-position:0 -72px;min-width:18px;line-height:1;cursor:pointer;visibility:visible;text-decoration:none;vertical-align:text-bottom;resize:none}.oldie .date-picker-control:link,.oldie .date-picker-control:visited{*background-image:url(http://www.yourdomain.com/the/path/to/the/images/datepicker-sprite.png);_background-image:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=crop,src=&#39;http://www.yourdomain.com/the/path/to/the/images/datepicker-normal.png&#39;)}.date-picker-dateval:link,.date-picker-dateval:visited{background-position:0 -108px}.oldie .date-picker-dateval:link,.oldie .date-picker-dateval:visited{_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=crop,src=&#39;http://www.yourdomain.com/the/path/to/the/images/datepicker-selected.png&#39;)}.date-picker-button-active:link,.date-picker-button-active:visited,.date-picker-control:focus,.date-picker-control:hover,.date-picker-control:active{background-position:0 0}.oldie .date-picker-button-active:link,.oldie .date-picker-button-active:visited,.oldie .date-picker-control:focus,.oldie .date-picker-control:hover,.oldie .date-picker-control:active{_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=crop,src=&#39;http://www.yourdomain.com/the/path/to/the/images/datepicker-focused.png&#39;)}.date-picker-control-disabled:link,.date-picker-control-disabled:visited,.date-picker-control-disabled:hover,.date-picker-control-disabled:active{background-position:0 -36px;cursor:default}.oldie .date-picker-control-disabled:link,.oldie .date-picker-control-disabled:visited,.oldie .date-picker-control-disabled:hover,.oldie .date-picker-control-disabled:active{_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=crop,src=&#39;http://www.yourdomain.com/the/path/to/the/images/datepicker-disabled.png&#39;)}.date-picker-control-disabled:hover span,.date-picker-control-disabled:active span{box-shadow:none!important}.oldie .date-picker-control{_width:18px}.date-picker-control{display:inline-block;outline:none!important}.date-picker th span{display:block;padding:0;margin:0;text-align:center;line-height:1em;border:0 none;background:transparent;font-weight:bold;cursor:pointer}.date-picker .month-display,.date-picker .year-display{display:inline;text-transform:uppercase;letter-spacing:1px;font-weight:normal;font-size:1.2em}.date-picker .prev-but,.date-picker .next-but{font-weight:normal;font-size:2.4em;font-family:georgia,times new roman,palatino,times,bookman,serif;cursor:pointer}.date-picker .prev-but,.date-picker .next-but,.date-picker .today-but{-webkit-transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-ms-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out}.date-picker .prev-but:hover,.date-picker .next-but:hover,.date-picker .today-but:hover{color:#a84444}.date-picker .today-but{text-align:center;margin:0 auto;font-weight:normal;font-size:1em;width:100%;text-decoration:none;padding-top:.3em;text-transform:uppercase;vertical-align:middle;cursor:pointer}.date-picker-disabled .prev-but,.date-picker-disabled .next-but,.date-picker-disabled .today-but,.date-picker-disabled .prev-but:hover,.date-picker-disabled .next-but:hover,.date-picker-disabled .today-but:hover,.date-picker .prev-but.fd-disabled:hover,.date-picker .next-but.fd-disabled:hover,.date-picker .fd-disabled,.date-picker .fd-disabled:hover{color:#aaa;cursor:default!important;opacity:1}.date-picker .prev-but.fd-disabled:hover,.date-picker .next-but.fd-disabled:hover{text-shadow:0 -1px 1px rgba(255,255,255,.8)}.date-picker table,.date-picker td,.date-picker tbody th,.date-picker .day-disabled,.date-picker .date-picker-hover.day-disabled,.date-picker .date-picker-unused,.date-picker .month-out{background-color:#fff;background-image:url(data:image/gif;base64,R0lGODlhJgBbAMQAAAAAAP////7+/v39/fz8/Pv7+/r6+vn5+fj4+Pf39/b29vX19fT09PPz8/Ly8vHx8fDw8O/v7+7u7u3t7ezs7Ovr6+rq6unp6ejo6Ofn5+bm5uXl5f///wAAAAAAAAAAACH5BAEAABwALAAAAAAmAFsAAAX/4CaOZGmeaKqubOu+cCzPWm3feK7vfO//wCAvQywaj8ikcslsOp/QJWZKrVqv2Kx2y+16v9qLeEwum8/otHqttrjf8Lh8Tq/b7/aKfs/v+/+AgYKDhIWGgRSJiouMjY6PkJGSkROVlpeYmZqbnJ2enRKhoqOkpaanqKmqqRGtrq+wsbKztLW2tRC5uru8vb6/wMHCwQ/FxsfIycrLzM3OzQ7R0tPU1dbX0Q3a29zd3t/g4eLj4gzm5+jp6uvs7e7v7gvy8/T19vf4+fr7+gr+/wADChxIsKDBgwYTKFzIsKHDhxAjSpwoEYHFixgzatzIsaPHjx4PiBxJsqTJkyhTi6pcybKly5QGYsqcSbOmzZs4c+rMWaCnz59AgwodSrSo0aIEkipdyrSp06dQo0qdSrUq1AFYs2rdyrWr169gw4odS/argLNo06pdy7at27dw48qd6zaA3bt48+rdy7ev37+AAwseTLiw4cOIEytezLix48eQI0ueTLmy5cuYM2vezLmz58+gQ4tOHAIAOw==);background-repeat:repeat-x;background-position:0 0}.oldie .date-picker table,.oldie .date-picker td,.oldie .date-picker tbody th,.oldie .date-picker .day-disabled,.oldie .date-picker .date-picker-hover.day-disabled,.oldie .date-picker .date-picker-unused,.oldie .date-picker .month-out{*background-image:url(http://www.yourdomain.com/the/path/to/the/images/datepicker-gradient.gif);_background-image:none}.date-picker table{table-layout:auto;empty-cells:show;border-spacing:2px;border-collapse:separate;position:relative;margin:0;padding:0;border:1px solid #ccc;background-position:0 -20px;text-align:center;padding:.3em;width:auto;height:auto;color:#555;font-size:1em;border-radius:.8em;box-shadow:0 0 5px #aaa}.date-picker:before,.date-picker:after{content:&quot;&quot;;position:absolute;z-index:-2;bottom:17px;left:10px;width:50%;height:20%;max-width:300px;max-height:100px;-webkit-box-shadow:0 15px 10px rgba(0,0,0,0.7);-moz-box-shadow:0 15px 10px rgba(0,0,0,0.7);box-shadow:0 15px 10px rgba(0,0,0,0.7);-webkit-transform:rotate(-3deg);-moz-transform:rotate(-3deg);-ms-transform:rotate(-3deg);-o-transform:rotate(-3deg);transform:rotate(-3deg)}.date-picker:after{right:10px;left:auto;-webkit-transform:rotate(3deg);-moz-transform:rotate(3deg);-ms-transform:rotate(3deg);-o-transform:rotate(3deg);transform:rotate(3deg)}.oldie .date-picker:before,.oldie .date-picker:after{display:none}.date-picker td,.date-picker tbody th{padding:0;text-align:center;vertical-align:middle;cursor:pointer;background-position:0 -35px;width:3em;height:3em;overflow:hidden;outline:transparent none 0;border:1px solid #cfcfcf;text-transform:none;font-weight:normal;text-shadow:0 1px #fff;border-radius:3px}.date-picker th{border:0 none;padding:0;font-weight:bold;color:#333;text-align:center;vertical-align:middle;text-transform:none}.date-picker .date-picker-week-header{border:1px solid #dcdcdc;font-style:oblique;background:transparent;cursor:default}.date-picker .date-picker-thead .date-picker-week-header{border:0 none;cursor:help}.date-picker .date-picker-day-header{cursor:help;border:0 none;padding:0 0 .2em 0;text-transform:lowercase;height:auto}.date-picker .date-picker-statusbar{cursor:default;font-weight:normal;text-transform:uppercase;letter-spacing:.1em;border:0 none;background:#fff;height:2.8em}.date-picker .date-picker-unused{border-color:#dcdcdc;cursor:default!important;background-position:0 -25px}.date-picker .date-picker-title{width:auto;height:auto;padding:.4em 0}.date-picker .date-picker-today{background:#fff url(data:image/gif;base64,R0lGODlhKwEoAJEAAKnT6v////X6+gAAACH5BAAAAAAALAAAAAArASgAAALXjI+py+0Po5y02ouz3lz4D4biSJbmiabqyrbuC8fyLAcCgOf0zvf+DwwKhyJbDkdMKpfMpnNo1D2n1Kr1GowCsNyu99uNgsfksnlnPKvX7LbA5o7L51Q4/Y7P8+z6vv9fwgc4SJgnWIiYuHao2OgY9hgpecU4aXkJVIm5yQmj2QkaavIpWmpKapraiaraasnqGusIK1tbSGub64er23vH6xvsBixcfEZsnAyGrNyMxewcPQUtXb1EbZ0thK3d3cPtHV4jTl5Xft4Ejr4eyO6e9R7/LU8/UwAAOw==) no-repeat 0 0}.oldie .date-picker .date-picker-today{*background:#fff url(http://www.yourdomain.com/the/path/to/the/images/datepicker-today.gif) no-repeat 0 0}.date-picker .month-out.date-picker-highlight{color:#b87676}.date-picker .date-picker-highlight{color:#a86666}.date-picker-focus .date-picker-hover{-moz-transform:scale(1.25);-ms-transform:scale(1.25);-o-transform:scale(1.25);transform:scale(1.25)}.date-picker .date-picker-hover,.date-picker .month-out.date-picker-hover{background:#fff url(data:image/jpg;base64,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) no-repeat 0 0;cursor:pointer;border-color:#6482aa!important;border-color:rgba(100,130,170,.7)!important;color:#6482aa;text-shadow:0 1px 1px #fff;box-shadow:0 0 6px rgba(100,130,170,.6);background-size:cover}.oldie .date-picker .date-picker-hover,.oldie .date-picker .month-out.date-picker-hover{*background:#fff url(http://www.yourdomain.com/the/path/to/the/images/datepicker-cursor.jpg) no-repeat 0 0}.date-picker .day-disabled{color:#888;cursor:default;text-decoration:line-through;background-position:0 -15px}.date-picker .month-out{border-color:#ddd;border-color:rgba(220,220,220,0.8);color:#aaa;background-position:0 -25px}.date-picker .date-picker-selected-date{border-color:#888!important;border-color:rgba(7,7,7,.6)!important}.date-picker .out-of-range,.date-picker .not-selectable{color:#ccc;font-style:oblique;background:#fcfcfc;cursor:default}.date-picker th.month-out,.date-picker th.out-of-range{color:#aaa;font-style:oblique;background:#fcfcfc}.date-picker .out-of-range{opacity:.6}.date-picker .not-selectable{opacity:.8}.oldie .date-picker .out-of-range{filter:alpha(opacity=60)}.oldie .date-picker .not-selectable{filter:alpha(opacity=80)}.date-picker tr{display:table-row}.date-picker sup{font-size:.86em;letter-spacing:normal;text-transform:none;height:0;line-height:1;position:relative;top:-0.2em;vertical-align:baseline!important;vertical-align:top}.date-picker .date-picker-day-header,.date-picker .month-display,.date-picker .year-display{text-shadow:0 1px 1px #fff}.date-picker .month-display,.date-picker .year-display{cursor:default}.date-picker td:focus,.date-picker .date-picker-hover{overflow:hidden;-moz-outline:0 none;outline:0 none;-o-highlight:0 none}.date-picker-focus .date-picker-hover,.date-picker-control:focus span{-webkit-animation:fd-dp-pulse 1.5s infinite alternate;-moz-animation:fd-dp-pulse 1.5s infinite alternate;-ms-animation:fd-dp-pulse 1.5s infinite alternate;-o-animation:fd-dp-pulse 1.5s infinite alternate}.date-picker .date-picker-selected-date{color:#333;color:rgba(3,3,3,.8);font-weight:bold;font-size:1.2em;width:2.4em;height:2.4em}.static-datepicker table{box-shadow:0 0 0 transparent}.static-datepicker:before,.static-datepicker:after{display:none}.date-picker-focus table{border-color:#999;border-color:rgba(153,153,153,.8);box-shadow:0 0 5px #aaa}.date-picker .drag-enabled,.date-picker .drag-enabled span{cursor:move}.date-picker-disabled table{opacity:.8!important}.date-picker-disabled table:before,.date-picker-disabled table:after{display:none}.oldie .date-picker-disabled table{filter:alpha(opacity=80)}.date-picker-disabled,.date-picker-disabled td,.date-picker-disabled th,.date-picker-disabled th span{cursor:default!important}.date-picker-disabled .prev-but:hover,.date-picker-disabled .next-but:hover{text-shadow:none}body.fd-drag-active{-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}@-webkit-keyframes fd-dp-pulse{from{box-shadow:0 0 2px rgba(100,130,170,0.8)}to{box-shadow:0 0 6px rgba(10,130,170,0.5)}}@-moz-keyframes fd-dp-pulse{from{box-shadow:0 0 2px rgba(100,130,170,0.8)}to{box-shadow:0 0 6px rgba(10,130,170,0.5)}}@-ms-keyframes fd-dp-pulse{from{box-shadow:0 0 2px rgba(100,130,170,0.8)}to{box-shadow:0 0 6px rgba(10,130,170,0.5)}}@-o-keyframes fd-dp-pulse{from{box-shadow:0 0 2px rgba(100,130,170,0.8)}to{box-shadow:0 0 6px rgba(10,130,170,0.5)}}</td>
+      </tr>
+</table>
+
+  </div>
+
+  </div>
+</div>
+
+<a href="#jump-to-line" rel="facebox[.linejump]" data-hotkey="l" style="display:none">Jump to Line</a>
+<div id="jump-to-line" style="display:none">
+  <form accept-charset="UTF-8" class="js-jump-to-line-form">
+    <input class="linejump-input js-jump-to-line-field" type="text" placeholder="Jump to line&hellip;" autofocus>
+    <button type="submit" class="button">Go</button>
+  </form>
+</div>
+
+        </div>
+
+      </div><!-- /.repo-container -->
+      <div class="modal-backdrop"></div>
+    </div><!-- /.container -->
+  </div><!-- /.site -->
+
+
+    </div><!-- /.wrapper -->
+
+      <div class="container">
+  <div class="site-footer" role="contentinfo">
+    <ul class="site-footer-links right">
+      <li><a href="https://status.github.com/">Status</a></li>
+      <li><a href="https://developer.github.com">API</a></li>
+      <li><a href="http://training.github.com">Training</a></li>
+      <li><a href="http://shop.github.com">Shop</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/about">About</a></li>
+
+    </ul>
+
+    <a href="/" aria-label="Homepage">
+      <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+    </a>
+
+    <ul class="site-footer-links">
+      <li>&copy; 2015 <span title="0.03825s from github-fe130-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+        <li><a href="/site/terms">Terms</a></li>
+        <li><a href="/site/privacy">Privacy</a></li>
+        <li><a href="/security">Security</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+  </div><!-- /.site-footer -->
+</div><!-- /.container -->
+
+
+    <div class="fullscreen-overlay js-fullscreen-overlay" id="fullscreen_overlay">
+  <div class="fullscreen-container js-suggester-container">
+    <div class="textarea-wrap">
+      <textarea name="fullscreen-contents" id="fullscreen-contents" class="fullscreen-contents js-fullscreen-contents" placeholder=""></textarea>
+      <div class="suggester-container">
+        <div class="suggester fullscreen-suggester js-suggester js-navigation-container"></div>
+      </div>
+    </div>
+  </div>
+  <div class="fullscreen-sidebar">
+    <a href="#" class="exit-fullscreen js-exit-fullscreen tooltipped tooltipped-w" aria-label="Exit Zen Mode">
+      <span class="mega-octicon octicon-screen-normal"></span>
+    </a>
+    <a href="#" class="theme-switcher js-theme-switcher tooltipped tooltipped-w"
+      aria-label="Switch themes">
+      <span class="octicon octicon-color-mode"></span>
+    </a>
+  </div>
+</div>
+
+
+
+    <div id="ajax-error-message" class="flash flash-error">
+      <span class="octicon octicon-alert"></span>
+      <a href="#" class="octicon octicon-x flash-close js-ajax-error-dismiss" aria-label="Dismiss error"></a>
+      Something went wrong with that request. Please try again.
+    </div>
+
+
+      <script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/frameworks-af95b05cb14b7a29b0457c26b4a1d24151f4a47842c8e74bd556622f347b9d3d.js" type="text/javascript"></script>
+      <script async="async" crossorigin="anonymous" src="https://assets-cdn.github.com/assets/github-2375cf3a0e93d1c4a609a11f141832798e84933a331a88b5240af5f3aade9e2d.js" type="text/javascript"></script>
+      
+      
+  </body>
+</html>
+
