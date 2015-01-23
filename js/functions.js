@@ -27,9 +27,9 @@ function get_calendar(id){
 
 	var opts = {
 		formElements: {
-			hideInput : true,
 			input: "%Y-%m-%d"
-		}
+		},
+		hideInput : true,
 	}
 	alert(opts);
 	datePickerController.createDatePicker(opts);
