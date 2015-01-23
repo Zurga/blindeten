@@ -287,13 +287,10 @@ form p {
 	margin-bottom: 50px ;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .facet_sidebar {
     display: none;
 	}
-#header {
-    font-family: Verdana;
-}
 
 #header img{
 	display: block;
@@ -340,10 +337,7 @@ form p {
 	text-align: center;
 	font-family: Century Gothic;
 }
-#footer ul li{
-    display: inline;  
-    margin: 0;
-}
+
 #footer ul li a {
 	color: white;
 	font-size: 20px;
