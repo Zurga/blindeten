@@ -13,9 +13,12 @@ function send_mail($user,$mail_id, $data=NULL) {
 	$subject = $mail_info['subject'];
 	$message = $mail_info['message'];
 	$headers = 'From: Jim.lemmers@gmail.com';
+	
+	//personalize message
 	$message = str_replace('\r\n',"\r\n",$message);	
 	$message = str_replace('%user%',$user->name,$message);
 	$message = str_replace('%password%', $data, $message);
+	
 	mail($to,$subject,$message,$headers);
 }
 
