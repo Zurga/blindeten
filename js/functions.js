@@ -45,8 +45,16 @@ function get_http_object(){
 function get_output(which, input){
 	http_object = get_http_object();
 	if (http_object != null){
+		var params = "input=" + input;
 		http_object.open('POST', "ajax/"+ which, true);
-		http_object.send('input=' + input);
+
+		//http://www.openjs.com/articles/ajax_xmlhttp_using_post.php
+		//Send the proper header information along with the request
+		http_object.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		http_object.setRequestHeader("Content-length", params.length);
+		http_object.setRequestHeader("Connection", "close");
+		
+		http_object.send(params);
 		http_object.onreadystatechange = set_output(input);
 	}
 }
