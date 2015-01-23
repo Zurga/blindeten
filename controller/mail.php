@@ -9,10 +9,15 @@ function send_mail($user,$mail_id, $data=NULL) {
 	$query = "SELECT * FROM mail WHERE id=". $mail_id;
 		
 	$mail_info = get_rows($db->query($query));
+	
+	var_dump($mail_info);
+	
 	$to = $user->email;
 	$subject = $mail_info['subject'];
 	$message = $mail_info['message'];
-	$headers = 'From: Jim.lemmers@gmail.com';
+	$headers = 'From: Viagrahetviagra@bedrijf.nl';
+	
+	var_dump($to);
 	
 	//personalize message
 	$message = str_replace('\r\n',"\r\n",$message);	
