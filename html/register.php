@@ -9,6 +9,9 @@
 				<input id="name" name="input[name]" type="text" placeholder="Naam" required>  
 				<br>
 				<br>
+				<input id="surname" name="input[surname]" type="text" placeholder="Achternaam" required>
+				<br>
+				<br>
 				<input id="email" name="input[email]" type="text" placeholder="E-mail" required>   
 				<br>
 				<br>
@@ -34,8 +37,6 @@
 			</fieldset>
 			
 			<fieldset id="actions">
-				<br>
-				<a href="/account/login.php">Inloggen</a>
 				<br>
 				<br>
 				<input type="submit" id="submit" value="Registreer">
