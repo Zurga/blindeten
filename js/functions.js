@@ -14,18 +14,16 @@ function showtext(id){
 }
 
 function get_calendar(id){
-	calendardiv = document.getElementById(id).getElementsByClassName("JsDatePickBox");
-	if(calendardiv.length == 0){
-		calendar = new JsDatePick({
-        	useMode:1,
-        	isStripped:true,
-        	target: id,
-	  	cellColorScheme:"ocean_blue"}); 
-    		calendar.setOnSelectedDelegate(function(){
-        		var obj = calendar.getSelectedDay();
-        		get_output("booking", id);
-    		});
-	} 
+        days = get_output("booking", id);
+	
+	div = document.getElementById(id + '-input');
+	div.className += ' display-inline dateformat-Y-ds-m-ds-d';
+
+	for(var day in days){
+		if(days[day] > 1){
+			div.className += ' disable-' + day;
+		}
+	}
 }
 
 // Get the HTTP Object
@@ -53,12 +51,15 @@ function get_output(which, input){
 		http_object.setRequestHeader("Connection", "close");
 		
 		http_object.send(params);
-		http_object.onreadystatechange = set_output(input);
+		if(http_object.ready_state == 4){
+			output = JSON.parse(http_object.response);
+			return output;
+		}
 	}
 }
 
 function set_output(id){
 	if(http_object.ready_state == 4){
-		document.getElementById(id).innerHtml = http_object.response;
+		calendar 
 	}
 }

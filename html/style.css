@@ -292,9 +292,9 @@ form p {
 #header img{
 	display: block;
 	margin: 0 auto;
-	padding: 0.5%;
-	width:35%;
-	height:18%;
+	padding: 2%;
+	width:95%;
+	height:78%;
 	position: relative;
 	
 }
@@ -339,17 +339,33 @@ form p {
 	margin: 10px 0;
 }
 
+.wrapper {
+	width: 95%; 
+	margin: 0 auto;
+	background-color: transparent; 
+}
+
+.maincontent {
+	margin: 0 auto;
+	margin-top: 90px;
+	width: 80%;
+	height: 200%;
+	background-color: rgba(255,255,255,0.85);
+	padding: 30px;
+}
+
 #footer {
-	margin-top: 20%;
-	padding: 20px;
-	display: inline;
+ 	margin-bottom: 2%;
+	padding: 5px;
+	opacity: 0.7;
+	text-align: center;
 }
 
 #footer ul li a {
 	font-size: 20px;
 	padding: 0 20px;
-	bottom: 0px;
-	}
+	bottom: 0px
+}
 }
 	
 
