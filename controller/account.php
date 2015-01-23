@@ -119,6 +119,7 @@ if($request == '/account/forgot_password'){
 
 if($request == '/account/mijnreserveringen.php') {
 	$bookings = $model->get_bookings($user);
+	
 	include $root . '/html/mijnreserveringen.php';
 }
 ?>
