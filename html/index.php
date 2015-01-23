@@ -40,7 +40,7 @@ map = new google.maps.Map(document.getElementById('map'),{
 });
 //create json from the model
 var json = { <?php foreach($restaurants as $restaurant){
-	echo '"' . $restaurant->id . ':'. json_encode($restaurant) . ',';}?>};
+	echo $restaurant->id . ':'. json_encode($restaurant) . ',';}?>};
 
 for(i=0;i<json.length;i++){
 	//create lonlat for each restaurant
