@@ -41,15 +41,6 @@ if($request == '/account/register.php') {
 
 //User pressed register button
 if($request == '/account/register'){
-/*
-	$attr = array(
-		"name" => $_POST['name'],
-		"email"=> $_POST['email'],
-		"birthdate" => $_POST['birthdate'],
-		"sex" => $_POST['sex'],
-		"password" => $_POST['password'],
-		"city" => $_POST['city']
-		);*/
 	$model = new Model;
 	$attr = $_POST['input'];
 	$bday= $attr['year'].'-'.$attr['month'].'-'.$attr['day'];
