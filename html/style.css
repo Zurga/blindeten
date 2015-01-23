@@ -112,16 +112,14 @@ a img {
 }
 #header {
     font-family: Verdana;
-    color: orange;
-	background-color: white;
 }
 
 #header img{
 	display: block;
-	margin: 0 0 2%;
+	margin: 3%;
 	width:25%;
 	height:8%;
-	position: relative; top: 15px; left: 3%;
+	position: relative; 
 }
   
 body {
