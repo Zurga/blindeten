@@ -14,14 +14,15 @@ function send_mail($user,$mail_id, $data=NULL) {
 	$message = $mail_info['message'];
 	$headers = 'From: Viagrahetviagra@bedrijf.nl';
 	
-	var_dump($to);
+	
 	
 	//personalize message
 	$message = str_replace('\r\n',"\r\n",$message);	
 	$message = str_replace('%user%',$user->name,$message);
 	$message = str_replace('%password%', $data, $message);
 	
-	var_dump(mail($to,$subject,$message,$headers));
+	mail($to,$subject,$message,$headers);
+	var_dump($php_errormsg);
 }
 
 ?>

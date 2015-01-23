@@ -3,10 +3,18 @@
 <head> 
 	<title><?php echo $title; ?> | BlinDeten</title>
 	<link rel="stylesheet" type="text/css" href="/html/style.css"></link>
-    
     <link rel="stylesheet" type="text/css" media="all" href="/html/jsDatePick_ltr.min.css" />
     <script type="text/javascript" src="/js/jsDatePick.min.1.3.js"></script>
-<script type="text/javascript" src="/js/functions.js"></script>
+	<script type="text/javascript" src="/js/functions.js"></script>
+	<script>
+	function validateForm() {
+    var x = document.forms["myForm"]["fname"].value;
+    if (x == null || x == "") {
+        alert("First name must be filled out");
+        return false;
+    }
+}
+	</script>
 
 </head>
 

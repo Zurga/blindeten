@@ -2,11 +2,11 @@
 
 <div class="content">
 	<div class="maincontent">
-		<form action='register' method='post'>
+		<form action='register' onsubmit="return validateForm()" method='post'>
 			
 			<h1>Registreer</h1><br>
 			<fieldset id="inputs" method='post'>
-				<input id="name" name="input[name]" type="text" placeholder="Naam" required>  
+				<input id="name" name="input[name]" type="text" placeholder="Voornaam" required>  
 				<br>
 				<br>
 				<input id="surname" name="input[surname]" type="text" placeholder="Achternaam" required>
