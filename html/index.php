@@ -38,32 +38,34 @@ map = new google.maps.Map(document.getElementById('map'),{
 	zoom: 3,
 	center: new google.maps.LatLng(52, 4)
 });
-//create json from the model
-var json = { <?php foreach($restaurants as $restaurant){
-	echo $restaurant->id . ':'. json_encode($restaurant) . ',';}?>};
+//create rest from the model
+var restaurants = { <?php foreach($restaurants as $restaurant){
+	echo $restaurant->id . ':'. rest_encode($restaurant) . ',';}?>};
 
-for(i=0;i<json.length;i++){
-	//create lonlat for each restaurant
-	var latlon = new google.maps.LatLng(json[i].lat, json[i].lon);
-	marker = new google.maps.Marker({
-		position: latlon,
-		map: map
-		});
-	infowindow = new google.maps.InfoWindow();
+for(var rest in restaurants){
+	if(restaurants.hasOWnProperty(restaurant)){
+		//create lonlat for each restaurant
+		var latlon = new google.maps.LatLng(rest[i].lat, rest[i].lon);
+		marker = new google.maps.Marker({
+			position: latlon,
+			map: map
+			});
+		infowindow = new google.maps.InfoWindow();
 
-	//todo create icon for the marker
-	//creating the popup for each restaurant
-	google.maps.event.addListener(marker, 'click', (function(marker, i){
-		return function(){
-			infowindow.setContent(json[i].name);
-			infowindow.open(map,marker);
-			restaurant = json[i].id;
-			//get_output('calendar', restaurant); 
-			showtext(restaurant);
+		//todo create icon for the marker
+		//creating the popup for each restaurant
+		google.maps.event.addListener(marker, 'click', (function(marker, i){
+			return function(){
+				infowindow.setContent(rest[i].name);
+				infowindow.open(map,marker);
+				restaurant = rest[i].id;
+				//get_output('calendar', restaurant); 
+				showtext(restaurant);
 
 
-		}
-	})(marker, i));
+			}
+		})(marker, i));
+	}
 }
 map.setCenter(latlon);
 map.setZoom(12);
