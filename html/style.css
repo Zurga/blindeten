@@ -291,11 +291,12 @@ form p {
 /*media (max-width: 700px) and (device-aspect-ratio: 40/71) {*/
 #header img{
 	display: block;
-	margin: 1% 1%;
+	margin: 0 auto;
 	padding: 0.5%;
 	width:35%;
 	height:18%;
-	position: center; 
+	position: relative;
+	
 }
 #menu ul {
     list-style-type: none;  
