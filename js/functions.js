@@ -27,11 +27,11 @@ function get_calendar(id){
 
 	var opts = {
 		formElements: {
-			input: "%Y-%m-%d"
 		},
 		hideInput : true,
 	}
 	alert(opts);
+	opts['formElements'][input] = "%Y-%m-%d";
 	datePickerController.createDatePicker(opts);
 	//datePickerController.setDisabledDates(input, disabled);
 }
