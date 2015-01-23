@@ -17,7 +17,9 @@ function get_calendar(id){
         days = get_output("booking", id);
 	
 	div = document.getElementById(id + '-input');
-	div.className += ' display-inline dateformat-Y-ds-m-ds-d';
+	if(!' display-inline dateformat-Y-ds-m-ds-d' in div.className){
+		div.className += ' display-inline dateformat-Y-ds-m-ds-d';
+	}
 
 	for(var day in days){
 		if(days[day] > 1){
