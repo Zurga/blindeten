@@ -2,7 +2,7 @@
 
 <div class="content">
 	<div class="maincontent">
-		<form action='register' method='post'>
+		<form action='register' onsubmit="return validateForm()" method='post'>
 			
 			<h1>Registreer</h1><br>
 			<fieldset id="inputs" method='post'>
