@@ -1,7 +1,6 @@
 <?php
 //get db connection
 include_once 'dblogin.php';
-//include_once 'Map.php';
 include_once 'User.php';
 include_once 'Restaurant.php';
 include_once 'Booking.php';
@@ -17,7 +16,7 @@ class Model{
 	//Create new account with specified attributes, return true or with reason.
 	public function add_account($attr){
 		//Password Encryption
-		$password = encrypt($user,$attr['password']);
+		$password = encrypt($attr['email'],$attr['password']);
 
 		//create a date int array to check if the date exists
 		$date = explode('-',$attr['birthdate']);

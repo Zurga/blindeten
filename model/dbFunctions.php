@@ -42,10 +42,10 @@ function sanitize ($attr) {
 }
 
 //Encrypt a password with salt, email address of user, the password and hash()
-function encrypt($user, $passw) {
+function encrypt($email, $passw) {
 	$salt1 = "12M6&#%lN*msp";
 	$salt2 = "@#k45hHdsl$2*";
-	$salted = $salt1 . $user->email . $passw . $salt2;
+	$salted = $salt1 . $email . $passw . $salt2;
 	$password = hash('sha256', $salted);
 	
 	return $password;

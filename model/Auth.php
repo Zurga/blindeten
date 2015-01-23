@@ -2,6 +2,7 @@
 
 include_once 'dblogin.php';
 include_once 'dbFunctions.php';
+include_once 'User.php';
 
 class Auth{
 	
@@ -11,7 +12,7 @@ class Auth{
 	}
 	//log the user the system and then return user info
 	public function login($email_addr, $password){
-		$epassword = encrypt($user, $password);
+		$epassword = encrypt($email_addr, $password);
 		
 		$query = "SELECT user.id".
 			" FROM user".
