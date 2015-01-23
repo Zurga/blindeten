@@ -354,14 +354,9 @@ form p {
 	padding: 30px;
 }
 
-fieldset a {
-	width: 200%;
-	height:150%;
-	}
-
 form h1{
 	padding-top: 20px;
-	font-size: 50px;
+	font-size: 25vw;
 }
 
 h1{
