@@ -146,7 +146,7 @@ class Model{
 		if(isset($date)){
 			$query = $query . ' AND time = ' . $date;
 		}
-	if($rows = get_rows($this->db->query($query))){
+		if($rows = get_rows($this->db->query($query))){
 			$bookings = array();
 			foreach($rows as $row){
 				if(gettype($row) == 'string'){
@@ -156,7 +156,7 @@ class Model{
 					$bookings[] = new Booking($row['id']);
 				}
 			}
-		return $bookings;
+			return $bookings;
 		}
 	}
 	

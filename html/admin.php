@@ -42,9 +42,9 @@
 		</form>
 
 		<form action = "add_restaurant" method= "POST">
-			<input id="restaurant_name" name='input["restaurant_name"]' type="text" placeholder="Naam restaurant" required>
+			<input id="name" name='input["name"]' type="text" placeholder="Naam restaurant" required>
 			<input id="street" name='input["street"]' type="text" placeholder="Straatnaam" required>
-			
+			<input id="number" name='input["number"]' type="number" placeholder="Nummer" required>
 			<input id="lat" name='input["lat"]' type="text" placeholder="Lat" required>
 			<input id="lon" name='input["lon"]' type="text" placeholder="Lon" required>
 			

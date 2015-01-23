@@ -287,26 +287,41 @@ form p {
 	margin-bottom: 50px ;
 }
 
-@media (max-width: 700px) {
-  .facet_sidebar {
-    display: none;
-	}
-
+@media all and (max-device-width: 640px) {
+/*media (max-width: 700px) and (device-aspect-ratio: 40/71) {*/
 #header img{
 	display: block;
-	margin: 1% 1%;
+	margin: 0 auto;
 	padding: 0.5%;
-	width:25%;
-	height:8%;
-	position: relative; 
+	width:35%;
+	height:18%;
+	position: relative;
+	
 }
-
+#menu ul {
+    list-style-type: none;  
+	margin-top: 0;
+	padding: 20px;
+	background-color: black;
+	opacity: 0.65; 
+	font-size: 40px;
+	text-align: center;
+} 
+#menu ul li { 
+    display: inline;  
+    margin: 0;  
+}
+#menu ul li a {  
+    font-family: Century Gothic;  
+    color: white; 
+	text-decoration: none;
+	padding: 0 20px;
+}
 .homemap{
 	margin-left: 2.5%;
 	margin-top: 90px;
 	margin-right: 2.5% ;
 	width: 46%;
-	background-color: rgba(255,255,255,0.85);
 	padding: 30px;
 	float: left;
 }
@@ -314,37 +329,27 @@ form p {
 .sidecontent {
 	margin-top: 90px; 
 	width: 46%;
-	background-color: rgba(255,255,255,0.85);
 	padding: 30px;
 	float: left;
 	font-size: 16px;
-	overflow: auto;
 	height: 635px;
 }
 
 .sidecontent ul li{
-	overflow: hidden;
 	margin: 10px 0;
-
 }
 
 #footer {
-    list-style-type: none;  
-	margin-top: 80%;
+ 	margin-top: 10%;
 	padding: 5px;
-	opacity: 0.9;
-	background-color: black;
 	text-align: center;
-	font-family: Century Gothic;
 }
 
 #footer ul li a {
-	color: white;
 	font-size: 20px;
-	text-decoration: none;
-	padding: 0 20px;
-	bottom: 0px;
-	}
+	padding: 0 auto;
+	bottom: 0px
+}
 }
 	
 
