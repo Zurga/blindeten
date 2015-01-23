@@ -49,15 +49,23 @@ class User {
 	}
 
 	public function add_restaurant($user_id, $attr){
-		$query = "INSERT INTO restaurant (owner, name, lat, lon, url)" .
-			" VALUES (". $attr['user_id'] . "," . $attr['name'] . "," . 
-			$attr['lat'] . "," . $attr['lon'] . "," . $attr['url'] . ")";
+		$query = "INSERT INTO restaurant (owner, name, lat, lon, url, street, zipcode, city)" .
+			" VALUES (". $attr['user_id'] . "," . $attr['name'] . ",". 
+			$attr['lat'] . "," . $attr['lon'] . "," . $attr['url'] . ",".
+			$attr['street'].",".$attr['zipcode'].",".$attr['number']. ",".
+			$attr['city'].")";
+			
+		$this->db->query($query);
+		$rest_id = $this->db->insert_id;
 
-		if($this->db->query($query)){
+		for ($i = 1; $i <= $attr['num_tables']; $i++) {
+			$this->add_table($rest_id);
+		}
+		/*if($this->db->query($query)){
 			$rest_id = $this->db->insert_id;
 			$query = "INSERT INTO tables (rest_id) VALUES (" . $rest_id . ")";
 			$this->db->query($query);
-		}
+		}*/
 	}
 	
 	public function delete_account($email) {
