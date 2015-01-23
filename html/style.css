@@ -93,7 +93,7 @@ a img {
 
 #menu ul {
     list-style-type: none;  
-	margin-top: 90px;
+	margin-top: 0;
 	padding: 5px;
 	background-color: black;
 	opacity: 0.65; 
@@ -118,13 +118,13 @@ a img {
 
 #header img{
 	display: block;
-	margin: 0 auto 10px;
+	margin: 0 0 2%;
 	width:25%;
 	height:8%;
-	position: absolute; top: 15px; left: 3%;
+	position: relative; top: 15px; left: 3%;
 }
   
-body {
+html {
 	background-image: url("gracht.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
