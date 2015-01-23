@@ -11,5 +11,10 @@ if($request == '/ajax/booking'){
 		$bookings = $model->get_bookings($restaurant);
 	}
 	header('Content-Type: application/json');
-	echo json_encode($bookings);
+	$days = array();
+	foreach($bookings as $booking){
+		$days[$booking->time] += 1;
+	}
+
+	echo json_encode($days);
 }
