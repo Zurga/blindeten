@@ -27,7 +27,7 @@ function get_calendar(id){
 
 	var opts = {
 		formElements: {
-			hideInput : true
+			hideInput : true,
 			input: "%Y-%m-%d"
 		}
 	}
