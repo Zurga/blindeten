@@ -290,11 +290,11 @@ form p {
 @media all and (max-device-width: 640px) {
 /*media (max-width: 700px) and (device-aspect-ratio: 40/71) {*/
 #header img{
-	display:block;
+	display: block;
 	margin: 1% 1%;
-	padding: 30%;
+	padding: 0.5%;
 	width:25%;
-	height:80%;
+	height:8%;
 	position: relative; 
 }
 #menu ul {
@@ -316,8 +316,6 @@ form p {
 	text-decoration: none;
 	padding: 0 20px;
 }
-
-
 .homemap{
 	margin-left: 2.5%;
 	margin-top: 90px;
@@ -338,12 +336,10 @@ form p {
 
 .sidecontent ul li{
 	margin: 10px 0;
-
 }
 
-
 #footer {
-	margin-top: 80%;
+	margin-top: 20%;
 	padding: 5px;
 }
 
