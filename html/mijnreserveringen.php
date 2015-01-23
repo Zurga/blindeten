@@ -7,7 +7,7 @@
 		<br>
 		<br>
 		<p>Datum en Tijd: <?php echo $booking->time; ?></p>
-		<p>Met: <?php if (is_null($booking->user2)) {echo 'Er heeft nog niemand aangeschoven.';} else {if ($booking->user2->sex == 0) {echo 'Man';} else {echo 'Vrouw';} echo $booking->user2->age();} ?> </p>
+		<p>Met: <?php if (is_null($booking->user2->sex)) {echo 'Er heeft nog niemand aangeschoven.';} else {if ($booking->user2->sex == 0) {echo 'Man';} else {echo 'Vrouw';} echo $booking->user2->age();} ?> </p>
 		<p>Stad: <?php echo $booking->user1->city; ?></p>
 		<br>
 		<p><a href="editbooking.html" title="Reservering wijzigen">Reservering wijzigen</a></p>	
