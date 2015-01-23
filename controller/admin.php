@@ -1,7 +1,9 @@
 <?php
 
-if($request == '/admin/admin.php'){
+
+if($request == '/admin/admin.php' or $request == '/admin/'){
 	$title = "Admin";
+	$restaurants = $model->get_restaurants();
 	include $root . "/html/admin.php";
 }
 
@@ -20,7 +22,8 @@ if($request == '/admin/delete_account'){
 }
 
 if($request == '/admin/delete_restaurant'){
-	$user->delete_restaurant();
+	$rest_id = $_POST["rest_id"];
+	$user->delete_restaurant($rest_id);
 	header("Location: ". $index . '/admin/');
 }
 
