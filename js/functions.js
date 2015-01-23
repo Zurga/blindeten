@@ -55,13 +55,12 @@ function get_output(which, input){
 		http_object.setRequestHeader("Connection", "close");
 		
 		http_object.onreadystatechange = function() {
-			if(http_object.ready_state == 4){
+			if(http_object.readyState == 4){
 				output = JSON.parse(http_object.response);
 				return output;
 			}
 		}
 		http_object.send(params);
-		return output;
 	}
 }
 
