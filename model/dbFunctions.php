@@ -1,7 +1,5 @@
 <?php
 //return all rows or one
-
-
 function get_rows($result){
 	if($result){
 		if ($result->num_rows == 1){
@@ -28,6 +26,7 @@ function set_var($var, $object){
 	return $object;
 }
 
+//Sanitize input in our forms (no scripts can be put in)
 function sanitize ($attr) {
 	if (is_array($attr)) {
 		$sanitized = array();
@@ -42,6 +41,7 @@ function sanitize ($attr) {
 	return $sanitized;
 }
 
+//Encrypt a password with salt, email address of user, the password and hash()
 function encrypt($user, $passw) {
 	$salt1 = "12M6&#%lN*msp";
 	$salt2 = "@#k45hHdsl$2*";
@@ -51,7 +51,8 @@ function encrypt($user, $passw) {
 	return $password;
 }
 
-//http://bit.ly/1zD8sG9
+//Generate a new random password
+//Source: http://bit.ly/1zD8sG9
 function new_string($length) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $char_len = strlen($characters);

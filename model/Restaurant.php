@@ -32,9 +32,5 @@ class Restaurant{
 			$this->id = $id;
 		}
 	}
-
-	function get_bookings(){
-		$query = "SELECT id FROM bookings WHERE time =";
-	}
 }
 ?>

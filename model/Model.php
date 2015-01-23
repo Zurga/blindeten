@@ -7,8 +7,6 @@ include_once 'Restaurant.php';
 include_once 'Booking.php';
 
 class Model{
-	private $salt1 = "12M6&#%lN*msp";
-	private $salt2 = "@#k45hHdsl$2*";
 	private $db;
 
 	public function __construct(){
@@ -19,8 +17,7 @@ class Model{
 	//Create new account with specified attributes, return true or with reason.
 	public function add_account($attr){
 		//Password Encryption
-		$salted = $this->salt1 . $attr['email'] . $attr['password'] . $this->salt2;
-		$password = hash('sha256', $salted);
+		$password = encrypt($user,$attr['password']);
 
 		//create a date int array to check if the date exists
 		$date = explode('-',$attr['birthdate']);
@@ -40,7 +37,7 @@ class Model{
 				$query = "INSERT INTO user_perm (perm_id, user_id)".
 					"VALUES (2,". $this->db->insert_id .")"; 
 				$this->db->query($query);
-				return true; //$id
+				return true;
 			}
 			else {
 				return false;
@@ -123,6 +120,7 @@ class Model{
 		}
 	}
 	
+	//Get the history (time and restaurant)
 	public function get_history($user) {
 		$query = "SELECT bookings_time, restaurant_id ".
 			"FROM history WHERE user_id = ". $user->id;
@@ -130,6 +128,7 @@ class Model{
 		return get_rows($this->db->query($query));
 	}
 	
+	//Get bookings with id / time 
 	public function get_bookings($object){
 		if (get_class($object) == 'User') {
 			$query = "SELECT id FROM bookings WHERE user1 = ". $object->id .
@@ -160,6 +159,7 @@ class Model{
 		}
 	}
 	
+	//Send email with new random password and update the database
 	public function forgot_password($email) {
 		$query = "SELECT id FROM user WHERE email='". $email."'";
 		
@@ -175,6 +175,7 @@ class Model{
 		return false;
 	}
 	
+	//Change the password
 	public function change_password($user_id, $new_passw) {
 		$query = "UPDATE user SET password = '". $new_passw ."' WHERE id= ".$user_id;
 		var_dump($query);

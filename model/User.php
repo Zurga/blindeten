@@ -39,7 +39,8 @@ class User {
 			return false; 
 		}
 	}
-
+	
+	//Change data of user
 	public function change_attr($attr) {
 		$query = "UPDATE user SET name = '".$attr['name']."', sex = '".$attr['sex']."',".
 			"birthdate = '".$attr['birthdate']."', city = '".$attr['city']."'". 
@@ -48,6 +49,7 @@ class User {
 		return $this->db->query($query);
 	}
 
+	//Add restaurant
 	public function add_restaurant($user_id, $attr){
 		$query = "INSERT INTO restaurant (owner, name, lat, lon, url, street, number, zipcode, city)" .
 			" VALUES (". $user_id . "," . $attr['name'] . ",". 
@@ -61,22 +63,20 @@ class User {
 		for ($i = 1; $i <= $attr['num_tables']; $i++) {
 			$this->add_table($rest_id);
 		}
-		/*if($this->db->query($query)){
-			$rest_id = $this->db->insert_id;
-			$query = "INSERT INTO tables (rest_id) VALUES (" . $rest_id . ")";
-			$this->db->query($query);
-		}*/
 	}
 	
+	//Delete account (selected by email)
 	public function delete_account($email) {
 		if ($this->permission == "Admin" or $this->email == $email) {
 			$query = "DELETE FROM user WHERE email = '". $email . "'";
-			//if ($this->permission == "Owner") {
-				//delete_restaurant();
-			//}
-			//else {
-				//return false;
-			//}
+			
+			//check if owner, if so it deletes the restaurant from the owner
+			if (is_null($this->owner)) {
+				//Nothing
+			}
+			else {
+				$this->delete_restaurant($owner);
+			}
 			return $this->db->query($query);
 		}
 		else {
@@ -87,7 +87,7 @@ class User {
 	//add table {id,rest_id}
 	public function add_table($restaurant){
 		if ($this->permission == "Admin" or $this->owner == $restaurant->id) {
-			$query = "INSERT INTO test_tables (rest_id)".
+			$query = "INSERT INTO tables (rest_id)".
 				"VALUES (" . $restaurant->id . ")";
 			$this->db->query($query);
 			$this->db->insert_id;
@@ -97,6 +97,7 @@ class User {
 		}
 	}
 	
+	//deletes tables by id
 	public function delete_table ($restaurant, $table_id) {
 		if ($this->permission == "Admin" or $this->owner == $restaurant->id) {
 			$query = "DELETE FROM tables WHERE id = ". $table_id;
@@ -108,12 +109,12 @@ class User {
 		}
 	}	
 	
-	//Dit is nu test verwijder 'test_'
+	//Delete restaurant
 	public function delete_restaurant ($rest_id) {
 		if ($this->permission == "Admin" or $this->owner == $rest_id) {
 			$query = "DELETE FROM restaurant WHERE id = ". $rest_id;
 			$table_query = "DELETE FROM tables WHERE rest_id = ". $rest_id;
-			echo $query;
+			
 			$this->db->query($query);
 			$this->db->query($table_query);
 		}
@@ -122,6 +123,7 @@ class User {
 		}
 	}
 	
+	//Edit the permissions
 	public function change_perm ($permission, $email) {
 		if ($this->permission == "Admin") {
 			$user_query = "SELECT id FROM user WHERE email = '". $email ."'";
@@ -135,6 +137,8 @@ class User {
 		}
 	}
 	
+	//Display age, calculated by birthdate
+	//Source: http://bit.ly/1AYzPZS
 	public function age() {
 	date_default_timezone_set('Europe/Amsterdam');
 		$age = date_create($this->birthdate)->diff(date_create('today'))->y;
@@ -142,6 +146,7 @@ class User {
 		return $age;
 	}
 	
+	//Cancel bookings
 	public function cancel_booking($booking_id) {
 		global $db;
 		$booking = new Booking($booking_id);
