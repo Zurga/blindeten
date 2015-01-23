@@ -23,7 +23,7 @@ function get_calendar(id){
 	  	cellColorScheme:"ocean_blue"}); 
     		calendar.setOnSelectedDelegate(function(){
         		var obj = calendar.getSelectedDay();
-        		get_output("calendar", id);
+        		get_output("booking", id);
     
         	alert("a date was just selected and the date is : " + obj.day + "/" + obj.month + "/" + obj.year);
     		});
