@@ -287,18 +287,13 @@ form p {
 	margin-bottom: 50px ;
 }
 
-@media (max-width: 700px) {
-  .facet_sidebar {
-    display: none;
-	
-
+@media (max-width: 700px) and (device-aspect-ratio: 40/71) {
 #header img{
 	margin: 1% 1%;
 	padding: 60%;
 	width:25%;
 	height:80%;
 	position: relative; 
-}
 }
 .homemap{
 	margin-left: 2.5%;
