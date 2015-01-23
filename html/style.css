@@ -340,8 +340,10 @@ form p {
 }
 
 #footer {
-	margin-top: 30%;
+	margin-top: 5%;
 	padding: 5px;
+	margin: 0 auto;
+	display: inline;
 }
 
 #footer ul li a {
