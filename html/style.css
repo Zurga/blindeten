@@ -124,7 +124,7 @@ a img {
 	position: relative; top: 15px; left: 3%;
 }
   
-html {
+body {
 	background-image: url("gracht.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
