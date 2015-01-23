@@ -33,7 +33,7 @@ function get_calendar(id){
 	//and highlight days that are single booked
 	var disabled;
 	for(var day in days){
-		if(days[day] == json[id].tables.length){
+		if(days[day] == rest[id].tables.length){
 			disabled[day] = 1;	
 		}
 		else if(days[day] % 2 == 1){
