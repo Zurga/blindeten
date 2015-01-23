@@ -287,7 +287,7 @@ form p {
 	margin-bottom: 50px ;
 }
 
-@media screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) {
+@media all and (max-device-width: 640px) {
 /*media (max-width: 700px) and (device-aspect-ratio: 40/71) {*/
 #header img{
 	margin: 1% 1%;
