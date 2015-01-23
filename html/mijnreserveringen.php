@@ -7,10 +7,10 @@
 		<br>
 		<br>
 		<p>Datum en Tijd: <?php echo $booking->time; ?></p>
-		<p>Met: <?php if (is_null($booking->user2)) {
+		<p>Met: <?php if (is_null($booking->var_dump(user2))) {
 		echo 'Er heeft nog niemand aangeschoven.';
 		} else {if ($booking->user2->sex == 0) {
-		echo 'Man';
+		echo 'Man ';
 		} else {echo 'Vrouw';} echo $booking->user2->age();
 		} ?> </p>
 		<p>Restaurant: <?php $restaurant = new restaurant($booking->restaurant_id); echo $restaurant->name; ?></p>
