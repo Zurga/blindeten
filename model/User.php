@@ -49,7 +49,7 @@ class User {
 	}
 
 	public function add_restaurant($user_id, $attr){
-		$query = "INSERT INTO restaurant (owner, name, lat, lon, url, street, zipcode, city)" .
+		$query = "INSERT INTO restaurant (owner, name, lat, lon, url, street, number, zipcode, city)" .
 			" VALUES (". $user_id . "," . $attr['name'] . ",". 
 			$attr['lat'] . "," . $attr['lon'] . "," . $attr['url'] . ",".
 			$attr['street'].",".$attr['zipcode'].",".$attr['number']. ",".
