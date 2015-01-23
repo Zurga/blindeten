@@ -22,7 +22,7 @@
 				<br>
 				<br>
 				<input id="day" name="input[day]" type="day" size="2" maxlength="2" max="31" placeholder="Dag" required>
-				<input id="month" name="input[month]" type="text" size="5" maxlength="2" max="12" placeholder="Maand" required>
+				<input id="month" name="input[month]" type="text" size="6" maxlength="2" max="12" placeholder="Maand" required>
 				<input id="year" name="input[year]" type="year" size="4" maxlength="4" max="1997" placeholder="Jaar" required>
 				<br>
 				<br>
