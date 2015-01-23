@@ -17,17 +17,27 @@ function get_calendar(id){
         var days = get_output("booking", id);
 
 	
-	div = document.getElementById(id + '-input');
+	input = id + '-input';
 	if(div.className.indexOf(' display-inline dateformat-Y-ds-m-ds-d') < 0){
 		div.className += ' display-inline dateformat-Y-ds-m-ds-d';
 	}
-
+	var disabled;
 	for(var day in days){
-		console.log(days[day]);
-		if(days[day] > 1){
-			div.className += ' disable-' + day;
+		if(days[day] > json[id].tables.length){
+			disabled[day] = 1;	
 		}
+
 	}
+
+	var opts = {
+		formElements: {
+			input : "%Y-%m-%d",
+			nopopup : true
+		},
+		disabledDates = disabled,
+	}
+	datePickerController.createDatePicker(opts);
+	datePickerController.setDisabledDates(input, disabledDates);
 }
 
 // Get the HTTP Object
