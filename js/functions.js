@@ -43,7 +43,7 @@ function get_output(which, input){
 			if(http_object.readyState == 4){
 				output = JSON.parse(http_object.response);
 				if (which == 'booking'){
-					get_calendar(output, id)
+					get_calendar(output, input)
 				}
 			}
 		}
