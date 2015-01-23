@@ -7,8 +7,10 @@
 if($request == '/ajax/booking'){
 	var_dump($_POST);
 	$restaurant = new Restaurant($_POST['input']);
+	
 	if (!isset($_GET['date'])){
 		$bookings = $model->get_bookings($restaurant);
 	}
 	echo json_encode($bookings);
+	echo 'test';
 }
