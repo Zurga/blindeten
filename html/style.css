@@ -295,7 +295,7 @@ form p {
 	padding: 0.5%;
 	width:35%;
 	height:18%;
-	position: relative; 
+	position: center; 
 }
 #menu ul {
     list-style-type: none;  
