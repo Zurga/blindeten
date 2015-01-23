@@ -339,6 +339,12 @@ form p {
 	margin: 10px 0;
 }
 
+.wrapper {
+	width: 95%; 
+	margin: 0 auto;
+	background-color: transparent; 
+}
+
 #footer {
  	margin: 0;
 	padding: 5px;
