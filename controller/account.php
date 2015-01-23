@@ -117,4 +117,7 @@ if($request == '/account/forgot_password'){
 	header("Location: ". $index);
 }
 
+if($request == '/account/mijnreserveringen.php') {
+	include $root . '/html/mijnreserveringen.php';
+}
 ?>
