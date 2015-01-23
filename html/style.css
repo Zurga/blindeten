@@ -293,8 +293,8 @@ form p {
 	display: block;
 	margin: 1% 1%;
 	padding: 0.5%;
-	width:25%;
-	height:8%;
+	width:35%;
+	height:18%;
 	position: relative; 
 }
 #menu ul {
@@ -339,7 +339,7 @@ form p {
 }
 
 #footer {
-	margin-top: 20%;
+	margin-top: 30%;
 	padding: 5px;
 }
 
