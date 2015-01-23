@@ -11,5 +11,4 @@ if($request == '/ajax/booking'){
 		$bookings = $model->get_bookings($restaurant);
 	}
 	echo json_encode($bookings);
-	echo 'test';
 }

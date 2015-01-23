@@ -25,7 +25,6 @@ function get_calendar(id){
         		var obj = calendar.getSelectedDay();
         		get_output("booking", id);
     
-        	alert("a date was just selected and the date is : " + obj.day + "/" + obj.month + "/" + obj.year);
     		});
 	} 
 }
@@ -61,6 +60,7 @@ function get_output(which, input){
 
 function set_output(id){
 	if(http_object.ready_state == 4){
+		alert(http_object.responseText);
 		document.getElementById(id).innerHtml = http_object.responseText;
 	}
 }	
