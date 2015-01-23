@@ -44,6 +44,8 @@ function get_http_object(){
 
 function get_output(which, input){
 	http_object = get_http_object();
+
+	var output;
 	if (http_object != null){
 		var params = "input=" + input;
 		http_object.open('POST', "ajax/"+ which, true);
@@ -57,10 +59,10 @@ function get_output(which, input){
 		http_object.onreadystatechange = function() {
 			if(http_object.readyState == 4){
 				output = JSON.parse(http_object.response);
-				return output;
 			}
 		}
 		http_object.send(params);
+		return output;
 	}
 }
 
