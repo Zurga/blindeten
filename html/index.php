@@ -40,7 +40,7 @@ map = new google.maps.Map(document.getElementById('map'),{
 });
 //create rest from the model
 var restaurants = { <?php foreach($restaurants as $restaurant){
-	echo $restaurant->id . ':'. rest_encode($restaurant) . ',';}?>};
+	echo $restaurant->id . ':'. json_encode($restaurant) . ',';}?>};
 
 for(var rest in restaurants){
 	if(restaurants.hasOWnProperty(rest)){
