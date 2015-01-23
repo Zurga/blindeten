@@ -146,7 +146,6 @@ class Model{
 		if(isset($date)){
 			$query = $query . ' AND time = ' . $date;
 		}
-		echo $query;
 		if($rows = get_rows($this->db->query($query))){
 			$bookings = array();
 			foreach($rows as $row){
