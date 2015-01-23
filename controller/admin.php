@@ -7,7 +7,7 @@ else{
 
 if($request == '/admin/admin.php' or $request == '/admin/'){
 	$title = "Admin";
-	include $root. '/admin/admin.php';
+	include $root. '/admin/admin.php'; 
 	}
 
 if($request == '/admin/change_permission'){
