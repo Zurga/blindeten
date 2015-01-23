@@ -61,6 +61,7 @@ function get_output(which, input){
 			}
 		}
 		http_object.send(params);
+		return output;
 	}
 }
 
