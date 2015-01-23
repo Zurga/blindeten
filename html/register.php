@@ -35,8 +35,6 @@
 			
 			<fieldset id="actions">
 				<br>
-				<a href="/account/login.php">Inloggen</a>
-				<br>
 				<br>
 				<input type="submit" id="submit" value="Registreer">
 			</fieldset>
