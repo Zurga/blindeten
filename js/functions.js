@@ -17,24 +17,31 @@ function get_calendar(id){
         var days = get_output("booking", id);
 
 	input = id + '-input';
-	var disabled;
-	for(var day in days){
-		if(days[day] > json[id].tables.length){
-			disabled[day] = 1;	
-		}
-
-	}
-
 	var opts = {
 		formElements: {
 		},
 		hideInput : true,
 		staticPos: true,
-		fillGrid: true
+		fillGrid: true,
+		rangeLow: new Date()
+
 	}
 	opts['formElements'][input] = "%Y-%m-%d";
 	datePickerController.createDatePicker(opts);
-	//datePickerController.setDisabledDates(input, disabled);
+	
+	//disabling the dates that are fully booked
+	//and highlight days that are single booked
+	var disabled;
+	for(var day in days){
+		if(days[day] == json[id].tables.length){
+			disabled[day] = 1;	
+		}
+		else if(days[day] % 2 == 1){
+			document.getElementById('cd-'+ day).style. = "color: rgb(26, 141, 28)";
+		}	
+	}
+
+	datePickerController.setDisabledDates(input, disabled);
 }
 
 // Get the HTTP Object
