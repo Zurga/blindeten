@@ -23,9 +23,8 @@ function get_calendar(id){
 	  	cellColorScheme:"ocean_blue"}); 
     		calendar.setOnSelectedDelegate(function(){
         		var obj = calendar.getSelectedDay();
-        		get_output("calendar", id);
+        		get_output("booking", id);
     
-        	alert("a date was just selected and the date is : " + obj.day + "/" + obj.month + "/" + obj.year);
     		});
 	} 
 }
@@ -45,14 +44,23 @@ function get_http_object(){
 function get_output(which, input){
 	http_object = get_http_object();
 	if (http_object != null){
+		var params = "input=" + input;
 		http_object.open('POST', "ajax/"+ which, true);
-		http_object.send({'input': input});
+
+		//http://www.openjs.com/articles/ajax_xmlhttp_using_post.php
+		//Send the proper header information along with the request
+		http_object.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		http_object.setRequestHeader("Content-length", params.length);
+		http_object.setRequestHeader("Connection", "close");
+		
+		http_object.send(params);
 		http_object.onreadystatechange = set_output(input);
 	}
 }
 
 function set_output(id){
 	if(http_object.ready_state == 4){
-		document.getElementById(id).innerHtml = http_object.responseText;
+		alert(http_object.response);
+		document.getElementById(id).innerHtml = http_object.response;
 	}
 }	
