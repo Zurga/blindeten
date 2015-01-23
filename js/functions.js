@@ -54,15 +54,12 @@ function get_output(which, input){
 		http_object.setRequestHeader("Connection", "close");
 		
 		http_object.send(params);
-		if(http_object.ready_state == 4){
-			output = JSON.parse(http_object.response);
-			return output;
+		http_object.onreadystatechange = function() {
+			if(http_object.ready_state == 4){
+				output = JSON.parse(http_object.response);
+				return output;
+			}
 		}
 	}
 }
 
-function set_output(id){
-	if(http_object.ready_state == 4){
-		calendar 
-	}
-}
