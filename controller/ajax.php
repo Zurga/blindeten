@@ -11,6 +11,6 @@ if($request == '/ajax/booking'){
 	if (!isset($_GET['date'])){
 		$bookings = $model->get_bookings($restaurant);
 	}
-	echo json_encode($bookings);
+	//echo json_encode($bookings);
 	echo 'test';
 }
