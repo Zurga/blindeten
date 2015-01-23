@@ -29,11 +29,10 @@ function get_calendar(id){
 		formElements: {
 			input : "%Y-%m-%d",
 			nopopup : true
-		},
-		disabledDates= disabled,
+		}
 	}
 	datePickerController.createDatePicker(opts);
-	datePickerController.setDisabledDates(input, disabledDates);
+	datePickerController.setDisabledDates(input, disabled);
 }
 
 // Get the HTTP Object
