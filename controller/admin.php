@@ -1,11 +1,14 @@
 <?php
+if($logged_in == false){
+	header("Location: ". $index . "/account/login.php");
+}
 
+else{
 
 if($request == '/admin/admin.php' or $request == '/admin/'){
 	$title = "Admin";
-	$restaurants = $model->get_restaurants();
-	include $root . "/html/admin.php";
-}
+	include $root. '/admin/';
+	}
 
 if($request == '/admin/change_permission'){
 	$permission = $_POST["permission"];
@@ -22,15 +25,20 @@ if($request == '/admin/delete_account'){
 }
 
 if($request == '/admin/delete_restaurant'){
-	$rest_id = $_POST["rest_id"];
+	$rest_id = $_POST['rest_id'];
 	$user->delete_restaurant($rest_id);
 	header("Location: ". $index . '/admin/');
 }
 
 if($request == '/admin/add_restaurant'){
-	$user->add_restaurant();
+	$user_id = "3";
+	$attr = $_POST['input'];
+	$user->add_restaurant($user_id, $attr);
 	header("Location: ". $index . '/admin/');
 }
+
+}
+
 
 
 ?>
