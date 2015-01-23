@@ -150,8 +150,12 @@ class Model{
 		if($rows = get_rows($this->db->query($query))){
 			$bookings = array();
 			foreach($rows as $row){
-				var_dump($row);
-				$bookings[] = new Booking($row['id']);
+				if(gettype($row) == 'string'){
+					$bookings[] = new Booking($row);
+				}
+				else{
+					$bookings[] = new Booking($row['id']);
+				}
 			}
 		return $bookings;
 		}
