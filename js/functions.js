@@ -16,11 +16,7 @@ function showtext(id){
 function get_calendar(id){
         var days = get_output("booking", id);
 
-	
 	input = id + '-input';
-	if(div.className.indexOf(' display-inline dateformat-Y-ds-m-ds-d') < 0){
-		div.className += ' display-inline dateformat-Y-ds-m-ds-d';
-	}
 	var disabled;
 	for(var day in days){
 		if(days[day] > json[id].tables.length){
