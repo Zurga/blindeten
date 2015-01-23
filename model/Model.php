@@ -167,7 +167,7 @@ class Model{
 			//5 = forgot password mail
 			$password = new_string(8);
 			send_mail($user, 5, $password);
-			$e_passwd = encrypt($user, $password);
+			$e_passwd = encrypt($user->email, $password);
 			$this->change_password($row['id'], $e_passwd);
 			return true;
 		}
