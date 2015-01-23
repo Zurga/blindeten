@@ -32,7 +32,7 @@ function get_calendar(id){
 	}
 	opts[input] = "%Y-%m-%d";
 	datePickerController.createDatePicker(opts);
-	datePickerController.setDisabledDates(input, disabled);
+	//datePickerController.setDisabledDates(input, disabled);
 }
 
 // Get the HTTP Object
