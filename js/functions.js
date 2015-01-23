@@ -22,6 +22,7 @@ function get_calendar(id){
 	}
 
 	for(var day in days){
+		console.log(days[day]);
 		if(days[day] > 1){
 			div.className += ' disable-' + day;
 		}
