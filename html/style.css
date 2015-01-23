@@ -354,14 +354,18 @@ form p {
 	padding: 30px;
 }
 
+form {
+	font-size: 15vw;
+}
+
 form h1{
 	padding-top: 20px;
-	font-size: 25vw;
+	font-size: 15vw;
 }
 
 h1{
 	padding-top: 20px;
-	font-size: 70px;
+	font-size: 10vw;;
 	text-align: center;
 }
 
