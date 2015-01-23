@@ -45,7 +45,7 @@ var restaurants = { <?php foreach($restaurants as $restaurant){
 for(var rest in restaurants){
 	if(restaurants.hasOWnProperty(rest)){
 		//create lonlat for each restaurant
-		var latlon = new google.maps.LatLng(rest[i].lat, rest[i].lon);
+		var latlon = new google.maps.LatLng(rest.lat, rest.lon);
 		marker = new google.maps.Marker({
 			position: latlon,
 			map: map
@@ -54,17 +54,17 @@ for(var rest in restaurants){
 
 		//todo create icon for the marker
 		//creating the popup for each restaurant
-		google.maps.event.addListener(marker, 'click', (function(marker, i){
+		google.maps.event.addListener(marker, 'click', (function(marker){
 			return function(){
-				infowindow.setContent(rest[i].name);
+				infowindow.setContent(rest.name);
 				infowindow.open(map,marker);
-				restaurant = rest[i].id;
+				restaurant = rest.id;
 				//get_output('calendar', restaurant); 
 				showtext(restaurant);
 
 
 			}
-		})(marker, i));
+		})(marker));
 	}
 }
 map.setCenter(latlon);
