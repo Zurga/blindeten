@@ -24,7 +24,6 @@ function get_calendar(id){
     		calendar.setOnSelectedDelegate(function(){
         		var obj = calendar.getSelectedDay();
         		get_output("booking", id);
-    
     		});
 	} 
 }
@@ -49,7 +48,7 @@ function get_output(which, input){
 
 		//http://www.openjs.com/articles/ajax_xmlhttp_using_post.php
 		//Send the proper header information along with the request
-		http_object.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		http_object.setRequestHeader("Content-type", "application/json");
 		http_object.setRequestHeader("Content-length", params.length);
 		http_object.setRequestHeader("Connection", "close");
 		
@@ -60,7 +59,6 @@ function get_output(which, input){
 
 function set_output(id){
 	if(http_object.ready_state == 4){
-		alert(http_object.response);
 		document.getElementById(id).innerHtml = http_object.response;
 	}
-}	
+}
