@@ -68,7 +68,7 @@ function get_calendar(days, id){
 	
 	//disabling the dates that are fully booked
 	//and highlight days that are single booked
-	var disabled;
+	var disabled = [];
 	for(var day in days){
 		if(days[day] == rest[id].tables.length){
 			disabled[day] = 1;	
