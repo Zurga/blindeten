@@ -4,6 +4,7 @@ include_once 'User.php';
 
 class Booking{
 	public $id;
+	public $restaurant_id;
 	public $table_id;
 	public $user1;
 	public $user2;
