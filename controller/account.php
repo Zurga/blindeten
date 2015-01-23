@@ -114,7 +114,7 @@ if($request == '/account/forgot_password.php') {
 if($request == '/account/forgot_password'){
 	$email = $_POST['email'];
 	$model->forgot_password($email);
-	header("Location: ". $index);
+	//header("Location: ". $index);
 }
 
 if($request == '/account/mijnreserveringen.php') {
