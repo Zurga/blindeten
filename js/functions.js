@@ -17,7 +17,7 @@ function get_calendar(id){
         days = get_output("booking", id);
 	
 	div = document.getElementById(id + '-input');
-	if(!' display-inline dateformat-Y-ds-m-ds-d' in div.className){
+	if(div.className.indexOf(' display-inline dateformat-Y-ds-m-ds-d') > -1){
 		div.className += ' display-inline dateformat-Y-ds-m-ds-d';
 	}
 
