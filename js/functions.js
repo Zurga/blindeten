@@ -37,7 +37,7 @@ function get_calendar(id){
 			disabled[day] = 1;	
 		}
 		else if(days[day] % 2 == 1){
-			classname = 'cd-' + day.replace('/-/g','')
+			classname = 'cd-' + day.replace(/-/g,'')
 			document.getElementsByClassName('cd-'+ day).style = "color: rgb(26, 141, 28)";
 		}	
 	}
