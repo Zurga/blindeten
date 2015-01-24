@@ -8,6 +8,7 @@ class Booking{
 	public $table_id;
 	public $user1;
 	public $user2;
+	public $date;
 	public $time;
 	private $db;
 	
