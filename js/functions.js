@@ -67,18 +67,18 @@ function get_calendar(days, id){
 	datePickerController.createDatePicker(opts);
 	
 	//disabling the dates that are fully booked
-	//and highlight days that are single booked
 	var disabled = [];
 	for(var day in days){
 		if(days[day] == rest[id].tables.length){
 			disabled[day] = 1;	
 		}
+		//and highlight days that are single booked
 		else if(days[day] % 2 == 1){
 			classname = 'cd-' + day.replace(/-/g,'').substring(0,8)
-			document.getElementsByClassName(classname).style = "color: rgb(26, 141, 28)";
+			calendarday = document.getElementById(id).getElementsByClassName(classname);
+			calendarday.style = "color: rgb(26, 141, 28)";
 		}	
 	}
-
 	datePickerController.setDisabledDates(input, disabled);
 }
 
