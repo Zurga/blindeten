@@ -75,7 +75,7 @@ function get_calendar(days, id){
 		//and highlight days that are single booked
 		else if(days[day] % 2 == 1){
 			classname = 'cd-' + day.replace(/-/g,'').substring(0,8)
-			calendarday = document.getElementById(id).getElementsByClassName(classname);
+			calendarday = document.getElementById(id).getElementsByClassName(classname)[0];
 			calendarday.style = "color: rgb(26, 141, 28)";
 		}	
 	}
