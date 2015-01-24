@@ -23,9 +23,6 @@ class Booking{
 		if($row = get_rows($this->db->query($query))){
 			//assign values to user based on mySQL columns
 			set_var($row, $this);
-			//make new users and store them in $user1 and $user2
-			$this->user1 = new User($this->user1);
-			$this->user2 = new User($this->user2);
 			return $this;
 		}
 		else{

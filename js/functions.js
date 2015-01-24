@@ -1,4 +1,4 @@
-function showtext(id){
+function showtext(id, what){
 	if(document.getElementById(id).style.display == 'none'){
       		document.getElementById(id).style.display = 'block';
       		elements = document.getElementsByClassName("hidden");
@@ -6,6 +6,10 @@ function showtext(id){
     			if (elements[i].id != id) {
     				elements[i].style.display = "none";	
     			}
+		}
+		//check if the function is called on the frontpage
+		if(what == 'calendar'){
+		       get_output(what, id);
 		}
    	}
    	else{
@@ -42,7 +46,7 @@ function get_output(which, input){
 		http_object.onreadystatechange = function() {
 			if(http_object.readyState == 4){
 				output = JSON.parse(http_object.response);
-				if (which == 'booking'){
+				if (which == 'calendar'){
 					get_calendar(output, input)
 				}
 			}
@@ -74,7 +78,7 @@ function get_calendar(days, id){
 		}
 		//and highlight days that are single booked
 		else if(days[day] % 2 == 1){
-			classname = 'cd-' + day.replace(/-/g,'').substring(0,8)
+			classname = 'cd-' + day.replace(/-/g,'');
 			calendarday = document.getElementById(id).getElementsByClassName(classname)[0];
 			calendarday.style = "color: rgb(26, 141, 28); font-weight: bold;";
 		}	

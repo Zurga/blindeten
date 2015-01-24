@@ -135,7 +135,8 @@ class Model{
 			" or user2 = ". $object->id;
 		}
 		else if (get_class($object) == 'Restaurant') {
-			$query = "SELECT id FROM bookings WHERE restaurant_id = ". $object->id;
+			$query = "SELECT id FROM bookings WHERE restaurant_id = ". $object->id .
+				" AND user2 is NULL";
 		}
 		else {
 			return false;
