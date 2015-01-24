@@ -76,7 +76,7 @@ function get_calendar(days, id){
 		else if(days[day] % 2 == 1){
 			classname = 'cd-' + day.replace(/-/g,'').substring(0,8)
 			calendarday = document.getElementById(id).getElementsByClassName(classname)[0];
-			calendarday.style = "color: rgb(26, 141, 28)";
+			calendarday.style = "color: rgb(26, 141, 28); font-weight: bold;";
 		}	
 	}
 	datePickerController.setDisabledDates(input, disabled);
