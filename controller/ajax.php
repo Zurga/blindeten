@@ -15,7 +15,7 @@ if($request == '/ajax/booking'){
 			$user = new User($booking->user1);
 			$booking->user1['age'] = $user->age();
 			$booking->user1['sex'] = ($user->sex == 0 ? 'Man' : 'Vrouw');
-
+		}
 		echo json_encode($bookings);
 	}
 	else{
