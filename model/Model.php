@@ -48,7 +48,7 @@ class Model{
 		}
 	}
 
-	public function book_table($user, $restaurant, $table_id, $time){
+	public function book_table($user, $restaurant, $table_id, $date, $time){
 		//check if the table belongs to the restaurant
 		if (in_array($table_id, $restaurant->tables)) {
 			//check if the booking does exists to determine
@@ -56,6 +56,7 @@ class Model{
 			//to an existing table
 			$query = "SELECT id, user1 FROM bookings" .
 				" WHERE table_id = " . $table_id . 
+				" AND date = '" . $date . "'" .
 				" AND time = '" . $time ."'";
 			
 			//it exists
@@ -72,9 +73,9 @@ class Model{
 			else{
 				//write the booking to the database
 				$bookQ = "INSERT INTO bookings (restaurant_id,".
-					" table_id, user1, time)" .
+					" table_id, user1, date, time)" .
 					" VALUES (". $restaurant->id ."," . $table_id . "," .
-					$user->id . ",'" . $time . "')";
+					$user->id . ",'". $date . "','" . $time . "')";
 			}
 			if($this->db->query($bookQ)){
 				$booking = new Booking($this->db->insert_id);
@@ -128,7 +129,7 @@ class Model{
 	}
 	
 	//Get bookings with id / time 
-	public function get_bookings($object){
+	public function get_bookings($object, $date=NULL){
 		if (get_class($object) == 'User') {
 			$query = "SELECT id FROM bookings WHERE user1 = ". $object->id .
 			" or user2 = ". $object->id;
@@ -142,7 +143,7 @@ class Model{
 		
 		//add the date to the query if it is set
 		if(isset($date)){
-			$query = $query . ' AND time = ' . $date;
+			$query = $query . ' AND date = "' . $date . '"';
 		}
 		if($rows = get_rows($this->db->query($query))){
 			$bookings = array();
