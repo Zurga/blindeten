@@ -35,7 +35,7 @@ if($request == 'ajax/book_table'){
 		$table = $_POST['input']['table_id'];
 		$time = $_POST['input']['time'];
 		if($booking = $model->book_table($user, $restaurant, $table, $time)){
-			$booking->
+			//$booking->
 		}
 	}
 	else {
