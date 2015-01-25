@@ -58,9 +58,9 @@ function get_output(which, input, params){
 	}
 }
 
-function create_calendar(days, rest_id){
+function create_calendar(days, id){
 
-	input = rest_id + '-input';
+	input = id + '-input';
 	var opts = {
 		formElements: {
 		},
@@ -70,7 +70,7 @@ function create_calendar(days, rest_id){
 		rangeLow: new Date(),
 		callbackFunctions:{
 			'datereturned': [function(arg){
-				get_output('booking', rest_id, 'input[id]='+rest_id + 
+				get_output('booking', id, 'input[id]='+id + 
 						'&input[date]=' + 
 						arg.yyyy+'-'+arg.mm+'-'+arg.dd)}]
 			}
@@ -83,7 +83,7 @@ function create_calendar(days, rest_id){
 	//disabling the dates that are fully booked
 	var disabled = [];
 	for(var day in days){
-		if(days[day] == rest[rest_id].tables.length){
+		if(days[day] == rest[id].tables.length){
 			disabled[day] = 1;	
 		}
 		//and highlight days that are single booked
