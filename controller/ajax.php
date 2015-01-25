@@ -4,30 +4,32 @@
 	//$bookings = $this->model->get_bookings($_GET['input']);
 	//include $root . '/html/calendar.php';
 
-if($request == '/ajax/booking'){
+if($request == '/ajax/calendar'){
 	$input = $_POST['input'];
 	$restaurant = new Restaurant($input['id']);
 	
 	header('Content-Type: application/json');
-	if(isset($input['date'])){
-		$bookings = $model->get_bookings($restaurant, $date);
-		foreach($bookings as $booking){
-			$user = new User($booking->user1);
-			$booking->user1['age'] = $user->age();
-			$booking->user1['sex'] = ($user->sex == 0 ? 'Man' : 'Vrouw');
-		}
-		echo json_encode($bookings);
-	}
-	else{
-		$bookings = $model->get_bookings($restaurant);
-		$days = array();
-		if(!empty($bookings)){
-		foreach($bookings as $booking){
-			$days[$booking->date] += 1;
-			}
+	$bookings = $model->get_bookings($restaurant);
+	$days = array();
+	if(!empty($bookings)){
+	foreach($bookings as $booking){
+		$days[$booking->date] += 1;
 		}
 	}
 	echo json_encode($days);
+}
+
+if($request == '/ajax/booking'){
+	header('Content-Type: application/json');
+	$input = $_POST['input'];
+	$restaurant = new Restaurant($input['id']);
+	$bookings = $model->get_bookings($restaurant, $input['date']);
+	foreach($bookings as $booking){
+		$user = new User($booking->user1);
+		$booking->user1['age'] = $user->age();
+		$booking->user1['sex'] = ($user->sex == 0 ? 'Man' : 'Vrouw');
+	}
+	echo json_encode($bookings);
 }
 
 if($request == 'ajax/book_table'){
