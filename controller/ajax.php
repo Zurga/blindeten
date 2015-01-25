@@ -19,6 +19,7 @@ if($request == '/ajax/booking'){
 		echo json_encode($bookings);
 	}
 	else{
+		$bookings = $model->get_bookings($restaurant);
 		$days = array();
 		if(!empty($bookings)){
 		foreach($bookings as $booking){

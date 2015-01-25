@@ -9,7 +9,8 @@ function showtext(id, what){
 		}
 		//check if the function is called on the frontpage
 		if(what == 'calendar'){
-		       get_output(what, id);
+			params = 'input[id]=' + id;
+		        get_output(what, id, params);
 		}
    	}
    	else{
@@ -29,12 +30,11 @@ function get_http_object(){
         }
 }
 
-function get_output(which, input){
+function get_output(which, input, params){
 	http_object = get_http_object();
 
 	var output;
 	if (http_object != null){
-		var params = "input=" + input;
 		http_object.open('POST', "ajax/"+ which, true);
 
 		//http://www.openjs.com/articles/ajax_xmlhttp_using_post.php
@@ -47,7 +47,10 @@ function get_output(which, input){
 			if(http_object.readyState == 4){
 				output = JSON.parse(http_object.response);
 				if (which == 'calendar'){
-					get_calendar(output, input)
+					create_calendar(output, input);
+				}
+				if (which == 'booking'){
+					set_bookings(output, input);
 				}
 			}
 		}
@@ -55,18 +58,22 @@ function get_output(which, input){
 	}
 }
 
-function get_calendar(days, id){
+function create_calendar(days, rest_id){
 
-	input = id + '-input';
+	input = rest_id + '-input';
 	var opts = {
 		formElements: {
 		},
 		hideInput : true,
 		staticPos: true,
 		fillGrid: true,
-		rangeLow: new Date()
-
+		rangeLow: new Date(),
+		callbackFunctions:{
+			'datereturned': [get_output('booking', rest_id, 'input[id]='+rest_id + 
+					'&input[date]='date)]
+		}
 	}
+	
 	opts['formElements'][input] = "%Y-%m-%d";
 	datePickerController.createDatePicker(opts);
 	
@@ -86,3 +93,13 @@ function get_calendar(days, id){
 	datePickerController.setDisabledDates(input, disabled);
 }
 
+function set_bookings(bookings, id){
+	var ul = document.getElementById('bookings-' + id);
+	for(var booking in bookings){
+		html = '<form action="/ajax/booktable" method="POST">' +
+			'<li id="' + booking.id + '">' + booking.age + ' ' + booking.sex +
+			'<input type="field" name="' + booking.table_id + '" class="hidden">'+
+			'<input type="submit" value="Reserveer">Reserveer</input></li>';
+		ul.innerHTML += html;
+	}
+}
