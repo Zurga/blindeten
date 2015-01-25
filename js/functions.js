@@ -9,7 +9,7 @@ function showtext(id, what){
 		}
 		//check if the function is called on the frontpage
 		if(what == 'calendar'){
-			params = 'input[id]=' + id;
+			var params = 'input[id]=' + id;
 		        get_output(what, id, params);
 		}
    	}
