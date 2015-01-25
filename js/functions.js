@@ -70,7 +70,9 @@ function create_calendar(days, rest_id){
 		rangeLow: new Date(),
 		callbackFunctions:{
 			'datereturned': [function(arg){
-				get_output('booking', rest_id, 'input[id]='+rest_id + '&input[date]=' + arg.date)]
+				get_output('booking', rest_id, 'input[id]='+rest_id + 
+						'&input[date]=' + arg.date)]
+			}
 		}
 	}
 	
