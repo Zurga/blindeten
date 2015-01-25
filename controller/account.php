@@ -53,6 +53,8 @@ if($request == '/account/register'){
 	}
 	else{
 		include $root . '/html/register.php';
+		//ECHO KAN WEG
+		echo 'Something went wrong!'
 	}
 }
 if ($request == '/account/logout') {
