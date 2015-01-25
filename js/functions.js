@@ -71,10 +71,10 @@ function create_calendar(days, rest_id){
 		callbackFunctions:{
 			'datereturned': [function(arg){
 				get_output('booking', rest_id, 'input[id]='+rest_id + 
-						'&input[date]=' + arg.date)]
+						'&input[date]=' + arg.date)}]
 			}
 		}
-	}
+	
 	
 	opts['formElements'][input] = "%Y-%m-%d";
 	datePickerController.createDatePicker(opts);
