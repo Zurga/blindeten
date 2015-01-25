@@ -69,8 +69,8 @@ function create_calendar(days, rest_id){
 		fillGrid: true,
 		rangeLow: new Date(),
 		callbackFunctions:{
-			'datereturned': [get_output('booking', rest_id, 'input[id]='+rest_id + 
-					'&input[date]=' + date)]
+			'datereturned': [function(arg){
+				get_output('booking', rest_id, 'input[id]='+rest_id + '&input[date]=' + arg.date)]
 		}
 	}
 	
