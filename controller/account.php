@@ -48,6 +48,8 @@ if($request == '/account/register'){
 	var_dump($attr);
 	if($model->add_account($attr)){
 		header("Location: ". $index);
+		//mail_id 1 is welcome mail
+		send_mail($user,1);
 	}
 	else{
 		include $root . '/html/register.php';
