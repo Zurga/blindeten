@@ -82,7 +82,7 @@ function create_calendar(days, rest_id){
 	//disabling the dates that are fully booked
 	var disabled = [];
 	for(var day in days){
-		if(days[day] == rest[id].tables.length){
+		if(days[day] == rest[rest_id].tables.length){
 			disabled[day] = 1;	
 		}
 		//and highlight days that are single booked
