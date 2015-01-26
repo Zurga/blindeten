@@ -84,11 +84,11 @@ function create_calendar(days, id){
 	//disabling the dates that are fully booked
 	var disabled = [];
 	for(var day in days){
+		css = '<style>';
 		if(days[day] == rest[id].tables.length * 2){
 			disabled[day] = 1;	
 		}
 		//and highlight days that are single booked
-		css = '<style>';
 		else if(days[day] % 2 == 1){
 			classname = 'cd-' + day.replace(/-/g,'');
 			css += '#' + id + ' ' + classname + '{color: rgb(26, 141, 28); font-weight: bold;}';
