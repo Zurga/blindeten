@@ -4,6 +4,11 @@
 	<div class="maincontent">
 		<h1>Mijn reserveringen</h1>
 		<?php foreach($bookings as $booking) { ?>
+		<?php if($booking == empty) {
+			echo 'Er zijn nog geen reserveringen.'
+		}
+			else {
+		?>
 		<br>
 		<br>
 		<p>Datum en Tijd: <?php echo $booking->time; ?></p>
@@ -18,7 +23,8 @@
 		<p><a href="editbooking.html" title="Reservering wijzigen">Reservering wijzigen</a></p>	
 		<br>
 	    <p><input type="submit" id="submit" value="Reservering verwijderen"></p>
-		<?php } ?>
+			
+		<?php }} ?>
 	</div>
 </div>
 
