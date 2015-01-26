@@ -28,22 +28,25 @@ function set_var($var, $object){
 
 //Sanitize input in our forms (no scripts can be put in)
 function sanitize ($attr) {
-	var_dump($attr);
-	if (is_array($attr)) {
-		$sanitized = array();
-		foreach($attr as $key=>$val) {
-			$sanitized[$key] = mysqli_real_escape_string($db,$val);
-			$sanitized[$key] = htmlspecialchars($val);
-			$sanitized[$key] = strip_tags($val);
+	if(!is_null($attr)) {
+		if (is_array($attr)) {
+			$sanitized = array();
+			foreach($attr as $key=>$val) {
+				$sanitized[$key] = mysqli_real_escape_string($db,$val);
+				$sanitized[$key] = htmlspecialchars($val);
+				$sanitized[$key] = strip_tags($val);
+			}
 		}
+		else {
+			$sanitized = mysqli_real_escape_string($db,$attr);
+			$sanitized = htmlspecialchars($sanitized);
+			$sanitized = strip_tags($sanitized);
+		}	
+		return $sanitized;
 	}
 	else {
-		$sanitized = mysqli_real_escape_string($db,$attr);
-		$sanitized = htmlspecialchars($sanitized);
-		$sanitized = strip_tags($sanitized);
+		return false;
 	}
-	var_dump($sanitized);
-	return $sanitized;
 }
 
 //Encrypt a password with salt, email address of user, the password and hash()
