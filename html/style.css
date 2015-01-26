@@ -368,6 +368,12 @@ form p {
 }
 
 /*admin css */
+#admintab {
+clear:both;
+overflow:hidden;
+visibility:hidden;
+}
+
 span:target ~ #tab > div:first-of-type {
 visibility:hidden;
 height:0;
