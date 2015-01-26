@@ -5,7 +5,12 @@
 		<form action='set_login' method='post'>
 			<h1>Log In</h1>
 			<br>
-			
+			<br>
+			<?php if(isset($error)) {
+			echo '<p class="error">' . $error .'</p>';
+			} ?> 
+			<br>
+			<br>
 			<fieldset id="inputs">
 				<input id="email" name="email" type="text" placeholder="E-mail" required>   
 				<br>
@@ -23,9 +28,6 @@
 				<input type="submit" id="submit" value="Log in">
 			</fieldset>
 		</form>
-	<?php if(isset($error)) {
-			echo '<p class="error">' . $error .'</p>';
-		} ?> 
 	</div>
 </div>
 <?php include 'footer.php';?>

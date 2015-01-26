@@ -6,6 +6,11 @@
 		<form id ="register" name= "register" action='register' method='post' onSubmit="return sendMe()">
 
 			<h1>Registreer</h1><br>
+			<br>
+			<br>
+			<?php if(isset($register_error)) {
+			echo '<p class="error">' . $register_error .'</p>';
+			} ?> 
 			<fieldset id="inputs" method='post'>
 				<input id="name" name="input[name]" type="text" placeholder="Voornaam" required>  
 				<br>

@@ -320,7 +320,7 @@ form p {
 	padding: 0 20px;
 }
 
-p.error {
+.error {
 	font-family: Century Gothic;
 	color: #FF0000;
 	text-align: center;
