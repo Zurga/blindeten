@@ -7,7 +7,7 @@
 			echo 'Er zijn nog geen reserveringen.';
 		}
 			else {
-		<?php foreach($bookings as $booking) { ?>
+		foreach($bookings as $booking) { ?>
 		<br>
 		<br>
 		<p>Datum en Tijd: <?php echo $booking->time; ?></p>
