@@ -48,9 +48,9 @@ if($request == '/account/register'){
 	if($model->add_account($attr)){
 		//mail_id 1 is welcome mail
 		send_mail($user,1);
-		var_dump($user);
 		if($auth->login($attr['email'], $attr['password'])){
-				header("Location: ". $index);
+			header("Location: ". $index);
+			var_dump($user);
 		}
 		else{
 			include $root . '/html/register.php';
