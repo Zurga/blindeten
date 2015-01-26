@@ -45,11 +45,12 @@ function get_output(which, input, params){
 		
 		http_object.onreadystatechange = function() {
 			if(http_object.readyState == 4){
-				output = JSON.parse(http_object.response);
 				if (which == 'calendar'){
+					output = JSON.parse(http_object.response);
 					create_calendar(output, input);
 				}
 				if (which == 'booking'){
+					output = http_object.response;
 					set_bookings(output, input);
 				}
 			}
@@ -83,7 +84,7 @@ function create_calendar(days, id){
 	//disabling the dates that are fully booked
 	var disabled = [];
 	for(var day in days){
-		if(days[day] == rest[id].tables.length){
+		if(days[day] == rest[id].tables.length * 2){
 			disabled[day] = 1;	
 		}
 		//and highlight days that are single booked
@@ -98,11 +99,6 @@ function create_calendar(days, id){
 
 function set_bookings(bookings, id){
 	var ul = document.getElementById('bookings-' + id);
-	for(var booking in bookings){
-		html = '<form action="/ajax/booktable" method="POST">' +
-			'<li id="' + booking.id + '">' + booking.age + ' ' + booking.sex +
-			'<input type="field" name="' + booking.table_id + '" class="hidden">'+
-			'<input type="submit" value="Reserveer">Reserveer</input></li>';
-		ul.innerHTML += html;
-	}
+	ul.innerHTML = bookings;
+
 }

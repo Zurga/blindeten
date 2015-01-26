@@ -1,7 +1,6 @@
 <?php
 include_once 'User.php';
 
-
 class Booking{
 	public $id;
 	public $restaurant_id;

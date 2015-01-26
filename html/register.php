@@ -35,24 +35,15 @@
 				</select>
 				<br>
 			</fieldset>
-			<?php include 'freecap.php';?>
-			<?php include 'freecap_wrap.php' ; ?>
 			<fieldset id="actions">
 				<br>
 				<br>
 				<input type="submit" id="submit" value="Registreer">
 			</fieldset>
-<<<<<<< HEAD
-
 				<br>
 				<br>
-				<br>
-
-=======
-				<br>
-				<br>
-				<br>
->>>>>>> 31b5de3b4adaf3fe719787daaaf4a58c8654603f
+			<?php include 'freecap.php';?>
+			<?php include 'freecap_wrap.php' ; ?>
 		</form>
 		</div>
 	</div>

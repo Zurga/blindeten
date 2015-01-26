@@ -1,6 +1,7 @@
 <?php
 $root = $_SERVER['DOCUMENT_ROOT'];
 include $root . '/controller/mail_controller.php';
+include_once $root .'/model/User.php';
 
 //show the user information
 if($request == '/account/show.php'){
@@ -45,20 +46,17 @@ if($request == '/account/register'){
 	$attr = $_POST['input'];
 	$bday= $attr['year'].'-'.$attr['month'].'-'.$attr['day'];
 	$attr['birthdate'] = $bday;
-	var_dump($attr);
-	if($model->add_account($attr)){
-		if($auth->login($_POST['email'], $_POST['password'])){
-		header("Location: ". $index);
-		}
-		//mail_id 1 is welcome mail
-		//send_mail($user,1);
-		//Mail kan pas gestuurd worden als $user bekend is.
-	}
-	else{
-		include $root . '/html/register.php';
-		//ECHO KAN WEG
-		echo 'Something went wrong!';
-	}
+	$email= $attr['email'];
+	if($user = new User($model->add_account($attr))){
+			//mail_id 1 is welcome mail
+			send_mail($user,1);
+			if($auth->login($attr['email'], $attr['password'])){
+				header("Location: ". $index);
+			}
+			else{
+				include $root . '/html/register.php';
+			}
+		}	
 }
 if ($request == '/account/logout') {
 	$auth->logout();
@@ -121,7 +119,6 @@ if($request == '/account/mijnreserveringen.php') {
 		$booking->user1 = new User($booking->user1);
 		$booking->user2 = new User($booking->user2);
 	}
-
 	include $root . '/html/mijnreserveringen.php';
 }
 ?>
