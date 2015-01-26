@@ -7,6 +7,7 @@ else{
 
 if($request == '/admin/admin.php' or $request == '/admin/'){
 	$title = "Admin";
+	$restaurants = $model->get_restaurants();
 	include $root. '/html/admin.php'; 
 	}
 
