@@ -63,6 +63,8 @@ class Model{
 			if ($exists = get_rows($this->db->query($query))){
 				//check if the user is booking the same table again
 				if($exists['user1'] == $user->id){
+					return false;
+				}
 				else{
 				$bookQ = "UPDATE bookings SET user2 = " . $user->id.
 					" WHERE id = " . $exists['id'];
