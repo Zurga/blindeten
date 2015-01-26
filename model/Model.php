@@ -6,7 +6,7 @@ include_once 'Restaurant.php';
 include_once 'Booking.php';
 
 class Model{
-	private $db;
+	public $db;
 
 	public function __construct(){
 		global $db;
