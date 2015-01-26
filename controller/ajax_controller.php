@@ -18,7 +18,7 @@ if($request == '/ajax/booking'){
 	header('Content-Type: application/json');
 	$input = $_POST['input'];
 	$restaurant = new Restaurant($input['id']);
-	$bookings = $model->get_bookings($restaurant, $input['date']);
+	$bookings = $model->get_bookings($restaurant, $input['date'], true);
 
 	//check if we have something to return
 	$html = '';
@@ -37,7 +37,7 @@ if($request == '/ajax/booking'){
 		}
 	}
 	$html .= '<form action="/ajax/book_table" method="POST"><select name=input[time]>'; 
-	if(!empty($times){
+	if(!empty($times)){
 		foreach($times as $time){
 			if($times[$time] < count($restaurant->tables)){
 				$html .= '<option value=' . $time . '>' . substring($booking->time, 0, 5) . '</option>';
