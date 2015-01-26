@@ -26,7 +26,6 @@ if($request == '/ajax/booking'){
 	if(!empty($bookings)){
 		foreach($bookings as $booking){
 			$user = new User($booking->user1);
-			//$booking->user1['age'] = $user->age();
 			//check the sex of the user
 			$booking->user1 = $user;
 			$html .= '<li id="' . $booking->id . '"><form action="/ajax/book_table" method="POST">' .
