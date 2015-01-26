@@ -375,10 +375,10 @@ padding:0 15px;
 }
 
 span ~ #tab > div:first-of-type,
-tab1:target ~ #admintab > div.change_permission,
-tab2:target ~ #admintab > div.delete_account,
-tab3:target ~ #admintab > div.delete_restaurant,
-tab4:target ~ #admintab > div.add_restaurant {
+#tab1:target ~ #admintab > div.change_permission,
+#tab2:target ~ #admintab > div.delete_account,
+#tab3:target ~ #admintab > div.delete_restaurant,
+#tab4:target ~ #admintab > div.add_restaurant {
 visibility:visible;
 }
 }
