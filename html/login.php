@@ -22,6 +22,8 @@
 				<br>
 				<input type="submit" id="submit" value="Log in">
 			</fieldset>
+				<br>
+				<br>
 		<?php if(isset($error)) {
 			echo '<p>' . $error .'</p>';
 		} ?> 
