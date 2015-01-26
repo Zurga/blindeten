@@ -83,20 +83,21 @@ function create_calendar(days, id){
 	
 	//disabling the dates that are fully booked
 	var disabled = [];
-	for(var day in days){
+	if(days){
 		var css = '<style>';
-		if(days[day] == rest[id].tables.length * 2){
-			disabled[day] = 1;	
+		for(var day in days){
+			if(days[day] == rest[id].tables.length * 2){
+				disabled[day] = 1;	
+			}
+			//and highlight days that are single booked
+			else if(days[day] % 2 == 1){
+				classname = 'cd-' + day.replace(/-/g,'');
+				css += '#' + id + ' ' + classname + 
+					'{color: rgb(26, 141, 28); font-weight: bold;}';
+			}
 		}
-		//and highlight days that are single booked
-		else if(days[day] % 2 == 1){
-			classname = 'cd-' + day.replace(/-/g,'');
-			css += '#' + id + ' ' + classname + '{color: rgb(26, 141, 28); font-weight: bold;}';
-			//calendarday = document.getElementById(id).getElementsByClassName(classname)[0];
-			//calendarday.style = "color: rgb(26, 141, 28); font-weight: bold;";
-		}	
+		document.getElementById(id).innerHTML += css + '</style>';
 	}
-	document.getElementById(id).innerHTML += css + '<style>';
 	datePickerController.setDisabledDates(input, disabled);
 }
 
