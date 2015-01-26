@@ -45,11 +45,12 @@ function get_output(which, input, params){
 		
 		http_object.onreadystatechange = function() {
 			if(http_object.readyState == 4){
-				output = JSON.parse(http_object.response);
 				if (which == 'calendar'){
+					output = JSON.parse(http_object.response);
 					create_calendar(output, input);
 				}
 				if (which == 'booking'){
+					output = JSON.parse(http_object.response);
 					set_bookings(output, input);
 				}
 			}
