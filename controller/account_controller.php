@@ -1,6 +1,7 @@
 <?php
 $root = $_SERVER['DOCUMENT_ROOT'];
 include $root . '/controller/mail_controller.php';
+include_once $root .'/model/User.php';
 
 //show the user information
 if($request == '/account/show.php'){
@@ -47,14 +48,16 @@ if($request == '/account/register'){
 	$attr['birthdate'] = $bday;
 	if($model->add_account($attr)){
 		//mail_id 1 is welcome mail
-		send_mail($user,1);
-		if($auth->login($attr['email'], $attr['password'])){
-			header("Location: ". $index);
-			var_dump($user);
-		}
-		else{
-			include $root . '/html/register.php';
-		}
+		$query = "SELECT id FROM user WHERE email='". $email."'";
+		if($row = get_rows($this->db->query($query))){
+			$user = new User($row['id']);
+			send_mail($user,1);
+			if($auth->login($attr['email'], $attr['password'])){
+				header("Location: ". $index);
+			}
+			else{
+				include $root . '/html/register.php';
+			}
 	}
 }
 if ($request == '/account/logout') {
