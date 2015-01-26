@@ -3,7 +3,7 @@
 <div class="content">
 	<div class="maincontent">
 
-		<form id ="register" name= "register" action='register' method='post' onSubmit="return sendMe()">
+		<form id ="register" name= "register" action='register' method='post' onSubmit="return chkForm()">
 
 			<h1>Registreer</h1><br>
 			<br>
@@ -57,7 +57,7 @@
 
 <script>
 	function sendMe() {
-		return confirm("Continue?");
+		return alert("Continue?");
 	}
 
 	function chkForm() {
@@ -72,6 +72,7 @@
 			return false;
 		}
 	}
+
 </script>
 
 
