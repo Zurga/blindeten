@@ -31,13 +31,13 @@ function sanitize ($attr,$db) {
 	if(!is_null($attr)) {
 		if (is_array($attr)) {
 			$sanitized = array();
-			var_dump(attr);
+			var_dump($attr);
 			foreach($attr as $key=>$val) {
 				$sanitized[$key] = mysqli_real_escape_string($model->db,$val);
 				$sanitized[$key] = htmlspecialchars($val);
 				$sanitized[$key] = strip_tags($val);
 			}
-			var_dump(sanitized);
+			var_dump($sanitized);
 		}
 		else {
 			$sanitized = mysqli_real_escape_string($model->db,$attr);
