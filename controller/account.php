@@ -47,7 +47,12 @@ if($request == '/account/register'){
 	$attr['birthdate'] = $bday;
 	var_dump($attr);
 	if($model->add_account($attr)){
-		header("Location: ". $index);
+		$logged_in == true;
+		if($logged_in) {
+			header("Location: ". $index);
+		}
+		//mail_id 1 is welcome mail
+		send_mail($user,1);
 	}
 	else{
 		include $root . '/html/register.php';
