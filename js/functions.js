@@ -70,6 +70,9 @@ function create_calendar(days, id){
 		fillGrid: true,
 		rangeLow: new Date(),
 		callbackFunctions:{
+			'redraw': [function(arg, arg2){
+					alert(arg + ' ' + arg2);
+				}],
 			'datereturned': [function(arg){
 				get_output('booking', id, 'input[id]='+id + 
 						'&input[date]=' + 
