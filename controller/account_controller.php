@@ -78,8 +78,8 @@ if($request == '/account/login.php'){
 if($request == '/account/set_login'){
 	if($auth->login(sanitize($_POST['email'],$model->db), sanitize($_POST['password'],$model->db))){
 		//include $root . '/html/index.php';
+		$welcome="Je bent ingelogd!";
 		header("Location: ". $index);
-		$welcome='Je bent ingelogd!';
 	}
 	else{
 		$error = 'Deze combinatie is bij ons niet bekend';
@@ -122,7 +122,6 @@ if($request == '/account/mijnreserveringen.php') {
 	foreach($bookings as $booking){
 		$booking->user1 = new User($booking->user1);
 		$booking->user2 = new User($booking->user2);
-	}
 	}
 	include $root . '/html/mijnreserveringen.php';
 }
