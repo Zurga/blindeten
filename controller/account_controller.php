@@ -46,11 +46,8 @@ if($request == '/account/register'){
 	$attr = $_POST['input'];
 	$bday= $attr['year'].'-'.$attr['month'].'-'.$attr['day'];
 	$attr['birthdate'] = $bday;
-	$email= $_POST['email'];
-	if($model->add_account($attr)){
-		$query = "SELECT id FROM user WHERE email='". $email."'";
-		if($row = get_rows($this->db->query($query))){
-			$user = new User($row['id']);
+	$email= $attr['email'];
+	if($user = new User($model->add_account($attr))){
 			//mail_id 1 is welcome mail
 			send_mail($user,1);
 			if($auth->login($attr['email'], $attr['password'])){
@@ -60,7 +57,6 @@ if($request == '/account/register'){
 				include $root . '/html/register.php';
 			}
 		}	
-	}
 }
 if ($request == '/account/logout') {
 	$auth->logout();
