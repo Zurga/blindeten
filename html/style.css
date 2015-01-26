@@ -124,7 +124,7 @@ a img {
 }
   
 body {
-	background-image: url("gracht2.jpg");
+	background-image: url("/img/gracht2.png");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: 100% 100%;
