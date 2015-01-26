@@ -70,9 +70,6 @@ function create_calendar(days, id){
 		fillGrid: true,
 		rangeLow: new Date(),
 		callbackFunctions:{
-			'redraw': [function(arg, arg2){
-					alert(arg.firstDateDisplayed + ' ' + arg2);
-				}],
 			'datereturned': [function(arg){
 				get_output('booking', id, 'input[id]='+id + 
 						'&input[date]=' + 
@@ -91,14 +88,15 @@ function create_calendar(days, id){
 			disabled[day] = 1;	
 		}
 		//and highlight days that are single booked
+		css = '<style>';
 		else if(days[day] % 2 == 1){
 			classname = 'cd-' + day.replace(/-/g,'');
-			css = '#' + id + ' ' + classname + '{color: rgb(26, 141, 28); font-weight: bold;}';
-			sheet.insertRule(css);
+			css += '#' + id + ' ' + classname + '{color: rgb(26, 141, 28); font-weight: bold;}';
 			//calendarday = document.getElementById(id).getElementsByClassName(classname)[0];
 			//calendarday.style = "color: rgb(26, 141, 28); font-weight: bold;";
 		}	
 	}
+	document.write(css + '<style>');
 	datePickerController.setDisabledDates(input, disabled);
 }
 
