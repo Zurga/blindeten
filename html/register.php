@@ -7,10 +7,10 @@
 
 			<h1>Registreer</h1><br>
 			<br>
-			<br>
 			<?php if(isset($register_error)) {
 			echo '<p class="error">' . $register_error .'</p>';
 			} ?> 
+			<br>
 			<fieldset id="inputs" method='post'>
 				<input id="name" name="input[name]" type="text" placeholder="Voornaam" required>  
 				<br>
