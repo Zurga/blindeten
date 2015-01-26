@@ -27,7 +27,7 @@ if($request == '/account/edit.php'){
 
 //Save user data
 if($request == '/account/save_data'){
-	$attr = sanitize($_POST['input']);
+	$attr = sanitize($_POST['input'],$model->db);
 	$bday= $attr['year'].'-'.$attr['month'].'-'.$attr['day'];
 	$attr['birthdate'] = $bday;
 	if($user->change_attr($attr)){
@@ -43,7 +43,7 @@ if($request == '/account/register.php') {
 //User pressed register button
 if($request == '/account/register'){
 	$model = new Model;
-	$attr = sanitize($_POST['input']);
+	$attr = sanitize($_POST['input'],$model->db);
 	$bday= $attr['year'].'-'.$attr['month'].'-'.$attr['day'];
 	$attr['birthdate'] = $bday;
 	$email= $attr['email'];
@@ -76,9 +76,10 @@ if($request == '/account/login.php'){
 
 //User pressed login button
 if($request == '/account/set_login'){
-	if($auth->login(sanitize($_POST['email']), sanitize($_POST['password']))){
+	if($auth->login(sanitize($_POST['email'],$model->db), sanitize($_POST['password'],$model->db))){
 		//include $root . '/html/index.php';
 		header("Location: ". $index);
+		$welcome="Je bent ingelogd!";
 	}
 	else{
 		$error = 'Deze combinatie is bij ons niet bekend';
@@ -99,7 +100,7 @@ if($request == '/account/change_password.php') {
 }
 //Save new password
 if($request == '/account/save_new_password'){
-	$new_e_password = encrypt($user->email,sanitize($_POST['new_password']));
+	$new_e_password = encrypt($user->email,sanitize($_POST['new_password']),$model->db);
 	$model->change_password($user->id, $new_e_password);
 	header("Location: ". $index);
 }
@@ -110,7 +111,7 @@ if($request == '/account/forgot_password.php') {
 }
 
 if($request == '/account/forgot_password'){
-	$email = sanitize($_POST['email']);
+	$email = sanitize($_POST['email'],$model->db);
 	$model->forgot_password($email);
 	//header("Location: ". $index);
 }

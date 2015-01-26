@@ -96,9 +96,9 @@ function create_calendar(days, id){
 					'{color: rgb(26, 141, 28); font-weight: bold;}';
 			}
 		}
-		document.getElementById(id).innerHTML += css + '</style>';
+		datePickerController.setDisabledDates(input, disabled);
+		//document.getElementById(id).innerHTML += css + '</style>';
 	}
-	datePickerController.setDisabledDates(input, disabled);
 }
 
 function set_bookings(bookings, id){
