@@ -371,7 +371,8 @@ form p {
 #admintab ul {
 list-style:none;
 position:relative; 
-z-index:2;top:1px;
+z-index:2;
+top:1px;
 display:table;
 border-left:1px solid #f5ab36;
 }
@@ -387,7 +388,6 @@ text-decoration:none;
 border-right:1px solid #f5ab36;
 border-top:1px solid #f5ab36;
 border-right:1px solid #f5ab36;
-margin:0;
 }
 #admintab ul li a.selected {
 border-bottom:1px solid #fff;
