@@ -27,10 +27,7 @@
 				<br>
 				<input type="submit" id="submit" value="Log in">
 			</fieldset>
-			<?php if(isset($welcome)) {
-			echo '<p>' . $welcome .'</p>';
-			} ?> 
-		</form>
+		<form>
 	</div>
 </div>
 <?php include 'footer.php';?>
