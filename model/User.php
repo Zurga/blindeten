@@ -1,8 +1,6 @@
 <?php
 
 include_once 'dbFunctions.php';
-include_once 'dblogin.php';
-
 class User {
 	private $db;
 	public $name;
@@ -148,7 +146,6 @@ class User {
 	
 	//Cancel bookings
 	public function cancel_booking($booking_id) {
-		global $db;
 		$booking = new Booking($booking_id);
 		
 		// check if the user is user1 or user2 and if there is another user
@@ -163,8 +160,7 @@ class User {
 			}
 		}
 		elseif ($booking->user2 == $this->id) {
-			$delquery = "UPDATE bookings SET user2 = 0 WHERE id = ". 
-			$booking_id;
+			$delquery = "UPDATE bookings SET user2 = 0 WHERE id = ". $booking_id;
 		}
 		else {
 			return false;

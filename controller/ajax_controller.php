@@ -38,13 +38,15 @@ if($request == '/ajax/booking'){
 	$html .= '<form action="/ajax/book_table" method="POST"><select name=input[time]>'; 
 	if(!empty($times)){
 		foreach($times as $time){
-			if($times[$time] < count($restaurant->tables)){
+			if(!$times[$time] > count($restaurant->tables)){
 				$html .= '<option value=' . $time . '>' . substring($booking->time, 0, 5) . '</option>';
 			}
 		}
 	}
-	else{}
-		
+	else{
+		$html .= '<option value="18:00">18:00</option>
+			<option value="20:00">20:00</option>';
+	}
 	$html .= '</select></form>';
 	echo $html;
 }
