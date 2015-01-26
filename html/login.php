@@ -27,7 +27,7 @@
 				<br>
 				<input type="submit" id="submit" value="Log in">
 			</fieldset>
-		</form>
+		<form>
 	</div>
 </div>
 <?php include 'footer.php';?>

@@ -27,7 +27,7 @@ if($request == '/account/edit.php'){
 
 //Save user data
 if($request == '/account/save_data'){
-	$attr = sanitize($_POST['input']);
+	$attr = sanitize($_POST['input'],$model->db);
 	$bday= $attr['year'].'-'.$attr['month'].'-'.$attr['day'];
 	$attr['birthdate'] = $bday;
 	if($user->change_attr($attr)){
@@ -43,7 +43,7 @@ if($request == '/account/register.php') {
 //User pressed register button
 if($request == '/account/register'){
 	$model = new Model;
-	$attr = sanitize($_POST['input']);
+	$attr = sanitize($_POST['input'],$model->db);
 	$bday= $attr['year'].'-'.$attr['month'].'-'.$attr['day'];
 	$attr['birthdate'] = $bday;
 	$email= $attr['email'];
@@ -76,14 +76,14 @@ if($request == '/account/login.php'){
 
 //User pressed login button
 if($request == '/account/set_login'){
-	if($auth->login(sanitize($_POST['email']), sanitize($_POST['password']))){
-		//include $root . '/html/index.php';
-		header("Location: ". $index);
+	if($auth->login(sanitize($_POST['email'],$model->db), sanitize($_POST['password'],$model->db))){
+		$welcome = "Je bent ingelogd!";
+		$logged_in = true;
+		include $root .'/controller/index_controller.php';
 	}
 	else{
 		$error = 'Deze combinatie is bij ons niet bekend';
 		include $root . '/html/login.php';
-		//header("Location: ". $index . "/account/login.php");
 	}
 }
 
@@ -99,7 +99,7 @@ if($request == '/account/change_password.php') {
 }
 //Save new password
 if($request == '/account/save_new_password'){
-	$new_e_password = encrypt($user->email,sanitize($_POST['new_password']));
+	$new_e_password = encrypt($user->email,sanitize($_POST['new_password']),$model->db);
 	$model->change_password($user->id, $new_e_password);
 	header("Location: ". $index);
 }
@@ -110,17 +110,28 @@ if($request == '/account/forgot_password.php') {
 }
 
 if($request == '/account/forgot_password'){
-	$email = sanitize($_POST['email']);
+	$email = sanitize($_POST['email'],$model->db);
 	$model->forgot_password($email);
 	//header("Location: ". $index);
 }
 
 if($request == '/account/mijnreserveringen.php') {
 	$bookings = $model->get_bookings($user);
-	foreach($bookings as $booking){
-		$booking->user1 = new User($booking->user1);
-		$booking->user2 = new User($booking->user2);
+	if(!empty($bookings)){
+
+		foreach($bookings as $booking){
+			$booking->user1 = new User($booking->user1);
+			$booking->user2 = new User($booking->user2);
+		}
 	}
 	include $root . '/html/mijnreserveringen.php';
+}
+
+if($request == '/account/delete_booking') {
+	$booking_id = sanitize($_POST['booking_id'],$model->db);
+	if ($user->cancel_booking($booking_id)) {
+		//send_mail x2
+		header("Location: ". $index .'/account/mijnreserveringen.php');
+	}
 }
 ?>

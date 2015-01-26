@@ -2,7 +2,6 @@
 <div id="content">
 	
 	<div id="wrapper">
-	
 	<div class="homemap">
 		<h1> Selecteer een restaurant:</h1>
 		<div id='map'>

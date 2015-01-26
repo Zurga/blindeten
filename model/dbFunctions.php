@@ -27,28 +27,20 @@ function set_var($var, $object){
 }
 
 //Sanitize input in our forms (no scripts can be put in)
-function sanitize ($attr) {
+function sanitize ($attr,$db) {
 	if(!is_null($attr)) {
 		if (is_array($attr)) {
 			$sanitized = array();
 			foreach($attr as $key=>$val) {
-				var_dump($attr);
 				$sanitized[$key] = mysqli_real_escape_string($db,$val);
-				var_dump($sanitized);
 				$sanitized[$key] = htmlspecialchars($val);
-				var_dump($sanitized);
 				$sanitized[$key] = strip_tags($val);
-				var_dump($sanitized);
 			}
 		}
 		else {
-			var_dump($sanitized);
 			$sanitized = mysqli_real_escape_string($db,$attr);
-			var_dump($sanitized);
 			$sanitized = htmlspecialchars($sanitized);
-			var_dump($sanitized);
 			$sanitized = strip_tags($sanitized);
-			var_dump($sanitized);
 		}	
 		return $sanitized;
 	}
