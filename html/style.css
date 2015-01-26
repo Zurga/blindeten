@@ -103,6 +103,11 @@ a img {
 #menu ul li { 
     display: inline;  
     margin: 0;  
+	font-family: Century Gothic;  
+    color: white; 
+	text-decoration: none;
+	padding: 0 20px;
+}
 }
 #menu ul li a {  
     font-family: Century Gothic;  
@@ -110,6 +115,7 @@ a img {
 	text-decoration: none;
 	padding: 0 20px;
 }
+
 #header {
     font-family: Verdana;
 }
@@ -234,6 +240,13 @@ h4 {
 	padding: 10px;
 }
 
+.error {
+	font-family: Century Gothic;
+	color: #FF0000;
+	text-align: center;
+	font-weight: bold;
+}
+
 form a{
 	font-size: 14px;
 }
@@ -256,6 +269,8 @@ form p {
      margin: 0;
 
 }
+
+
 
 #map {
 	height: 500px;
@@ -317,12 +332,6 @@ form p {
     color: white; 
 	text-decoration: none;
 	padding: 0 20px;
-}
-
-.error {
-	font-family: Century Gothic;
-	color: #FF0000;
-	text-align: center;
 }
 
 .homemap{
