@@ -28,7 +28,8 @@
 		<div class="error">		
 		<?php if(isset($error)) {
 			echo '<p>' . $error .'</p>';
-		} ?> 
+		} ?>
+        </form>		
 		</div>
 	<div>
 </div>
