@@ -40,10 +40,6 @@
 				<option value="1" >Vrouw</option>
 				</select>
 				<br>
-			</fieldset>
-			<fieldset id="actions">
-				<br>
-				<br>
 				<input type="submit" id="submit" value="Registreer" onClick="return chkForm()">
 			</fieldset>
 				<br>
