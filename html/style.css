@@ -110,6 +110,12 @@ a img {
 	text-decoration: none;
 	padding: 0 20px;
 }
+#menu li {
+	font-family: Century Gothic;  
+    color: white; 
+	text-decoration: none;
+	padding: 0 20px;
+}
 #header {
     font-family: Verdana;
 }
