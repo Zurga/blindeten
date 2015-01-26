@@ -60,4 +60,8 @@
 </div>
 
 
+
+http://krasimirtsonev.com/blog/article/GoogleMaps-JS-API-address-to-coordinates-transformation-text-to-LatLng
+
+
 <?php include 'footer.php';?>
