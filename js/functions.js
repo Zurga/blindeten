@@ -83,8 +83,9 @@ function create_calendar(days, id){
 	
 	//disabling the dates that are fully booked
 	var disabled = [];
+	var css = '';
 	if(days){
-		var css = '<style>';
+		css += '<style>';
 		for(var day in days){
 			if(days[day] == rest[id].tables.length * 2){
 				disabled[day] = 1;	
@@ -97,8 +98,9 @@ function create_calendar(days, id){
 			}
 		}
 		datePickerController.setDisabledDates(input, disabled);
-		document.getElementById(id).innerHTML += css + '</style>';
+		css += '</style>';
 	}
+	document.getElementById(id).innerHTML += css;
 }
 
 function set_bookings(bookings, id){
