@@ -44,7 +44,7 @@ if($request == '/ajax/booking'){
 			}
 		}
 	}
-	else{
+	else{}
 		
 	$html .= '</select></form>';
 	echo $html;
