@@ -24,9 +24,11 @@
 			</fieldset>
 				<br>
 				<br>
+		<div class="error">		
 		<?php if(isset($error)) {
 			echo '<p>' . $error .'</p>';
 		} ?> 
+		</div>
 		</form>
 	</div>
 </div>
