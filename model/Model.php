@@ -36,7 +36,7 @@ class Model{
 				$query = "INSERT INTO user_perm (perm_id, user_id)".
 					"VALUES (2,". $this->db->insert_id .")"; 
 				$this->db->query($query);
-				return true;
+				return $id;
 			}
 			else {
 				return false;
