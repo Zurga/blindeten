@@ -62,7 +62,7 @@
 				<option value="1" >Vrouw</option>
 				</select>
 				<br>
-				<input type="submit" id="submit" value="Registreer" >
+				<input type="submit" id="submit" formnovalidate name=cancel value="Registreer" >
 			</fieldset>
 				<br>
 				<br>
