@@ -103,6 +103,11 @@ a img {
 #menu ul li { 
     display: inline;  
     margin: 0;  
+	font-family: Century Gothic;  
+    color: white; 
+	text-decoration: none;
+	padding: 0 20px;
+}
 }
 #menu ul li a {  
     font-family: Century Gothic;  
@@ -110,12 +115,7 @@ a img {
 	text-decoration: none;
 	padding: 0 20px;
 }
-#menu li {
-	font-family: Century Gothic;  
-    color: white; 
-	text-decoration: none;
-	padding: 0 20px;
-}
+
 #header {
     font-family: Verdana;
 }
