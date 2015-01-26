@@ -368,7 +368,7 @@ form p {
 }
 
 /*admin css */
-#admintab {
+#admintab > div {
 clear:both;
 overflow:hidden;
 visibility:hidden;
