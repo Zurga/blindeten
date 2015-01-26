@@ -23,7 +23,7 @@
 				<input type="submit" id="submit" value="Log in">
 			</fieldset>
 		</form>
-	<div class="error">
+	<div id="error">
 	<?php if(isset($error)) {
 			echo '<p>' . $error .'</p>';
 		} ?> 
