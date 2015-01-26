@@ -368,25 +368,33 @@ form p {
 }
 
 /*admin css */
-#admintab > div {
-clear:both;
-overflow:hidden;
-visibility:hidden;
+#admintab ul {
+list-style:none;
+position:relative; 
+z-index:2;top:1px;
+display:table;
+border-left:1px solid #f5ab36;
+}
+#admintab ul li {
+float:left;
+}
+#admintab ul li a {
+background:#ffd89b;
+color:#222;
+display:block;
+padding:6px 15px;
+text-decoration:none;
+border-right:1px solid #f5ab36;
+border-top:1px solid #f5ab36;
+border-right:1px solid #f5ab36;
+margin:0;
+}
+#admintab ul li a.selected {
+border-bottom:1px solid #fff;
+color:#344385;
+background:#fff;
 }
 
-span:target ~ #tab > div:first-of-type {
-visibility:hidden;
-height:0;
-padding:0 15px;
-}
-
-span ~ #tab > div:first-of-type,
-#tab1:target ~ #admintab > div.change_permission,
-#tab2:target ~ #admintab > div.delete_account,
-#tab3:target ~ #admintab > div.delete_restaurant,
-#tab4:target ~ #admintab > div.add_restaurant {
-visibility:visible;
-}
 }
 	
 
