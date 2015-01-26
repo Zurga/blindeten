@@ -47,7 +47,9 @@ if($request == '/account/register'){
 	$attr['birthdate'] = $bday;
 	if($model->add_account($attr)){
 		$auth->login($_POST['email'], $_POST['password']) == True;
-		header("Location: ". $index);
+			if($auth->login($_POST['email'], $_POST['password'])){
+			header("Location: ". $index);
+			}
 		//mail_id 1 is welcome mail
 		//send_mail($user,1);
 		//Mail kan pas gestuurd worden als $user bekend is.
