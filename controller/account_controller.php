@@ -128,7 +128,7 @@ if($request == '/account/mijnreserveringen.php') {
 }
 
 if($request == '/account/delete_booking') {
-	$booking_id = sanitize($model->db,$_POST['booking_id']);
+	$booking_id = sanitize($_POST['booking_id'],$model->db);
 	if ($user->cancel_booking($booking_id)) {
 		//send_mail x2
 		header("Location: ". $index .'/account/mijnreserveringen.php');
