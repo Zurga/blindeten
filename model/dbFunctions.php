@@ -31,15 +31,16 @@ function sanitize ($attr) {
 	if (is_array($attr)) {
 		$sanitized = array();
 		foreach($attr as $key=>$val) {
-			$sanitized[$key] = mysql_real_escape_string($val);
+			$sanitized[$key] = mysqli_real_escape_string($val);
+			$sanitized[$key] = htmlspecialchars($val);
+			$sanitized[$key] = strip_tags($val);
 		}
 	}
 	else {
-		$sanitized = mysql_real_escape_string($attr,$db);
+		$sanitized = mysqli_real_escape_string($attr,$db);
+		$sanitized = htmlspecialchars($sanitized);
+		$sanitized = strip_tags($sanitized);
 	}
-	$sanitized = htmlspecialchars($sanitized);
-	$sanitized = strip_tags($sanitized);
-	
 	return $sanitized;
 }
 
