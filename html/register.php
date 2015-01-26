@@ -1,9 +1,27 @@
 <?php include 'header.php';?>
+<script>
+	function sendMe() {
+		return alert("Continue?");
+	}
 
+	function chkForm() {
+		register = document.getElementById('register');
+		pass1 = register.getElementsByName('input[password]')[0];
+		pass2 = register.getElementsByName('check_password')[0];
+		if(pass1.value != pass2.value){
+			alert("Wachtwoorden komen niet overeen");
+			pass1.value = '';
+			pass2.value = '';
+			pass1.focus();
+			return false;
+		}
+	}
+
+</script>
 <div class="content">
 	<div class="maincontent">
 
-		<form id ="register" name= "register" action='register' method='post' onSubmit="return sendMe()">
+		<form id ="register" name= "register" action='register' method='post' onSubmit="return chkForm()">
 
 			<h1>Registreer</h1><br>
 			<br>
@@ -40,10 +58,6 @@
 				<option value="1" >Vrouw</option>
 				</select>
 				<br>
-			</fieldset>
-			<fieldset id="actions">
-				<br>
-				<br>
 				<input type="submit" id="submit" value="Registreer" onClick="return chkForm()">
 			</fieldset>
 				<br>
@@ -55,24 +69,7 @@
 	</div>
 </div>	
 
-<script>
-	function sendMe() {
-		return confirm("Continue?");
-	}
 
-	function chkForm() {
-		register = document.getElementById('register');
-		pass1 = register.getElementsByName('input[password]')[0];
-		pass2 = register.getElementsByName('check_password')[0];
-		if(pass1.value != pass2.value){
-			alert("Wachtwoorden komen niet overeen");
-			pass1.value = '';
-			pass2.value = '';
-			pass1.focus();
-			return false;
-		}
-	}
-</script>
 
 
 
