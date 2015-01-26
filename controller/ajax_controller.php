@@ -26,7 +26,7 @@ if($request == '/ajax/booking'){
 	var_dump($input);
 	$bookings = $model->get_bookings($restaurant, $input['date']);
 	var_dump($bookings);
-	if(!empty($bookings){
+	if(!empty($bookings)){
 		foreach($bookings as $booking){
 			$user = new User($booking->user1);
 			//$booking->user1['age'] = $user->age();
