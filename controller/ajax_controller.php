@@ -26,12 +26,14 @@ if($request == '/ajax/booking'){
 	var_dump($input);
 	$bookings = $model->get_bookings($restaurant, $input['date']);
 	var_dump($bookings);
-	foreach($bookings as $booking){
-		$user = new User($booking->user1);
-		//$booking->user1['age'] = $user->age();
-		$booking->user1['sex'] = ($user->sex == 0 ? 'Man' : 'Vrouw');
+	if(!empty($bookings){
+		foreach($bookings as $booking){
+			$user = new User($booking->user1);
+			//$booking->user1['age'] = $user->age();
+			$booking->user1['sex'] = ($user->sex == 0 ? 'Man' : 'Vrouw');
+			echo json_encode($bookings);
+		}
 	}
-	echo json_encode($bookings);
 }
 
 if($request == 'ajax/book_table'){
