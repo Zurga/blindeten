@@ -2,9 +2,6 @@
 <div id="content">
 	
 	<div id="wrapper">
-	<?php if(isset($welcome)) {
-			echo '<p>' . $welcome .'</p>';
-			} ?> 
 	<div class="homemap">
 		<h1> Selecteer een restaurant:</h1>
 		<div id='map'>
