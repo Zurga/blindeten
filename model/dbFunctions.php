@@ -34,6 +34,8 @@ function sanitize ($attr,$db) {
 			var_dump($attr);
 			foreach($attr as $key=>$val) {
 				$sanitized[$key] = mysqli_real_escape_string($model->db,$val);
+				echo '<br>','<br>';
+				var_dump($val);
 				//$sanitized[$key] = htmlspecialchars($val);
 				//$sanitized[$key] = strip_tags($val);
 			}
