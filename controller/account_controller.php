@@ -1,6 +1,7 @@
 <?php
 $root = $_SERVER['DOCUMENT_ROOT'];
 include $root . '/controller/mail_controller.php';
+include_once $root .'/model/User.php';
 
 //show the user information
 if($request == '/account/show.php'){
@@ -50,7 +51,6 @@ if($request == '/account/register'){
 		send_mail($user,1);
 		if($auth->login($attr['email'], $attr['password'])){
 			header("Location: ". $index);
-			var_dump($user);
 		}
 		else{
 			include $root . '/html/register.php';
