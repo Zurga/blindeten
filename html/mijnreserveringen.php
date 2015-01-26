@@ -3,7 +3,7 @@
 <div class="content">
 	<div class="maincontent">
 		<h1>Mijn reserveringen</h1>
-		<?php foreach($bookings as $booking) ?>
+		<?php foreach($bookings as $booking) { ?>
 		<br>
 		<br>
 		<p>Datum en Tijd: <?php echo $booking->time; ?></p>
