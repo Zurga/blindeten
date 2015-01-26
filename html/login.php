@@ -2,7 +2,10 @@
 
 <div class="content">
 	<div class="maincontent">
-		<form action='set_login' method='post'>
+		<form action='set_login' method='post>
+		<?php if(isset($error)) {
+			echo '<p class="error">' . $error .'</p>';
+		} ?> 
 			<h1>Log In</h1>
 			<br>
 			
@@ -23,11 +26,6 @@
 				<input type="submit" id="submit" value="Log in">
 			</fieldset>
 		</form>
-	<div class="error">
-	<?php if(isset($error)) {
-			echo '<p>' . $error .'</p>';
-		} ?> 
-	</div>
 	</div>
 </div>
 <?php include 'footer.php';?>
