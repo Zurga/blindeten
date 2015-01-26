@@ -125,7 +125,6 @@ if($request == '/account/mijnreserveringen.php') {
 		}
 	}
 	include $root . '/html/mijnreserveringen.php';
-	}
 }
 
 if($request == '/account/delete_account') {
