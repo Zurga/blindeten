@@ -33,6 +33,7 @@ if($request == '/ajax/booking'){
 		}
 	}else{
 		echo array();
+	}
 }
 
 if($request == 'ajax/book_table'){
