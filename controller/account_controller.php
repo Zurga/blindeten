@@ -53,9 +53,9 @@ if($request == '/account/register'){
 			include $root . '/html/register.php';
 		}
 			
-		//mail_id 1 is welcome mail
-		//send_mail($user,1);
-		//Mail kan pas gestuurd worden als $user bekend is.
+	//mail_id 1 is welcome mail
+	send_mail($user,1);
+	//Mail kan pas gestuurd worden als $user bekend is.
 	}
 	else{
 		include $root . '/html/register.php';
