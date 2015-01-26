@@ -144,7 +144,7 @@ class Model{
 		
 		//add the date to the query if it is set
 		if(isset($date)){
-			if(isset($later){
+			if(isset($later)){
 				$query .= ' AND date >= "' . $date . '"';
 			}
 			else{
