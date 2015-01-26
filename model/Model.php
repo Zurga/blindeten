@@ -145,10 +145,10 @@ class Model{
 		//add the date to the query if it is set
 		if(isset($date)){
 			if(isset($later)){
-				$query .= ' AND date >= "' . $date . '"';
+				$query .= ' AND `date` >= "' . $date . '"';
 			}
 			else{
-				$query .= ' AND date = "' . $date . '"';
+				$query .= ' AND `date` = "' . $date . '"';
 			}
 		}
 		if($rows = get_rows($this->db->query($query))){
