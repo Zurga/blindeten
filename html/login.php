@@ -2,12 +2,13 @@
 
 <div class="content">
 	<div class="maincontent">
-		<form action='set_login' method='post>
+		<form action='set_login' method='post'>
 		<?php if(isset($error)) {
-		echo '<p class="error">' . $error .'</p>';} ?> 
+			echo '<p class="error">' . $error .'</p>';
+		} ?> 
 			<h1>Log In</h1>
 			<br>
-			
+			<br>
 			<fieldset id="inputs">
 				<input id="email" name="email" type="text" placeholder="E-mail" required>   
 				<br>
