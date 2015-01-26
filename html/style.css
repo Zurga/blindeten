@@ -319,8 +319,9 @@ form p {
 }
 
 .error{
-	font-familt: Century Gothic;
+	font-family: Century Gothic;
 	color: red;
+	text-align: center;
 }
 
 .homemap{
