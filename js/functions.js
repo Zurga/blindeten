@@ -97,12 +97,11 @@ function create_calendar(days, id){
 			}
 		}
 		datePickerController.setDisabledDates(input, disabled);
-		//document.getElementById(id).innerHTML += css + '</style>';
+		document.getElementById(id).innerHTML += css + '</style>';
 	}
 }
 
 function set_bookings(bookings, id){
 	var ul = document.getElementById('bookings-' + id);
 	ul.innerHTML = bookings;
-
 }

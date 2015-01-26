@@ -39,7 +39,7 @@ if($request == '/ajax/booking'){
 	if(!empty($times)){
 		foreach($times as $time){
 			if(!$times[$time] > count($restaurant->tables)){
-				$html .= '<option value=' . $time . '>' . substring($booking->time, 0, 5) . '</option>';
+				$html .= '<option value=' . $time . '>' . substr($booking->time, 0, 5) . '</option>';
 			}
 		}
 	}
