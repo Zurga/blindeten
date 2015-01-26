@@ -23,9 +23,7 @@ if($request == '/ajax/booking'){
 	header('Content-Type: application/json');
 	$input = $_POST['input'];
 	$restaurant = new Restaurant($input['id']);
-	var_dump($input);
 	$bookings = $model->get_bookings($restaurant, $input['date']);
-	var_dump($bookings);
 	if(!empty($bookings)){
 		foreach($bookings as $booking){
 			$user = new User($booking->user1);
@@ -33,7 +31,8 @@ if($request == '/ajax/booking'){
 			$booking->user1['sex'] = ($user->sex == 0 ? 'Man' : 'Vrouw');
 			echo json_encode($bookings);
 		}
-	}
+	}else{
+		echo array();
 }
 
 if($request == 'ajax/book_table'){
