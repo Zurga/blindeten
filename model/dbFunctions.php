@@ -32,15 +32,23 @@ function sanitize ($attr) {
 		if (is_array($attr)) {
 			$sanitized = array();
 			foreach($attr as $key=>$val) {
+				var_dump($sanitized);
 				$sanitized[$key] = mysqli_real_escape_string($db,$val);
+				var_dump($sanitized);
 				$sanitized[$key] = htmlspecialchars($val);
+				var_dump($sanitized);
 				$sanitized[$key] = strip_tags($val);
+				var_dump($sanitized);
 			}
 		}
 		else {
+			var_dump($sanitized);
 			$sanitized = mysqli_real_escape_string($db,$attr);
+			var_dump($sanitized);
 			$sanitized = htmlspecialchars($sanitized);
+			var_dump($sanitized);
 			$sanitized = strip_tags($sanitized);
+			var_dump($sanitized);
 		}	
 		return $sanitized;
 	}
