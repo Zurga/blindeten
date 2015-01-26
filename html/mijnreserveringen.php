@@ -3,11 +3,14 @@
 <div class="content">
 	<div class="maincontent">
 		<h1>Mijn reserveringen</h1>
+		<br>
+		<br>
+		<p>
 		<?php if(empty($bookings)) {
 			echo 'Er zijn nog geen reserveringen.';
 		}
 			else {
-		foreach($bookings as $booking) { ?>
+		foreach($bookings as $booking) { ?> </p>
 		<br>
 		<br>
 		<p>Datum en Tijd: <?php echo $booking->time; ?></p>
