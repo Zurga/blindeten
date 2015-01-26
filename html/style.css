@@ -105,10 +105,15 @@ a img {
     margin: 0;  
 }
 #menu ul li a {  
+<<<<<<< HEAD
     font-family: Century Gothic;  
     color: #FFFFFF; 
+=======
+    font-family: Century Gothic;   
+>>>>>>> 3c142e6a88254e8ef6d9d3807d205700d8b5e72e
 	text-decoration: none;
 	padding: 0 20px;
+	color: #FFFFFF;
 }
 #header {
     font-family: Verdana;
