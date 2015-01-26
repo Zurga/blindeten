@@ -62,12 +62,8 @@
 				<option value="1" >Vrouw</option>
 				</select>
 				<br>
-<<<<<<< HEAD
 				<br>
-				<input type="submit" id="submit" value="Registreer" >
-=======
 				<input type="submit" id="submit" formnovalidate name=cancel value="Registreer" >
->>>>>>> a023a0641e88098587184c1e54ccb69c202ca17a
 			</fieldset>
 				<br>
 				<br>
