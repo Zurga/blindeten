@@ -45,7 +45,6 @@ if($request == '/account/register'){
 	$attr = $_POST['input'];
 	$bday= $attr['year'].'-'.$attr['month'].'-'.$attr['day'];
 	$attr['birthdate'] = $bday;
-	var_dump($attr);
 	if($model->add_account($attr)){
 		if($auth->login($_POST['email'], $_POST['password'])){
 		header("Location: ". $index);
@@ -56,8 +55,6 @@ if($request == '/account/register'){
 	}
 	else{
 		include $root . '/html/register.php';
-		//ECHO KAN WEG
-		echo 'Something went wrong!';
 	}
 }
 if ($request == '/account/logout') {
