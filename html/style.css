@@ -366,6 +366,27 @@ form p {
 	padding: 0 20px;
 	bottom: 0px
 }
+
+/*admin css */
+#admintab > div {
+clear:both;
+overflow:hidden;
+visibility:hidden;
+}
+
+span:target ~ #tab > div:first-of-type {
+visibility:hidden;
+height:0;
+padding:0 15px;
+}
+
+span ~ #tab > div:first-of-type,
+#tab1:target ~ #admintab > div.change_permission,
+#tab2:target ~ #admintab > div.delete_account,
+#tab3:target ~ #admintab > div.delete_restaurant,
+#tab4:target ~ #admintab > div.add_restaurant {
+visibility:visible;
+}
 }
 	
 
