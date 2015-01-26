@@ -24,6 +24,8 @@ if($request == '/ajax/booking'){
 	$input = $_POST['input'];
 	$restaurant = new Restaurant($input['id']);
 	$bookings = $model->get_bookings($restaurant, $input['date']);
+
+	//check if we have something to return
 	if(!empty($bookings)){
 		foreach($bookings as $booking){
 			$user = new User($booking->user1);
@@ -32,7 +34,8 @@ if($request == '/ajax/booking'){
 			echo json_encode($bookings);
 		}
 	}else{
-		echo array();
+		//return empty array
+		echo json_encode(array());
 	}
 }
 
