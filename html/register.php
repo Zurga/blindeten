@@ -6,8 +6,8 @@
 
 	function chkForm() {
 		register = document.getElementById('register');
-		pass1 = register.getElementsByName('input[password]')[0];
-		pass2 = register.getElementsByName('check_password')[0];
+		pass1 = register.getElementById('password');
+		pass2 = register.getElementById('check_password');
 		if(pass1.value != pass2.value){
 			alert("Wachtwoorden komen niet overeen");
 			pass1.value = '';
