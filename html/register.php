@@ -41,6 +41,8 @@
 				<br>
 				<input type="submit" id="submit" value="Registreer">
 			</fieldset>
+				<br>
+				<br>
 		
 		</form>
 		</div>
