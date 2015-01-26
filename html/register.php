@@ -2,8 +2,9 @@
 
 <div class="content">
 	<div class="maincontent">
-		<form action='register' method='post'>
-			
+
+		<form id ="register" name= "register" action='register' method='post' onSubmit="return sendMe()">
+
 			<h1>Registreer</h1><br>
 			<fieldset id="inputs" method='post'>
 				<input id="name" name="input[name]" type="text" placeholder="Voornaam" required>  
@@ -21,7 +22,7 @@
 				<input id="password" name="input[password]" type="password" placeholder="Wachtwoord" required>
 				<br>
 				<br>
-				<input id="password" name="input[password]" type="password" placeholder="Herhaal wachtwoord" required>
+				<input id="check_password" name="check_password" type="password" placeholder="Herhaal wachtwoord" required>
 				<br>
 				<br>
 				<input id="day" name="input[day]" type="day" size="4" maxlength="2" max="31" placeholder="Dag" required>
@@ -38,7 +39,7 @@
 			<fieldset id="actions">
 				<br>
 				<br>
-				<input type="submit" id="submit" value="Registreer">
+				<input type="submit" id="submit" value="Registreer" onClick="return chkForm()">
 			</fieldset>
 				<br>
 				<br>
@@ -48,4 +49,28 @@
 		</div>
 	</div>
 </div>	
+
+<script>
+	function sendMe() {
+		return confirm("Continue?");
+	}
+
+	function chkForm() {
+		register = document.getElementById('register');
+		pass1 = register.getElementsByName('input[password]')[0];
+		pass2 = register.getElementsByName('check_password')[0];
+		if(pass1.value != pass2.value){
+			alert("Wachtwoorden komen niet overeen");
+			pass1.value = '';
+			pass2.value = '';
+			pass1.focus();
+			return false;
+		}
+	}
+</script>
+
+
+
+
+
 <?php include 'footer.php';?>

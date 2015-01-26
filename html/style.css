@@ -318,9 +318,10 @@ form p {
 	padding: 0 20px;
 }
 
-.error{
-	font-familt: Century Gothic;
-	color: red;
+.error {
+	font-family: Century Gothic;
+	color: #FF0000;
+	text-align: center;
 }
 
 .homemap{
