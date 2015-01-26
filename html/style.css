@@ -96,7 +96,7 @@ a img {
 	margin-top: 0;
 	padding: 8px;
 	background-color: black;
-	opacity: 0.65; 
+	opacity: 0.8; 
 	font-size: 20px;
 	text-align: center;
 } 
@@ -142,7 +142,7 @@ a {
 	margin: 0 auto;
 	margin-top: 90px;
 	width: 50%;
-	background-color: rgba(255,255,255,0.85);
+	background-color: rgba(255,255,255,0.65);
 	padding: 30px;
 }
 
@@ -151,7 +151,7 @@ a {
 	margin-top: 90px;
 	margin-right: 2.5% ;
 	width: 55%;
-	background-color: rgba(255,255,255,0.85);
+	background-color: rgba(255,255,255,0.65);
 	padding: 30px;
 	float: left;
 }
@@ -165,7 +165,7 @@ a {
 .sidecontent {
 	margin-top: 90px; 
 	width: 37.5%;
-	background-color: rgba(255,255,255,0.85);
+	background-color: rgba(255,255,255,0.65);
 	padding: 30px;
 	float: left;
 	font-size: 16px;
