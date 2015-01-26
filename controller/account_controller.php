@@ -79,6 +79,7 @@ if($request == '/account/set_login'){
 	if($auth->login(sanitize($_POST['email']), sanitize($_POST['password']))){
 		//include $root . '/html/index.php';
 		header("Location: ". $index);
+		$welcome="Je bent ingelogd!";
 	}
 	else{
 		$error = 'Deze combinatie is bij ons niet bekend';
