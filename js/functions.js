@@ -100,7 +100,7 @@ function create_calendar(days, id){
 		datePickerController.setDisabledDates(input, disabled);
 		css += '</style>';
 	}
-	set_css(id, css);
+	set_css('footer', css);
 }
 function set_css(id, css){
 	document.getElementById(id).innerHTML += css;
