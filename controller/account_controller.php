@@ -57,7 +57,6 @@ if($request == '/account/register'){
 				include $root . '/html/register.php';
 			}
 		}	
-	}
 }
 if ($request == '/account/logout') {
 	$auth->logout();
