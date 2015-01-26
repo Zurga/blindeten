@@ -105,10 +105,10 @@ a img {
     margin: 0;  
 }
 #menu ul li a {  
-    font-family: Century Gothic;  
-    color: white; 
+    font-family: Century Gothic;   
 	text-decoration: none;
 	padding: 0 20px;
+	color: #FFFFFF;
 }
 #header {
     font-family: Verdana;
