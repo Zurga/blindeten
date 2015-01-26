@@ -36,7 +36,7 @@
 				echo '<option value ='.$restaurant->id.'>'.$restaurant->name.'</option>';
 			} ?>
 			</select>
-			<input id="restaurant_name" name="restaurant_name" type="text" placeholder="Naam restaurant" required>	
+			<!--<input id="restaurant_name" name="restaurant_name" type="text" placeholder="Naam restaurant" required>-->
 			<br><br>
 			<input type="submit" id="submit" value="Verwijder">
 		</form>
