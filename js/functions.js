@@ -49,7 +49,7 @@ function get_output(which, input, params){
 					output = JSON.parse(http_object.response);
 					create_calendar(output, input);
 				}
-				if (which == 'booking'){
+				else if (which == 'booking'){
 					output = http_object.response;
 					set_bookings(output, input);
 				}
