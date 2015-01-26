@@ -9,13 +9,13 @@
 		<br>
 		<div id='admintab'>
 			<ul>
-				<li><a href="tab1">Rechten aanpassen</a>
+				<li><a href="#tab1">Rechten aanpassen</a>
 				</li>
-				<li><a href="tab2">Account verwijderen</a>
+				<li><a href="#tab2">Account verwijderen</a>
 				</li>
-				<li><a href="tab3">Restaurant verwijderen</a>
+				<li><a href="#tab3">Restaurant verwijderen</a>
 				</li>
-				<li><a href="tab4">Restaurant toevoegen</a>
+				<li><a href="#tab4">Restaurant toevoegen</a>
 				</li>
 			</ul>
 			<div class="change_permission">
