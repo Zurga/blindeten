@@ -14,6 +14,10 @@
 			pass2.value = '';
 			pass1.focus();
 			return false;
+
+		}
+		else {
+			return true;
 		}
 	}
 
@@ -58,7 +62,7 @@
 				<option value="1" >Vrouw</option>
 				</select>
 				<br>
-				<input type="submit" id="submit" value="Registreer" onClick="return chkForm()">
+				<input type="submit" id="submit" value="Registreer" >
 			</fieldset>
 				<br>
 				<br>
