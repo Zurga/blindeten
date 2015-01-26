@@ -104,14 +104,12 @@ a img {
     display: inline;  
     margin: 0;  
 }
-
 #menu ul li a {  
     font-family: Century Gothic;  
-    color: white; 
+    color: #FFFFFF; 
 	text-decoration: none;
 	padding: 0 20px;
 }
-
 #header {
     font-family: Verdana;
 }
