@@ -25,8 +25,6 @@
 				<input id="check_password" name="check_password" type="password" placeholder="Herhaal wachtwoord" required>
 				<br>
 				<br>
-				<input type= "submit" value="Submit" onClick="return chkForm()">
-				<input type= "reset" value-"Reset">
 				<input id="day" name="input[day]" type="day" size="4" maxlength="2" max="31" placeholder="Dag" required>
 				<input id="month" name="input[month]" type="text" size="6" maxlength="2" max="12" placeholder="Maand" required>
 				<input id="year" name="input[year]" type="year" size="4" maxlength="4" max="1997" placeholder="Jaar" required>
@@ -41,7 +39,7 @@
 			<fieldset id="actions">
 				<br>
 				<br>
-				<input type="submit" id="submit" value="Registreer">
+				<input type="submit" id="submit" value="Registreer" onClick="return chkForm()">
 			</fieldset>
 				<br>
 				<br>
