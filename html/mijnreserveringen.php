@@ -5,7 +5,7 @@
 		<h1>Mijn reserveringen</h1>
 		<?php foreach($bookings as $booking) { ?>
 		<?php if($booking == empty) {
-			echo 'Er zijn nog geen reserveringen.'
+			echo 'Er zijn nog geen reserveringen.';
 		}
 			else {
 		?>
