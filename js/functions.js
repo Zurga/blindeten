@@ -71,7 +71,7 @@ function create_calendar(days, id){
 		rangeLow: new Date(),
 		callbackFunctions:{
 			'redraw': [function(arg, arg2){
-					alert(arg + ' ' + arg2);
+					alert(arg.firstDateDisplayed + ' ' + arg2);
 				}],
 			'datereturned': [function(arg){
 				get_output('booking', id, 'input[id]='+id + 
@@ -93,8 +93,10 @@ function create_calendar(days, id){
 		//and highlight days that are single booked
 		else if(days[day] % 2 == 1){
 			classname = 'cd-' + day.replace(/-/g,'');
-			calendarday = document.getElementById(id).getElementsByClassName(classname)[0];
-			calendarday.style = "color: rgb(26, 141, 28); font-weight: bold;";
+			css = '#' + id + ' ' + classname + '{color: rgb(26, 141, 28); font-weight: bold;}';
+			sheet.insertRule(css);
+			//calendarday = document.getElementById(id).getElementsByClassName(classname)[0];
+			//calendarday.style = "color: rgb(26, 141, 28); font-weight: bold;";
 		}	
 	}
 	datePickerController.setDisabledDates(input, disabled);
