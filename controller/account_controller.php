@@ -1,6 +1,6 @@
 <?php
 $root = $_SERVER['DOCUMENT_ROOT'];
-include $root . '/controller/mail.php';
+include $root . '/controller/mail_controller.php';
 
 //show the user information
 if($request == '/account/show.php'){
