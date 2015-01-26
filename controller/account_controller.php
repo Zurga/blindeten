@@ -58,6 +58,7 @@ if($request == '/account/register'){
 			else{
 				include $root . '/html/register.php';
 			}
+		}	
 	}
 }
 if ($request == '/account/logout') {
