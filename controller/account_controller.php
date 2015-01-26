@@ -127,7 +127,7 @@ if($request == '/account/mijnreserveringen.php') {
 	include $root . '/html/mijnreserveringen.php';
 }
 
-if($request == '/account/delete_account') {
+if($request == '/account/delete_booking') {
 	$booking_id = sanitize($model->db,$_POST['booking_id']);
 	if ($user->cancel_booking($booking_id)) {
 		//send_mail x2
