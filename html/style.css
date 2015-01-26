@@ -318,7 +318,7 @@ form p {
 	padding: 0 20px;
 }
 
-.error{
+.error p{
 	font-family: Century Gothic;
 	color: red;
 	text-align: center;
