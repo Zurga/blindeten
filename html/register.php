@@ -33,6 +33,7 @@
 			echo '<p class="error">' . $register_error .'</p>';
 			} ?> 
 			<br>
+			<br>
 			<fieldset id="inputs" method='post'>
 				<input id="name" name="input[name]" type="text" placeholder="Voornaam" required>  
 				<br>
@@ -61,6 +62,7 @@
 				<option value="0" >Man</option>
 				<option value="1" >Vrouw</option>
 				</select>
+				<br>
 				<br>
 				<input type="submit" id="submit" formnovalidate name=cancel value="Registreer" >
 			</fieldset>
