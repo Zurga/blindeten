@@ -35,13 +35,15 @@
 				</select>
 				<br>
 			</fieldset>
-			
+			<?php include 'freecap.php';?>
 			<fieldset id="actions">
 				<br>
 				<br>
 				<input type="submit" id="submit" value="Registreer">
 			</fieldset>
 		
+
+
 		</form>
 		</div>
 	</div>
