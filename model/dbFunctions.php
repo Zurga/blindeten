@@ -32,7 +32,7 @@ function sanitize ($attr) {
 		if (is_array($attr)) {
 			$sanitized = array();
 			foreach($attr as $key=>$val) {
-				var_dump($sanitized);
+				var_dump($attr);
 				$sanitized[$key] = mysqli_real_escape_string($db,$val);
 				var_dump($sanitized);
 				$sanitized[$key] = htmlspecialchars($val);
