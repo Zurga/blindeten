@@ -24,9 +24,9 @@
 				echo '<li><a href="/admin/admin.php" title="Admin pagina">Admin</a></li>';
 			}
 			echo '<li><a href="/account/mijnreserveringen.php" title="Mijn Account">Mijn Reserveringen</a></li>
-			<li><a href="/account/logout" title="Uitloggen">Uitloggen</a></li>';
+				  <li><a href="/account/logout" title="Uitloggen">Uitloggen</a></li>';
 			if(isset($welcome)) {
-				echo '<li><a <p>' . $welcome .'</p></a></li>';
+				echo '<li><a>' . $welcome .'</a></li>';
 			}
 		}else{
 			echo ' <li><a href="/account/register.php" title="Registreer">Registreer</a></li>  
