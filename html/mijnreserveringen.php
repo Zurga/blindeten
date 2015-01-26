@@ -6,7 +6,7 @@
 		<br>
 		<br>
 		<?php if(empty($bookings)) {
-			echo '<p>' .Er zijn nog geen reserveringen. .'</p>';
+			echo '<p>Er zijn nog geen reserveringen.</p>';
 		}
 			else {
 		foreach($bookings as $booking) { ?>
