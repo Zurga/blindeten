@@ -1,6 +1,6 @@
 <?php
 $root = $_SERVER['DOCUMENT_ROOT'];
-include $root . '/controller/mail.php';
+include $root . '/controller/mail_controller.php';
 
 //show the user information
 if($request == '/account/show.php'){
@@ -48,14 +48,19 @@ if($request == '/account/register'){
 	var_dump($attr);
 	if($model->add_account($attr)){
 		$logged_in == true;
-		if($logged_in) {
+		var_dump($logged_in);
+		if(isset($_SESSION['logged_in'])){
 			header("Location: ". $index);
 		}
+		header("Location: ". $index);
 		//mail_id 1 is welcome mail
-		send_mail($user,1);
+		//send_mail($user,1);
+		//Mail kan pas gestuurd worden als $user bekend is.
 	}
 	else{
 		include $root . '/html/register.php';
+		//ECHO KAN WEG
+		echo 'Something went wrong!';
 	}
 }
 if ($request == '/account/logout') {

@@ -12,7 +12,7 @@ function send_mail($user,$mail_id, $data=NULL) {
 	$to = $user->email;
 	$subject = $mail_info['subject'];
 	$message = $mail_info['message'];
-	$headers = 'From: info@BlinDeten.nl';
+	$headers = 'From: BlinDeten@info.nl';
 	
 	
 	
