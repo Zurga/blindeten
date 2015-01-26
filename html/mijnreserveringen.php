@@ -3,7 +3,7 @@
 <div class="content">
 	<div class="maincontent">
 		<h1>Mijn reserveringen</h1>
-		<?php if($bookings = empty) {
+		<?php if($bookings == empty) {
 			echo 'Er zijn nog geen reserveringen.';
 		}
 			else {
