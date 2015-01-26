@@ -30,7 +30,7 @@ if($request == '/ajax/booking'){
 			//check the sex of the user
 			$booking->user1 = $user;
 			$html .= '<li id="' . $booking->id . '"><form action="/ajax/book_table" method="POST">' .
-				 $booking->user1->age() . ' ' . $($user->sex == 0 ? 'Man' : 'Vrouw') . 
+				 $booking->user1->age() . ' ' . ($user->sex == 0 ? 'Man' : 'Vrouw') . 
 				'<input type="field" name="input[rest_id]" value="' .$booking->table_id .'" class="hidden">'.
 				'<input type="submit" value="Reserveer">Reserveer</input></form></li>';
 			$times[$booking->time] += 1;
