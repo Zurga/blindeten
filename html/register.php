@@ -3,7 +3,7 @@
 <div class="content">
 	<div class="maincontent">
 
-		<form name= "register" action='register' method='post' onSubmit="return sendMe()">
+		<form id ="register" name= "register" action='register' method='post' onSubmit="return sendMe()">
 
 			<h1>Registreer</h1><br>
 			<fieldset id="inputs" method='post'>
@@ -56,11 +56,14 @@
 	}
 
 	function chkForm() {
-		if(register.input[password].value != registe.check_password.value){
+		register = document.getElementById('register');
+		pass1 = register.getElementsByName('input[password]')[0];
+		pass2 = register.getElementsByName('check_password')[0];
+		if(pass1.value != pass2.value){
 			alert("Wachtwoorden komen niet overeen");
-			register.input[password].value = '';
-			register.check_password.value = '';
-			register.input[password].focus();
+			pass1.value = '';
+			pass2.value = '';
+			pass1.focus();
 			return false;
 		}
 	}
