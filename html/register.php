@@ -2,8 +2,9 @@
 
 <div class="content">
 	<div class="maincontent">
-		<form name= "register" action='register' onsubmit="return validateForm()" method='post' onSubmit="return sendMe()">
-			
+
+		<form name= "register" action='register' method='post' onSubmit="return sendMe()">
+
 			<h1>Registreer</h1><br>
 			<fieldset id="inputs" method='post'>
 				<input id="name" name="input[name]" type="text" placeholder="Voornaam" required>  

@@ -9,15 +9,16 @@
 		<br>
 		<div id='admintab'>
 			<ul>
-				<li><a class="selected" href="javascript:void(0);">Rechten aanpassen</a>
+				<li><a href="#tab1">Rechten aanpassen</a>
 				</li>
-				<li><a href="javascript:void(0);">Account verwijderen</a>
+				<li><a href="#tab2">Account verwijderen</a>
 				</li>
-				<li><a href="javascript:void(0);">Restaurant verwijderen</a>
+				<li><a href="#tab3">Restaurant verwijderen</a>
 				</li>
-				<li><a href="javascript:void(0);">Restaurant toevoegen</a>
+				<li><a href="#tab4">Restaurant toevoegen</a>
 				</li>
 			</ul>
+			
 			<div class="change_permission">
 				<form action = "change_permission" method="POST">
 					<input id="email" name="email" type="text" placeholder="E-mail" required>   
@@ -76,14 +77,6 @@
 		
 		</div>
 	</div>
-	<script type="test/javascript">
-		$(document).ready(function(){
-			$('#admintab ul a').click(function(){
-				$('#admintab ul a').removeClass('selected');
-				$(this).addClass('selected');
-			});
-		});
-	</script>
 </div>
 
 

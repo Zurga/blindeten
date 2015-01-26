@@ -317,6 +317,12 @@ form p {
 	text-decoration: none;
 	padding: 0 20px;
 }
+
+.error{
+	font-familt: Century Gothic;
+	color: red;
+}
+
 .homemap{
 	margin-left: 2.5%;
 	margin-top: 90px;

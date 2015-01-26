@@ -35,8 +35,10 @@ function sanitize ($attr) {
 		}
 	}
 	else {
-		$sanitized = mysql_real_escape_string($attr);
+		$sanitized = mysql_real_escape_string($attr,$db);
 	}
+	$sanitized = htmlspecialchars($sanitized);
+	$sanitized = strip_tags($sanitized);
 	
 	return $sanitized;
 }
