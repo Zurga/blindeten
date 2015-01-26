@@ -2,6 +2,9 @@
 
 <div class="content">
 	<div class="maincontent">
+		<?php if(isset($error)) {
+			echo '<p>' . $error .'</p>';
+		} ?> 
 		<form action='set_login' method='post'>
 			<h1>Log In</h1>
 			<br>
