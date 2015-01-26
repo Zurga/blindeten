@@ -35,8 +35,6 @@
 				</select>
 				<br>
 			</fieldset>
-			<?php include 'freecap.php';?>
-			<?php include 'freecap_wrap.php' ; ?>
 			<fieldset id="actions">
 				<br>
 				<br>
@@ -44,6 +42,8 @@
 			</fieldset>
 				<br>
 				<br>
+			<?php include 'freecap.php';?>
+			<?php include 'freecap_wrap.php' ; ?>
 		</form>
 		</div>
 	</div>
