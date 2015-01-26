@@ -30,9 +30,9 @@
 				<input id="check_password" name="check_password" type="password" placeholder="Herhaal wachtwoord" required>
 				<br>
 				<br>
-				<input id="day" name="input[day]" type="day" size="4" maxlength="2" max="31" placeholder="Dag" required>
-				<input id="month" name="input[month]" type="text" size="6" maxlength="2" max="12" placeholder="Maand" required>
-				<input id="year" name="input[year]" type="year" size="4" maxlength="4" max="1997" placeholder="Jaar" required>
+				<input id="day" name="input[day]" type="day" size="4" maxlength="2" min="1" max="31" placeholder="Dag" required>
+				<input id="month" name="input[month]" type="text" size="6" maxlength="2" min="01" max="12" placeholder="Maand" required>
+				<input id="year" name="input[year]" type="year" size="4" maxlength="4" min="1915" max="1997" placeholder="Jaar" required>
 				<br>
 				<br>
 				<select name="input[sex]">
