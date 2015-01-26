@@ -2,7 +2,7 @@
 
 <div class="content">
 	<div class="maincontent">
-		<form action='register' onsubmit="return validateForm()" method='post'>
+		<form name= "register" action='register' onsubmit="return validateForm()" method='post' onSubmit="return sendMe()">
 			
 			<h1>Registreer</h1><br>
 			<fieldset id="inputs" method='post'>
@@ -21,9 +21,11 @@
 				<input id="password" name="input[password]" type="password" placeholder="Wachtwoord" required>
 				<br>
 				<br>
-				<input id="password" name="input[password]" type="password" placeholder="Herhaal wachtwoord" required>
+				<input id="check_password" name="check_password" type="password" placeholder="Herhaal wachtwoord" required>
 				<br>
 				<br>
+				<input type= "submit" value="Submit" onClick="return chkForm()">
+				<input type= "reset" value-"Reset">
 				<input id="day" name="input[day]" type="day" size="4" maxlength="2" max="31" placeholder="Dag" required>
 				<input id="month" name="input[month]" type="text" size="6" maxlength="2" max="12" placeholder="Maand" required>
 				<input id="year" name="input[year]" type="year" size="4" maxlength="4" max="1997" placeholder="Jaar" required>
@@ -48,4 +50,25 @@
 		</div>
 	</div>
 </div>	
+
+<script>
+	function sendMe() {
+		return confirm("Continue?");
+	}
+
+	function chkForm() {
+		if(register.input[password].value != registe.check_password.value){
+			alert("Wachtwoorden komen niet overeen");
+			register.input[password].value = '';
+			register.check_password.value = '';
+			register.input[password].focus();
+			return false;
+		}
+	}
+</script>
+
+
+
+
+
 <?php include 'footer.php';?>
