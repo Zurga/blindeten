@@ -25,9 +25,8 @@
 			}
 			echo '<li><a href="/account/mijnreserveringen.php" title="Mijn Account">Mijn Reserveringen</a></li>
 			<li><a href="/account/logout" title="Uitloggen">Uitloggen</a></li>';
-			var_dump($welcome);
 			if(isset($welcome)) {
-				echo '<p>' . $welcome .'</p>';
+				echo '<li><a <p>' . $welcome .'</p></a></li>';
 			}
 		}else{
 			echo ' <li><a href="/account/register.php" title="Registreer">Registreer</a></li>  
