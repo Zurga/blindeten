@@ -76,6 +76,14 @@
 		
 		</div>
 	</div>
+	<script type="test/javascript">
+		$(document).ready(function(){
+			$('#admintab ul a').click(function(){
+				$('#admintab ul a').removeClass('selected');
+				$(this).addClass('selected');
+			});
+		});
+	</script>
 </div>
 
 
