@@ -48,6 +48,7 @@ if($request == '/account/register'){
 	var_dump($attr);
 	if($model->add_account($attr)){
 		$logged_in == true;
+		var_dump($logged_in);
 		if(isset($_SESSION['logged_in'])){
 			header("Location: ". $index);
 		}
