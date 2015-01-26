@@ -122,7 +122,6 @@ if($request == '/account/mijnreserveringen.php') {
 		$booking->user1 = new User($booking->user1);
 		$booking->user2 = new User($booking->user2);
 	}
-
 	include $root . '/html/mijnreserveringen.php';
 }
 ?>
