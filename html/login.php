@@ -22,14 +22,12 @@
 				<br>
 				<input type="submit" id="submit" value="Log in">
 			</fieldset>
-				<br>
-				<br>
-		<div class="error">		
-		<?php if(isset($error)) {
+		</form>
+	<div class="error">
+	<?php if(isset($error)) {
 			echo '<p>' . $error .'</p>';
 		} ?> 
-		</div>
-		</form>
+	</div>
 	</div>
 </div>
 <?php include 'footer.php';?>
