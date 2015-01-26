@@ -18,7 +18,7 @@ if($request == '/ajax/booking'){
 	header('Content-Type: application/json');
 	$input = $_POST['input'];
 	$restaurant = new Restaurant($input['id']);
-	$bookings = $model->get_bookings($restaurant, $input['date']);
+	$bookings = $model->get_bookings($restaurant, $input['date'], true);
 
 	//check if we have something to return
 	$html = '';
@@ -32,16 +32,20 @@ if($request == '/ajax/booking'){
 			$html .= '<li id="' . $booking->id . '"><form action="/ajax/book_table" method="POST">' .
 				 $booking->user1->age() . ' ' . ($user->sex == 0 ? 'Man' : 'Vrouw') . 
 				'<input type="field" name="input[rest_id]" value="' .$booking->table_id .'" class="hidden">'.
-				'<input type="submit" value="Reserveer">Reserveer</input></form></li>';
+				'<input type="submit" value="Reserveer"></input></form></li>';
 			$times[$booking->time] += 1;
 		}
 	}
 	$html .= '<form action="/ajax/book_table" method="POST"><select name=input[time]>'; 
-	foreach($times as $time){
-		if($times[$time] < count($restaurant->tables)){
-			$html .= '<option value=' . $time . '>' . substring($booking->time, 0, 5) . '</option>';
+	if(!empty($times)){
+		foreach($times as $time){
+			if($times[$time] < count($restaurant->tables)){
+				$html .= '<option value=' . $time . '>' . substring($booking->time, 0, 5) . '</option>';
+			}
 		}
 	}
+	else{}
+		
 	$html .= '</select></form>';
 	echo $html;
 }

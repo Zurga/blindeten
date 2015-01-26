@@ -129,7 +129,7 @@ class Model{
 	}
 	
 	//Get bookings with id / time 
-	public function get_bookings($object, $date=NULL){
+	public function get_bookings($object, $date=NULL, $later=NULL){
 		if (get_class($object) == 'User') {
 			$query = "SELECT id FROM bookings WHERE user1 = ". $object->id .
 			" or user2 = ". $object->id;
@@ -144,7 +144,12 @@ class Model{
 		
 		//add the date to the query if it is set
 		if(isset($date)){
-			$query = $query . ' AND date = "' . $date . '"';
+			if(isset($later)){
+				$query .= ' AND `date` >= "' . $date . '"';
+			}
+			else{
+				$query .= ' AND `date` = "' . $date . '"';
+			}
 		}
 		if($rows = get_rows($this->db->query($query))){
 			$bookings = array();
