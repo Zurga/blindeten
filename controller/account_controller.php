@@ -81,10 +81,8 @@ if($request == '/account/set_login'){
 	}
 	else{
 		$error = 'Deze combinatie is bij ons niet bekend';
-		
 		include $root . '/html/login.php';
-
-		header("Location: ". $index . "/account/login.php");
+		//header("Location: ". $index . "/account/login.php");
 	}
 }
 
