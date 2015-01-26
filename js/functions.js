@@ -96,7 +96,7 @@ function create_calendar(days, id){
 			//calendarday.style = "color: rgb(26, 141, 28); font-weight: bold;";
 		}	
 	}
-	document.write(css + '<style>');
+	document.getElementById(id).innerHTML += css + '<style>';
 	datePickerController.setDisabledDates(input, disabled);
 }
 
