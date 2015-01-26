@@ -118,9 +118,11 @@ if($request == '/account/forgot_password'){
 
 if($request == '/account/mijnreserveringen.php') {
 	$bookings = $model->get_bookings($user);
+	if(!empty($bookings)){
 	foreach($bookings as $booking){
 		$booking->user1 = new User($booking->user1);
 		$booking->user2 = new User($booking->user2);
+	}
 	}
 	include $root . '/html/mijnreserveringen.php';
 }
