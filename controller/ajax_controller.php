@@ -60,7 +60,7 @@ if($request == '/ajax/book_table'){
 	if($logged_in){
 		$time = $input['time'];
 		$date = $input['date'];
-		$restaurant = new Restaurant($input['id']);
+		$restaurant = new Restaurant($input['restaurant']);
 		var_dump($restaurant);
 		if(isset($input['booking'])){
 			$booking = new Booking($input['booking']);
