@@ -51,11 +51,11 @@ if($request == '/account/register'){
 			//mail_id 1 is welcome mail
 			send_mail($user,1);
 			if($auth->login($attr['email'], $attr['password'])){
-				//header("Location: ". $index);
+				header("Location: ". $index);
 			}
 			else{
 				$register_error = 'De ingevulde gegevens zijn niet compleet of onjuist';
-				//include $root . '/html/register.php';
+				include $root . '/html/register.php';
 			}
 		}	
 }
