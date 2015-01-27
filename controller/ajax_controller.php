@@ -80,6 +80,10 @@ if($request == '/ajax/book_table'){
 					}
 				}
 			}
+			else {
+				if($booking = $model->book_table($user, $restaurant, 
+					$restaurant->tables[0], $date, $time){
+					echo 'je hebt gebookt';
 		}
 	}
 	else {
