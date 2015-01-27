@@ -38,7 +38,7 @@ if ($request == '/account/edit_restaurant.php') {
 if ($request == '/account/save_restaurant') {
 	$attr = sanitize($_POST['input'],$model->db);
 	if($user->change_rest($attr)) {
-		//header("Location: ".$index ."/account/show.php");
+		header("Location: ".$index ."/account/show.php");
 	}
 }
 
