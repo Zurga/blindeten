@@ -16,13 +16,13 @@
 			<br>
 			<br>
 			<li><p>Geboortedatum:</p><br><br>
-			<input id="day" name="input[day]" type="day" size="2" maxlength="2" max="31" placeholder="Dag" >
-			<input id="month" name="input[month]" type="month" size="5" maxlength="2" max="12" placeholder="Maand">
-			<input id="year" name="input[year]" type="year" size="4" maxlength="4" max="1997" placeholder="Jaar" >
+			<input id="day" name="input[day]" type="day" size="2" maxlength="2" max="31">
+			<input id="month" name="input[month]" type="month" size="5" maxlength="2" max="12">
+			<input id="year" name="input[year]" type="year" size="4" maxlength="4" max="1997">
 			<br>
 			<br>
 			<li><p>Woonplaats:</p><br><br>
-			<input id="city" name="input[city]" type="text" <!--placeholder="<?php //echo $user->city; ?>">--></p></li>
+			<input id="city" name="input[city]" type="text"></p></li>
 			<br>
 			<br>
 			<li><input type="submit" id="submit" value="Gegevens opslaan"></p></li>

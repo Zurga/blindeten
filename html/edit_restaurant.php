@@ -39,7 +39,7 @@
 
 <script>
 	var data = <?php echo json_encode(new $restaurant($user->owner));?>;
-
+	document.write (data);
 		document.getElementById("name").value = data["name"];
 
 		document.getElementById("url").value = data["url"];
