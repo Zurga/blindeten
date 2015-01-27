@@ -79,8 +79,8 @@ if($request == '/ajax/book_table'){
 		$date = $input['date'];
 		if(isset($input['booking'])){
 			$booking = new Booking($input['booking']);
-			$restaurant = new Restaurant($booking->rest_id);
-			if($booking = $model->book_table($user, $restaurant, $booking->table, $date, $time)){
+			$restaurant = new Restaurant($booking->restaurant_id);
+			if($booking = $model->book_table($user, $restaurant, $booking->table_id, $date, $time)){
 				echo 'je hebt geboekt!1!!!11!11';
 			}
 		}
