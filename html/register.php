@@ -1,24 +1,28 @@
 <?php include 'header.php';?>
 <script>
-function validate()
+function checkPass()
 {
-  var a=documents.forms["password"].value;
-  var b=documents.forms["check_password"].value;
-  if(!(a==b))
-  {
-    alert("both passwords are not matching");
-    return false;
-  }
-  return true;
+  var password = document.getElementById("password");
+  var check_password = document.getElementById("check_password");
+  var message = document.getElementById('confirmMessage');
+  var goodColor= "#66cc66";
+  var badColor= "#ff6666";
+  
+  if(password.value == check_password.value){
+	check_password.style.backgroundColor = goodColor;
+	message.style.color = goodColor;
+	message.innerHTML = "Het wachtwoord matcht!"
+}else{
+	check_password.style.backgroundColor = badColor;
+	message.style.color = badColor;
+	message.innerHTML = "Het wachtwoord matcht niet."
+	}
 }
-
-
-
 </script>
 <div class="content">
 	<div class="maincontent">
 
-		<form id ="form" name= "register" action='register' method='post' onSubmit="return validate()">
+		<form id ="form" name= "register" action='register' method='post'>
 
 			<h1>Registreer</h1><br>
 			<br>
@@ -43,7 +47,8 @@ function validate()
 				<input id="password" name="input[password]" type="password" placeholder="Wachtwoord" required>
 				<br>
 				<br>
-				<input id="check_password" name="input[check_password]" type="password" placeholder="Herhaal wachtwoord" required>
+				<input id="check_password" name="input[check_password]" type="password" onkeyup="checkPass(); return false;" placeholder="Herhaal wachtwoord" required>
+				<span id="confirmMessage" class="confirmMessage"></span>
 				<br>
 				<br>
 				<input id="day" name="input[day]" type="day" size="4" maxlength="2" min="1" max="31" placeholder="Dag" required>
@@ -57,7 +62,7 @@ function validate()
 				</select>
 				<br>
 				<br>
-				<input type="submit" id="submit" onclick= return validate() value="Registreer" >
+				<input type="submit" id="submit" value="Registreer" >
 			</fieldset>
 				<br>
 				<br>
