@@ -69,7 +69,8 @@ class User {
 			"street = '".$attr['street']."', number = ".$attr['number'].", city = '".$attr['city']."'". 
 			", zipcode = '".$attr['zipcode']."' WHERE id = '".$this->owner."'";
 		
-		for ($i = 1; $i <= (int) abs($attr['tables']); $i++) {
+		$inttables = (int) $attr['tables'];
+		for ($i = 1; $i <= abs($inttables); $i++) {
 				$this->add_table($this->owner);
 		}
 		
