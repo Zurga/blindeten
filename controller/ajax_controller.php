@@ -46,8 +46,9 @@ if($request == '/ajax/booking'){
 	if($times_count < $restaurant->tables and $times_count != 0){
 		$html .= '<select name="time" id="new-' . $restaurant->id . '">'; 
 		
-		foreach($times as $time){
-			if($times[$time] < count($restaurant->tables)){
+		foreach($times as $time=>$count){
+			var_dump($time);
+			if($count < count($restaurant->tables)){
 				$html .= '<option value=' . $time . '>' . substr($booking->time, 0, 5) . '</option>';
 			}
 		}
