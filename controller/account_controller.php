@@ -24,6 +24,7 @@ if($request == '/account/edit.php'){
 	}	
 }
 
+//change restaurant attributes
 if ($request == '/account/edit_restaurant.php') {
 	if ($logged_in == true and $user->owner != 0) {
 		$title = "Restaurant wijzigen";
@@ -31,6 +32,13 @@ if ($request == '/account/edit_restaurant.php') {
 	}
 	else {
 		header("Location: ". $index ."/account/login.php");
+	}
+}
+
+if ($request == '/account/save_restaurant') {
+	$attr = sanitize($_POST['input'],$model->db);
+	if($user->change_rest($attr)) {
+		header("Location: ".$index ."/account/show.php");
 	}
 }
 
@@ -63,7 +71,7 @@ if($request == '/account/register'){
 				header("Location: ". $index);
 			}
 			else{
-				$last_input= $_POST['input'];
+				$last_input= sanitize($_POST['input'], $model->db);
 				$register_error = 'De ingevulde gegevens zijn niet compleet of onjuist';
 				include $root . '/html/register.php';
 			}
