@@ -77,14 +77,15 @@ if($request == '/ajax/book_table'){
 	if($logged_in){
 		$time = $input['time'];
 		$date = $input['date'];
-		$restaurant = new Restaurant($input['restaurant']);
 		if(isset($input['booking'])){
 			$booking = new Booking($input['booking']);
-			if($booking = $model->book_table($user, $restaurant, $booking->table, $time)){
+			$restaurant = new Restaurant($booking->rest_id);
+			if($booking = $model->book_table($user, $restaurant, $booking->table, $date, $time)){
 				echo 'je hebt geboekt!1!!!11!11';
 			}
 		}
 		else {
+			$restaurant = new Restaurant($input['restaurant']);
 			if($cur_bookings = $model->get_bookings($restaurant, $input['date'], $input['time'])){;
 				foreach($cur_bookings as $booking){
 					foreach($restaurant->tables as $table){
