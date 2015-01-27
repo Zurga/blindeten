@@ -15,7 +15,7 @@
 	<div class= "headercontent">
 		<a href="/"><img src="/html/blindetenlogo.png"></a>
 		<?php 
-		if ($logged_in) {
+		if ($logged_in){
 			echo "<h1>Welkom, ".$user->name."!</h1>";
 		} 
 		?>
