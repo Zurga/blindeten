@@ -55,11 +55,13 @@ if($request == '/ajax/booking'){
 			"var params = 'input[time]=' + document.getElementById('new-".$restaurant->id."').value;".
 			"params += '&input[restaurant]=" . $restaurant->id . "&input[date]=". $input['date'] . "';" .
 			"get_output('book_table',". $restaurant->id .' ,params);">Reserveer</button>';
-	}
-	//no bookings so far
-	else if($times_count == count($restaurant->tables)){
+		
 		echo $html;
-		break;
+	}
+	//booking is not possible
+	else if($times_count == count($restaurant->tables) * 2){
+		echo $html;
+		return true;
 	}
 	else{
 		$html .= '<select name="time" id="new-' . $restaurant->id . '">'; 
@@ -68,8 +70,9 @@ if($request == '/ajax/booking'){
 			"var params = 'input[time]=' + document.getElementById('new-".$restaurant->id."').value;".
 			"params += '&input[restaurant]=" . $restaurant->id . "&input[date]=". $input['date'] . "';" .
 			"get_output('book_table',". $restaurant->id .' ,params);">Reserveer</button>';
+		
+		echo $html;
 	}
-	echo $html;
 }
 
 if($request == '/ajax/book_table'){
