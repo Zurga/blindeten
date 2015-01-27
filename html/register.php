@@ -47,7 +47,7 @@ function checkPass()
 			<br>
 			<br>
 			<fieldset id="inputs" method='post'>
-				<input id="name" name="input[name]" type="text" placeholder= "<?php $last_input->name ?>" required>  
+				<input id="name" name="input[name]" type="text" placeholder="Voornaam" value = "<?php $last_input->name ?>" required>  
 				<br>
 				<br>
 				<input id="surname" name="input[surname]" type="text" placeholder="Achternaam" value ="<?php $last_input->surname ?>" required>
@@ -63,7 +63,6 @@ function checkPass()
 				<br>
 				<br>
 				<input id="check_password" name="input[check_password]" type="password" onkeyup="checkPass(); return false;" placeholder="Herhaal wachtwoord" required>
-				<span id="confirmMessage" class="confirmMessage"></span>
 				<br>
 				<br>
 				<input id="day" name="input[day]" type="day" size="4" maxlength="2" min="1" max="31" placeholder="Dag" value ="day" required>
