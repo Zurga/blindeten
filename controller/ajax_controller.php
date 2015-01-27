@@ -11,9 +11,9 @@ if($request == '/ajax/calendar'){
 	$bookings = $model->get_bookings($restaurant, $cur_date, NULL, true);
 	$days = array();
 	if(!empty($bookings)){
-	foreach($bookings as $booking){
-		$days[$booking->date] += 1;
-
+		foreach($bookings as $booking){
+			$days[$booking->date] += 1;
+		}
 	}
 	echo json_encode($days);
 }
