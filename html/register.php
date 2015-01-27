@@ -177,7 +177,7 @@ function checkPass()
 				</select>
 				<br>
 				<br>
-				<select name="input[sex]">
+				<select id="sex" name="input[sex]">
 				<option value="0" >Man</option>
 				<option value="1" >Vrouw</option>
 				</select>
