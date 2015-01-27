@@ -56,6 +56,7 @@ if($request == '/ajax/booking'){
 }
 
 if($request == 'ajax/book_table'){
+	echo 'htsaoeushtnoeuahtsnaoeuhtsnaoeuhtsn';
 	if($logged_in){
 		$restaurant = new Restaurant($_POST['input']['id']);
 		$table = $_POST['input']['table_id'];
