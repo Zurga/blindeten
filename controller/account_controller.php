@@ -51,11 +51,11 @@ if($request == '/account/register'){
 			//mail_id 1 is welcome mail
 			send_mail($user,1);
 			if($auth->login($attr['email'], $attr['password'])){
-				header("Location: ". $index);
+				//header("Location: ". $index);
 			}
 			else{
 				$register_error = 'De ingevulde gegevens zijn niet compleet of onjuist';
-				include $root . '/html/register.php';
+				//include $root . '/html/register.php';
 			}
 		}	
 }
@@ -130,6 +130,7 @@ if($request == '/account/mijnreserveringen.php') {
 if($request == '/account/delete_booking') {
 	$booking_id = sanitize($_POST['booking_id'],$model->db);
 	if ($user->cancel_booking($booking_id)) {
+		//mail_id 6 is cancelling booking
 		send_mail($user,6,$booking->date);
 		header("Location: ". $index .'/account/mijnreserveringen.php');
 	}

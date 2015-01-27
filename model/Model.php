@@ -20,7 +20,7 @@ class Model{
 
 		//create a date int array to check if the date exists
 		$date = explode('-',$attr['birthdate']);
-		array_walk($date, 'intval');
+		var_dump(array_walk($date, 'intval'));
 
 		//check if the date is valid
 		if(checkdate($date[1],$date[2], $date[0])){
