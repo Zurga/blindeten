@@ -1,5 +1,14 @@
 <?php include 'header.php';?>
 
+<script>
+	var data = <?php echo json_encode($booking);?>;
+
+		document.getElementById("date").value = data["date"];
+
+		document.getElementById("time").value = data["time"];
+	
+</script>
+
 <div class="content">
 	<div class="maincontent">
 		<h1>Booking wijzigen</h1>
@@ -20,13 +29,5 @@
     </div>
 </div>
 
-<script>
-	var data = <?php echo json_encode($booking);?>;
-
-		document.getElementById("date").value = data["date"];
-
-		document.getElementById("time").value = data["time"];
-	
-</script>
 
 <?php include 'footer.php';?>
