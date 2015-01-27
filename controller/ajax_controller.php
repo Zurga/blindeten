@@ -28,8 +28,7 @@ if($request == '/ajax/booking'){
 	//check if we have something to return
 	if(!empty($bookings)){
 		foreach($bookings as $booking){
-			//get user info
-			$user = new User($booking->user1);
+			//insert user in booking
 			$booking->user1 = $user;
 			
 			$html .= '<li id="' . $booking->id . '" class="booking">'.
@@ -58,14 +57,14 @@ if($request == '/ajax/booking'){
 			"get_output('book_table',". $restaurant->id .' ,params);">Reserveer</button>';
 	}
 	//no bookings so far
-	else{
+	else if($times_count == count($restaurant->tables)){
 		$html .= '<select name="time" id="new-' . $restaurant->id . '">'; 
 		$html .= '<option value="18:00:00">18:00</option><option value="20:00:00">20:00</option>';
 		$html .= '</select><button value="Reserveer" onClick="'.
 			"var params = 'input[time]=' + document.getElementById('new-".$restaurant->id."').value;".
 			"params += '&input[restaurant]=" . $restaurant->id . "&input[date]=". $input['date'] . "';" .
 			"get_output('book_table',". $restaurant->id .' ,params);">Reserveer</button>';
-	}	
+	}
 	echo $html;
 }
 
