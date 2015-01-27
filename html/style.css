@@ -94,9 +94,9 @@ a img {
 #menu ul {
     list-style-type: none;  
 	margin-top: 0;
-	padding: 8px;
+	padding: 5px;
 	background-color: black;
-	opacity: 0.8; 
+	opacity: 0.9; 
 	font-size: 20px;
 	text-align: center;
 } 
