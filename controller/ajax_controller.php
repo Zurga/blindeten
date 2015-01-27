@@ -34,15 +34,13 @@ if($request == '/ajax/booking'){
 			$html .= '<li id="' . $booking->id . '" class="booking">'.
 				 $booking->user1->age() . ' ' . ($user->sex == 0 ? 'Man' : 'Vrouw') . $booking->time .
 				 '<button value="Reserveer" onClick="get_output('."'book_table',". $restaurant->id .
-				",'input[time]='".$booking->time. "input[booking]='". $booking->id ."')" . 
+				",'input[time]='".$booking->time. "&input[booking]='". $booking->id ."');" . 
 				'">Schuif aan!</button>';
 			$times[$booking->time] += 1;
 		}
 	}
 
 	$times_count = array_sum($times);
-	var_dump($times);
-	var_dump(count($restaurant->tables));
 	//check if there are disabled times
 	if($times_count < count($restaurant->tables) * 2 and $times_count != 0){
 		$html .= '<select name="time" id="new-' . $restaurant->id . '">'; 
