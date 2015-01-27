@@ -49,7 +49,7 @@ if($request == '/ajax/booking'){
 			<option value="20:00">20:00</option>';
 	}
 	$html .= '</select><button value="Reserveer" onClick="'.
-		"var params = 'input[time]='+ document.getElementsById('new-".$restaurant->id."').value;".
+		"var params = 'input[time]='+ document.getElementById('new-".$restaurant->id."').value;".
 		"get_output('book_table',". $restaurant->id .' ,params);">Reserveer</button>';
 	echo $html;
 }
