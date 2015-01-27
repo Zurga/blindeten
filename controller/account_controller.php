@@ -71,6 +71,7 @@ if($request == '/account/register'){
 				header("Location: ". $index);
 			}
 			else{
+				$last_input= $_POST['input'];
 				$register_error = 'De ingevulde gegevens zijn niet compleet of onjuist';
 				include $root . '/html/register.php';
 			}

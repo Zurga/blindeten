@@ -15,6 +15,27 @@ function checkPass()
 	message.style.color = badColor;
 	}
 }
+
+  var data = <?php echo json_encode($last_input);?>;
+  var day = data["birthdate"].substring(8,10);	
+  var month = data["birthdate"].substring(5,7);
+  var year = data["birthdate"].substring(0,4);
+
+	document.getElementById("name").value = data["name"];
+
+	document.getElementById("surname").value = data["surname"];
+	
+	document.getElementById("email").value = data["email"];
+	
+	document.getElementById("city").value = data["city"];
+
+	document.getElementById("day").value = day;
+
+	document.getElementById("month").value = month;
+
+	document.getElementById("year").value = year;
+
+	
 </script>
 <div class="content">
 	<div class="maincontent">
@@ -24,8 +45,9 @@ function checkPass()
 			<h1>Registreer</h1>
 			<br>
 			<?php if(isset($register_error)) {
-			echo '<p class="error">' . $register_error .'</p>';
-			} ?> 
+					echo '<p class="error">' . $register_error .'</p>';
+				} ?>
+			<br>
 			<br>
 			<fieldset id="inputs" method='post'>
 				<input id="name" name="input[name]" type="text" placeholder="Voornaam" required>  
@@ -62,17 +84,11 @@ function checkPass()
 			</fieldset>
 				<br>
 				<br>
-			<?php include 'freecap.php';?>
-			<?php include 'freecap_wrap.php' ; ?>
+				<br>
+				<br>
 		</form>
 		</div>
 	</div>
 </div>	
-
-
-
-
-
-
 
 <?php include 'footer.php';?>
