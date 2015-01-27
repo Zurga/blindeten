@@ -157,10 +157,26 @@ class User {
 		return $age;
 	}
 	
+	//Save changed booking
+	//Verwijder jezef uit de booking en maak een nieuwe booking aan als die datum/tijd beschikbaar is.
+	public function change_booking($booking, $time, $date){
+	$this->cancel_booking($booking);
+	$query= 'SELECT user2 FROM booking WHERE time='.$time.' AND date='.$date;
+	$user_info = get_rows($this->db->query($query));
+	if(user2 == 0 OR user2 == NULL) {
+		$this->book_table($user,$restaurant,$table_id,$date,$time);
+	}
+	else {
+		return false;
+	}
+	$query= "UPDATE bookings SET (date,time) "	
+	
+	}
+	
 	//Cancel bookings
 	public function cancel_booking($booking_id) {
 		$booking = new Booking($booking_id);
-		
+	
 		// check if the user is user1 or user2 and if there is another user
 		if ($booking->user1 == $this->id) {
 			if ($booking->user2 != 0) {
