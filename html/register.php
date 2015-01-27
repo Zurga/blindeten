@@ -2,8 +2,8 @@
 <script>
 function validate()
 {
-  var a=documents.forms["password"]["password"].value;
-  var b=documents.forms["check_password"]["check_password"].value;
+  var a=documents.forms["password"].value;
+  var b=documents.forms["check_password"].value;
   if(!(a==b))
   {
     alert("both passwords are not matching");
@@ -57,7 +57,7 @@ function validate()
 				</select>
 				<br>
 				<br>
-				<input type="submit" id="submit" value="Registreer" >
+				<input type="submit" id="submit" onclick= return validate() value="Registreer" >
 			</fieldset>
 				<br>
 				<br>
