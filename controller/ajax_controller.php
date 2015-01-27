@@ -29,15 +29,14 @@ if($request == '/ajax/booking'){
 			$user = new User($booking->user1);
 			//check the sex of the user
 			$booking->user1 = $user;
-			$html .= '<li id="' . $booking->id . '" class="booking"><form action="/ajax/book_table" method="POST">' .
+			$html .= '<li id="' . $booking->id . '" class="booking">'.
 				 $booking->user1->age() . ' ' . ($user->sex == 0 ? 'Man' : 'Vrouw') . $booking->time .
-				 '<input type="field" name="input[rest_id]" value="' .
-				 $booking->table_id .'" class="hidden">'.
-				'<input type="submit" value="Reserveer"></input></form></li>';
+				 '<button value="Reserveer" onClick="get_output('."'book_table',". $restaurant->id .
+				 ",'input[time]='".$booking->time. "')" . '">Schuif aan!</button>';
 			$times[$booking->time] += 1;
 		}
 	}
-	$html .= '<form action="/ajax/book_table" method="POST"><select name=input[time]>'; 
+	$html .= '<select name="time" id="new-' . $restaurant->id . '>'; 
 	if(!empty($times)){
 		foreach($times as $time){
 			if(!$times[$time] > count($restaurant->tables)){
@@ -49,7 +48,9 @@ if($request == '/ajax/booking'){
 		$html .= '<option value="18:00">18:00</option>
 			<option value="20:00">20:00</option>';
 	}
-	$html .= '</select><input type="submit" value="Reserveer"></form>';
+	$html .= '</select><button value="Reserveer" onClick="'.
+		"var params = 'input[time]='+ document.getElementsById('new-".$restaurant->id."').value;".
+		"get_output('book_table',". $restaurant->id ." ,params);></form>";
 	echo $html;
 }
 
@@ -63,5 +64,7 @@ if($request == 'ajax/book_table'){
 		}
 	}
 	else {
+		echo 'Je moet ingelogd zijn om te kunnen reserveren...'.
+		     '<a href="/account/register.php">Registreer hier</a>';
 	}
 }
