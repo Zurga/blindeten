@@ -69,8 +69,8 @@ class User {
 			"street = '".$attr['street']."', number = ".$attr['number'].", city = '".$attr['city']."'". 
 			", zipcode = '".$attr['zipcode']."' WHERE id = '".$this->owner."'";
 		
-		for ($i = 1; $i <= (int) abs($attr['tables']); $i++) {
-				$this->add_table($this->owner);
+		for ($i = 1; $i <= abs($attr['tables']); $i++) {
+			$this->add_table(new Restaurant($this->owner));
 		}
 		
 		return $this->db->query($query);
