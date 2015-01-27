@@ -9,31 +9,12 @@ function checkPass()
   
   if(password.value == check_password.value){
 	check_password.style.backgroundColor = goodColor;
-	message.style.color = goodColor;
 }else{
 	check_password.style.backgroundColor = badColor;
-	message.style.color = badColor;
 	}
 }
-
-  var data = <?php echo json_encode($last_input);?>;
-
-	document.getElementById("name").value = data["name"];
-
-	document.getElementById("surname").value = data["surname"];
-	
-	document.getElementById("email").value = data["email"];
-	
-	document.getElementById("city").value = data["city"];
-
-	document.getElementById("day").value = data["day"];
-
-	document.getElementById("month").value = data["month"];
-
-	document.getElementById("year").value = data["year"];
-
-	
 </script>
+
 <div class="content">
 	<div class="maincontent">
 
@@ -45,18 +26,17 @@ function checkPass()
 					echo '<p class="error">' . $register_error .'</p>';
 				} ?>
 			<br>
-			<br>
 			<fieldset id="inputs" method='post'>
-				<input id="name" name="input[name]" type="text" placeholder="Voornaam" value ="<?php $last_input->name ?>" required>  
+				<input id="name" name="input[name]" type="text" placeholder="Voornaam" required>  
 				<br>
 				<br>
-				<input id="surname" name="input[surname]" type="text" placeholder="Achternaam" value ="<?php $last_input->surname ?>" required>
+				<input id="surname" name="input[surname]" type="text" placeholder="Achternaam" required>
 				<br>
 				<br>
-				<input id="email" name="input[email]" type="text" placeholder="E-mail" value ="<?php $last_input->email ?>" required>   
+				<input id="email" name="input[email]" type="text" placeholder="E-mail" required>   
 				<br>
 				<br>
-				<input id="city" name="input[city]" type="text" placeholder="Woonplaats" value "<?php $last_input->city ?>" required> 
+				<input id="city" name="input[city]" type="text" placeholder="Woonplaats" required> 
 				<br>
 				<br>
 				<input id="password" name="input[password]" type="password" placeholder="Wachtwoord" required>
@@ -65,9 +45,9 @@ function checkPass()
 				<input id="check_password" name="input[check_password]" type="password" onkeyup="checkPass(); return false;" placeholder="Herhaal wachtwoord" required>
 				<br>
 				<br>
-				<input id="day" name="input[day]" type="day" size="4" maxlength="2" min="1" max="31" placeholder="Dag" value ="<?php $last_input->day ?>" required>
-				<input id="month" name="input[month]" type="text" size="6" maxlength="2" min="01" max="12" placeholder="Maand" value ="<?php $last_input->month ?>" required>
-				<input id="year" name="input[year]" type="year" size="4" maxlength="4" min="1915" max="1997" placeholder="Jaar" value ="<?php $last_input->year ?>" required>
+				<input id="day" name="input[day]" type="day" size="4" maxlength="2" min="1" max="31" placeholder="Dag" required>
+				<input id="month" name="input[month]" type="text" size="6" maxlength="2" min="01" max="12" placeholder="Maand" required>
+				<input id="year" name="input[year]" type="year" size="4" maxlength="4" min="1915" max="1997" placeholder="Jaar" required>
 				<br>
 				<br>
 				<select name="input[sex]">
@@ -84,5 +64,24 @@ function checkPass()
 		</div>
 	</div>
 </div>	
+
+<script>
+  var data = <?php echo json_encode($last_input);?>;
+
+	document.getElementById("name").value = data["name"];
+
+	document.getElementById("surname").value = data["surname"];
+	
+	document.getElementById("email").value = data["email"];
+	
+	document.getElementById("city").value = data["city"];
+
+	document.getElementById("day").value = data["day"];
+
+	document.getElementById("month").value = data["month"];
+
+	document.getElementById("year").value = data["year"];
+
+</script>
 
 <?php include 'footer.php';?>

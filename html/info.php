@@ -17,5 +17,6 @@
 			<br><h3>Voor vragen zie de <a href="faq.php" title="Frequently Asked Questions">FAQ</a></h3></br>
 		</h2><br>
 	</div>
+</div>
 
 <?php include 'footer.php';?>
