@@ -22,7 +22,7 @@
 			<br>
 			<br>
 			<li><p>Woonplaats:</p><br><br>
-			<input id="city" name="input[city]" type="text" placeholder="<?php echo $user->city; ?>"></p></li>
+			<input id="city" name="input[city]" type="text" <!--placeholder="<?php //echo $user->city; ?>">--></p></li>
 			<br>
 			<br>
 			<li><input type="submit" id="submit" value="Gegevens opslaan"></p></li>
