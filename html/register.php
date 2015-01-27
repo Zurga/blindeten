@@ -47,7 +47,7 @@ function checkPass()
 			<br>
 			<br>
 			<fieldset id="inputs" method='post'>
-				<input id="name" name="input[name]" type="text" placeholder="Voornaam" value ="<?php$last_input?>" required>  
+				<input id="name" name="input[name]" type="text" placeholder="Voornaam" value ="<?php $last_input->name ?>" required>  
 				<br>
 				<br>
 				<input id="surname" name="input[surname]" type="text" placeholder="Achternaam" value ="<?php $last_input->surname ?>" required>
