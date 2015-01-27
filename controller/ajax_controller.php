@@ -50,7 +50,7 @@ if($request == '/ajax/booking'){
 	}
 	$html .= '</select><button value="Reserveer" onClick="'.
 		"var params = 'input[time]='+ document.getElementById('new-".$restaurant->id."').value;".
-		"params += '&input[restaurant]=" . $restaurant->id . "';";
+		"params += '&input[restaurant]=" . $restaurant->id . "';" .
 		"get_output('book_table',". $restaurant->id .' ,params);">Reserveer</button>';
 	echo $html;
 }
