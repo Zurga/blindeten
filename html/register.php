@@ -4,18 +4,15 @@ function checkPass()
 {
   var password = document.getElementById("password");
   var check_password = document.getElementById("check_password");
-  var message = document.getElementById('confirmMessage');
   var goodColor= "#66cc66";
   var badColor= "#ff6666";
   
   if(password.value == check_password.value){
 	check_password.style.backgroundColor = goodColor;
 	message.style.color = goodColor;
-	message.innerHTML = "Het wachtwoord matcht!"
 }else{
 	check_password.style.backgroundColor = badColor;
 	message.style.color = badColor;
-	message.innerHTML = "Het wachtwoord matcht niet."
 	}
 }
 </script>
