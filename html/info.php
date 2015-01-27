@@ -3,7 +3,7 @@
 <div class="content">
 	<div class="maincontent">
 	
-	<h1>Wat is BlinDeten?</h1><br>
+	<h1>Wat is BlinDeten?</h1><br><br>
 			
 		<h2>
 			Zin om uit eten te gaan? Maar u bent alleen en wilt nieuwe mensen ontmoeten? Of gewoon gezellig met iemand uit eten gaan? <br><br>
