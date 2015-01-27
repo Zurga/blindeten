@@ -1,23 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head> 
-	<title>BlinDeten</title>
-	<link rel="stylesheet" type="text/css" href="style.css"></link>
-</head>
-
-<body>
-<div id="header">
-	<a href="header.html"> <img src="html/blindetenlogo.png"></a>
-</div>
-
-
-<div id="menu">
-    <ul>
-        <li><a href="watisblindeten.html" title="Wat is BlinDeten?">Wat is BlinDeten?</a></li>  
-        <li><a href="registreer.html" title="Registreer">Registreer</a></li>  
-		<li><a href="login.html" title="Log in">Log in</a></li> 
-<br>
-</div>
+<?php include 'header.php';?>
 
 <div class="content">
 	<div class="maincontent">
@@ -47,14 +28,4 @@
 	</div>
 </div>
 
-<div id="footer">
-	<ul>
-        <li><a href="faq.html" title="FAQ">FAQ</a></li>  
-        <li><a href="disclaimer.html" title="Disclaimer">Disclaimer</a></li>  
-		<li><a href="termsofuse.html" title="Terms of Use">Terms Of Use</a></li>
-		<li><a href="contact.html" title="Contact">Contact</a></li>
-	</ul>
-</div>
-
-</body>
-</html>
+<?php include 'footer.php';?>
