@@ -91,7 +91,7 @@ function create_calendar(days, id){
 			}
 			//and highlight days that are single booked
 			else if(days[day] % 2 == 1){
-				classname = 'cd-' + day.replace(/-/g,'');
+				classname = '.cd-' + day.replace(/-/g,'');
 				css += '#' + id + ' ' + classname + 
 					'{color: rgb(26, 141, 28); font-weight: bold;}';
 			}
