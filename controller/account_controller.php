@@ -99,7 +99,7 @@ if($request == '/account/set_login'){
 	if($auth->login(sanitize($_POST['email'],$model->db), sanitize($_POST['password'],$model->db))){
 		$welcome = "Je bent ingelogd!";
 		$logged_in = true;
-		include $root .'/controller/index_controller.php';
+		header("Location: ". $index);
 	}
 	else{
 		$error = 'Deze combinatie is bij ons niet bekend';
