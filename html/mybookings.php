@@ -21,12 +21,12 @@
 		<br>
 		<form action="/account/edit_booking" method="post">
 		<input name="booking_id" value="<?php echo $booking->id; ?>" class="hidden">
-	    <p><input type="submit" id="submit" value="Reservering wijzigen"></p>
+	    <input type="submit" id="submit" value="Reservering wijzigen">
 		</form>
 		<br>
 		<form action="/account/delete_booking" method="post">
 		<input name="booking_id" value="<?php echo $booking->id; ?>" class="hidden">
-	    <p><input type="submit" id="submit" value="Reservering verwijderen"></p>
+	    <input type="submit" id="submit" value="Reservering verwijderen">
 		</form>
 		<?php }} ?>
 	</div>
