@@ -45,7 +45,7 @@ function checkPass()
 				<input id="check_password" name="input[check_password]" type="password" onkeyup="checkPass(); return false;" placeholder="Herhaal wachtwoord" required>
 				<br>
 				<br>
-				<select name="input[day]">
+				<select id="day" name="input[day]">
 				<option value="01" >01</option>
 				<option value="02" >02</option>
 				<option value="03" >03</option>
@@ -81,7 +81,7 @@ function checkPass()
 				<option value="30" >30</option>
 				<option value="31" >31</option>
 				</select>
-				<select name="input[month]">
+				<select id="month" name="input[month]">
 				<option value="01" >Januari</option>
 				<option value="02" >Februari</option>
 				<option value="03" >Maart</option>
@@ -95,7 +95,7 @@ function checkPass()
 				<option value="11" >November</option>
 				<option value="12" >December</option>
 				</select>
-				<select name="input[year]">
+				<select id="year" name="input[year]">
 				<option value="1997">1997</option>
 				<option value="1996">1996</option>
 				<option value="1995">1995</option>
