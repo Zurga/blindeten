@@ -58,7 +58,8 @@ if($request == '/ajax/booking'){
 	}
 	//no bookings so far
 	else if($times_count == count($restaurant->tables)){
-		echo $html;	
+		echo $html;
+		break;
 	}
 	else{
 		$html .= '<select name="time" id="new-' . $restaurant->id . '">'; 
