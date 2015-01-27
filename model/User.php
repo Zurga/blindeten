@@ -73,7 +73,7 @@ class User {
 				var_dump($this->add_table($this->owner));
 		}
 		
-		return this->db->query($query);
+		return $this->db->query($query);
 	}
 	
 	//Delete account (selected by email)
