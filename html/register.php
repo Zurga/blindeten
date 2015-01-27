@@ -73,8 +73,6 @@ function checkPass()
 			</fieldset>
 				<br>
 				<br>
-			<?php include 'freecap.php';?>
-			<?php include 'freecap_wrap.php' ; ?>
 		</form>
 		</div>
 	</div>
