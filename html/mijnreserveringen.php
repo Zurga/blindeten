@@ -11,7 +11,7 @@
 			else {
 		foreach($bookings as $booking) { ?>	
 		<p>Datum en Tijd: <?php echo $booking->date,' ', substr($booking->time, 0, 5); ?></p>
-		<p>Met: <?php if (is_null($booking->user2->id or $booking->user1->id)) {
+		<p>Met: <?php if (is_null($booking->user1->age() or $booking->user2->age())) {
 		echo 'Er heeft nog niemand aangeschoven.';
 		} else {if ($booking->user2->sex == 0) {
 		echo 'Man ';
