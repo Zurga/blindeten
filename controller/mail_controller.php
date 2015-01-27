@@ -20,7 +20,7 @@ function send_mail($user,$mail_id, $data=NULL) {
 	$message = str_replace('\r\n',"\r\n",$message);	
 	$message = str_replace('%user%',$user->name,$message);
 	//time and password will never be in the same mail
-	$message = str_replace(array('%time','%password%'), $data, $message);
+	$message = str_replace(array('%time%','%password%'), $data, $message);
 	
 	mail($to,$subject,$message,$headers);
 	var_dump($php_errormsg);
