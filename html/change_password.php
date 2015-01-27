@@ -4,7 +4,6 @@
 	<div class="maincontent">
 		<h1>Wachtwoord veranderen</h1>
 		<br>
-		<br>
 		<form action="save_new_password" method="post">	
 		<fieldset id="inputs">
 			<li><p>Huidig wachtwoord:&nbsp;&nbsp;</p><input id="current_password" name="password" type="password" placeholder="Huidig wachtwoord" required></li>
