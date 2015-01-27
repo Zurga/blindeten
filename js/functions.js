@@ -88,7 +88,7 @@ function create_calendar(days, id){
 		css += '<style>';
 		for(var day in days){
 			if(days[day] == rest[id].tables.length * 2){
-				disabled[day] = 1;	
+				disabled[day.replace(/-/g,'')] = 1;	
 			}
 			//and highlight days that are single booked
 			else if(days[day] % 2 == 1){
