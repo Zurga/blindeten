@@ -61,6 +61,7 @@ if($request == '/ajax/book_table'){
 		$time = $input['time'];
 		$date = $input['date'];
 		$restaurant = new Restaurant($input['id']);
+		var_dump($restaurant);
 		if(isset($input['booking'])){
 			$booking = new Booking($input['booking']);
 			if($booking = $model->book_table($user, $restaurant, $booking->table, $time)){
