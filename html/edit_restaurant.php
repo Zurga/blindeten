@@ -38,7 +38,7 @@
 </div>
 
 <script>
-	var data = <?php echo json_encode($restaurant);?>;
+	var data = <?php echo json_encode(new $restaurant($user->owner));?>;
 
 		document.getElementById("name").value = data["name"];
 

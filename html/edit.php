@@ -7,7 +7,7 @@
 		<form action='save_data' method='post'>
 		<fieldset id="inputs">
 			<li><p>Naam:</p><br><br>
-			<input id="name" name="input[name]" type="text" <!--placeholder="<?php echo $user->name; ?>"-->></p></li>
+			<input id="name" name="input[name]" type="text"></p></li>
 			<br>
 			<select id= "sex" name="input[sex]">
 			<option value="0" >Man</option>
