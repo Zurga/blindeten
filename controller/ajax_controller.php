@@ -36,7 +36,7 @@ if($request == '/ajax/booking'){
 			$times[$booking->time] += 1;
 		}
 	}
-	$html .= '<select name="time" id="new-' . $restaurant->id . '>'; 
+	$html .= '<select name="time" id="new-' . $restaurant->id . '">'; 
 	if(!empty($times)){
 		foreach($times as $time){
 			if(!$times[$time] > count($restaurant->tables)){
