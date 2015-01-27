@@ -58,6 +58,9 @@ if($request == '/ajax/booking'){
 	}
 	//no bookings so far
 	else if($times_count == count($restaurant->tables)){
+		echo $html;	
+	}
+	else{
 		$html .= '<select name="time" id="new-' . $restaurant->id . '">'; 
 		$html .= '<option value="18:00:00">18:00</option><option value="20:00:00">20:00</option>';
 		$html .= '</select><button value="Reserveer" onClick="'.
