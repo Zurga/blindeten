@@ -24,20 +24,31 @@ function checkPass()
 			<h1>Registreer</h1>
 			<br>
 			<?php if(isset($register_error)) {
-			echo '<p class="error">' . $register_error .'</p>';
-			} ?> 
+					echo '<p class="error">' . $register_error .'</p>';
+					} 
+					if (isset($_POST["submit"]) && $_POST["submit"]=='Submit') {
+					$name=$_POST["name"];
+					$surname=$_POST["surname"];
+					$email=$_POST["email"];
+					$city=$_POST["city"];
+					$day=$_POST["day"];
+					$month=$_POST["month"];
+					$year=$_POST["year"];
+					$sex=$_POST["sex"];
+					}
+			?> 
 			<br>
 			<fieldset id="inputs" method='post'>
-				<input id="name" name="input[name]" type="text" placeholder="Voornaam" required>  
+				<input id="name" name="input[name]" type="text" placeholder="Voornaam" value="<? echo $name?>"/>required>  
 				<br>
 				<br>
-				<input id="surname" name="input[surname]" type="text" placeholder="Achternaam" required>
+				<input id="surname" name="input[surname]" type="text" placeholder="Achternaam" value="<? echo $surname?>"/> required>
 				<br>
 				<br>
-				<input id="email" name="input[email]" type="text" placeholder="E-mail" required>   
+				<input id="email" name="input[email]" type="text" placeholder="E-mail" value="<? echo $email?>"/> required>   
 				<br>
 				<br>
-				<input id="city" name="input[city]" type="text" placeholder="Woonplaats" required> 
+				<input id="city" name="input[city]" type="text" placeholder="Woonplaats" value="<? echo $city?>"/> required> 
 				<br>
 				<br>
 				<input id="password" name="input[password]" type="password" placeholder="Wachtwoord" required>
@@ -47,9 +58,9 @@ function checkPass()
 				<span id="confirmMessage" class="confirmMessage"></span>
 				<br>
 				<br>
-				<input id="day" name="input[day]" type="day" size="4" maxlength="2" min="1" max="31" placeholder="Dag" required>
-				<input id="month" name="input[month]" type="text" size="6" maxlength="2" min="01" max="12" placeholder="Maand" required>
-				<input id="year" name="input[year]" type="year" size="4" maxlength="4" min="1915" max="1997" placeholder="Jaar" required>
+				<input id="day" name="input[day]" type="day" size="4" maxlength="2" min="1" max="31" placeholder="Dag" value="<? echo $day?>"/> required>
+				<input id="month" name="input[month]" type="text" size="6" maxlength="2" min="01" max="12" placeholder="Maand" value="<? echo $month?>"/> required>
+				<input id="year" name="input[year]" type="year" size="4" maxlength="4" min="1915" max="1997" placeholder="Jaar" value="<? echo $year?>"/> required>
 				<br>
 				<br>
 				<select name="input[sex]">
