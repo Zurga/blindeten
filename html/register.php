@@ -17,9 +17,6 @@ function checkPass()
 }
 
   var data = <?php echo json_encode($last_input);?>;
-  var day = data["birthdate"].substring(8,10);	
-  var month = data["birthdate"].substring(5,7);
-  var year = data["birthdate"].substring(0,4);
 
 	document.getElementById("name").value = data["name"];
 
