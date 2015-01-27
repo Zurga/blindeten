@@ -49,10 +49,11 @@ function get_output(which, input, params){
 					output = JSON.parse(http_object.response);
 					create_calendar(output, input);
 				}
-				else if (which == 'booking'){
+				else {
 					output = http_object.response;
 					set_bookings(output, input);
 				}
+					
 			}
 		}
 		http_object.send(params);
