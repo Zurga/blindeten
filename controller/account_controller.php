@@ -106,6 +106,11 @@ if($request == '/account/set_login'){
 	}
 }
 
+//User request editbooking.php
+if($request == '/account/editbooking.php'){
+	include $root . '/html/editbooking.php';
+}
+
 //User pressed delete account
 if($request == '/account/delete_account'){
 	$auth->logout();
