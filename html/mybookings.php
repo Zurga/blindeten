@@ -31,7 +31,7 @@
 		</form>
 		<br>
 		<form action="/account/delete_booking" method="post">
-		<input name="booking_id" value="<?php echo $booking->id; ?>" class="hidden">
+		<input name="booking_id" value=<?php echo $booking->id; ?> class="hidden">
 	    <input type="submit" id="submit" value="Reservering verwijderen">
 		</form>
 		<?php }}} ?>
