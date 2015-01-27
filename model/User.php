@@ -166,6 +166,6 @@ class User {
 			return false;
 		}
 		return $this->db->query($delquery);
-	}
+	}		
 }
 ?>

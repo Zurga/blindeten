@@ -79,30 +79,34 @@ function create_calendar(days, id){
 	
 	
 	opts['formElements'][input] = "%Y-%m-%d";
-	datePickerController.createDatePicker(opts);
 	
 	//disabling the dates that are fully booked
 	var disabled = [];
+	var css = '';
 	if(days){
-		var css = '<style>';
+		css += '<style>';
 		for(var day in days){
 			if(days[day] == rest[id].tables.length * 2){
 				disabled[day] = 1;	
 			}
 			//and highlight days that are single booked
 			else if(days[day] % 2 == 1){
-				classname = 'cd-' + day.replace(/-/g,'');
+				classname = '.cd-' + day.replace(/-/g,'');
 				css += '#' + id + ' ' + classname + 
 					'{color: rgb(26, 141, 28); font-weight: bold;}';
 			}
 		}
+		css += '</style>';
+		set_css('header', css);
+		datePickerController.createDatePicker(opts);
 		datePickerController.setDisabledDates(input, disabled);
-		//document.getElementById(id).innerHTML += css + '</style>';
 	}
+}
+function set_css(id, css){
+	document.getElementById(id).innerHTML += css;
 }
 
 function set_bookings(bookings, id){
 	var ul = document.getElementById('bookings-' + id);
 	ul.innerHTML = bookings;
-
 }
