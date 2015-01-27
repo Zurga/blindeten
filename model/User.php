@@ -70,10 +70,10 @@ class User {
 			", zipcode = '".$attr['zipcode']." WHERE id = '".$user->owner."'";
 		
 		for ($i = 1; $i <= abs($attr['tables']); $i++) {
-				$this->add_table($user->owner);
+				var_dump($this->add_table($user->owner));
 		}
 		
-		return $this->db->query($query);
+		return var_dump($this->db->query($query));
 	}
 	
 	//Delete account (selected by email)
