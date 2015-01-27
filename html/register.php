@@ -22,6 +22,7 @@ function checkPass()
 
 			<h1>Registreer</h1>
 			<br>
+			<br>
 			<?php if(isset($register_error)) {
 					echo '<p class="error">' . $register_error .'</p>';
 				} ?>
