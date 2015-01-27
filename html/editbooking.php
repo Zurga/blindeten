@@ -10,7 +10,7 @@
 			<li><p>Datum: </p>
 			<p><input id="date" name="input[date]" type="date" placeholder="<?php echo $booking->date; ?>"> </p></li>
 			<br>
-			<li><p>Tijd: </p>&nsbp;&nsbp;&nsbp;&nsbp;
+			<li><p>Tijd: </p>
 			<p><input id="time" name="input[time]" type="time" placeholder="<?php echo substr($booking->time, 0, 5); ?>"></p></li>
 			<br>
 			<br>
