@@ -33,7 +33,6 @@ class Auth{
 	//Check if logged in
 	public function check_login(){
 		if(isset($_SESSION['logged_in'])){
-			header("Location: ". $index);
 			return true;
 		}
 		else {
