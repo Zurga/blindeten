@@ -9,10 +9,8 @@ function checkPass()
   
   if(password.value == check_password.value){
 	check_password.style.backgroundColor = goodColor;
-	message.style.color = goodColor;
 }else{
 	check_password.style.backgroundColor = badColor;
-	message.style.color = badColor;
 	}
 }
 
