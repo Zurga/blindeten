@@ -151,14 +151,17 @@ if($request == '/account/mybookings.php') {
 if($request == '/account/edit_booking'){
 	$booking = new Booking($_POST['booking_id']);
 	include $root . '/html/editbooking.php';
+}
+
+if($request == '/account/save_editbooking'){
 	
 }
 
 if($request == '/account/delete_booking') {
 	$booking_id = sanitize($_POST['booking_id'],$model->db);
+	send_mail($user,6,$booking->date);
 	if ($user->cancel_booking($booking_id)) {
 		//mail_id 6 is cancelling booking
-		send_mail($user,6,$booking->date);
 		header("Location: ". $index .'/account/mybookings.php');
 	}
 }

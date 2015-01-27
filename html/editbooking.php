@@ -5,7 +5,7 @@
 		<h1>Booking wijzigen</h1>
 		<br>
 		<br>
-		<form>	
+		<form action="save_editbooking" method="post">	
 		<fieldset id="inputs">
 			<li><p>Datum: </p>
 			<p><input id="date" name="input[date]" type="date"> </p></li>

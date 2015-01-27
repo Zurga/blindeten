@@ -11,11 +11,17 @@
 			else {
 		foreach($bookings as $booking) { ?>	
 		<p>Datum en Tijd: <?php echo $booking->date,' ', substr($booking->time, 0, 5); ?></p>
-		<p>Met: <?php if($booking->user1->age() != 0 or $booking->user2->age() != 0) {
+		<p>Met: <?php if($booking->user1->age() == 0 or $booking->user2->age() == 0) {
 		echo 'Er is nog niemand aangeschoven.';
-		} else {if ($booking->user2->sex == 0) {
+		} else {if($booking->user2->id == $user->id){ 
+		  if ($booking->user1->sex == 0) {
 		echo 'Man ';
-		} else {echo 'Vrouw';} echo $booking->user2->age();
+		} else {echo 'Vrouw';} echo $booking->user1->age(); 
+		}
+		else if($booking->user1->id == $user->id){ 
+		  if ($booking->user2->sex == 0) {
+		echo 'Man ';
+		} else {echo 'Vrouw';} echo $booking->user2->age(); 
 		} ?> </p>
 		<p>Restaurant: <?php $restaurant = new restaurant($booking->restaurant_id); echo $restaurant->name; ?></p>
 		<br>
@@ -28,7 +34,7 @@
 		<input name="booking_id" value="<?php echo $booking->id; ?>" class="hidden">
 	    <input type="submit" id="submit" value="Reservering verwijderen">
 		</form>
-		<?php }} ?>
+		<?php }}} ?>
 	</div>
 </div>
 

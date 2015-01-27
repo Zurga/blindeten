@@ -118,13 +118,15 @@ a img {
 #header h1 {
 	text-align: right;
 	padding-right: 50px;
-	padding-bottom: 30px;
+	padding-bottom: 10px;
+	display: inline-block;
 }
 
 #header img{
-	display: block;
+	display: inline block;
 	margin: 1% 1%;
-	margin-left: 38%;
+	margin-left: 41%;
+	margin-right: 14% ;
 	padding: 0.5%;
 	width:25%;
 	height:8%;
@@ -133,6 +135,8 @@ a img {
 
 .headercontent {
 	background-color: transparent;
+	max-width: 95%;
+	max-height: 100px;
 
 }
   
