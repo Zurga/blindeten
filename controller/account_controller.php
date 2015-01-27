@@ -90,6 +90,7 @@ if($request == '/account/login.php'){
 		include $root . '/html/login.php';
 	}
 	else {
+		header("Location: ". $index);
 	}
 }
 
@@ -143,7 +144,7 @@ if($request == '/account/mybookings.php') {
 			$booking->user2 = new User($booking->user2);
 		}
 	}
-	include $root . '/html/mijnreserveringen.php';
+	include $root . '/html/mybookings.php';
 }
 
 if($request == '/account/delete_booking') {
@@ -151,7 +152,7 @@ if($request == '/account/delete_booking') {
 	if ($user->cancel_booking($booking_id)) {
 		//mail_id 6 is cancelling booking
 		send_mail($user,6,$booking->date);
-		header("Location: ". $index .'/account/mijnreserveringen.php');
+		header("Location: ". $index .'/account/mybookings.php');
 	}
 }
 ?>
