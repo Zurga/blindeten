@@ -41,6 +41,8 @@
 	var data = <?php echo json_encode(new Restaurant($user->owner));?>;
 	
 		document.getElementById("name").value = data["name"];
+		
+		document.getElementById("tables").value = "0";
 
 		document.getElementById("url").value = data["url"];
 	
