@@ -14,12 +14,12 @@
 		<p>Met: <?php if($booking->user1->age() == 0 or $booking->user2->age() == 0) {
 		echo 'Er is nog niemand aangeschoven.';
 		} if($booking->user2->id == $user->id){ 
-		else {if ($booking->user1>sex == 0) {
+		  if ($booking->user1>sex == 0) {
 		echo 'Man ';
 		} else {echo 'Vrouw';} echo $booking->user1>age(); 
 		}
 		else if($booking->user1->id == $user->id){ 
-		else {if ($booking->user2->sex == 0) {
+		  if ($booking->user2->sex == 0) {
 		echo 'Man ';
 		} else {echo 'Vrouw';} echo $booking->user2->age(); 
 		}}} ?> </p>
