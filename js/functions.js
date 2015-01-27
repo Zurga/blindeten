@@ -97,7 +97,7 @@ function create_calendar(days, id){
 			}
 		}
 		css += '</style>';
-		set_css(id, css);
+		set_css('header', css);
 		datePickerController.createDatePicker(opts);
 		datePickerController.setDisabledDates(input, disabled);
 	}
