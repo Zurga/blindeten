@@ -38,8 +38,8 @@
 </div>
 
 <script>
-	var data = <?php echo json_encode(new $restaurant($user->owner));?>;
-	document.write (data);
+	var data = <?php echo json_encode(new Restaurant($user->owner));?>;
+	
 		document.getElementById("name").value = data["name"];
 
 		document.getElementById("url").value = data["url"];
