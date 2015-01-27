@@ -9,7 +9,7 @@
 		</div>
 	<div class="sidecontent">
 		<h1>Reserveer hier:</h1>
-		
+		<br>
 		<ul>
 		<?php foreach ($restaurants as $restaurant) {
 			echo "<li>";
@@ -19,7 +19,7 @@
 			echo $restaurant->number."<br>";
 			echo $restaurant->zipcode." ";
 			echo $restaurant->city."<br>"; 
-			echo '<a target="_blank" href="'.$restaurant->url.'">Website</a>';
+			echo '<a target="_blank" href="'.$restaurant->url.'">Website</a><br><br><br>';
 			echo '<input id="' . $restaurant->id . '-input" name="date"  style="visibility:hidden"></input>';
 			echo '<ul id="bookings-' . $restaurant->id. '"></ul>';
 			echo '</div>';

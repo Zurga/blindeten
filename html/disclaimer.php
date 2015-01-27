@@ -5,7 +5,6 @@
 			<br>
 			<h2>
 				
-				<br>
 				1. In deze disclaimer wordt verstaan onder:
 				<br>				
 				- de eigenaar: de eigenaar van de website;

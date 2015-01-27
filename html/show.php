@@ -22,11 +22,11 @@
 echo '
 <div class="content">
 	<div class="maincontent">
-		<h1>Mijn Restaurant</h1>
+		<h1>Mijn Restaurant</h1><br>
 		<p>Naam: '. $restaurant->name .'</p>
 		<p>URL: <a href="'.$restaurant->url .'">'.$restaurant->url.'</a></p>
 		<p>Aantal tafels: '. $restaurant->tables .'</p>
-		<p>Adres: '. $restaurant->street.' '.$restaurant->number.'<br>'. $restaurant->zipcode.' '. $restaurant->city.'</p>	
+		<p>Adres: '. $restaurant->street.' '.$restaurant->number.'<br>'. $restaurant->zipcode.' '. $restaurant->city.'<br><br></p>	
 		<p><a href="/account/edit_restaurant.php" title="Gegevens wijzigen">Gegevens wijzigen</a>
 		<br>		
 		<br>

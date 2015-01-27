@@ -23,7 +23,6 @@
 	<div class="maincontent">
 		<h1>Gegevens veranderen</h1>
 		<br>
-		<br>
 		<form>	
 		<fieldset id="inputs">
 			<li><p>Naam:</p><br><br>

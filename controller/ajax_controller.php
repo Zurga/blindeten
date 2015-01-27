@@ -4,7 +4,9 @@ if($request == '/ajax/calendar'){
 	$restaurant = new Restaurant($input['id']);
 	
 	header('Content-Type: application/json');
-	$bookings = $model->get_bookings($restaurant);
+	//get all the bookings after the current date which is given by javascript
+	$cur_date = date("Y-m-d");
+	$bookings = $model->get_bookings($restaurant, $cur_date, true);
 	$days = array();
 	if(!empty($bookings)){
 	foreach($bookings as $booking){
@@ -15,10 +17,9 @@ if($request == '/ajax/calendar'){
 }
 
 if($request == '/ajax/booking'){
-	header('Content-Type: application/json');
 	$input = $_POST['input'];
 	$restaurant = new Restaurant($input['id']);
-	$bookings = $model->get_bookings($restaurant, $input['date'], true);
+	$bookings = $model->get_bookings($restaurant, $input['date']);
 
 	//check if we have something to return
 	$html = '';
@@ -48,7 +49,7 @@ if($request == '/ajax/booking'){
 		$html .= '<option value="18:00">18:00</option>
 			<option value="20:00">20:00</option>';
 	}
-	$html .= '</select></form>';
+	$html .= '</select><input type="submit" value="Reserveer"></form>';
 	echo $html;
 }
 
