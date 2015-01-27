@@ -22,7 +22,7 @@
 		  if ($booking->user2->sex == 0) {
 		echo 'Man ';
 		} else {echo 'Vrouw';} echo $booking->user2->age(); 
-		}}} ?> </p>
+		}} ?> </p>
 		<p>Restaurant: <?php $restaurant = new restaurant($booking->restaurant_id); echo $restaurant->name; ?></p>
 		<br>
 		<form action="/account/edit_booking" method="post">
@@ -34,7 +34,7 @@
 		<input name="booking_id" value="<?php echo $booking->id; ?>" class="hidden">
 	    <input type="submit" id="submit" value="Reservering verwijderen">
 		</form>
-		<?php }} ?>
+		<?php } ?>
 	</div>
 </div>
 
