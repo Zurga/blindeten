@@ -31,6 +31,21 @@ class Restaurant{
 			}
 			$this->id = $id;
 		}
+		//check which table belong to the restaurant
+		$tableQ = 'SELECT id FROM `tables`' .
+			' WHERE rest_id = ' . $row['id'];
+
+		if($tables = get_rows($this->db->query($tableQ))){
+			foreach($tables as $table){
+			//add the table id to the restaurant
+				if(gettype($table) == 'string'){
+					$restaurant->tables[] = $table;
+				}
+				else{
+					$restaurant->tables[] = $table['id'];
+				}
+			}
+		}
 	}
 }
 ?>
