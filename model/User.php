@@ -67,7 +67,7 @@ class User {
 	public function change_rest($attr) {
 		$query = "UPDATE restaurant SET name = '".$attr['name']."', url = '".$attr['url']."',".
 			"street = '".$attr['street']."', number = ".$attr['number'].", city = '".$attr['city']."'". 
-			" zipcode = '".$attr['zipcode']." WHERE id = '".$user->owner."'";
+			", zipcode = '".$attr['zipcode']." WHERE id = '".$user->owner."'";
 		
 		for ($i = 1; $i <= abs($attr['tables']); $i++) {
 				$this->add_table($user->owner);
