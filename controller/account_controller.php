@@ -148,7 +148,7 @@ if($request == '/account/mybookings.php') {
 }
 
 //User request editbooking.php
-if($request == '/account/editbooking'){
+if($request == '/account/edit_booking'){
 	$booking = new Booking($_POST['booking_id']);
 	include $root . '/html/editbooking.php';
 	
