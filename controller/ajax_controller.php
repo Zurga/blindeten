@@ -56,7 +56,7 @@ if($request == '/ajax/booking'){
 			"get_output('book_table',". $restaurant->id .' ,params);">Reserveer</button>';
 		
 		echo $html;
-		return true
+		return true;
 	}
 	//booking is not possible
 	else if($times_count == count($restaurant->tables) * 2){
