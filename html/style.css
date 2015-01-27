@@ -352,7 +352,7 @@ form p {
 }
 
 .wrapper {
-	width: 95%; 
+	max-width: 980px; 
 	margin: 0 auto;
 	background-color: transparent; 
 }
@@ -360,7 +360,6 @@ form p {
 .maincontent {
 	margin: 0 auto;
 	margin-top: 90px;
-	width: 80%;
 	max-width: 980px;
 	height: 200%;
 	background-color: rgba(255,255,255,0.85);
