@@ -34,7 +34,7 @@ if($request == '/ajax/booking'){
 			$html .= '<li id="' . $booking->id . '" class="booking">'.
 				 $booking->user1->age() . ' ' . ($user->sex == 0 ? 'Man' : 'Vrouw') . $booking->time .
 				 '<button value="Reserveer" onClick="get_output('."'book_table',". $restaurant->id .
-				",'input[time]='".$booking->time. "&input[booking]='". $booking->id ."');" . 
+				",'input[time]=".$booking->time. "&input[booking]=". $booking->id ."');" . 
 				'">Schuif aan!</button>';
 			$times[$booking->time] += 1;
 		}
