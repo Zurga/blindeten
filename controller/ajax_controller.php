@@ -86,3 +86,4 @@ if($request == '/ajax/book_table'){
 		     '<a href="/account/register.php">Registreer hier</a>';
 	}
 }
+?>
