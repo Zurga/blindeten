@@ -20,7 +20,7 @@ class Model{
 
 		//create a date int array to check if the date exists
 		$date = explode('-',$attr['birthdate']);
-		var_dump(array_walk($date, 'intval'));
+		array_walk($date, 'intval');
 
 		//check if e-mail is valid
 		if (!filter_var($attr['email'], FILTER_VALIDATE_EMAIL)) {
@@ -57,7 +57,8 @@ class Model{
 
 	public function book_table($user, $restaurant, $table_id, $date, $time){
 		//check if the table belongs to the restaurant
-		if (in_array($table_id, $restaurant->tables)) {
+		$belongs = in_array($table_id, $restaurant->tables);
+		if ($belongs and ($time == '18:00:00' or $time == '20:00:00')) {
 			//check if the booking does exists to determine
 			//if the booking is new or if the user books 
 			//to an existing table
@@ -105,22 +106,6 @@ class Model{
 			foreach($rows as $row) {
 				//new restaurant object
 				$restaurant = new Restaurant($row['id']);
-
-				//check which table belong to the restaurant
-				$tableQ = 'SELECT id FROM `tables`' .
-					' WHERE rest_id = ' . $row['id'];
-
-				if($tables = get_rows($this->db->query($tableQ))){
-					foreach($tables as $table){
-					//add the table id to the restaurant
-						if(gettype($table) == 'string'){
-							$restaurant->tables[] = $table;
-						}
-						else{
-							$restaurant->tables[] = $table['id'];
-						}
-					}
-				}
 				$restaurants[] = $restaurant;
 			}
 			return $restaurants;
