@@ -80,8 +80,6 @@ function checkPass()
 			</fieldset>
 				<br>
 				<br>
-				<br>
-				<br>
 		</form>
 		</div>
 	</div>
