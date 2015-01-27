@@ -1,6 +1,6 @@
 <?php
 
-$input = sanitize($model->db,$_POST['input']);
+$input = sanitize($_POST['input'], $model->db,);
 
 if($request == '/ajax/calendar'){
 	$restaurant = new Restaurant($input['id']);
