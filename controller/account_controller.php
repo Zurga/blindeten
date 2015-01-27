@@ -134,7 +134,7 @@ if($request == '/account/forgot_password'){
 	//header("Location: ". $index);
 }
 
-if($request == '/account/mijnreserveringen.php') {
+if($request == '/account/mybookings.php') {
 	$bookings = $model->get_bookings($user);
 	if(!empty($bookings)){
 
