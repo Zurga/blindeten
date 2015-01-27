@@ -169,7 +169,7 @@ class User {
 	else {
 		return false;
 	}
-	$query= "UPDATE bookings SET (date,time) "	
+	$query= "UPDATE bookings SET (date,time) ";	
 	
 	}
 	
