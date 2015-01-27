@@ -69,7 +69,6 @@ class User {
 			"street = '".$attr['street']."', number = ".$attr['number'].", city = '".$attr['city']."'". 
 			", zipcode = '".$attr['zipcode']."' WHERE id = '".$this->owner."'";
 		
-		$table = (int)$attr['tables'];
 		for ($i = 1; $i <= abs($attr['tables']); $i++) {
 			$this->add_table(new Restaurant($this->owner));
 		}
