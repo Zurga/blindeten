@@ -27,7 +27,7 @@ echo '
 		<p>URL: <a href="'.$restaurant->url .'">'.$restaurant->url.'</a></p>
 		<p>Aantal tafels: '. $restaurant->tables .'</p>
 		<p>Adres: '. $restaurant->street.' '.$restaurant->number.'<br>'. $restaurant->zipcode.' '. $restaurant->city.'</p>	
-		<p><a href="/account/edit.php" title="Gegevens wijzigen">Gegevens wijzigen</a>
+		<p><a href="/account/edit_restaurant.php" title="Gegevens wijzigen">Gegevens wijzigen</a>
 		<br>		
 		<br>
 		<a href="wachtwoordveranderen.php" title="Wachtwoord veranderen">Wachtwoord veranderen</a>
