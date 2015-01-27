@@ -8,13 +8,13 @@
 		<br>
 		<div id='admintab'>
 			<ul>
-				<li><a href="#tab1">Rechten aanpassen</a>
+				<li><a href="javascript:void(0);" id="tab1" class="selected">Rechten aanpassen</a>
 				</li>
-				<li><a href="#tab2">Account verwijderen</a>
+				<li><a href="javascript:void(0)" id="tab2">Account verwijderen</a>
 				</li>
-				<li><a href="#tab3">Restaurant verwijderen</a>
+				<li><a href="javascript:void(0)" id="tab3">Restaurant verwijderen</a>
 				</li>
-				<li><a href="#tab4">Restaurant toevoegen</a>
+				<li><a href="javascript:void(0)" id="#tab4">Restaurant toevoegen</a>
 				</li>
 			</ul>
 			
@@ -74,8 +74,15 @@
 	</div>
 </div>
 
-
-
+<script>
+	$(document).ready(function(){
+			$('#navigation ul a').click(function(){
+				$('#navigation ul a').removeClass('selected');
+				$(this).addClass('selected');
+				$('#content_changer').html('You have selected '+ $(this).html());
+			});
+		});
+</script>
 http://krasimirtsonev.com/blog/article/GoogleMaps-JS-API-address-to-coordinates-transformation-text-to-LatLng
 
 
