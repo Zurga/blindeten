@@ -23,7 +23,7 @@
 			if ($user->permission == "Admin"){
 				echo '<li><a href="/admin/admin.php" title="Admin pagina">Admin</a></li>';
 			}
-			echo '<li><a href="/account/mijnreserveringen.php" title="Mijn Account">Mijn Reserveringen</a></li>
+			echo '<li><a href="/account/mybookings.php" title="Mijn Account">Mijn Reserveringen</a></li>
 				  <li><a href="/account/logout" title="Uitloggen">Uitloggen</a></li>';
 			if(isset($welcome)) {
 				echo '<li><a>' . $welcome .'</a></li>';
