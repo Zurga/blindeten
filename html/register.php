@@ -1,31 +1,24 @@
 <?php include 'header.php';?>
 <script>
-	function sendMe() {
-		return alert("Continue?");
-	}
+function validate()
+{
+  var a=documents.forms["password"]["password"].value;
+  var b=documents.forms["check_password"]["check_password"].value;
+  if(!(a==b))
+  {
+    alert("both passwords are not matching");
+    return false;
+  }
+  return true;
+}
 
-	function chkForm() {
-		form = document.getElementById('form');
-		pass1 = form.getElementById('password');
-		pass2 = form.getElementById('check_password');
-		if(pass1.value != pass2.value){
-			alert("Wachtwoorden komen niet overeen");
-			pass1.value = '';
-			pass2.value = '';
-			pass1.focus();
-			return false;
 
-		}
-		else {
-			return true;
-		}
-	}
 
 </script>
 <div class="content">
 	<div class="maincontent">
 
-		<form id ="form" name= "register" action='register' method='post' onSubmit="return chkForm()">
+		<form id ="form" name= "register" action='register' method='post' onSubmit="return validate()">
 
 			<h1>Registreer</h1><br>
 			<br>
@@ -50,7 +43,7 @@
 				<input id="password" name="input[password]" type="password" placeholder="Wachtwoord" required>
 				<br>
 				<br>
-				<input id="check_password" name="check_password" type="password" placeholder="Herhaal wachtwoord" required>
+				<input id="check_password" name="input[check_password]" type="password" placeholder="Herhaal wachtwoord" required>
 				<br>
 				<br>
 				<input id="day" name="input[day]" type="day" size="4" maxlength="2" min="1" max="31" placeholder="Dag" required>
@@ -64,7 +57,7 @@
 				</select>
 				<br>
 				<br>
-				<input type="submit" id="submit" formnovalidate name=cancel value="Registreer" >
+				<input type="submit" id="submit" value="Registreer" >
 			</fieldset>
 				<br>
 				<br>
