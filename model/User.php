@@ -71,9 +71,11 @@ class User {
 		
 		var_dump($attr);
 		
-		for ($i = 1; $i <= abs($attr['tables']); $i++) {
+		for ($i = 1; var_dump($i) <= abs($attr['tables']); $i++) {
 				$this->add_table($user->owner);
 		}
+		
+		var_dump($query);
 		
 		return var_dump($this->db->query($query));
 	}
