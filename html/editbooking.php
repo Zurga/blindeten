@@ -11,10 +11,10 @@
 			<p><input id="date" name="input[date]" type="date"> </p></li>
 			<br>
 			<li><p>Tijd: </p>
-			<select id="time" name="input[time]">
+			<p><select id="time" name="input[time]">
 				<option value="18:00:00">18:00</option>
 				<option value="20:00:00">20:00</option>
-			</select>
+			</select><p><li>
 			<br>
 			<br>
 			<li><input type="submit" id="submit" value="Gegevens opslaan"></p></li>
