@@ -55,7 +55,7 @@ if($request == '/account/register'){
 			}
 			else{
 				$register_error = 'De ingevulde gegevens zijn niet compleet of onjuist';
-				include $root . '/html/register.php';
+				//include $root . '/html/register.php';
 			}
 		}	
 }
