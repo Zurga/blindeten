@@ -72,7 +72,6 @@ if($request == '/account/register'){
 			}
 			else{
 				$last_input= sanitize($_POST['input'], $model->db);
-				var_dump($last_input);
 				$register_error = 'De ingevulde gegevens zijn niet compleet of onjuist';
 				include $root . '/html/register.php';
 			}
@@ -163,7 +162,7 @@ if($request == '/account/delete_booking') {
 	send_mail($user,6,$booking->date);
 	if ($user->cancel_booking($booking_id)) {
 		//mail_id 6 is cancelling booking
-		//header("Location: ". $index .'/account/mybookings.php');
+		header("Location: ". $index .'/account/mybookings.php');
 	}
 }
 ?>

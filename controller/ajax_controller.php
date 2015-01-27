@@ -56,6 +56,7 @@ if($request == '/ajax/booking'){
 			"get_output('book_table',". $restaurant->id .' ,params);">Reserveer</button>';
 		
 		echo $html;
+		return true
 	}
 	//booking is not possible
 	else if($times_count == count($restaurant->tables) * 2){
@@ -78,6 +79,7 @@ if($request == '/ajax/book_table'){
 	if($logged_in){
 		$time = $input['time'];
 		$date = $input['date'];
+		
 		if(isset($input['booking'])){
 			$booking = new Booking($input['booking']);
 			$restaurant = new Restaurant($booking->restaurant_id);
@@ -87,6 +89,7 @@ if($request == '/ajax/book_table'){
 		}
 		else {
 			$restaurant = new Restaurant($input['restaurant']);
+			//check which table is available
 			if($cur_bookings = $model->get_bookings($restaurant, $input['date'], $input['time'])){;
 				foreach($cur_bookings as $booking){
 					foreach($restaurant->tables as $table){
@@ -99,6 +102,7 @@ if($request == '/ajax/book_table'){
 					}
 				}
 			}
+			//every table is available
 			else {
 				if($booking = $model->book_table($user, $restaurant, 
 					$restaurant->tables[0], $date, $time)){
