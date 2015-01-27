@@ -73,7 +73,8 @@ if($request == '/ajax/book_table'){
 			foreach($cur_bookings as $booking){
 				foreach($restaurant->tables as $table){
 					if($booking->table_id != $table){
-						if($booking = $model->book_table($user, $restaurant, $table, $date, time)){
+						if($booking = $model->book_table($user, $restaurant, 
+							$table, $date, time)){
 							echo 'je hebt geboekt!1!!!11!11';
 						}
 					}
