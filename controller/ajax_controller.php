@@ -1,7 +1,6 @@
 <?php
 
-$input = sanitize($model->db,$_POST['input']);
-
+$input = sanitize($_POST['input'], $model->db);
 if($request == '/ajax/calendar'){
 	$restaurant = new Restaurant($input['id']);
 	
@@ -11,9 +10,9 @@ if($request == '/ajax/calendar'){
 	$bookings = $model->get_bookings($restaurant, $cur_date, NULL, true);
 	$days = array();
 	if(!empty($bookings)){
-	foreach($bookings as $booking){
-		$days[$booking->date] += 1;
-
+		foreach($bookings as $booking){
+			$days[$booking->date] += 1;
+		}
 	}
 	echo json_encode($days);
 }
