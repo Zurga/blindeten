@@ -24,12 +24,11 @@ function checkPass()
 
 		<form id ="form" name= "register" action='register' method='post'>
 
-			<h1>Registreer</h1><br>
+			<h1>Registreer</h1>
 			<br>
 			<?php if(isset($register_error)) {
 			echo '<p class="error">' . $register_error .'</p>';
 			} ?> 
-			<br>
 			<br>
 			<fieldset id="inputs" method='post'>
 				<input id="name" name="input[name]" type="text" placeholder="Voornaam" required>  

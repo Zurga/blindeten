@@ -5,11 +5,9 @@
 		<form action='set_login' method='post'>
 			<h1>Log In</h1>
 			<br>
-			<br>
 			<?php if(isset($error)) {
 			echo '<p class="error">' . $error .'</p>';
 			} ?> 
-			<br>
 			<br>
 			<fieldset id="inputs">
 				<input id="email" name="email" type="text" placeholder="E-mail" required>   

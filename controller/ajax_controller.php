@@ -19,7 +19,7 @@ if($request == '/ajax/calendar'){
 if($request == '/ajax/booking'){
 	$input = $_POST['input'];
 	$restaurant = new Restaurant($input['id']);
-	$bookings = $model->get_bookings($restaurant, $input['date'], false);
+	$bookings = $model->get_bookings($restaurant, $input['date']);
 
 	//check if we have something to return
 	$html = '';

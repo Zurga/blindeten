@@ -4,7 +4,6 @@
 	<div class="maincontent">
 		<h1>Gegevens veranderen</h1>
 		<br>
-		<br>
 		<form action='save_data' method='post'>
 		<fieldset id="inputs">
 			<li><p>Naam:</p><br><br>

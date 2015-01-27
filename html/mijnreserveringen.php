@@ -9,9 +9,7 @@
 			echo '<p>Er zijn nog geen reserveringen.</p>';
 		}
 			else {
-		foreach($bookings as $booking) { ?>
-		<br>
-		<br>
+		foreach($bookings as $booking) { ?>	
 		<p>Datum en Tijd: <?php echo $booking->time; ?></p>
 		<p>Met: <?php if (is_null($booking->user2->id or $booking->user1->id)) {
 		echo 'Er heeft nog niemand aangeschoven.';
