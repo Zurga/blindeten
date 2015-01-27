@@ -334,16 +334,13 @@ color:#344385;
 background:#fff;
 }
 
+/*
+Mediacss
 
 
 
 
-
-
-
-
-
-
+*/
 @media all and (max-device-width: 640px) {
 /*media (max-width: 700px) and (device-aspect-ratio: 40/71) {*/
 #header img{
