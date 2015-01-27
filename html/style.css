@@ -355,13 +355,13 @@ form p {
 	width: 95%; 
 	margin: 0 auto;
 	background-color: transparent; 
-	max-width: 980px;
 }
 
 .maincontent {
 	margin: 0 auto;
 	margin-top: 90px;
 	width: 80%;
+	max-width: 980px;
 	height: 200%;
 	background-color: rgba(255,255,255,0.85);
 	padding: 30px;
