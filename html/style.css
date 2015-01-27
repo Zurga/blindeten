@@ -300,7 +300,7 @@ form p {
 	background-color: transparent; 
 }
 
-/*admin css */
+/*admin css 
 #admintab ul {
 list-style:none;
 position:relative; 
@@ -326,6 +326,45 @@ border-right:1px solid #f5ab36;
 border-bottom:1px solid #fff;
 color:#344385;
 background:#fff;
+} */
+.admintab {
+position:relative;
+min-height:400px;
+clear:both;
+margin:25px 0;
+}
+.tab {
+float:left;
+}
+.tab [type=radio] {
+display:none;
+}
+[type=radio]:checked ~ label {
+background: white;
+border-bottom:1px solid white;
+z-index:2;
+}
+[type=radio]:checked ~ label ~ .tabcontent {
+z-index:1;
+}
+.tab label {
+background:grey;
+padding:10px;
+border:1px solid grey;
+margin-left: -1px;
+position:relative;
+left:1px;
+}
+.tabcontent {
+position:absolute;
+top:28px;
+left:0;
+background:white;
+right:0;
+bottom:0;
+padding:20px;
+border:1px solid grey;
+overflow:hidden;
 }
 
 /*
