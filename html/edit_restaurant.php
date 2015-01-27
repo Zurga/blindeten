@@ -37,4 +37,20 @@
 	</div>
 </div>
 
+<script>
+	var data = <?php echo json_encode($restaurant);?>;
+
+		document.getElementById("name").value = data["name"];
+
+		document.getElementById("url").value = data["url"];
+	
+		document.getElementById("street").value = data["street"];
+
+		document.getElementById("number").value = data["number"];
+
+		document.getElementById("zipcode").value = data["zipcode"];
+
+		document.getElementById("city").value = data["city"];
+</script>
+
 <?php include 'footer.php';?>
