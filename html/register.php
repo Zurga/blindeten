@@ -45,7 +45,6 @@ function checkPass()
 					echo '<p class="error">' . $register_error .'</p>';
 				} ?>
 			<br>
-			<br>
 			<fieldset id="inputs" method='post'>
 				<input id="name" name="input[name]" type="text" placeholder="Voornaam" value ="<?php $last_input->name ?>" required>  
 				<br>
