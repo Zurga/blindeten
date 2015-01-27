@@ -15,6 +15,27 @@ function checkPass()
 	message.style.color = badColor;
 	}
 }
+
+  var data = <?php echo json_encode($user);?>;
+  var day = data["birthdate"].substring(8,10);	
+  var month = data["birthdate"].substring(5,7);
+  var year = data["birthdate"].substring(0,4);
+
+	document.getElementById("name").value = data["name"];
+
+	document.getElementById("surname").value = data["surname"];
+	
+	document.getElementById("email").value = data["email"];
+	
+	document.getElementById("city").value = data["city"];
+
+	document.getElementById("day").value = day;
+
+	document.getElementById("month").value = month;
+
+	document.getElementById("year").value = year;
+
+	
 </script>
 <div class="content">
 	<div class="maincontent">
@@ -25,18 +46,7 @@ function checkPass()
 			<br>
 			<?php if(isset($register_error)) {
 					echo '<p class="error">' . $register_error .'</p>';
-					} 
-					if (isset($_POST["submit"]) && $_POST["submit"]=='Submit') {
-					$name=$_POST["name"];
-					$surname=$_POST["surname"];
-					$email=$_POST["email"];
-					$city=$_POST["city"];
-					$day=$_POST["day"];
-					$month=$_POST["month"];
-					$year=$_POST["year"];
-					$sex=$_POST["sex"];
-					}
-			?> 
+				} ?>
 			<br>
 			<br>
 			<fieldset id="inputs" method='post'>
@@ -80,11 +90,5 @@ function checkPass()
 		</div>
 	</div>
 </div>	
-
-
-
-
-
-
 
 <?php include 'footer.php';?>
