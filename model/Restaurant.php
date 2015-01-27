@@ -33,7 +33,7 @@ class Restaurant{
 		}
 		//check which table belong to the restaurant
 		$tableQ = 'SELECT id FROM `tables`' .
-			' WHERE rest_id = ' . $row['id'];
+			' WHERE rest_id = ' . $this->id;
 
 		if($tables = get_rows($this->db->query($tableQ))){
 			foreach($tables as $table){
