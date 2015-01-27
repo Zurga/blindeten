@@ -32,7 +32,8 @@ if($request == '/ajax/booking'){
 			$html .= '<li id="' . $booking->id . '" class="booking">'.
 				 $booking->user1->age() . ' ' . ($user->sex == 0 ? 'Man' : 'Vrouw') . $booking->time .
 				 '<button value="Reserveer" onClick="get_output('."'book_table',". $restaurant->id .
-				 ",'input[time]='".$booking->time. "')" . '">Schuif aan!</button>';
+				",'input[time]='".$booking->time. "input[booking]='". $booking->id ."')" . 
+				'">Schuif aan!</button>';
 			$times[$booking->time] += 1;
 		}
 	}
@@ -56,7 +57,6 @@ if($request == '/ajax/booking'){
 }
 
 if($request == '/ajax/book_table'){
-	echo 'htsaoeushtnoeuahtsnaoeuhtsnaoeuhtsn';
 	if($logged_in){
 		$restaurant = new Restaurant($_POST['input']['id']);
 		$table = $_POST['input']['table_id'];
