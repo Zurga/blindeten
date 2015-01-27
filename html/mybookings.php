@@ -34,7 +34,7 @@
 		<input name="booking_id" value="<?php echo $booking->id; ?>" class="hidden">
 	    <input type="submit" id="submit" value="Reservering verwijderen">
 		</form>
-		<?php }} ?>
+		<?php }}} ?>
 	</div>
 </div>
 
