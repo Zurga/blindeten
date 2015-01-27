@@ -7,9 +7,10 @@
 		<br>
 		<form>	
 		<fieldset id="inputs">
-			<li><p>Datum en tijd:  </p>
+			<li><p>Datum: </p>
 			<input id="date" name="input[date]" type="date" placeholder=" <?php echo $booking->date ?>"></li>
 			<br>
+			<li><p>Tijd: </p>
 			<input id="time" name="input[time]" type="time" placeholder=" <?php echo substr($booking->time, 0, 5); ?>"></li>
 			<br>
 			<br>
