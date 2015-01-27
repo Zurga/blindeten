@@ -353,6 +353,7 @@ form p {
 
 .wrapper {
 	width: 95%; 
+	max-width: 980px;
 	margin: 0 auto;
 	background-color: transparent; 
 }
