@@ -1,23 +1,24 @@
 <?php
+
+$input = sanitize($model->db,$_POST['input']);
+
 if($request == '/ajax/calendar'){
-	$input = $_POST['input'];
 	$restaurant = new Restaurant($input['id']);
 	
 	header('Content-Type: application/json');
 	//get all the bookings after the current date which is given by javascript
 	$cur_date = date("Y-m-d");
-	$bookings = $model->get_bookings($restaurant, $cur_date, true);
+	$bookings = $model->get_bookings($restaurant, $cur_date, NULL, true);
 	$days = array();
 	if(!empty($bookings)){
 	foreach($bookings as $booking){
 		$days[$booking->date] += 1;
-		}
+
 	}
 	echo json_encode($days);
 }
 
 if($request == '/ajax/booking'){
-	$input = $_POST['input'];
 	$restaurant = new Restaurant($input['id']);
 	$bookings = $model->get_bookings($restaurant, $input['date']);
 
@@ -51,18 +52,34 @@ if($request == '/ajax/booking'){
 	}
 	$html .= '</select><button value="Reserveer" onClick="'.
 		"var params = 'input[time]='+ document.getElementById('new-".$restaurant->id."').value;".
-		"params += '&input[restaurant]=" . $restaurant->id . "';" .
+		"params += '&input[restaurant]=" . $restaurant->id . "&input[date]=". $input['date'] . "';" .
 		"get_output('book_table',". $restaurant->id .' ,params);">Reserveer</button>';
 	echo $html;
 }
 
 if($request == '/ajax/book_table'){
 	if($logged_in){
-		$restaurant = new Restaurant($_POST['input']['id']);
-		$table = $_POST['input']['table_id'];
-		$time = $_POST['input']['time'];
-		if($booking = $model->book_table($user, $restaurant, $table, $time)){
-			//$booking->
+		$time = $input['time'];
+		$date = $input['date'];
+		$restaurant = new Restaurant($input['id']);
+		if(isset($input['booking'])){
+			$booking = new Booking($input['booking']);
+			if($booking = $model->book_table($user, $restaurant, $booking->table, $time)){
+				echo 'je hebt geboekt!1!!!11!11';
+			}
+		}
+		else {
+			$cur_bookings = $model->get_bookings($restaurant, $input['date'], $input['time']);
+			foreach($cur_bookings as $booking){
+				foreach($restaurant->tables as $table){
+					if($booking->table_id != $table){
+						if($booking = $model->book_table($user, $restaurant, 
+							$table, $date, time)){
+							echo 'je hebt geboekt!1!!!11!11';
+						}
+					}
+				}
+			}
 		}
 	}
 	else {
@@ -70,3 +87,4 @@ if($request == '/ajax/book_table'){
 		     '<a href="/account/register.php">Registreer hier</a>';
 	}
 }
+?>
