@@ -13,25 +13,8 @@ function checkPass()
 	check_password.style.backgroundColor = badColor;
 	}
 }
-
-  var data = <?php echo json_encode($last_input);?>;
-
-	document.getElementById("name").value = data["name"];
-
-	document.getElementById("surname").value = data["surname"];
-	
-	document.getElementById("email").value = data["email"];
-	
-	document.getElementById("city").value = data["city"];
-
-	document.getElementById("day").value = data["day"];
-
-	document.getElementById("month").value = data["month"];
-
-	document.getElementById("year").value = data["year"];
-
-	
 </script>
+
 <div class="content">
 	<div class="maincontent">
 
@@ -81,5 +64,24 @@ function checkPass()
 		</div>
 	</div>
 </div>	
+
+<script>
+  var data = <?php echo json_encode($last_input);?>;
+
+	document.getElementById("name").value = data["name"];
+
+	document.getElementById("surname").value = data["surname"];
+	
+	document.getElementById("email").value = data["email"];
+	
+	document.getElementById("city").value = data["city"];
+
+	document.getElementById("day").value = data["day"];
+
+	document.getElementById("month").value = data["month"];
+
+	document.getElementById("year").value = data["year"];
+
+</script>
 
 <?php include 'footer.php';?>
