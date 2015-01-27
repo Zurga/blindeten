@@ -131,7 +131,10 @@ a img {
 	position: relative; 
 }
 
-.headercontent
+.headercontent {
+	background-color: transparent;
+
+}
   
 body {
 	background-image: url("gracht2.png");
