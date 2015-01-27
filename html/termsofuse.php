@@ -4,7 +4,7 @@
 	<div class="maincontent">
 
 			<h1>Terms Of Use</h1>
-			<br>
+			<br><br>
 			<h2>1. You must be at least 18 years old to use the Service.
 				<br><br>
 				2. You are responsible for any activity that occurs 
