@@ -21,8 +21,17 @@ if($request == '/account/edit.php'){
 	}
 	else {
 		header("Location: ". $index . "/account/login.php");
+	}	
+}
+
+if ($request == '/account/edit_restaurant.php') {
+	if ($logged_in == true and $user->owner != 0) {
+		$title = "Restaurant wijzigen";
+		include $root . '/html/edit_restaurant.php';
 	}
-		
+	else {
+		header("Location: ". $index ."/account/login.php");
+	}
 }
 
 //Save user data

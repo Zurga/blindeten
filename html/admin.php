@@ -1,11 +1,10 @@
 <?php include 'header.php';?>
 
-
-
 <div class="content">
 	<div class="maincontent">
 	
 		<h1>Administratie</h1>
+		<br>
 		<br>
 		<div id='admintab'>
 			<ul>
@@ -23,23 +22,19 @@
 				<form action = "change_permission" method="POST">
 					<input id="email" name="email" type="text" placeholder="E-mail" required>   
 					<br>
-					<br>
 					<select name="permission">
 						<option value="0">Owner</option>
 						<option value="1">Admin</option>
 						<option value="2">User</option>
 					</select>
-					<br>
-					<br>
-					<br>
+					<br><br>
 					<input type="submit" id="submit" value="Opslaan">
 				</form>	
 			</div>
 			<div class="delete_account">					
 				<form action="delete_account" method= "POST">
 					<input id="email" name="email" type="text" placeholder="E-mail" required>   
-					<br>
-					<br>
+					<br><br>
 					<input type="submit" id="submit" value="Account verwijderen">
 				</form>
 			</div>

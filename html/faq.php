@@ -3,7 +3,7 @@
 <div class="content">
 
 	<div class="maincontent">
-		<h1>FAQ</h1><br>
+		<h1>FAQ</h1><br><br>
 		
 		<h2><b><a href="javascript:showtext('cancel');" title="Hoe moet ik cancellen?">Hoe moet ik cancellen?</a></b></h2>
 		<br>
