@@ -108,5 +108,6 @@ function set_css(id, css){
 
 function set_bookings(bookings, id){
 	var ul = document.getElementById('bookings-' + id);
+
 	ul.innerHTML = bookings;
 }
