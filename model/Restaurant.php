@@ -39,10 +39,10 @@ class Restaurant{
 			foreach($tables as $table){
 			//add the table id to the restaurant
 				if(gettype($table) == 'string'){
-					$restaurant->tables[] = $table;
+					$this->tables[] = $table;
 				}
 				else{
-					$restaurant->tables[] = $table['id'];
+					$this->tables[] = $table['id'];
 				}
 			}
 		}
