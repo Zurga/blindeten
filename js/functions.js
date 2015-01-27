@@ -96,10 +96,10 @@ function create_calendar(days, id){
 					'{color: rgb(26, 141, 28); font-weight: bold;}';
 			}
 		}
+		css += '</style>';
 		set_css('footer', css);
 		datePickerController.createDatePicker(opts);
 		datePickerController.setDisabledDates(input, disabled);
-		css += '</style>';
 	}
 }
 function set_css(id, css){
