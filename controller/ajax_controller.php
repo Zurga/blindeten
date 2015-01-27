@@ -28,7 +28,7 @@ if($request == '/ajax/booking'){
 			$user = new User($booking->user1);
 			//check the sex of the user
 			$booking->user1 = $user;
-			$html .= '<li id="' . $booking->id . '"><form action="/ajax/book_table" method="POST">' .
+			$html .= '<li id="' . $booking->id . '" class="booking"><form action="/ajax/book_table" method="POST">' .
 				 $booking->user1->age() . ' ' . ($user->sex == 0 ? 'Man' : 'Vrouw') . $booking->time .
 				 '<input type="field" name="input[rest_id]" value="' .
 				 $booking->table_id .'" class="hidden">'.

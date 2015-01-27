@@ -79,7 +79,6 @@ function create_calendar(days, id){
 	
 	
 	opts['formElements'][input] = "%Y-%m-%d";
-	datePickerController.createDatePicker(opts);
 	
 	//disabling the dates that are fully booked
 	var disabled = [];
@@ -97,10 +96,11 @@ function create_calendar(days, id){
 					'{color: rgb(26, 141, 28); font-weight: bold;}';
 			}
 		}
+		set_css('footer', css);
+		datePickerController.createDatePicker(opts);
 		datePickerController.setDisabledDates(input, disabled);
 		css += '</style>';
 	}
-	set_css('footer', css);
 }
 function set_css(id, css){
 	document.getElementById(id).innerHTML += css;
