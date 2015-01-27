@@ -1,7 +1,7 @@
 <?php include 'header.php';?>
 
 <script>
-	var data = <?php echo json_encode($bookings);?>;
+	var data = <?php echo json_encode($booking);?>;
 
 		document.getElementById("date").value = data["date"];
 
