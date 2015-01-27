@@ -10,7 +10,7 @@
 		}
 			else {
 		foreach($bookings as $booking) { ?>	
-		<p>Datum en Tijd: <?php echo $booking->date, $booking->time; ?></p>
+		<p>Datum en Tijd: <?php echo $booking->date,' ', $booking->time; ?></p>
 		<p>Met: <?php if (is_null($booking->user2->id or $booking->user1->id)) {
 		echo 'Er heeft nog niemand aangeschoven.';
 		} else {if ($booking->user2->sex == 0) {
