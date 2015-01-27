@@ -22,29 +22,36 @@ class Model{
 		$date = explode('-',$attr['birthdate']);
 		var_dump(array_walk($date, 'intval'));
 
-		//check if the date is valid
-		if(checkdate($date[1],$date[2], $date[0])){
-			//it is so add account
-			$query = "INSERT INTO user (name, email, birthdate, sex, password, city) ".
-				"VALUES ('". $attr['name'] . "','" . $attr['email'] . "','" .
-				$attr['birthdate']. "','" . $attr['sex'] . "','" . $password . "','" . 
-				$attr['city'] . "')";
-			
-			//permission
-			if ($this->db->query($query)) {
-				$id = $this->db->insert_id;
-				$query = "INSERT INTO user_perm (perm_id, user_id)".
-					"VALUES (2,". $this->db->insert_id .")"; 
-				$this->db->query($query);
-				return $id;
+		//check if e-mail is valid
+		if (!filter_var($attr['email'], FILTER_VALIDATE_EMAIL)) {
+			return false;
+		}
+		
+		else {
+			//check if the date is valid
+			if(checkdate($date[1],$date[2], $date[0])){
+				//it is so add account
+				$query = "INSERT INTO user (name, email, birthdate, sex, password, city) ".
+					"VALUES ('". $attr['name'] . "','" . $attr['email'] . "','" .
+					$attr['birthdate']. "','" . $attr['sex'] . "','" . $password . "','" . 
+					$attr['city'] . "')";
+				
+				//permission
+				if ($this->db->query($query)) {
+					$id = $this->db->insert_id;
+					$query = "INSERT INTO user_perm (perm_id, user_id)".
+						"VALUES (2,". $this->db->insert_id .")"; 
+					$this->db->query($query);
+					return $id;
+				}
+				else {
+					return false;
+				}
+				
 			}
 			else {
 				return false;
 			}
-			
-		}
-		else {
-			return false;
 		}
 	}
 
