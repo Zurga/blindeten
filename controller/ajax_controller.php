@@ -43,6 +43,7 @@ if($request == '/ajax/booking'){
 
 	$times_count = array_sum($times);
 	var_dump($times);
+	var_dump(count($restaurant->tables));
 	//check if there are disabled times
 	if($times_count < count($restaurant->tables) * 2 and $times_count != 0){
 		$html .= '<select name="time" id="new-' . $restaurant->id . '">'; 
