@@ -48,7 +48,7 @@ if($request == '/ajax/booking'){
 		foreach($times as $time){
 			if($times[$time] < count($restaurant->tables)){
 				$html .= '<select name="time" id="new-' . $restaurant->id . '">'.
-					'<option value=' . $time . '>' . substr($booking->time, 0, 5)'</option>';
+					'<option value=' . $time . '>' . substr($booking->time, 0, 5) . '</option>';
 			}
 		}
 		$html .= '</select><button value="Reserveer" onClick="'.
