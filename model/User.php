@@ -4,6 +4,7 @@ include_once 'dbFunctions.php';
 class User {
 	private $db;
 	public $name;
+	public $surname;
 	public $id;
 	public $permission;
 	public $email;
