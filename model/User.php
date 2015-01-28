@@ -201,7 +201,6 @@ class User {
 		else {
 			return false;
 		}
-		var_dump($delquery);
 		return $this->db->query($delquery);
 		}		
 }
