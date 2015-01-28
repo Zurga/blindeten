@@ -185,9 +185,9 @@ class User {
 	public function cancel_booking($booking_id) {
 		$booking = new Booking($booking_id);
 		// check if the user is user1 or user2 and if there is another user
-		if ($booking->user1 == $this->id) {
-			if ($booking->user2 != 0) {
-				$delquery = "UPDATE bookings SET user1 = ". $booking->user2 .
+		if ($booking->user1->id == $this->id) {
+			if ($booking->user2->id != 0) {
+				$delquery = "UPDATE bookings SET user1 = ". $booking->user2->id .
 				", user2 = 0 WHERE id = ". $booking_id;
 				
 			}
@@ -195,13 +195,12 @@ class User {
 				$delquery = "DELETE FROM bookings WHERE id = ". $booking_id;
 			}
 		}
-		elseif ($booking->user2 == $this->id) {
+		elseif ($booking->user2->id == $this->id) {
 			$delquery = "UPDATE bookings SET user2 = 0 WHERE id = ". $booking_id;
 		}
 		else {
 			return false;
 		}
-		
 		return $this->db->query($delquery);
 		}		
 }
