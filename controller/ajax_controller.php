@@ -91,7 +91,7 @@ if($request == '/ajax/book_table'){
 			//check which table is available
 			if($cur_bookings = $model->get_bookings($restaurant, $input['date'], $input['time'])){
 				//check if all the tables have been booked
-				if(count($cur_bookings) != count($restaurant->tables * 2)){
+				if(count($cur_bookings) != count($restaurant->tables) * 2){
 					foreach($cur_bookings as $booking){
 						foreach($restaurant->tables as $table){
 							if($booking->table_id != $table){
