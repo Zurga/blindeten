@@ -24,6 +24,8 @@ class Booking{
 			set_var($row, $this);
 			return $this;
 		}
+		$this->user1 = new User($this->user1);
+		$this->user2 = new USer($this->user2);
 		else{
 			return false; 
 		}
