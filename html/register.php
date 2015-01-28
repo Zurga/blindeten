@@ -3,8 +3,6 @@
 
 var match = false; 
 
-
-
 function checkPass()
 {
   var password = document.getElementById("password");
