@@ -147,7 +147,7 @@ if($request == '/account/edit_booking'){
 }
 //Save changed booking
 if($request == '/account/save_editbooking'){
-	if($model->change_booking($booking, $time, $date)){
+	if($user->change_booking($booking, $time, $date)){
 		$message = "Je hebt geboekt!";
 	}
 	else {
