@@ -184,9 +184,6 @@ class User {
 	//Cancel bookings
 	public function cancel_booking($booking_id) {
 		$booking = new Booking($booking_id);
-		var_dump($booking->user1);
-		echo "<br>";
-		var_dump($booking->user2);
 		// check if the user is user1 or user2 and if there is another user
 		if ($booking->user1 == $this->id) {
 			if ($booking->user2 != 0) {
@@ -204,7 +201,7 @@ class User {
 		else {
 			return false;
 		}
-		
+		var_dump($delquery);
 		return $this->db->query($delquery);
 		}		
 }
