@@ -28,15 +28,13 @@ if($request == '/ajax/booking'){
 	//check if we have something to return
 	if(!empty($bookings)){
 		foreach($bookings as $booking){
-			//insert user in booking
-			$booking->user1 = $user;
-			
-			$html .= '<li id="' . $booking->id . '" class="booking">'.
-				 $booking->user1->age() . ' ' . ($user->sex == 0 ? 'Man' : 'Vrouw') . $booking->time .
-				 '<button value="Reserveer" onClick="get_output('."'book_table',". $restaurant->id .
-				",'input[time]=".$booking->time. "&input[booking]=". $booking->id ."&input[date]=" .  
-				$input['date'] ."');" . 
-				'">Schuif aan!</button>';
+			if(!isset($booking->user2->id) and $booking->user1->id != $user->id){
+				$html .= '<li id="' . $booking->id . '" class="booking">'.
+					 $booking->user1->age() . ' ' . ($booking->user1->sex == 0 ? 'Man' : 'Vrouw') . $booking->time .
+					 '<button value="Reserveer" onClick="get_output('."'book_table',". $restaurant->id .
+					",'input[time]=".$booking->time. "&input[booking]=". $booking->id ."&input[date]=" .  
+					$input['date'] ."');" . '">Schuif aan!</button>';
+			}
 			$times[$booking->time] += 1;
 		}
 	}
@@ -80,6 +78,7 @@ if($request == '/ajax/book_table'){
 		$time = $input['time'];
 		$date = $input['date'];
 		
+		//the user is booking table where there is another user
 		if(isset($input['booking'])){
 			$booking = new Booking($input['booking']);
 			$restaurant = new Restaurant($booking->restaurant_id);

@@ -128,10 +128,10 @@ class Model{
 		}
 		else if (get_class($object) == 'Restaurant') {
 			$query = "SELECT id FROM bookings WHERE restaurant_id = ". $object->id;
-		}
 			if(isset($user2)){
 				$query .= ' AND user2 IS NULL';
 			}
+		}
 		else {
 			return false;
 		}
@@ -148,7 +148,7 @@ class Model{
 				$query .= ' AND `time` = "' . $time . '"';
 			}
 		}
-		echo $query;
+		
 		if($rows = get_rows($this->db->query($query))){
 			$bookings = array();
 			foreach($rows as $row){

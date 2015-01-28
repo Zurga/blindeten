@@ -24,8 +24,23 @@ class Booking{
 			set_var($row, $this);
 			return $this;
 		}
+		$this->user1 = new User($this->user1);
+		$this->user2 = new USer($this->user2);
 		else{
 			return false; 
+		}
+	}
+	
+	//returns the other user id
+	public function other_user($user){
+		if ($this->user1 == $user->id) {
+			return $user2;
+		}
+		else if ($this->user2 == $user->id) {
+			return $user1;
+		}
+		else {
+			return false;
 		}
 	}
 }
