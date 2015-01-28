@@ -165,7 +165,7 @@ if($request == '/account/delete_booking') {
 	$booking_id = sanitize($_POST['booking_id'],$model->db);
 	$booking = new Booking($booking_id);
 	send_mail($user,6,$booking->date);
-	$booking->other_user($user);
+	var_dump($booking->other_user($user));
 	if($user->cancel_booking($booking_id)){
 		//mail_id 6 is cancelling booking
 		//header("Location: ". $index .'/account/mybookings.php');
