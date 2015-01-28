@@ -21,8 +21,6 @@ else{
 	}
 }
 
-if(match == false)
-
 </script>
 
 <div class="content">
@@ -194,7 +192,7 @@ if(match == false)
 				</select>
 				<br>
 				<br>
-				<input type="submit" id="submit" value="Registreer" OnClick="return match" >
+				<input type="submit" id="submit" value="Registreer" OnClick="alert(match);return match;" >
 			</fieldset>
 				<br>
 				<br>
