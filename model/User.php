@@ -184,9 +184,8 @@ class User {
 	//Cancel bookings
 	public function cancel_booking($booking_id) {
 		$booking = new Booking($booking_id);
-		var_dump($booking->other_user($user));
 		// check if the user is user1 or user2 and if there is another user
-		if ($booking->user1->id == $this->id) {
+		if ($booking->user1 == $this->id) {
 			if ($booking->user2 != 0) {
 				$delquery = "UPDATE bookings SET user1 = ". $booking->user2->id .
 				", user2 = 0 WHERE id = ". $booking_id;
