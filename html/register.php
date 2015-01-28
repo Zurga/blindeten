@@ -52,7 +52,7 @@ else{
 				<input id="password" name="input[password]" type="password" placeholder="Wachtwoord" required>
 				<br>
 				<br>
-				<input id="check_password" name="input[check_password]" type="password" onkeyup="checkPass(); return false;" placeholder="Herhaal wachtwoord" required>
+				<input id="check_password" name="input[check_password]" type="password" onkeyup="checkPass();" placeholder="Herhaal wachtwoord" required>
 				<br>
 				<br>
 				<select id="day" name="input[day]">
