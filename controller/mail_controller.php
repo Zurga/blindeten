@@ -23,7 +23,6 @@ function send_mail($user,$mail_id, $data=NULL) {
 	$message = str_replace(array('%time%','%password%'), $data, $message);
 	
 	mail($to,$subject,$message,$headers);
-	var_dump($php_errormsg);
 }
 
 ?>

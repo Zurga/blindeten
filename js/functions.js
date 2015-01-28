@@ -98,13 +98,13 @@ function create_calendar(days, id){
 			}
 		}
 		css += '</style>';
-		set_css('header', css);
+		set_css('html', css);
 		datePickerController.createDatePicker(opts);
 		datePickerController.setDisabledDates(input, disabled);
 	}
 }
 function set_css(id, css){
-	document.getElementById(id).innerHTML += css;
+	document.getElementsByTagName(id)[0].innerHTML += css;
 }
 
 function set_bookings(bookings, id){
