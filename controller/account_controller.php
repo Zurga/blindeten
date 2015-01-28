@@ -75,7 +75,7 @@ if($request == '/account/register'){
 		$last_input= sanitize($_POST['input'], $model->db);
 		$register_error = 'De ingevulde gegevens zijn niet compleet of onjuist';
 		include $root . '/html/register.php';
-		echo $attr;
+		return $attr;
 	}
 }
 if ($request == '/account/logout') {
