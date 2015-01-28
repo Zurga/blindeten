@@ -132,7 +132,7 @@ if($request == '/account/forgot_password.php') {
 if($request == '/account/forgot_password'){
 	$email = sanitize($_POST['email'],$model->db);
 	$model->forgot_password($email);
-	//header("Location: ". $index);
+	header("Location: ". $index);
 }
 
 if($request == '/account/mybookings.php') {
