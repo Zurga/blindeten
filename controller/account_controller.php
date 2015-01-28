@@ -160,6 +160,7 @@ if($request == '/account/save_editbooking'){
 	}
 }
 
+//Delete booking
 if($request == '/account/delete_booking') {
 	$booking_id = sanitize($_POST['booking_id'],$model->db);
 	$booking = new Booking($booking_id);
