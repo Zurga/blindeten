@@ -28,15 +28,13 @@ if($request == '/ajax/booking'){
 	//check if we have something to return
 	if(!empty($bookings)){
 		foreach($bookings as $booking){
-			//insert user in booking
-			$booking->user1 = $user;
-			
-			$html .= '<li id="' . $booking->id . '" class="booking">'.
-				 $booking->user1->age() . ' ' . ($user->sex == 0 ? 'Man' : 'Vrouw') . $booking->time .
-				 '<button value="Reserveer" onClick="get_output('."'book_table',". $restaurant->id .
-				",'input[time]=".$booking->time. "&input[booking]=". $booking->id ."&input[date]=" .  
-				$input['date'] ."');" . 
-				'">Schuif aan!</button>';
+			if(!isset($booking->user2->id) and $booking->user1->id != $user->id){
+				$html .= '<li id="' . $booking->id . '" class="booking">'.
+					 $booking->user1->age() . ' ' . ($booking->user1->sex == 0 ? 'Man' : 'Vrouw') . $booking->time .
+					 '<button value="Reserveer" onClick="get_output('."'book_table',". $restaurant->id .
+					",'input[time]=".$booking->time. "&input[booking]=". $booking->id ."&input[date]=" .  
+					$input['date'] ."');" . '">Schuif aan!</button>';
+			}
 			$times[$booking->time] += 1;
 		}
 	}
@@ -80,11 +78,12 @@ if($request == '/ajax/book_table'){
 		$time = $input['time'];
 		$date = $input['date'];
 		
+		//the user is booking table where there is another user
 		if(isset($input['booking'])){
 			$booking = new Booking($input['booking']);
 			$restaurant = new Restaurant($booking->restaurant_id);
 			if($booking = $model->book_table($user, $restaurant, $booking->table_id, $date, $time)){
-				echo 'je hebt geboekt!1!!!11!11';
+				echo '<p class="confirm">Maak er een mooie avond van!</p>';
 			}
 		}
 		else {
@@ -95,8 +94,8 @@ if($request == '/ajax/book_table'){
 					foreach($restaurant->tables as $table){
 						if($booking->table_id != $table){
 							if($booking = $model->book_table($user, $restaurant, 
-								$table, $date, time)){
-								echo 'je hebt geboekt!1!!!11!11';
+								$table, $date, $time)){
+								echo '<p class="confirm">Je hebt gereserveerd!</p>';
 							}
 						}
 					}
@@ -106,14 +105,14 @@ if($request == '/ajax/book_table'){
 			else {
 				if($booking = $model->book_table($user, $restaurant, 
 					$restaurant->tables[0], $date, $time)){
-					echo 'je hebt gebookt';
+					echo '<p class="confirm">Je hebt gereserveerd!</p>';
 				}	
 			}
 		}
 	}
 	else {
-		echo 'Je moet ingelogd zijn om te kunnen reserveren...'.
-		     '<a href="/account/register.php">Registreer hier</a>';
+		echo '<p class="error">Je moet ingelogd zijn om te kunnen reserveren...'.
+		     '<a href="/account/register.php">Login</a> om te kunnen reserveren</p>';
 	}
 }
 ?>

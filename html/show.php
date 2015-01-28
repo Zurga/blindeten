@@ -4,7 +4,7 @@
 	<div class="maincontent">
 		<h1>Mijn Account</h1>
 		<br><br>
-		<p>Naam: <?php echo $user->name; ?></p>
+		<p>Naam: <?php echo $user->name ,' ', $user->surname; ?></p>
 		<p>Geslacht: <?php if ($user->sex == 0) {echo 'Man';} else {echo 'Vrouw';} ?></p>
 		<p>Geboortedatum: <?php echo $user->birthdate; ?></p>
 		<p>Woonplaats: <?php echo $user->city; ?></p>
