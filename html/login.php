@@ -9,6 +9,7 @@
 			echo '<p class="error">' . $error .'</p>';
 			} ?> 
 			<br>
+			<br>
 			<fieldset id="inputs">
 				<input id="email" name="email" type="text" placeholder="E-mail" required>   
 				<br>
