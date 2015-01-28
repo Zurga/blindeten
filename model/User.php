@@ -164,7 +164,6 @@ class User {
 	$this->cancel_booking($booking->id);
 	$restaurant = new Restaurant($booking->restaurant_id);
 	if($cur_bookings = $model->get_bookings($restaurant,$date, $time, NULL, true)){
-	var_dump($cur_bookings);
 		foreach($cur_bookings as $booking){
 			foreach($restaurant->tables as $table){
 				if($booking->table_id != $table){
