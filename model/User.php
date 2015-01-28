@@ -164,7 +164,8 @@ class User {
 	$this->cancel_booking($booking->id);
 	$query= 'SELECT user2 FROM booking WHERE time='.$time.' AND date='.$date;
 	$user_info = get_rows($this->db->query($query));
-	$restaurant = new Restaurant($booking->$restaurant_id);	
+	$
+	$restaurant = new Restaurant($booking->restaurant_id);	
 	if($cur_bookings = $model->get_bookings($restaurant,$date, $time, NULL, true)){
 		foreach($cur_bookings as $booking){
 			foreach($restaurant->tables as $table){
