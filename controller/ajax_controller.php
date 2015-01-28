@@ -89,16 +89,22 @@ if($request == '/ajax/book_table'){
 		else {
 			$restaurant = new Restaurant($input['restaurant']);
 			//check which table is available
-			if($cur_bookings = $model->get_bookings($restaurant, $input['date'], $input['time'])){;
-				foreach($cur_bookings as $booking){
-					foreach($restaurant->tables as $table){
-						if($booking->table_id != $table){
-							if($booking = $model->book_table($user, $restaurant, 
-								$table, $date, $time)){
-								echo '<p class="confirm">Je hebt gereserveerd!</p>';
+			if($cur_bookings = $model->get_bookings($restaurant, $input['date'], $input['time'])){
+				//check if all the tables have been booked
+				if(count($cur_bookings) != count($restaurant->tables * 2)){
+					foreach($cur_bookings as $booking){
+						foreach($restaurant->tables as $table){
+							if($booking->table_id != $table){
+								if($booking = $model->book_table($user, $restaurant, 
+									$table, $date, $time)){
+									echo '<p class="confirm">Je hebt gereserveerd!</p>';
+								}
 							}
 						}
 					}
+				}
+				else{
+					echo '<p class="error">Bij dit restaurant kan helaas niet meer gereserveerd worden</p>';
 				}
 			}
 			//every table is available
