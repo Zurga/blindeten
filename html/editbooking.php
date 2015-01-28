@@ -24,6 +24,7 @@
 			?>	
 			<br>
 			<br>
+			<input name="booking_id" value="<?php echo $booking->id; ?>" class="hidden">
 			<li><input type="submit" id="submit" value="Gegevens opslaan"></p></li>
 		</fieldset>	
 		</form>
