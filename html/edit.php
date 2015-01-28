@@ -208,6 +208,8 @@
 
 		document.getElementById("name").value = data["name"];
 
+		document.getElementById("surname").value = data["surname"];	
+
 		document.getElementById("sex").value = data["sex"];
 	
 		document.getElementById("day").value = day;
