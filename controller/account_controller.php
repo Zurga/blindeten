@@ -63,19 +63,16 @@ if($request == '/account/register'){
 	$bday = $attr['year'].'-'.$attr['month'].'-'.$attr['day'];
 	$attr['birthdate'] = $bday;
 	if($user = new User($model->add_account($attr))){
-		var_dump($user);
-		echo 'account aangemaakt';
 		//mail_id 1 is welcome mail
 		send_mail($user,1);
 		if($auth->login($attr['email'], $attr['password'])){
 			header("Location: ". $index);
 		}
-	}
-	else{
-		echo 'faalt';
-		$last_input= $attr;
-		$register_error = 'De ingevulde gegevens zijn niet compleet of onjuist';
-		include $root . '/html/register.php';
+		else{
+			$last_input= $attr;
+			$register_error = 'De ingevulde gegevens zijn niet compleet of onjuist';
+			include $root . '/html/register.php';
+		}
 	}
 }
 
