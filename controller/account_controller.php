@@ -59,7 +59,6 @@ if($request == '/account/register.php') {
 
 //User pressed register button
 if($request == '/account/register'){
-	$model = new Model;
 	$attr = sanitize($_POST['input'],$model->db);
 	$bday= $attr['year'].'-'.$attr['month'].'-'.$attr['day'];
 	$attr['birthdate'] = $bday;
@@ -72,6 +71,7 @@ if($request == '/account/register'){
 		}
 	}
 	else{
+		echo 'faalt';
 		$last_input= $attr;
 		$register_error = 'De ingevulde gegevens zijn niet compleet of onjuist';
 		include $root . '/html/register.php';
@@ -98,7 +98,6 @@ if($request == '/account/login.php'){
 if($request == '/account/set_login'){
 	if($auth->login(sanitize($_POST['email'],$model->db), sanitize($_POST['password'],$model->db))){
 		$welcome = "Je bent ingelogd!";
-		$logged_in = true;
 		header("Location: ". $index);
 	}
 	else{
