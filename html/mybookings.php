@@ -32,7 +32,7 @@
 		<p><b>Restaurant: </b> <?php $restaurant = new restaurant($booking->restaurant_id); echo $restaurant->name; ?></p>
 		<br>
 		
-		<div id="buttons" style="display:none; margin:0px">
+		
 		<form action="/account/edit_booking" method="post">
 		<input name="booking_id" value="<?php echo $booking->id; ?>" class="hidden">
 	    <input type="submit" id="submit" value="Reservering wijzigen">
@@ -42,7 +42,7 @@
 		<input name="booking_id" value=<?php echo $booking->id; ?> class="hidden">
 	    <input type="submit" id="submit" value="Reservering verwijderen">
 		</form>
-		</div>
+		
 
 		<?php }} ?>
 	</div>
