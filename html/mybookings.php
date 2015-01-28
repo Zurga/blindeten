@@ -11,7 +11,7 @@
 			else {
 		
 		foreach($bookings as $booking) { ?>	
-		<hr>
+		<hr><br>
 		<p><b>Datum: </b><?php echo $booking->date?></p>
 		<p><b>Tijd: </b><?php echo substr($booking->time, 0, 5); ?></p>
 		<p><b>Met: </b><?php if($booking->user1->age() == 0 or $booking->user2->age() == 0) {
