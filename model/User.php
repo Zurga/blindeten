@@ -163,8 +163,6 @@ class User {
 	public function change_booking($booking, $time, $date){
 	$this->cancel_booking($booking->id);
 	$restaurant = new Restaurant($booking->restaurant_id);
-	$time = sanitize($_POST['time'],$model->db);
-	$date = sanitize($_POST['date'],$model->db);
 	var_dump($time);
 	var_dump($date);
 	if($cur_bookings = $model->get_bookings($restaurant,$date, $time, NULL, true)){
