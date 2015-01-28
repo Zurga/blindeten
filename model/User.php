@@ -188,7 +188,7 @@ class User {
 		// check if the user is user1 or user2 and if there is another user
 		if ($booking->user1->id == $this->id) {
 			if ($booking->user2 != 0) {
-				$delquery = "UPDATE bookings SET user1 = ". $booking->user2 .
+				$delquery = "UPDATE bookings SET user1 = ". $booking->user2->id .
 				", user2 = 0 WHERE id = ". $booking_id;
 				
 			}
@@ -202,7 +202,7 @@ class User {
 		else {
 			return false;
 		}
-		var_dump(other_user($user));
+		var_dump($booking->other_user($user));
 		return $this->db->query($delquery);
 	}		
 }
