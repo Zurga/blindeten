@@ -145,10 +145,13 @@ if($request == '/account/edit_booking'){
 	
 	include $root . '/html/editbooking.php';
 }
-
+//Save changed booking
 if($request == '/account/save_editbooking'){
-	if($model->change_booking($booking, $time, $date));
+	$time = sanitize($_POST['time'],$model->db);
+	$date = sanitize($_POST['date'],$model->db);
+	if($user->change_booking($booking, $time, $date)){
 		$message = "Je hebt geboekt!";
+	}
 	else {
 		$error_message = "Deze boeking is al bezet, kies een ander tijdstip";
 	}

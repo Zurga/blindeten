@@ -9,6 +9,9 @@
 			<li><p>Naam:</p><br><br>
 			<input id="name" name="input[name]" type="text"></p></li>
 			<br>
+			<input id="surname" name="input[surname]" type="text"></p></li>
+			<br>
+			<br>
 			<select id= "sex" name="input[sex]">
 			<option value="0" >Man</option>
 			<option value="1" >Vrouw</option>
