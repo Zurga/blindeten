@@ -17,7 +17,7 @@
 			<br>
 			<li><p>Geboortedatum:</p><br><br>
 			<input id="day" name="input[day]" type="day" size="2" maxlength="2" max="31">
-			<input id="month" name="input[month]" type="month" size="5" maxlength="2" max="12">
+			<input id="month" name="input[month]" type="text" size="5" maxlength="2" max="12">
 			<input id="year" name="input[year]" type="year" size="4" maxlength="4" max="1997">
 			<br>
 			<br>
