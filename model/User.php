@@ -163,8 +163,8 @@ class User {
 	public function change_booking($booking, $time, $date){
 	$this->cancel_booking($booking->id);
 	$restaurant = new Restaurant($booking->restaurant_id);
-	var_dump($date);
-	var_dump($time);
+	$time = sanitize($_POST['time'],$model->db);
+	$date = sanitize($_POST['date'],$model->db);
 	if($cur_bookings = $model->get_bookings($restaurant,$date, $time, NULL, true)){
 		foreach($cur_bookings as $booking){
 			foreach($restaurant->tables as $table){
