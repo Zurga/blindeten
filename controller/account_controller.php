@@ -70,11 +70,12 @@ if($request == '/account/register'){
 		if($auth->login($attr['email'], $attr['password'])){
 			header("Location: ". $index);
 		}
-	}
-	else{
-		$last_input= sanitize($_POST['input'], $model->db);
-		$register_error = 'De ingevulde gegevens zijn niet compleet of onjuist';
-		include $root . '/html/register.php';
+	
+		else{
+			$last_input= sanitize($_POST['input'], $model->db);
+			$register_error = 'De ingevulde gegevens zijn niet compleet of onjuist';
+			include $root . '/html/register.php';
+		}
 	}
 }
 if ($request == '/account/logout') {
