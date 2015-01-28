@@ -47,7 +47,7 @@ function sanitize ($attr,$db) {
 			$sanitized = strip_tags($sanitized);
 		}	
 		echo '<br>';
-		var_dump($attr);
+		var_dump($sanitized);
 		return $sanitized;
 	}
 	else {
