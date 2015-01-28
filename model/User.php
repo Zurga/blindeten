@@ -165,6 +165,8 @@ class User {
 	$restaurant = new Restaurant($booking->restaurant_id);
 	$time = sanitize($_POST['time'],$model->db);
 	$date = sanitize($_POST['date'],$model->db);
+	var_dump($time);
+	var_dump($date);
 	if($cur_bookings = $model->get_bookings($restaurant,$date, $time, NULL, true)){
 		foreach($cur_bookings as $booking){
 			foreach($restaurant->tables as $table){
