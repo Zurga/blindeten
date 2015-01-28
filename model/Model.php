@@ -148,7 +148,7 @@ class Model{
 				$query .= ' AND `time` = "' . $time . '"';
 			}
 		}
-		echo $query;
+		
 		if($rows = get_rows($this->db->query($query))){
 			$bookings = array();
 			foreach($rows as $row){
