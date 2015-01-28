@@ -10,18 +10,16 @@ function checkPass()
   var goodColor= "#66cc66";
   var badColor= "#ff6666";
   
- if(password.value == check_password.value){
-	check_password.style.backgroundColor = goodColor;
-	var match = true;
+ if(password.value != check_password.value){
+	check_password.style.backgroundColor = badColor;
+	var match = false;
 }
 
 else{
-	check_password.style.backgroundColor = badColor;
-	var match = false;
+	check_password.style.backgroundColor = goodColor;
+	var match = true;
 	}
 }
-
-if(match == false)
 
 </script>
 
@@ -195,7 +193,7 @@ if(match == false)
 				</select>
 				<br>
 				<br>
-				<input type="submit" id="submit" value="Registreer" OnClick="return match" >
+				<input type="submit" id="submit" value="Registreer" OnClick="alert(match);return match;" >
 			</fieldset>
 				<br>
 				<br>
