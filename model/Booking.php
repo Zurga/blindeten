@@ -28,5 +28,18 @@ class Booking{
 			return false; 
 		}
 	}
+	
+	//returns the other user id
+	public function other_user($user){
+		if ($user1 == $user->id) {
+			return $user2;
+		}
+		else if ($user2 == $user->id) {
+			return $user1;
+		}
+		else {
+			return false;
+		}
+	}
 }
 ?>
