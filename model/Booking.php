@@ -23,7 +23,7 @@ class Booking{
 			//assign values to user based on mySQL columns
 			set_var($row, $this);
 			$this->user1 = new User($this->user1);
-			$this->user2 = new USer($this->user2);
+			$this->user2 = new User($this->user2);
 			return $this;
 		}
 		else{
@@ -33,11 +33,11 @@ class Booking{
 	
 	//returns the other user id
 	public function other_user($user){
-		if ($user1 == $user->id) {
-			return $user2;
+		if ($this->user1 == $user->id) {
+			return $this->user2;
 		}
-		else if ($user2 == $user->id) {
-			return $user1;
+		else if ($this->user2 == $user->id) {
+			return $this->user1;
 		}
 		else {
 			return false;
