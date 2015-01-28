@@ -119,12 +119,13 @@ a img {
 	text-align: right;
 	padding-bottom: 10px;
 	display: inline-block;
+	font-size: 20px;
 }
 
 #header img{
 	display: inline-block;
 	margin-left: 41%;
-	margin-right: 14% ;
+	margin-right: 18% ;
 	padding: 0.5%;
 	width:25%;
 	height:8%;
