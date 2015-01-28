@@ -133,7 +133,6 @@ class Model{
 			}
 		}
 		else {
-			echo "blalbksjgdjsdofs";
 			return false;
 		}
 		
@@ -160,7 +159,6 @@ class Model{
 					$bookings[] = new Booking($row['id']);
 				}
 			}
-			var_dump($query);
 			return $bookings;
 		}
 	}

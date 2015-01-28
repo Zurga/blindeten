@@ -150,8 +150,6 @@ if($request == '/account/edit_booking'){
 if($request == '/account/save_editbooking'){
 	$time = sanitize($_POST['time'],$model->db);
 	$date = sanitize($_POST['date'],$model->db);
-	var_dump($time);
-	var_dump($date);
 	$booking_id = sanitize($_POST['booking_id'],$model->db);
 	$booking = new Booking($booking_id);
 	if($user->change_booking($booking, $time, $date)){
