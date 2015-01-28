@@ -22,10 +22,10 @@ class Booking{
 		if($row = get_rows($this->db->query($query))){
 			//assign values to user based on mySQL columns
 			set_var($row, $this);
+			$this->user1 = new User($this->user1);
+			$this->user2 = new USer($this->user2);
 			return $this;
 		}
-		$this->user1 = new User($this->user1);
-		$this->user2 = new USer($this->user2);
 		else{
 			return false; 
 		}
@@ -33,10 +33,10 @@ class Booking{
 	
 	//returns the other user id
 	public function other_user($user){
-		if ($this->user1 == $user->id) {
+		if ($user1 == $user->id) {
 			return $user2;
 		}
-		else if ($this->user2 == $user->id) {
+		else if ($user2 == $user->id) {
 			return $user1;
 		}
 		else {
