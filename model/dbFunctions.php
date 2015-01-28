@@ -44,7 +44,6 @@ function sanitize ($attr,$db) {
 			$sanitized = htmlspecialchars($sanitized);
 			$sanitized = strip_tags($sanitized);
 		}	
-		var_dump($attr);
 		return $sanitized;
 	}
 	else {
