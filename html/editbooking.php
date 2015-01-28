@@ -16,7 +16,7 @@
 				<option value="20:00:00">20:00</option>
 			</select><p><li>
 			<?php if(isset($message)){
-				echo '<p class="error">' . $message .'</p>';
+				echo '<p class="confirm">' . $message .'</p>';
 				}
 				if(isset($error_message)){
 				echo '<p class="error">' . $error_message .'</p>';

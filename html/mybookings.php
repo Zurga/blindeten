@@ -34,10 +34,10 @@
 		
 		<form action="/account/edit_booking" method="post">
 		<input name="booking_id" value="<?php echo $booking->id; ?>" class="hidden">
-	    <input type="submit" id="submit" value="Reservering wijzigen">
+	    <input type="submit" id="submit" value="Reservering wijzigen" STYLE= "float:left">
 		</form>
 		<form action="/account/delete_booking" method="post">
-		<input name="booking_id" value=<?php echo $booking->id; ?> class="hidden" STYLE= "float:left">
+		<input name="booking_id" value=<?php echo $booking->id; ?> class="hidden">
 	    <input type="submit" id="submit" value="Reservering verwijderen" STYLE= "float:right"><hr width="100%">
 		</form>
 
