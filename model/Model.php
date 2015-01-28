@@ -159,8 +159,6 @@ class Model{
 					$bookings[] = new Booking($row['id']);
 				}
 			}
-			var_dump($query);
-			var_dump($bookings);
 			return $bookings;
 		}
 	}
