@@ -202,6 +202,8 @@ form {
 	height: 50%;
 	font-family: Century Gothic, Arial;
 	text-align: center;
+	margin-right: 15px;
+	margin-left: 15px;
 }
 
 
@@ -212,6 +214,8 @@ fieldset {
 form h1{
 	padding-top: 20px;
 	font-size: 30px;
+	margin-right: 15px;
+	margin-left: 15px;
 }
 
 h1{
@@ -227,16 +231,22 @@ h2{
 
 form h2{
 		font-size: 14px;
+		margin-right: 15px;
+		margin-left: 15px;
 
 }
 
 h2, p{
 	font-size: 14px;
 	text-align: left;
+	margin-right: 15px;
+	margin-left: 15px;
 }
 
 h2 a{
 	font-size: 14px;
+	margin-right: 15px;
+	margin-left: 15px;
 }
 
 h3{
