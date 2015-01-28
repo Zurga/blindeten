@@ -130,6 +130,7 @@ class Model{
 			$query = "SELECT id FROM bookings WHERE restaurant_id = ". $object->id;
 			if(isset($user2)){
 				$query .= ' AND user2 IS NULL';
+				var_dump($query);
 			}
 		}
 		else {
