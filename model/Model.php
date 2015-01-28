@@ -133,7 +133,6 @@ class Model{
 			}
 		}
 		else {
-			echo "blalbksjgdjsdofs";
 			return false;
 		}
 		
@@ -161,6 +160,7 @@ class Model{
 				}
 			}
 			var_dump($query);
+			var_dump($bookings);
 			return $bookings;
 		}
 	}
