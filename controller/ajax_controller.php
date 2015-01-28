@@ -1,4 +1,5 @@
 <?php
+include $root . '/controller/mail_controller.php';
 
 $input = sanitize($_POST['input'], $model->db);
 if($request == '/ajax/calendar'){
