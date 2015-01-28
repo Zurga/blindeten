@@ -1,5 +1,10 @@
 <?php include 'header.php';?>
 <script>
+
+var match = false; 
+
+
+
 function checkPass()
 {
   var password = document.getElementById("password");
@@ -7,12 +12,19 @@ function checkPass()
   var goodColor= "#66cc66";
   var badColor= "#ff6666";
   
-  if(password.value == check_password.value){
+ if(password.value == check_password.value){
 	check_password.style.backgroundColor = goodColor;
-}else{
+	var match = true;
+}
+
+else{
 	check_password.style.backgroundColor = badColor;
+	var match = false;
 	}
 }
+
+if(match == false)
+
 </script>
 
 <div class="content">
@@ -184,7 +196,7 @@ function checkPass()
 				</select>
 				<br>
 				<br>
-				<input type="submit" id="submit" value="Registreer" >
+				<input type="submit" id="submit" value="Registreer" OnClick="return match" >
 			</fieldset>
 				<br>
 				<br>
