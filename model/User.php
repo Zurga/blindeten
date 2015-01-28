@@ -202,7 +202,6 @@ class User {
 		else {
 			return false;
 		}
-		var_dump($booking->other_user($user));
 		return $this->db->query($delquery);
 	}		
 }
