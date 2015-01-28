@@ -23,11 +23,7 @@ class Model{
 		array_walk($date, 'intval');
 
 		//check if e-mail is valid
-		if (!filter_var($attr['email'], FILTER_VALIDATE_EMAIL)) {
-			return false;
-		}
-		
-		else {
+		if (filter_var($attr['email'], FILTER_VALIDATE_EMAIL)) {
 			//check if the date is valid
 			if(checkdate($date[1],$date[2], $date[0])){
 				//it is so add account
@@ -47,11 +43,13 @@ class Model{
 				else {
 					return false;
 				}
-				
 			}
 			else {
 				return false;
 			}
+		}
+		else{
+			return false;
 		}
 	}
 
