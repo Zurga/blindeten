@@ -168,7 +168,7 @@ if($request == '/account/delete_booking') {
 	send_mail($user,6,$booking->date);
 	if ($user->cancel_booking($booking_id)) {
 		//mail_id 6 is cancelling booking
-		header("Location: ". $index .'/account/mybookings.php');
+		//header("Location: ". $index .'/account/mybookings.php');
 	}
 }
 ?>
