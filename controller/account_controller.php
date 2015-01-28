@@ -147,6 +147,8 @@ if($request == '/account/edit_booking'){
 }
 //Save changed booking
 if($request == '/account/save_editbooking'){
+	$time = sanitize($_POST['time']);
+	$date = sanitize($_POST['date']);
 	if($user->change_booking($booking, $time, $date)){
 		$message = "Je hebt geboekt!";
 	}
