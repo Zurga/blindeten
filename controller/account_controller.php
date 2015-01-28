@@ -70,12 +70,12 @@ if($request == '/account/register'){
 		if($auth->login($attr['email'], $attr['password'])){
 			header("Location: ". $index);
 		}
-	}
-	else{
-		$last_input= sanitize($_POST['input'], $model->db);
-		$register_error = 'De ingevulde gegevens zijn niet compleet of onjuist';
-		include $root . '/html/register.php';
-		return $attr;
+	
+		else{
+			$last_input= sanitize($_POST['input'], $model->db);
+			$register_error = 'De ingevulde gegevens zijn niet compleet of onjuist';
+			//include $root . '/html/register.php';
+		}
 	}
 }
 if ($request == '/account/logout') {
@@ -150,6 +150,9 @@ if($request == '/account/edit_booking'){
 if($request == '/account/save_editbooking'){
 	$time = sanitize($_POST['time'],$model->db);
 	$date = sanitize($_POST['date'],$model->db);
+	$booking_id = sanitize($_POST['booking_id'],$model->db);
+	$booking = new Booking($booking_id);
+	var_dump($booking);
 	if($user->change_booking($booking, $time, $date)){
 		$message = "Je hebt geboekt!";
 	}

@@ -32,7 +32,8 @@ else{
 			<br>
 			<?php if(isset($register_error)) {
 					echo '<p class="error">' . $register_error .'</p>';
-				} ?>
+				}
+			?>
 			<br>
 			<br>
 			<fieldset id="inputs" method='post'>

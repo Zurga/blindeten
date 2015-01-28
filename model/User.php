@@ -161,14 +161,9 @@ class User {
 	//Save changed booking
 	//Verwijder jezelf uit de booking en maak een nieuwe booking aan als die datum/tijd beschikbaar is.
 	public function change_booking($booking, $time, $date){
-	$this->cancel_booking($booking);
-	$query= 'SELECT user2 FROM booking WHERE time='.$time.' AND date='.$date;
-	$user_info = get_rows($this->db->query($query));
-	$restaurant = new Restaurant($booking->$restaurant_id);	
+	$this->cancel_booking($booking->id);
+	$restaurant = new Restaurant($booking->restaurant_id);	
 	if($cur_bookings = $model->get_bookings($restaurant,$date, $time, NULL, true)){
-	var_dump($restaurant);
-	var_dump($date);
-	var_dump($time);
 		foreach($cur_bookings as $booking){
 			foreach($restaurant->tables as $table){
 				if($booking->table_id != $table){
