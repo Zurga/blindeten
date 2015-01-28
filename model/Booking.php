@@ -33,11 +33,11 @@ class Booking{
 	
 	//returns the other user id
 	public function other_user($user){
-		if ($this->user1 == $user->id) {
-			return $this->user2;
+		if ($this->user1->id == $user->id) {
+			return $this->user2->id;
 		}
-		else if ($this->user2 == $user->id) {
-			return $this->user1;
+		else if ($this->user2->id == $user->id) {
+			return $this->user1->id;
 		}
 		else {
 			return false;
