@@ -123,16 +123,19 @@ class Model{
 	//Get bookings with id / time 
 	public function get_bookings($object, $date=NULL, $time=NULL, $later=NULL, $user2=NULL){
 		if (get_class($object) == 'User') {
+			echo 'its a user';
 			$query = "SELECT id FROM bookings WHERE user1 = ". $object->id .
 			" or user2 = ". $object->id;
 		}
 		else if (get_class($object) == 'Restaurant') {
+			echo 'its a restaurant';
 			$query = "SELECT id FROM bookings WHERE restaurant_id = ". $object->id;
 		}
 			if(isset($user2)){
 				$query .= ' AND user2 IS NULL';
 			}
 		else {
+			echo 'its false';
 			return false;
 		}
 		
