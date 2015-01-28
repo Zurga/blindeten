@@ -163,12 +163,11 @@ if($request == '/account/save_editbooking'){
 //Delete booking
 if($request == '/account/delete_booking') {
 	$booking_id = sanitize($_POST['booking_id'],$model->db);
-	var_dump($booking_id);
 	$booking = new Booking($booking_id);
 	send_mail($user,6,$booking->date);
 	if ($user->cancel_booking($booking_id)) {
 		//mail_id 6 is cancelling booking
-		//header("Location: ". $index .'/account/mybookings.php');
+		header("Location: ". $index .'/account/mybookings.php');
 	}
 }
 ?>
