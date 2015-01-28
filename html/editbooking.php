@@ -8,10 +8,10 @@
 		<form action="save_editbooking" method="post">	
 		<fieldset id="inputs">
 			<li><p>Datum: </p>
-			<p><input id="date" name="input[date]" type="date"> </p></li>
+			<p><input id="date" name="date" type="date"> </p></li>
 			<br>
 			<li><p>Tijd: </p>
-			<p><select id="time" name="input[time]">
+			<p><select id="time" name="time">
 				<option value="18:00:00">18:00</option>
 				<option value="20:00:00">20:00</option>
 			</select><p><li>
