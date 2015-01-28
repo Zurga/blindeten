@@ -169,7 +169,8 @@ a {
 	margin-right: 2.5% ;
 	width: 55%;
 	background-color: rgba(255,255,255,0.8);
-	padding: 36px;
+	padding: 49px;
+	padding-top: 10px;
 	float: left;
 }
 
@@ -183,7 +184,7 @@ a {
 	margin-top: 90px; 
 	width: 37.5%;
 	background-color: rgba(255,255,255,0.8);
-	padding: 30px;
+	padding-top: 10px;
 	float: left;
 	font-size: 16px;
 	overflow: auto;
