@@ -12,12 +12,12 @@ function checkPass()
   
  if(password.value != check_password.value){
 	check_password.style.backgroundColor = badColor;
-	var match = false;
+	match = false;
 }
 
 else{
 	check_password.style.backgroundColor = goodColor;
-	var match = true;
+	match = true;
 	}
 }
 
