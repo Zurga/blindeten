@@ -60,10 +60,11 @@ if($request == '/account/register.php') {
 //User pressed register button
 if($request == '/account/register'){
 	$attr = sanitize($_POST['input'],$model->db);
-	$bday= $attr['year'].'-'.$attr['month'].'-'.$attr['day'];
+	$bday = $attr['year'].'-'.$attr['month'].'-'.$attr['day'];
 	$attr['birthdate'] = $bday;
-	$email= $attr['email'];
+	$email = $attr['email'];
 	if($user = new User($model->add_account($attr))){
+		echo 'account aangemaakt';
 		//mail_id 1 is welcome mail
 		send_mail($user,1);
 		if($auth->login($attr['email'], $attr['password'])){
