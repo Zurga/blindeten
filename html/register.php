@@ -35,8 +35,9 @@ if(match == false)
 			<h1>Registreer</h1>
 			<br>
 			<?php if(isset($register_error)) {
-					echo '<p class="error">' . $register_error .'</p>';
-				} ?>
+					echo '<p class="error">' . $register_error .'</p>',$attr;
+				}
+			?>
 			<br>
 			<br>
 			<fieldset id="inputs" method='post'>
