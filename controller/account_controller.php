@@ -152,6 +152,7 @@ if($request == '/account/save_editbooking'){
 	$date = sanitize($_POST['date'],$model->db);
 	$booking_id = sanitize($_POST['booking_id'],$model->db);
 	$booking = new Booking($booking_id);
+	var_dump($booking);
 	if($user->change_booking($booking, $time, $date)){
 		$message = "Je hebt geboekt!";
 	}
