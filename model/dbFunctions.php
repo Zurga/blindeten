@@ -45,7 +45,6 @@ function sanitize ($attr,$db) {
 			$sanitized = htmlspecialchars($sanitized);
 			$sanitized = strip_tags($sanitized);
 		}	
-		echo '<br>';
 		return $sanitized;
 	}
 	else {
