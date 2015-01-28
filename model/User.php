@@ -202,7 +202,8 @@ class User {
 		else {
 			return false;
 		}
+		var_dump(other_user($user));
 		return $this->db->query($delquery);
-	}		
+		}		
 }
 ?>
