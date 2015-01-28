@@ -117,10 +117,7 @@ if($request == '/ajax/book_table'){
 					$restaurant->tables[0], $date, $time)){
 					echo '<p class="confirm">Je hebt gereserveerd!</p>';
 					send_mail($user,2);
-					}
-					else{
-					//nothing
-					}
+				}
 			}	
 		}
 	}
