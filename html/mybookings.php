@@ -32,14 +32,17 @@
 		<p><b>Restaurant: </b> <?php $restaurant = new restaurant($booking->restaurant_id); echo $restaurant->name; ?></p>
 		<br>
 		
+		
 		<form action="/account/edit_booking" method="post">
 		<input name="booking_id" value="<?php echo $booking->id; ?>" class="hidden">
-	    <input type="submit" id="submit" value="Reservering wijzigen" STYLE= "float:left">
+	    <input type="submit" id="submit" value="Reservering wijzigen">
 		</form>
-		<form action="/account/delete_booking" method="post">
+		
+		<form action="/account/delete_booking" method="post" style="display:inline-block">
 		<input name="booking_id" value=<?php echo $booking->id; ?> class="hidden">
-	    <input type="submit" id="submit" value="Reservering verwijderen" STYLE= "float:right"><hr width="100%">
+	    <input type="submit" id="submit" value="Reservering verwijderen">
 		</form>
+		
 
 		<?php }} ?>
 	</div>

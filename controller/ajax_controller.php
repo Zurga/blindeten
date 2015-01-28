@@ -121,8 +121,7 @@ if($request == '/ajax/book_table'){
 					else{
 					//nothing
 					}
-				}	
-			}
+			}	
 		}
 	}
 	else {
@@ -130,4 +129,5 @@ if($request == '/ajax/book_table'){
 		     '<a href="/account/register.php">Login</a> om te kunnen reserveren</p>';
 	}
 }
+
 ?>
