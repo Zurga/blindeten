@@ -114,8 +114,9 @@ if($request == '/ajax/book_table'){
 					$restaurant->tables[0], $date, $time)){
 					echo '<p class="confirm">Je hebt gereserveerd!</p>';
 					send_mail($user,2);
-					if($booking->user1->id != $user->id){
+					if(var_dump($booking->user1->id) != $user->id){
 						$other_user= new User($booking->other_user($user));
+						var_dump($other_user);
 						send_mail($other_user,3);
 					}
 					else{
