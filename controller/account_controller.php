@@ -136,13 +136,6 @@ if($request == '/account/forgot_password'){
 
 if($request == '/account/mybookings.php') {
 	$bookings = $model->get_bookings($user);
-	if(!empty($bookings)){
-
-		foreach($bookings as $booking){
-			$booking->user1 = new User($booking->user1);
-			$booking->user2 = new User($booking->user2);
-		}
-	}
 	include $root . '/html/mybookings.php';
 }
 
@@ -153,7 +146,11 @@ if($request == '/account/edit_booking'){
 }
 
 if($request == '/account/save_editbooking'){
-		
+	if($model->change_booking($booking, $time, $date));
+		$message = "Je hebt geboekt!";
+	else {
+		$error_message = "Deze boeking is al bezet, kies een ander tijdstip";
+	}
 }
 
 if($request == '/account/delete_booking') {
