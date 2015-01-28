@@ -193,7 +193,7 @@ else{
 				</select>
 				<br>
 				<br>
-				<input type="submit" id="submit" value="Registreer" OnClick="alert(match);return match;" >
+				<input type="submit" id="submit" value="Registreer" OnClick="return match;" >
 			</fieldset>
 				<br>
 				<br>
@@ -218,6 +218,8 @@ else{
 	document.getElementById("month").value = data["month"];
 
 	document.getElementById("year").value = data["year"];
+
+	document.getElementById("sex").value = data["sex"];
 
 </script>
 
