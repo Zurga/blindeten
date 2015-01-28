@@ -10,7 +10,7 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {
 	border: 0;
-	font-family: Century Gothic;
+	font-family: Century Gothic, Arial;
 	font-size: 100%;
 	font-style: inherit;
 	font-weight: inherit;
@@ -105,9 +105,9 @@ a img {
     margin: 0;  
 }
 #menu ul li a {  
-    font-family: Century Gothic;  
+    font-family: Century Gothic, Arial;  
     color: #FFFFFF; 
-    font-family: Century Gothic;   
+    font-family: Century Gothic, Arial;   
 	text-decoration: none;
 	padding: 0 20px;
 }
@@ -160,7 +160,7 @@ a {
 	width: 50%;
 	background-color: rgba(255,255,255,0.8);
 	padding: 10px;
-	padding-bottom: 20px;
+	padding-bottom: 15px;
 }
 
 .homemap{
@@ -200,7 +200,7 @@ form {
 	margin-top: 1.5%;
 	padding-bottom: 20px;
 	height: 50%;
-	font-family: Century Gothic;
+	font-family: Century Gothic, Arial;
 	text-align: center;
 }
 
@@ -217,10 +217,17 @@ form h1{
 h1{
 	font-size: 30px;
 	text-align: center;
+	padding-top: 15px;
+}
+
+h2{
+	margin-right: 15px;
+	margin-left: 15px;
 }
 
 form h2{
 		font-size: 14px;
+
 }
 
 h2, p{
@@ -244,7 +251,7 @@ h4 {
 }
 
 .error {
-	font-family: Century Gothic;
+	font-family: Century Gothic, Arial;
 	color: #FF0000;
 	text-align: center;
 	font-weight: bold;
@@ -287,7 +294,7 @@ form p {
 	opacity: 0.9;
 	background-color: black;
 	text-align: center;
-	font-family: Century Gothic;
+	font-family: Century Gothic, Arial;
 }
 #footer ul li{
     display: inline;  
@@ -412,7 +419,7 @@ Mediacss
     margin: 0;  
 }
 #menu ul li a {  
-    font-family: Century Gothic;  
+    font-family: Century Gothic, Arial;  
     color: white; 
 	text-decoration: none;
 	padding: 0 20px;
