@@ -40,7 +40,7 @@
 		
 		<form action="/account/delete_booking" method="post" style="display:inline-block">
 		<input name="booking_id" value=<?php echo $booking->id; ?> class="hidden">
-	    <input type="submit" id="submit" value="Reservering verwijderen">
+	    <input type="submit" id="submit" value="Reservering verwijderen" style="margin-left:100px">
 		</form>
 		
 
