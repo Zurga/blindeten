@@ -29,7 +29,6 @@ function set_var($var, $object){
 //Sanitize input in our forms (no scripts can be put in)
 function sanitize ($attr,$db) {
 	echo '<br>';
-	var_dump($attr);
 	if(!is_null($attr)) {
 		if (is_array($attr)) {
 			$sanitized = array();
@@ -47,7 +46,6 @@ function sanitize ($attr,$db) {
 			$sanitized = strip_tags($sanitized);
 		}	
 		echo '<br>';
-		var_dump($sanitized);
 		return $sanitized;
 	}
 	else {
