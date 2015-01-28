@@ -165,6 +165,7 @@ class User {
 	$restaurant = new Restaurant($booking->restaurant_id);
 	var_dump($restaurant);
 	if($cur_bookings = $model->get_bookings($restaurant,$date, $time, NULL, true)){
+	var_dump($cur_bookings);
 		foreach($cur_bookings as $booking){
 			foreach($restaurant->tables as $table){
 				if($booking->table_id != $table){
