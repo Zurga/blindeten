@@ -1,6 +1,6 @@
 <?php include 'header.php';?>
 
-
+<!-- bron voor de tabs: http://www.webhostingtalk.com/showthread.php?t=1045871-->
 
 <div class="content">
 	<div class="maincontent">

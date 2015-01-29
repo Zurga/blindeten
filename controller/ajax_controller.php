@@ -11,7 +11,6 @@ if($pos === false){
 }
 else{
 	$request = substr($string, strlen($needle));
-	echo $request;
 }
 $input = sanitize($_POST['input'], $model->db);
 if($request == '/ajax/calendar'){
