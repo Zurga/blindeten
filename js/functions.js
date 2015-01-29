@@ -36,7 +36,7 @@ function get_output(which, input, params){
 	var output;
 	var home = window.location.protocol + window.location.host + '/';
 	if (http_object != null){
-		http_object.open('POST', "ajax/"+ which, true);
+		http_object.open('POST', home + "ajax/"+ which, true);
 
 		//http://www.openjs.com/articles/ajax_xmlhttp_using_post.php
 		//Send the proper header information along with the request
