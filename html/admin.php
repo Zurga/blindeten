@@ -17,6 +17,7 @@
 		
 		
 		<div class="tab" title="account_settings">
+			<a href="javascript:void(null)" onclick="">
 			<h5>Tab 1</h5>
 			<form action = "change_permission" method="POST">
 			<input id="email" name="email" type="text" placeholder="E-mail" required>   
@@ -40,6 +41,7 @@
 		
 		
 		<div class="tab" title="add_delete_restaurant">
+			<a href="javascript:void(null)" onclick="">
 			<h5>Tab 2 </h5>
 			<form action = "delete_restaurant" method= "POST">
 			<select name="rest_id">
