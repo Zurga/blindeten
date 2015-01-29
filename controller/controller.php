@@ -25,7 +25,7 @@ class Controller {
 
 		$urlRoutes = array(
 			'/\/$/' => 'index',
-			//'/\/account\/ajax\//' => 'ajax',
+			'/\/account\/ajax\//' => 'ajax',
 			'/\/account\/[^ajax]/'=> 'account',
 			'/\/admin\//' => 'admin',
 			'/\/ajax\//' => 'ajax',
@@ -35,6 +35,7 @@ class Controller {
 		foreach($urlRoutes as $route=>$controller_name){
 			if(preg_match($route, $request)){
 				$controller = $controller_name;
+				
 			}
 		}
 		
