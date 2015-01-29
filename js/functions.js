@@ -83,7 +83,7 @@ function get_map(){
 					infowindow.open(map,marker);
 					restaurant = rest[i].id;
 					//get_output('calendar', restaurant); 
-					showtext(restaurant);
+					showtext(restaurant, calendar);
 
 
 				}
