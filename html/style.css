@@ -205,7 +205,6 @@ a {
 form {
 	margin-top: 1.5%;
 	padding-bottom: 20px;
-	height: 50%;
 	font-family: Century Gothic, Arial;
 	text-align: center;
 	margin-right: 15px;
@@ -352,72 +351,66 @@ form p {
 	background-color: transparent; 
 }
 
-/*admin css 
-#admintab ul {
-list-style:none;
-position:relative; 
-z-index:2;
-top:1px;
-display:table;
-border-left:1px solid #f5ab36;
+
+/*tabs
+*/
+
+#Tabs ul {
+padding: 0px;
+margin: 0px;
+margin-left: 10px;
+list-style-type: none;
 }
-#admintab ul li {
-float:left;
+
+#Tabs ul li {
+display: inline-block;
+clear: none;
+float: left;
+height: 24px;
 }
-#admintab ul li a {
-background:#ffd89b;
-color:#222;
-display:block;
-padding:6px 15px;
-text-decoration:none;
-border-right:1px solid #f5ab36;
-border-top:1px solid #f5ab36;
-border-right:1px solid #f5ab36;
+
+#Tabs ul li a {
+position: relative;
+margin-top: 16px;
+display: block;
+margin-left: 6px;
+line-height: 24px;
+padding-left: 10px;
+background: #f6f6f6;
+z-index: 9999;
+border: 1px solid #ccc;
+border-bottom: 0px;
+
+/* The following four lines are to make the top left and top right corners of each tab rounded. */
+-moz-border-radius-topleft: 4px;
+border-top-left-radius: 4px;
+-moz-border-radius-topright: 4px;
+border-top-right-radius: 4px;
+/* end of rounded borders */
+
+width: 130px;
+color: #000000;
+text-decoration: none;
+font-weight: bold;
 }
-#admintab ul li a.selected {
-border-bottom:1px solid #fff;
-color:#344385;
-background:#fff;
-} */
-.admintab {
-position:relative;
-min-height:200px;
+
+#Tabs ul li a:hover {
+text-decoration: underline; // a very simple effect when hovering the mouse on tab
+}
+
+#Tabs #Content_Area { // this is the css class for the content displayed in each tab
+padding: 0 15px;
 clear:both;
-margin:25px 0;
-}
-.tab {
-float:left;
-}
-.tab [type=radio] {
-display:none;
-}
-[type=radio]:checked ~ label {
-background: white;
-border-bottom:1px solid white;
-z-index:2;
-}
-[type=radio]:checked ~ label ~ .tabcontent {
-z-index:1;
-}
-.tab label {
-background:grey;
-padding:10px;
-border:1px solid grey;
-margin-left: -1px;
-position:relative;
-left:1px;
-}
-.tabcontent {
-position:absolute;
-top:28px;
-left:0;
-background:white;
-right:0;
-bottom:0;
-padding:20px;
-border:1px solid grey;
 overflow:hidden;
+line-height:19px;
+position: relative;
+top: 20px;
+z-index: 5;
+height: 150px;
+overflow: hidden;
 }
+
+
 
 /*
 Mediacss
