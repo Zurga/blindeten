@@ -149,8 +149,22 @@ if($request == '/account/save_editbooking'){
 	$date = sanitize($_POST['date'],$model->db);
 	$booking_id = sanitize($_POST['booking_id'],$model->db);
 	$booking = new Booking($booking_id);
-	if($user->change_booking($booking, $time, $date)){
-		$message = "Je hebt geboekt!";
+	
+	$user->cancel_booking($booking->id);
+	$restaurant = new Restaurant($booking->restaurant_id);
+	//check all free bookings
+	if($cur_bookings = $model->get_bookings($restaurant,$date, $time, NULL, true)){
+		foreach($cur_bookings as $booking){
+			foreach($restaurant->tables as $table){
+				if($booking->table_id != $table){
+					if($booking = $model->book_table($user, $restaurant, 
+						$table, $date, $time)){
+						$message = "Je hebt geboekt!";
+						return true;
+					}
+				}
+			}
+		}
 	}
 	else {
 		$error_message = "Deze boeking is al bezet, kies een ander tijdstip";
