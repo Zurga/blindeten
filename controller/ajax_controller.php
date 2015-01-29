@@ -7,7 +7,7 @@ include_once $root . '/controller/mail_controller.php';
 $needle = '/account';
 $pos = strpos($request, $needle);
 
-if(!$pos){
+if(!$pos == false){
 	$request = substr($request, strlen($needle));
 }
 $input = sanitize($_POST['input'], $model->db);
