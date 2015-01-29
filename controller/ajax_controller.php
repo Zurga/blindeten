@@ -7,8 +7,10 @@ include_once $root . '/controller/mail_controller.php';
 $needle = '/account';
 $pos = strpos($request, $needle);
 
-if(!$pos == false){
-	$request = substr($request, strlen($needle));
+if($pos === false){
+}
+else{
+	$request = substr($string, strlen($needle));
 }
 $input = sanitize($_POST['input'], $model->db);
 if($request == '/ajax/calendar'){
