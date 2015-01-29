@@ -146,7 +146,8 @@ if($request == '/account/mybookings.php') {
 //User request editbooking.php
 if($request == '/account/edit_booking'){
 	$booking = new Booking($_POST['booking_id']);
-	
+	$request = '/ajax/calender';
+	include $root . '/controller/ajax_controller';
 	include $root . '/html/editbooking.php';
 }
 //Save changed booking
