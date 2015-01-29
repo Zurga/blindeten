@@ -10,7 +10,6 @@ class Controller {
 	public $index;
 
 	public function invoke(){
-		$_POST = sanitize($_POST);
 		//set variables for use in other controllers
 		$model = new Model;
 		$auth = new Auth;
