@@ -146,3 +146,28 @@ function set_bookings(bookings, id){
 
 	ul.innerHTML = bookings;
 }
+
+var match = false; 
+
+//check if passwords are the same
+function checkPass()
+{
+  var error=document.getElementById("error");
+  var password = document.getElementById("password");
+  var check_password = document.getElementById("check_password");
+  var goodColor= "#66cc66";
+  var badColor= "#ff6666";
+  
+ if(password.value != check_password.value){
+	check_password.style.backgroundColor = badColor;
+	error.innerHTML="Wachtwoord komt niet overeen.";
+	match = false;
+}
+
+else{
+	check_password.style.backgroundColor = goodColor;
+	error.innerHTML="";
+	match = true;
+	}
+}
+

@@ -88,11 +88,7 @@ if($request == '/ajax/book_table'){
 			$restaurant = new Restaurant($booking->restaurant_id);
 			if($model->book_table($user, $restaurant, $booking->table_id, $date, $time)){
 				echo '<p class="confirm">Maak er een mooie avond van!</p>';
-				echo $booking->id;
-				echo $booking->user2->id;
-				var_dump($booking->user1->id);
 				send_mail($user,2);
-				//$other_user= new User($booking->other_user($user));
 				send_mail($booking->user1,3);
 			}
 		}
