@@ -181,6 +181,7 @@ if($request == '/account/save_editbooking'){
 
 //Delete booking
 if($request == '/account/delete_booking') {
+	$bookings = $model->get_bookings($user);
 	$booking_id = sanitize($_POST['booking_id'],$model->db);
 	$booking = new Booking($booking_id);
 	//mail_id 6 is cancelling booking
@@ -189,7 +190,8 @@ if($request == '/account/delete_booking') {
 	send_mail($other_user,4,$booking->date);
 	if($user->cancel_booking($booking_id)){
 		$booking_deleted = "Reservering succesvol verwijderd.";
-		header("Location: ". $index .'/account/mybookings.php');
+		include $root . "/html/mybookings.php";
+		//header("Location: ". $index .'/account/mybookings.php');
 	}
 }
 ?>
