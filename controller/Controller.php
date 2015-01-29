@@ -27,7 +27,7 @@ class Controller {
 		$urlRoutes = array(
 			'/\/$/' => 'index',
 			'/\/account\/ajax//' => 'ajax',
-			'/\/account\//'=> 'account',
+			'/\/account\/[^ajax]/'=> 'account',
 			'/\/admin\//' => 'admin',
 			'/\/ajax\//' => 'ajax',
 			'/\/text\//' => 'text'
