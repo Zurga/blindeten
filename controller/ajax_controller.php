@@ -5,7 +5,7 @@ include $root . '/controller/mail_controller.php';
 include_once $root .'/model/User.php';
 
 $input = sanitize($_POST['input'], $model->db);
-if($request == $index . '/ajax/calendar'){
+if($request == '/ajax/calendar'){
 	$restaurant = new Restaurant($input['id']);
 	
 	header('Content-Type: application/json');
