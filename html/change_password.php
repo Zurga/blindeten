@@ -4,8 +4,8 @@
 	<div class="maincontent">
 		<h1>Wachtwoord veranderen</h1>
 		<br>
-		<?php if(isset($register_error)) {
-					echo '<p class="error">' . $register_error .'</p>';
+		<?php if(isset($password_error)) {
+					echo '<p class="error">' . $password_error .'</p>';
 				}
 		?>
 		<br>

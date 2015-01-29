@@ -122,7 +122,7 @@ if($request == '/account/save_new_password'){
 		header("Location: ". $index);
 	}
 	else {
-		$error_message = "Het huidige wachtwoord is niet correct.";
+		$password_error = "Het huidige wachtwoord is niet correct.";
 	}
 }
 
