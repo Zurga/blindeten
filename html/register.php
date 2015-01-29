@@ -26,10 +26,10 @@
 				<input id="city" name="input[city]" type="text" placeholder="Woonplaats" required> 
 				<br>
 				<br>
-				<input id="password" name="input[password]" type="password" placeholder="Wachtwoord" pattern=".{6,}" title="Minimaal 6 tekens." required>
+				<input id="password" name="input[password]" type="password" placeholder="Wachtwoord" title="Minimaal 6 tekens." required>
 				<br>
 				<br>
-				<input id="check_password" name="input[check_password]" type="password" onkeyup="checkPass();" placeholder="Herhaal wachtwoord" pattern=".{6,}" required>
+				<input id="check_password" name="input[check_password]" type="password" onkeyup="checkPass();" placeholder="Herhaal wachtwoord" required>
 				<br>
 				<p id="error" class="error"></p>
 				<br>
