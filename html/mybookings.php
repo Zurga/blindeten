@@ -5,7 +5,7 @@
 		<h1>Mijn reserveringen</h1>
 		<br>
 		<br>
-		<?phpif(isset($booking_deleted)) {
+		<?php if(isset($booking_deleted)) {
 					echo '<p class="confirm">' . $booking_deleted .'</p>';
 				}
 		
