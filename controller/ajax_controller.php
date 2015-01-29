@@ -13,7 +13,6 @@ else{
 	$request = substr($request, strlen($needle));
 }
 
-var_dump($request) ;
 $input = sanitize($_POST['input'], $model->db);
 if($request == '/ajax/calendar'){
 	$restaurant = new Restaurant($input['id']);
