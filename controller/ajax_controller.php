@@ -137,5 +137,4 @@ if($request == '/ajax/book_table'){
 		     '<a href="/account/login.php">Login</a> om te kunnen reserveren</p>';
 	}
 }
-
 ?>

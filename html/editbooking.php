@@ -14,6 +14,7 @@
     </div>
 </div>
 <script>
+<?php var_dump($restaurant);?>
 var rest = <?php echo array($restaurant->id => json_encode($restaurant));?>;
 window.onload=function(){
 	get_output('calendar','<?php echo $booking->restaurant_id;?>', 'input[id]=<?php echo $booking->restaurant_id;?>');
