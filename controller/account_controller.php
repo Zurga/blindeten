@@ -116,7 +116,7 @@ if($request == '/account/change_password.php') {
 }
 //Save new password
 if($request == '/account/save_new_password'){
-	$new_e_password = encrypt($user->email,sanitize($_POST['new_password']),$model->db);
+	$new_e_password = encrypt($user->email,sanitize($_POST['password']),$model->db);
 	$model->change_password($user->id, $new_e_password);
 	header("Location: ". $index);
 }
