@@ -10,10 +10,11 @@
 			<br>
 			<li><p>Nieuw wachtwoord:&nbsp;&nbsp;</p><input id="new_password" name="new_password"type="password" placeholder="Nieuw wachtwoord" required></li> 
 			<br>
-			<li><p>Herhaal wachtwoord:</p><input id="repeat_pasword" name="repeat_password" type="password" placeholder="Wachtwoord herhalen" required></li>
+			<li><p>Herhaal wachtwoord:</p><input id="repeat_pasword" name="repeat_password" type="password" onkeyup="checkPass();" placeholder="Wachtwoord herhalen" required></li>
 			<br>
+			<p id="error" class="error"></p>
 			<br>
-			<li><input type="submit" id="submit" value="Wachtwoord opslaan"></li>
+			<li><input type="submit" id="submit" value="Wachtwoord opslaan" OnClick="return match;"></li>
 		</fieldset>	
 		</form>
 			 
