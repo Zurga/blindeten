@@ -14,7 +14,7 @@
 			<li><p>Huidig wachtwoord:&nbsp;&nbsp;</p><input id="current_password" name="cur_password" type="password" placeholder="Huidig wachtwoord" required></li>
 			<br>
 			<br>
-			<li><p>Nieuw wachtwoord:&nbsp;&nbsp;</p><input id="password" name="password" type="password" placeholder="Wachtwoord" required>
+			<li><p>Nieuw wachtwoord:&nbsp;&nbsp;</p><input id="password" name="password" type="password" placeholder="Wachtwoord" pattern=".{6,}" title="Minimaal 6 tekens" required>
 			<br>
 			<br>
 			<li><p>Herhaal wachtwoord:</p><input id="check_password" name="check_password" type="password" onkeyup="checkPass();" placeholder="Herhaal wachtwoord" required>
