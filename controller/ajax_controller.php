@@ -3,6 +3,13 @@
 $root = $_SERVER['DOCUMENT_ROOT'];
 include_once $root . '/controller/mail_controller.php';
 
+//strip away all other controller text form url
+$needle = '/account';
+$pos = strpos($request, $needle);
+
+if(!$pos){
+	$request = substr($request, strlen($needle));
+}
 $input = sanitize($_POST['input'], $model->db);
 if($request == '/ajax/calendar'){
 	$restaurant = new Restaurant($input['id']);
