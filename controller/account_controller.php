@@ -123,6 +123,7 @@ if($request == '/account/save_new_password'){
 	}
 	else {
 		$password_error = "Het huidige wachtwoord is niet correct.";
+		include $root . '/html/change_password.php';
 	}
 }
 
