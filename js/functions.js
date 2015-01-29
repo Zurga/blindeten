@@ -60,6 +60,40 @@ function get_output(which, input, params){
 	}
 }
 
+function get_map(){
+	map = new google.maps.Map(document.getElementById('map'),{
+		zoom: 3,
+		center: new google.maps.LatLng(52, 4)
+	});
+	for(var i in rest){
+		if(rest.hasOwnProperty(i)){
+			//create lonlat for each restaurant
+			var latlon = new google.maps.LatLng(rest[i].lat, rest[i].lon);
+			marker = new google.maps.Marker({
+				position: latlon,
+				map: map
+				});
+			infowindow = new google.maps.InfoWindow();
+
+			//todo create icon for the marker
+			//creating the popup for each restaurant
+			google.maps.event.addListener(marker, 'click', (function(marker, i){
+				return function(){
+					infowindow.setContent(rest[i].name);
+					infowindow.open(map,marker);
+					restaurant = rest[i].id;
+					//get_output('calendar', restaurant); 
+					showtext(restaurant);
+
+
+				}
+			})(marker, i));
+		}
+	}
+	map.setCenter(latlon);
+	map.setZoom(12);
+}
+
 function create_calendar(days, id){
 
 	input = id + '-input';
