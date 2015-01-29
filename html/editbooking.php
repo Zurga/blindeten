@@ -10,7 +10,7 @@ window.onload=get_output('<?php echo $booking->restaurant_id;?>', 'calendar','in
 		<br>
 		<form action="save_editbooking" method="post">	
 		<fieldset id="inputs">
-			<p><input id="<?php echo $booking->restaurant_id?>" name="date" type="date"> </p>
+			<p><input id="<?php echo $booking->restaurant_id?>-input" name="date" type="date"> </p>
 		<ul id="bookings-<?php echo $booking->restaurant_id;?>">
 		</ul>
 		</fieldset>	
