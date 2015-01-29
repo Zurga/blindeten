@@ -1,10 +1,6 @@
 <?php include 'header.php';?>
 
 
-<!-- bron: http://www.barelyfitz.com/projects/tabber/-->
-<script type="text/javascript" src="/js/tabber.js">
-
-</script>
 
 <div class="content">
 	<div class="maincontent">
@@ -12,13 +8,14 @@
 		<h1>Administratie</h1>
 		<br>
 		<br>
-
-	<div class="tabs" id="all_tabs">
-		
-		
-		<div class="tab" title="account_settings">
-			<a href="javascript:void(null)" onclick="">
-			<h5>Tab 1</h5>
+		<div id="Tabs">
+			<ul>
+				<li id="tab_one" OnClick="tab('tab1')"><a>Tab 1</a></li> 
+				<li id="tab_two" OnClick="tab('tab2')"><a>Tab 2</a></li>
+			</ul>
+	
+		<div id="tab_content">
+			<div id="tab1">
 			<form action = "change_permission" method="POST">
 			<input id="email" name="email" type="text" placeholder="E-mail" required>   
 			<br>
@@ -36,13 +33,13 @@
 			<br><br>
 			<input type="submit" id="submit" value="Account verwijderen">
 			</form>
-			</div>	
+			</div>
+			
 			
 		
 		
-		<div class="tab" title="add_delete_restaurant">
-			<a href="javascript:void(null)" onclick="">
-			<h5>Tab 2 </h5>
+		
+			<div id="tab2" style="display:none">
 			<form action = "delete_restaurant" method= "POST">
 			<select name="rest_id">
 				<?php 
@@ -69,15 +66,24 @@
 			<br><br>
 			<input type="submit" id="submit" value="Toevoegen">
 			</form>	
+			</div>
 		</div>
-		
+		</div>
 	</div>		
 		
 	</div>
 </div>
 
-
-http://krasimirtsonev.com/blog/article/GoogleMaps-JS-API-address-to-coordinates-transformation-text-to-LatLng
+<script type="text/javascript">
+function tab(tab) {
+document.getElementById('tab1').style.display = 'none';
+document.getElementById('tab2').style.display = 'none';
+document.getElementById('tab_one').setAttribute("class", "");
+document.getElementById('tab_two').setAttribute("class", "");
+document.getElementById(tab).style.display = 'block';
+document.getElementById('tab_'+tab).setAttribute("class", "active");
+}
+</script>
 
 
 <?php include 'footer.php';?>
