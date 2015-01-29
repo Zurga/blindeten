@@ -8,12 +8,6 @@
 		<?php if(isset($booking_deleted)) {
 					echo '<p class="confirm">' . $booking_deleted .'</p>';
 				}
-			if(isset($changed_password)) {
-				echo '<p class="confirm">'. $changed_password .'</p>';
-			}
-			if(isset($changed_attributes)) {
-				echo '<p class="confirm">'. $changed_attributes .'</p>';
-			}
 		
 		if(empty($bookings)) {
 			echo '<p>Er zijn nog geen reserveringen.</p>';
