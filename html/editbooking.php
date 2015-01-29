@@ -14,7 +14,8 @@
     </div>
 </div>
 <script>
-window.onload=get_output('<?php echo $booking->restaurant_id;?>', 'calendar','input[id]=<?php echo $booking->restaurant_id;?>');
-
+window.onload=function(){
+	get_output('<?php echo $booking->restaurant_id;?>', 'calendar','input[id]=<?php echo $booking->restaurant_id;?>');
+}
 </script>
 <?php include 'footer.php';?>
