@@ -26,11 +26,11 @@ class Controller {
 
 		$urlRoutes = array(
 			'/\/$/' => 'index',
+			'/\/account\/ajax//' => 'ajax',
 			'/\/account\//'=> 'account',
 			'/\/admin\//' => 'admin',
 			'/\/ajax\//' => 'ajax',
-			'/\/text\//' => 'text',
-			'/\/account\/ajax//' => 'ajax'
+			'/\/text\//' => 'text'
 			);
 
 		foreach($urlRoutes as $route=>$controller_name){
