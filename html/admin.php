@@ -1,5 +1,11 @@
 <?php include 'header.php';?>
 
+
+<!-- bron: http://www.barelyfitz.com/projects/tabber/-->
+<script type="text/javascript" src="/js/tabber.js">
+
+</script>
+
 <div class="content">
 	<div class="maincontent">
 	
@@ -7,7 +13,13 @@
 		<br>
 		<br>
 
-		<form action = "change_permission" method="POST">
+	<div class="tabs" id="all_tabs">
+		
+		
+		<div class="tab" title="account_settings">
+			<a href="javascript:void(null)" onclick="">
+			<h5>Tab 1</h5>
+			<form action = "change_permission" method="POST">
 			<input id="email" name="email" type="text" placeholder="E-mail" required>   
 			<br>
 			<select name="permission">
@@ -17,16 +29,21 @@
 			</select>
 			<br><br>
 			<input type="submit" id="submit" value="Opslaan">
-		</form>	
+			</form>	
 			
-		<form action="delete_account" method= "POST">
+			<form action="delete_account" method= "POST">
 			<input id="email" name="email" type="text" placeholder="E-mail" required>   
 			<br><br>
 			<input type="submit" id="submit" value="Account verwijderen">
-		</form>
+			</form>
+			</div>	
 			
-			
-		<form action = "delete_restaurant" method= "POST">
+		
+		
+		<div class="tab" title="add_delete_restaurant">
+			<a href="javascript:void(null)" onclick="">
+			<h5>Tab 2 </h5>
+			<form action = "delete_restaurant" method= "POST">
 			<select name="rest_id">
 				<?php 
 				foreach($restaurants as $restaurant){
@@ -36,9 +53,10 @@
 			<!--<input id="restaurant_name" name="restaurant_name" type="text" placeholder="Naam restaurant" required>-->
 			<br><br>
 			<input type="submit" id="submit" value="Verwijder">
-		</form>
+			</form>
+
 			
-		<form action = "add_restaurant" method= "POST">
+			<form action = "add_restaurant" method= "POST">
 			<input id="name" name='input["name"]' type="text" placeholder="Naam restaurant" required>
 			<input id="street" name='input["street"]' type="text" placeholder="Straatnaam" required>
 			<input id="number" name='input["number"]' type="number" placeholder="Nummer" required>
@@ -50,10 +68,13 @@
 			<input id="url" name='input["url"]' type="text" placeholder="URL" required>
 			<br><br>
 			<input type="submit" id="submit" value="Toevoegen">
-		</form>	
-				
+			</form>	
 		</div>
+		
+	</div>		
+		
 	</div>
+</div>
 
 
 http://krasimirtsonev.com/blog/article/GoogleMaps-JS-API-address-to-coordinates-transformation-text-to-LatLng
