@@ -405,7 +405,7 @@ font-weight: bold;
 text-decoration: underline; 
 }
 
-#Tabs #tab_content{ // this is the css class for the content displayed in each tab
+#Tabs #tab_content{ 
 padding: 0 15px;
 clear:both;
 overflow:hidden;
@@ -414,7 +414,6 @@ position: relative;
 top: 20px;
 z-index: 5;
 height: 150px;
-overflow: hidden;
 }
 
 
