@@ -5,7 +5,11 @@
 		<h1>Mijn reserveringen</h1>
 		<br>
 		<br>
-		<?php if(empty($bookings)) {
+		<?phpif(isset($booking_deleted)) {
+					echo '<p class="confirm">' . $booking_deleted .'</p>';
+				}
+		
+		if(empty($bookings)) {
 			echo '<p>Er zijn nog geen reserveringen.</p>';
 		}
 			else {
