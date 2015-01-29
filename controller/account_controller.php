@@ -1,6 +1,6 @@
 <?php
 $root = $_SERVER['DOCUMENT_ROOT'];
-include $root . '/controller/mail_controller.php';
+include_once $root . '/controller/mail_controller.php';
 include_once $root .'/model/User.php';
 
 //show the user information
@@ -146,7 +146,7 @@ if($request == '/account/mybookings.php') {
 //User request editbooking.php
 if($request == '/account/edit_booking'){
 	$booking = new Booking($_POST['booking_id']);
-	
+	$restaurant = new Restaurant($booking->restaurant_id);
 	include $root . '/html/editbooking.php';
 }
 //Save changed booking

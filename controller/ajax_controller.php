@@ -1,11 +1,17 @@
 <?php
 //sorry jim even testen, don't hate us plies, bye!
 $root = $_SERVER['DOCUMENT_ROOT'];
-include $root . '/controller/mail_controller.php';
-include_once $root .'/model/User.php';
+include_once $root . '/controller/mail_controller.php';
 
+//strip away all other controller text form url
+$needle = '/account';
+$pos = strpos($request, $needle);
+
+if(!$pos == false){
+	$request = substr($request, strlen($needle));
+}
 $input = sanitize($_POST['input'], $model->db);
-if($request == $index . '/ajax/calendar'){
+if($request == '/ajax/calendar'){
 	$restaurant = new Restaurant($input['id']);
 	
 	header('Content-Type: application/json');
@@ -23,10 +29,10 @@ if($request == $index . '/ajax/calendar'){
 
 if($request == '/ajax/booking'){
 	$restaurant = new Restaurant($input['id']);
-	$bookings = $model->get_bookings($restaurant, $input['date']);
+$bookings = $model->get_bookings($restaurant, $input['date']);
 
-	$html = '';
-	$times = array('18:00:00'=> 0,
+$html = '';
+$times = array('18:00:00'=> 0,
 			'20:00:00' => 0);
 		
 	//check if we have something to return

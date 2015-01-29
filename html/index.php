@@ -16,11 +16,11 @@
 			echo "<li>";
 			echo '<h2><a href="javascript:showtext('.$restaurant->id.",'calendar'".');">'.$restaurant->name.'</a></h2><br>';
 			echo '<div id="'.$restaurant->id.'" class="hidden" style="display:none">';
-			echo $restaurant->street." ";
+			echo '<h5>'.$restaurant->street." ";
 			echo $restaurant->number."<br>";
 			echo $restaurant->zipcode." ";
 			echo $restaurant->city."<br>"; 
-			echo '<a target="_blank" href="'.$restaurant->url.'">Website</a><br><br><br>';
+			echo '<a target="_blank" href="'.$restaurant->url.'">Website</a><br><br><br></h5>';
 			echo '<input id="' . $restaurant->id . '-input" name="date"  style="visibility:hidden"></input>';
 			echo '<ul id="bookings-' . $restaurant->id. '"></ul>';
 			echo '</div>';
