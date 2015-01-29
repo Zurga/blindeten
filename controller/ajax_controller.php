@@ -125,7 +125,7 @@ if($request == '/ajax/book_table'){
 	}
 	else {
 		echo '<p class="error">Je moet ingelogd zijn om te kunnen reserveren...'.
-		     '<a href="/account/register.php">Login</a> om te kunnen reserveren</p>';
+		     '<a href="/account/login.php">Login</a> om te kunnen reserveren</p>';
 	}
 }
 
