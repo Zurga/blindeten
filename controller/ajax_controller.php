@@ -5,7 +5,7 @@ include $root . '/controller/mail_controller.php';
 include_once $root .'/model/User.php';
 
 $input = sanitize($_POST['input'], $model->db);
-if($request == '/ajax/calendar'){
+if($request == $index . '/ajax/calendar'){
 	$restaurant = new Restaurant($input['id']);
 	
 	header('Content-Type: application/json');
@@ -86,11 +86,10 @@ if($request == '/ajax/book_table'){
 		if(isset($input['booking'])){
 			$booking = new Booking($input['booking']);
 			$restaurant = new Restaurant($booking->restaurant_id);
-			if($booking = $model->book_table($user, $restaurant, $booking->table_id, $date, $time)){
+			if($model->book_table($user, $restaurant, $booking->table_id, $date, $time)){
 				echo '<p class="confirm">Maak er een mooie avond van!</p>';
 				send_mail($user,2);
-				$other_user= new User($booking->other_user($user));
-				send_mail($other_user,3);
+				send_mail($booking->user1,3);
 			}
 		}
 		else {
@@ -126,7 +125,7 @@ if($request == '/ajax/book_table'){
 	}
 	else {
 		echo '<p class="error">Je moet ingelogd zijn om te kunnen reserveren...'.
-		     '<a href="/account/register.php">Login</a> om te kunnen reserveren</p>';
+		     '<a href="/account/login.php">Login</a> om te kunnen reserveren</p>';
 	}
 }
 

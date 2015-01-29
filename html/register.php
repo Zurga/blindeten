@@ -1,27 +1,4 @@
 <?php include 'header.php';?>
-<script>
-
-var match = false; 
-
-function checkPass()
-{
-  var password = document.getElementById("password");
-  var check_password = document.getElementById("check_password");
-  var goodColor= "#66cc66";
-  var badColor= "#ff6666";
-  
- if(password.value != check_password.value){
-	check_password.style.backgroundColor = badColor;
-	match = false;
-}
-
-else{
-	check_password.style.backgroundColor = goodColor;
-	match = true;
-	}
-}
-
-</script>
 
 <div class="content">
 	<div class="maincontent">
@@ -49,11 +26,12 @@ else{
 				<input id="city" name="input[city]" type="text" placeholder="Woonplaats" required> 
 				<br>
 				<br>
-				<input id="password" name="input[password]" type="password" placeholder="Wachtwoord" required>
+				<input id="password" name="input[password]" type="password" placeholder="Wachtwoord" pattern=".{6,}" title="Minimaal 6 tekens." required>
 				<br>
 				<br>
 				<input id="check_password" name="input[check_password]" type="password" onkeyup="checkPass();" placeholder="Herhaal wachtwoord" required>
 				<br>
+				<p id="error" class="error"></p>
 				<br>
 				<select id="day" name="input[day]">
 				<option value="01" >01</option>

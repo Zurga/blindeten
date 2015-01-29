@@ -1,5 +1,4 @@
 <?php include 'header.php';?>
-
 <div class="content">
 	<div class="maincontent">
 		<h1>Booking wijzigen</h1>
@@ -7,37 +6,16 @@
 		<br>
 		<form action="save_editbooking" method="post">	
 		<fieldset id="inputs">
-			<li><p>Datum: </p>
-			<p><input id="date" name="date" type="date"> </p></li>
-			<br>
-			<li><p>Tijd: </p>
-			<p><select id="time" name="time">
-				<option value="18:00:00">18:00</option>
-				<option value="20:00:00">20:00</option>
-			</select><p><li>
-			<?php if(isset($message)){
-				echo '<p class="confirm">' . $message .'</p>';
-				}
-				if(isset($error_message)){
-				echo '<p class="error">' . $error_message .'</p>';
-				}
-			?>	
-			<br>
-			<br>
-			<input name="booking_id" value="<?php echo $booking->id; ?>" class="hidden">
-			<li><input type="submit" id="submit" value="Gegevens opslaan"></p></li>
+			<p><input id="<?php echo $booking->restaurant_id?>-input" name="date" type="date"> </p>
+		<ul id="bookings-<?php echo $booking->restaurant_id;?>">
+		</ul>
 		</fieldset>	
 		</form>
     </div>
 </div>
-
 <script>
-	var data = <?php echo json_encode($booking);?>;
-
-		document.getElementById("date").value = data["date"];
-
-		document.getElementById("time").value = data["time"];
-	
+window.onload=function(){
+	get_output('calendar','<?php echo $booking->restaurant_id;?>', 'input[id]=<?php echo $booking->restaurant_id;?>');
+}
 </script>
-
 <?php include 'footer.php';?>

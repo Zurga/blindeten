@@ -34,8 +34,9 @@ function get_output(which, input, params){
 	http_object = get_http_object();
 
 	var output;
+	var home = window.location.protocol + window.location.host + '/';
 	if (http_object != null){
-		http_object.open('POST', "ajax/"+ which, true);
+		http_object.open('POST', home + "ajax/"+ which, true);
 
 		//http://www.openjs.com/articles/ajax_xmlhttp_using_post.php
 		//Send the proper header information along with the request
@@ -58,6 +59,40 @@ function get_output(which, input, params){
 		}
 		http_object.send(params);
 	}
+}
+
+function get_map(){
+	map = new google.maps.Map(document.getElementById('map'),{
+		zoom: 3,
+		center: new google.maps.LatLng(52, 4)
+	});
+	for(var i in rest){
+		if(rest.hasOwnProperty(i)){
+			//create lonlat for each restaurant
+			var latlon = new google.maps.LatLng(rest[i].lat, rest[i].lon);
+			marker = new google.maps.Marker({
+				position: latlon,
+				map: map
+				});
+			infowindow = new google.maps.InfoWindow();
+
+			//todo create icon for the marker
+			//creating the popup for each restaurant
+			google.maps.event.addListener(marker, 'click', (function(marker, i){
+				return function(){
+					infowindow.setContent(rest[i].name);
+					infowindow.open(map,marker);
+					restaurant = rest[i].id;
+					//get_output('calendar', restaurant); 
+					showtext(restaurant, 'calendar');
+
+
+				}
+			})(marker, i));
+		}
+	}
+	map.setCenter(latlon);
+	map.setZoom(12);
 }
 
 function create_calendar(days, id){
@@ -98,7 +133,7 @@ function create_calendar(days, id){
 			}
 		}
 		css += '</style>';
-		set_css('html', css);
+		//set_css('html', css);
 		datePickerController.createDatePicker(opts);
 		datePickerController.setDisabledDates(input, disabled);
 	}
@@ -112,3 +147,28 @@ function set_bookings(bookings, id){
 
 	ul.innerHTML = bookings;
 }
+
+var match = false; 
+
+//check if passwords are the same
+function checkPass()
+{
+  var error=document.getElementById("error");
+  var password = document.getElementById("password");
+  var check_password = document.getElementById("check_password");
+  var goodColor= "#66cc66";
+  var badColor= "#ff6666";
+  
+ if(password.value != check_password.value){
+	check_password.style.backgroundColor = badColor;
+	error.innerHTML="Wachtwoord komt niet overeen.";
+	match = false;
+}
+
+else{
+	check_password.style.backgroundColor = goodColor;
+	error.innerHTML="";
+	match = true;
+	}
+}
+
