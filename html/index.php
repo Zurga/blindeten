@@ -5,7 +5,7 @@
 	<div class="homemap">
 		<h1> Selecteer een restaurant:</h1>
 		<br><br>
-		<div id='map'>
+		<div id='map' >
 	</div>
 		</div>
 	<div class="sidecontent">
@@ -31,45 +31,11 @@
 	</div>
 	</div>
 
-<script src="http://maps.google.com/maps/api/js?sensor=false" 
-          type="text/javascript"></script>
-<!--script src="/js/functions.js"></script-->
 <script>
-map = new google.maps.Map(document.getElementById('map'),{
-	zoom: 3,
-	center: new google.maps.LatLng(52, 4)
-});
 //create rest from the model
 var rest = { <?php foreach($restaurants as $restaurant){
 	echo $restaurant->id . ':'. json_encode($restaurant) . ',';}?>};
 
-for(var i in rest){
-	if(rest.hasOwnProperty(i)){
-		//create lonlat for each restaurant
-		var latlon = new google.maps.LatLng(rest[i].lat, rest[i].lon);
-		marker = new google.maps.Marker({
-			position: latlon,
-			map: map
-			});
-		infowindow = new google.maps.InfoWindow();
-
-		//todo create icon for the marker
-		//creating the popup for each restaurant
-		google.maps.event.addListener(marker, 'click', (function(marker, i){
-			return function(){
-				infowindow.setContent(rest[i].name);
-				infowindow.open(map,marker);
-				restaurant = rest[i].id;
-				//get_output('calendar', restaurant); 
-				showtext(restaurant);
-
-
-			}
-		})(marker, i));
-	}
-}
-map.setCenter(latlon);
-map.setZoom(12);
 </script>
 		
 <?php include 'footer.php' ?>
