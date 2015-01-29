@@ -190,7 +190,6 @@
 			<br>
 			<br>
 			<br>
-			<p>* Als u een tafel of uw restaurant wilt verwijderen, neem dan <a href="/html/contact.php">contact</a> met ons op</p>	
 			<li><input type="submit" id="submit" value="Gegevens opslaan"></p></li>
 			<br>
 			<br>
