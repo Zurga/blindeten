@@ -18,6 +18,7 @@ class Controller {
 		$index = 'http://' . $_SERVER['SERVER_NAME'];
 		$root = $_SERVER['DOCUMENT_ROOT'];
 		$request = $_SERVER['REQUEST_URI'];
+		echo $request;
 
 		//get user info if logged in
 		if($logged_in){
@@ -26,11 +27,11 @@ class Controller {
 
 		$urlRoutes = array(
 			'/\/$/' => 'index',
-			'/\/account\//'=> 'account',
+			'/\/account\/ajax//' => 'ajax',
+			'/\/account\/[^ajax]/'=> 'account',
 			'/\/admin\//' => 'admin',
 			'/\/ajax\//' => 'ajax',
-			'/\/text\//' => 'text',
-			'/\/account\/ajax/' => 'ajax'
+			'/\/text\//' => 'text'
 			);
 
 		foreach($urlRoutes as $route=>$controller_name){
