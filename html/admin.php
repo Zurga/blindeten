@@ -17,7 +17,7 @@
 		<div id="tab_content">
 			
 			<div id="tab1">
-				<form action = "change_permission" method="POST">
+				<form action = "change_permission" method="POST" id= "admin_form">
 				<input id="email" name="email" type="text" placeholder="E-mail" required>   
 				<br>
 				<select name="permission">
@@ -29,7 +29,7 @@
 				<input type="submit" id="submit" value="Opslaan">
 				</form>	
 			
-				<form action="delete_account" method= "POST">
+				<form action="delete_account" method= "POST" id="admin_form">
 				<input id="email" name="email" type="text" placeholder="E-mail" required>   
 				<br><br>
 				<input type="submit" id="submit" value="Account verwijderen">
@@ -38,7 +38,7 @@
 			
 			
 			<div id="tab2" style="display:none">
-				<form action = "delete_restaurant" method= "POST">
+				<form action = "delete_restaurant" method= "POST" id="admin_form">
 				<select name="rest_id">
 					<?php 
 					foreach($restaurants as $restaurant){
@@ -51,7 +51,7 @@
 				</form>
 
 			
-				<form action = "add_restaurant" method= "POST">
+				<form action = "add_restaurant" method= "POST" id="admin_form">
 				<input id="name" name='input["name"]' type="text" placeholder="Naam restaurant" required>
 				<input id="street" name='input["street"]' type="text" placeholder="Straatnaam" required>
 				<input id="number" name='input["number"]' type="number" placeholder="Nummer" required>
