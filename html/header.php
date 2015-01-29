@@ -6,10 +6,10 @@
     <link rel="stylesheet" type="text/css" media="all" href="/html/datepicker.min.css" />
     <script type="text/javascript" src="/js/datepicker.min.js"></script>
 	<script type="text/javascript" src="/js/lang/nl.js"></script>
-
+	<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
 </head>
 
-<body>
+<body onload="get_map();">
 <div id="header">
 
 	<div class= "headercontent">
