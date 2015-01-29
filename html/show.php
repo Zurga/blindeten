@@ -9,6 +9,9 @@
 			}
 			if(isset($changed_attributes)) {
 				echo '<p class="confirm">'. $changed_attributes .'</p>';
+			}
+			if(isset($changed_restaurant)) {
+				echo '<p class="confirm">'. $changed_restaurant .'</p>';
 			}?>
 		<br>
 		<p><b>Naam: </b> <?php echo $user->name ,' ', $user->surname; ?></p>

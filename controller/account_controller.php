@@ -37,9 +37,13 @@ if ($request == '/account/edit_restaurant.php') {
 
 //change restaurant attributes
 if ($request == '/account/save_restaurant') {
+	if($user->owner != 0){
+		$restaurant = new Restaurant($user->owner);
+	}
 	$attr = sanitize($_POST['input'],$model->db);
 	if($user->change_rest($attr)) {
-		header("Location: ".$index ."/account/show.php");
+		$changed_restaurant = 'Het restaurant is aangepast.';
+		include $root ."/html/show.php";
 	}
 }
 
