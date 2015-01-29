@@ -1,7 +1,7 @@
 <?php
 //sorry jim even testen, don't hate us plies, bye!
 $root = $_SERVER['DOCUMENT_ROOT'];
-include $root . '/controller/mail_controller.php';
+include_once $root . '/controller/mail_controller.php';
 
 $input = sanitize($_POST['input'], $model->db);
 if($request == '/ajax/calendar'){
@@ -22,10 +22,10 @@ if($request == '/ajax/calendar'){
 
 if($request == '/ajax/booking'){
 	$restaurant = new Restaurant($input['id']);
-	$bookings = $model->get_bookings($restaurant, $input['date']);
+$bookings = $model->get_bookings($restaurant, $input['date']);
 
-	$html = '';
-	$times = array('18:00:00'=> 0,
+$html = '';
+$times = array('18:00:00'=> 0,
 			'20:00:00' => 0);
 		
 	//check if we have something to return

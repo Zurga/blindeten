@@ -1,6 +1,6 @@
 <?php
 $root = $_SERVER['DOCUMENT_ROOT'];
-include $root . '/controller/mail_controller.php';
+include_once $root . '/controller/mail_controller.php';
 include_once $root .'/model/User.php';
 
 //show the user information
