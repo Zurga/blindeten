@@ -123,7 +123,7 @@ if($request == '/account/save_new_password'){
 		$new_e_password = encrypt($user->email,sanitize($_POST['password']),$model->db);
 		$model->change_password($user->id, $new_e_password);
 		$changed_password = 'Je wachtwoord is aangepast.';
-		header("Location: ". $index);
+		header("Location: ". $index .'/account/show.php');
 	}
 	else {
 		$password_error = "Het huidige wachtwoord is niet correct.";
