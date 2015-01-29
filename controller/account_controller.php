@@ -188,7 +188,7 @@ if($request == '/account/delete_booking') {
 	$other_user= new User($booking->other_user($user));
 	send_mail($other_user,4,$booking->date);
 	if($user->cancel_booking($booking_id)){
-		$booking_deleted = "Booking succesvol verwijderd."
+		$booking_deleted = "Booking succesvol verwijderd.";
 		header("Location: ". $index .'/account/mybookings.php');
 	}
 }
