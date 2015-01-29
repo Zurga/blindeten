@@ -19,7 +19,7 @@ class User {
 		$this->db = $db;
 
 		//query from the database
-		$query = "SELECT user.id, user.name, user.sex ," .
+		$query = "SELECT user.id, user.name, user.surname, user.sex ," .
 			" user.birthdate, user.city, user.email," .
 		        " user.owner, permission.name AS permission".
 			" FROM user" .
