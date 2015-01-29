@@ -26,7 +26,7 @@
 				<input id="city" name="input[city]" type="text" placeholder="Woonplaats" required> 
 				<br>
 				<br>
-				<input id="password" name="input[password]" type="password" placeholder="Wachtwoord" minlength="6" required>
+				<input id="password" name="input[password]" type="password" placeholder="Wachtwoord" pattern=".{6,}" title="Minimaal 6 tekens." required>
 				<br>
 				<br>
 				<input id="check_password" name="input[check_password]" type="password" onkeyup="checkPass();" placeholder="Herhaal wachtwoord" required>
