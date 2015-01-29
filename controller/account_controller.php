@@ -53,7 +53,7 @@ if($request == '/account/save_data'){
 	$attr['birthdate'] = $bday;
 	if($user->change_attr($attr)){
 		$changed_attributes = 'Je hebt je gegevens aangepast';
-		header("Location: ". $index . "/account/show.php");
+		include $root . '/html/show.php';
 	}
 }
 //User request register.php
