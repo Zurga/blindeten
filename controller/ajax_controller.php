@@ -10,10 +10,10 @@ $pos = strpos($request, $needle);
 if($pos === false){
 }
 else{
-	$request = substr($string, strlen($needle));
+	$request = substr($request, strlen($needle));
 }
 
-var_dump($request);
+var_dump($request) ;
 $input = sanitize($_POST['input'], $model->db);
 if($request == '/ajax/calendar'){
 	$restaurant = new Restaurant($input['id']);
