@@ -35,6 +35,7 @@ function get_output(which, input, params){
 
 	var output;
 	var home = window.location.protocol + window.location.host + '/';
+	console.log(home);
 	if (http_object != null){
 		http_object.open('POST', home + "ajax/"+ which, true);
 
@@ -54,7 +55,6 @@ function get_output(which, input, params){
 					output = http_object.response;
 					set_bookings(output, input);
 				}
-					
 			}
 		}
 		http_object.send(params);
