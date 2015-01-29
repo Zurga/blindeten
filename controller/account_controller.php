@@ -35,6 +35,7 @@ if ($request == '/account/edit_restaurant.php') {
 	}
 }
 
+//change restaurant attributes
 if ($request == '/account/save_restaurant') {
 	$attr = sanitize($_POST['input'],$model->db);
 	if($user->change_rest($attr)) {
@@ -76,6 +77,7 @@ if($request == '/account/register'){
 	}
 }
 
+//logout
 if ($request == '/account/logout') {
 	$auth->logout();
 	header("Location: ". $index);
@@ -186,6 +188,7 @@ if($request == '/account/delete_booking') {
 	$other_user= new User($booking->other_user($user));
 	send_mail($other_user,4,$booking->date);
 	if($user->cancel_booking($booking_id)){
+		$booking_deleted = "Booking succesvol verwijderd.";
 		header("Location: ". $index .'/account/mybookings.php');
 	}
 }
