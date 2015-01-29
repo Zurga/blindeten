@@ -157,7 +157,6 @@ if($request == '/account/mybookings.php') {
 if($request == '/account/edit_booking'){
 	$booking = new Booking($_POST['booking_id']);
 	$restaurant = new Restaurant($booking->restaurant_id);
-	var_dump($restaurant);
 	include $root . '/html/editbooking.php';
 }
 //Save changed booking
