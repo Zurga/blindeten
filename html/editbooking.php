@@ -1,6 +1,6 @@
 <?php include 'header.php';?>
 <script>
-window.onload=get_output('<?php echo $booking->restaurant_id;?>', 'calendar');
+window.onload=get_output('<?php echo $booking->restaurant_id;?>', 'calendar','input[id]=<?php echo $booking->restaurant_id;?>');
 
 </script>
 <div class="content">
@@ -10,8 +10,9 @@ window.onload=get_output('<?php echo $booking->restaurant_id;?>', 'calendar');
 		<br>
 		<form action="save_editbooking" method="post">	
 		<fieldset id="inputs">
-			<li><p>Datum: </p>
-			<p><input id="<?php echo $booking->restaurant_id?>" name="date" type="date"> </p></li>
+			<p><input id="<?php echo $booking->restaurant_id?>" name="date" type="date"> </p>
+		<ul id="bookings-<?php echo $booking->restaurant_id;?>">
+		</ul>
 		</fieldset>	
 		</form>
     </div>
