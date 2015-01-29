@@ -29,7 +29,8 @@ class Controller {
 			'/\/account\//'=> 'account',
 			'/\/admin\//' => 'admin',
 			'/\/ajax\//' => 'ajax',
-			'/\/text\//' => 'text'
+			'/\/text\//' => 'text',
+			'/\/account\/ajax/' => 'ajax'
 			);
 
 		foreach($urlRoutes as $route=>$controller_name){
