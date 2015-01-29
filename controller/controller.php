@@ -34,6 +34,7 @@ class Controller {
 
 		foreach($urlRoutes as $route=>$controller_name){
 			if(preg_match($route, $request)){
+				echo $controller_name;
 				$controller = $controller_name;
 				
 			}
