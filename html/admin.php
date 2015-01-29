@@ -16,7 +16,7 @@
 			<div id="tab_content">
 			
 				<div id="tab1">
-					<h2>Verander de rechten van een gebruiker:</h2>
+					<b><h2>Verander de rechten van een gebruiker:</h2></b>
 					<form action = "change_permission" method="POST" id= "admin_form">
 					<input id="email" name="email" type="text" placeholder="E-mail" required>   
 					<br>
@@ -28,7 +28,7 @@
 					<br><br>
 					<input type="submit" id="submit" value="Opslaan">
 					</form>	
-					<h2>Verwijderen van account:</h2>
+					<b><h2>Verwijderen van account:</h2></b>
 					<form action="delete_account" method= "POST" id="admin_form">
 					<input id="email" name="email" type="text" placeholder="E-mail" required>   
 					<br><br>
@@ -38,7 +38,7 @@
 			
 			
 				<div id="tab2" style="display:none">
-					<h2>Verwijderen restaurant:</h2>
+					<b><h2>Verwijderen restaurant:</h2></b>
 					<form action = "delete_restaurant" method= "POST" id="admin_form">
 					<select name="rest_id">
 						<?php 
@@ -50,7 +50,7 @@
 					<input type="submit" id="submit" value="Verwijder">
 					</form>
 
-					<h2>Toevoegen restaurant:</h2>
+					<b><h2>Toevoegen restaurant:</h2></b>
 					<form action = "add_restaurant" method= "POST" id="admin_form">
 					<input id="name" name='input["name"]' type="text" placeholder="Naam restaurant" required>
 					<input id="street" name='input["street"]' type="text" placeholder="Straatnaam" required>
