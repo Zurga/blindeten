@@ -1,6 +1,6 @@
 <?php include 'header.php';?>
 <script>
-window.onload=get_output('<?php echo $booking->restaurant_id;?>', 'calendar','input[id]=<?php echo $booking->restaurant_id;?>');
+get_output('<?php echo $booking->restaurant_id;?>', 'calendar','input[id]=<?php echo $booking->restaurant_id;?>');
 
 </script>
 <div class="content">
