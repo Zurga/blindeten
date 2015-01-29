@@ -30,7 +30,7 @@ class Controller {
 			'/\/admin\//' => 'admin',
 			'/\/ajax\//' => 'ajax',
 			'/\/text\//' => 'text',
-			'/\/account\/ajax/' => 'ajax'
+			'/\/account\/ajax//' => 'ajax'
 			);
 
 		foreach($urlRoutes as $route=>$controller_name){
