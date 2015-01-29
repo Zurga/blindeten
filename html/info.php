@@ -14,6 +14,7 @@
 
 			Heel simpel! Op het kaartje ziet u de verschillende restaurants staan waar u kunt reserveren. Bent u de eerste die ergens reserveert, dan moet u nog even geduld hebben. Wanneer er een persoon bij u aan tafel schuift krijgen jullie beiden een bevestigingsmail en wensen wij jullie een gezellig diner toe!</br>
 
+			<br><p>* Als u uw restaurant wilt aanmelden, neem dan <a href="/html/contact.php">contact</a> met ons op.</p></br>	
 			<br><h3>Voor vragen zie de <a href="faq.php" title="Frequently Asked Questions">FAQ</a></h3></br>
 		</h2><br>
 	</div>
