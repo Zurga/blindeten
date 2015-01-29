@@ -35,7 +35,7 @@ function get_output(which, input, params){
 
 	var output;
 	var url = window.location.protocol + window.location.host + '/ajax/' + which;
-	console.log(home);
+	console.log(url);
 	
 	if (http_object != null){
 		http_object.open('POST', url, true);
