@@ -1,6 +1,6 @@
 <?php include 'header.php';?>
 
-<!-- bron voor de tabs: http://www.webhostingtalk.com/showthread.php?t=1045871-->
+<!-- source for tabs: http://www.webhostingtalk.com/showthread.php?t=1045871-->
 
 <div class="content">
 	<div class="maincontent">
@@ -16,6 +16,7 @@
 			<div id="tab_content">
 			
 				<div id="tab1">
+					<h2>Verander de rechten van een gebruiker:</h2>
 					<form action = "change_permission" method="POST" id= "admin_form">
 					<input id="email" name="email" type="text" placeholder="E-mail" required>   
 					<br>
@@ -27,7 +28,7 @@
 					<br><br>
 					<input type="submit" id="submit" value="Opslaan">
 					</form>	
-			
+					<h2>Verwijderen van account:</h2>
 					<form action="delete_account" method= "POST" id="admin_form">
 					<input id="email" name="email" type="text" placeholder="E-mail" required>   
 					<br><br>
@@ -37,6 +38,7 @@
 			
 			
 				<div id="tab2" style="display:none">
+					<h2>Verwijderen restaurant:</h2>
 					<form action = "delete_restaurant" method= "POST" id="admin_form">
 					<select name="rest_id">
 						<?php 
@@ -44,21 +46,20 @@
 						echo '<option value ='.$restaurant->id.'>'.$restaurant->name.'</option>';
 						} ?>
 					</select>
-					<!--<input id="restaurant_name" name="restaurant_name" type="text" placeholder="Naam restaurant" required>-->
 					<br><br>
 					<input type="submit" id="submit" value="Verwijder">
 					</form>
 
+					<h2>Toevoegen restaurant:</h2>
 					<form action = "add_restaurant" method= "POST" id="admin_form">
 					<input id="name" name='input["name"]' type="text" placeholder="Naam restaurant" required>
 					<input id="street" name='input["street"]' type="text" placeholder="Straatnaam" required>
 					<input id="number" name='input["number"]' type="number" placeholder="Nummer" required>
-					<input id="lat" name='input["lat"]' type="text" placeholder="Lat" required>
-					<input id="lon" name='input["lon"]' type="text" placeholder="Lon" required>
 					<input id="zipcode" name='input["zipcode"]' type="text" placeholder="1234AB" required>
 					<input id="city" name='input["city"]' type="text" placeholder="Stad" required>
-					<!--<input id="email" name="email" type="text" placeholder="E-mail vd eigenaar"> -->
 					<input id="url" name='input["url"]' type="text" placeholder="URL" required>
+					<input id="lat" name='input["lat"]' type="text" placeholder="Lat" required>
+					<input id="lon" name='input["lon"]' type="text" placeholder="Lon" required>
 					<br><br>
 					<input type="submit" id="submit" value="Toevoegen">
 					</form>	
