@@ -8,9 +8,6 @@
 		<?php if(isset($booking_deleted)) {
 					echo '<p class="confirm">' . $booking_deleted .'</p>';
 				}
-			else {
-				//nothing
-			}
 		
 		if(empty($bookings)) {
 			echo '<p>Er zijn nog geen reserveringen.</p>';
