@@ -43,7 +43,7 @@ if ($request == '/account/save_restaurant') {
 	$attr = sanitize($_POST['input'],$model->db);
 	if($user->change_rest($attr)) {
 		$changed_restaurant = 'Het restaurant is aangepast.';
-		include $root ."/html/show.php");
+		include $root ."/html/show.php";
 	}
 }
 
