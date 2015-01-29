@@ -86,7 +86,7 @@ if($request == '/ajax/book_table'){
 		if(isset($input['booking'])){
 			$booking = new Booking($input['booking']);
 			$restaurant = new Restaurant($booking->restaurant_id);
-			if($booking = $model->book_table($user, $restaurant, $booking->table_id, $date, $time)){
+			if($model->book_table($user, $restaurant, $booking->table_id, $date, $time)){
 				echo '<p class="confirm">Maak er een mooie avond van!</p>';
 				echo $booking->id;
 				echo $booking->user2->id;
