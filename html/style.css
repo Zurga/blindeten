@@ -350,6 +350,7 @@ form p {
 }
 
 ol{
+	padding: 30px;
 	list-style-type: decimal;
 }
 
