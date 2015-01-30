@@ -53,7 +53,7 @@
 					<input type="submit" id="submit" value="Toevoegen">
 					</form>	
 
-					<b><h2>Verwijder restaurant</h2></b>
+					<b><h2>Verwijder restaurant:</h2></b>
 					<form action = "delete_restaurant" method= "POST" id="admin_form">
 					<select name="rest_id">
 						<?php 
