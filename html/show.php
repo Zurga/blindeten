@@ -31,9 +31,9 @@ echo '
 		<p><b>Naam: </b> '. $restaurant->name .'</p>
 		<p><b>URL: </b><a href="'.$restaurant->url .'">'.$restaurant->url.'</a></p>
 		<p><b>Aantal tafels: </b>'.count($restaurant->tables).'</p>
-		<pre><b>Adres: </b>'. 
-		$restaurant->street.' '. $restaurant->number .' ' 
-		.$restaurant->zipcode.' '. $restaurant->city.'</pre>	
+		<p><b>Adres: </b>'. 
+		$restaurant->street.' '. $restaurant->number .'</p><p>' 
+		.$restaurant->zipcode.' '. $restaurant->city.'</p>	
 		<p><a href="/account/edit_restaurant.php" title="Gegevens wijzigen">Gegevens wijzigen</a></p>	
 	</div>
 </div>';
