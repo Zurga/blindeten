@@ -200,6 +200,7 @@ a {
 
 .date-picker {
 	margin: 0 auto 10px;
+	
 }
 
 form {
@@ -483,7 +484,7 @@ Mediacss
 	padding: 20px;
 }
 
-#bookings-1 {
+#bookings-1 li {
 	margin-left: 15px;
 }
 
