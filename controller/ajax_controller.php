@@ -113,6 +113,7 @@ if($request == '/ajax/book_table'){
 								if($booking = $model->book_table($user, $restaurant, 
 									$table, $date, $time)){
 									echo '<p class="confirm">Je hebt gereserveerd!</p>';
+									return true;
 								}
 							}
 						}
