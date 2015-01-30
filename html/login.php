@@ -12,11 +12,9 @@
 				<input id="password" name="password" type="password" placeholder="Wachtwoord" required>
 			</fieldset>
 			
-			<fieldset id="actions">
-				<a href="forgot_password.php">Wachtwoord vergeten?</a> 
-				<a href="/account/register.php">Registreren</a>
+				<p><a href="forgot_password.php">Wachtwoord vergeten?</a></p>
+				<p><a href="/account/register.php">Registreren</a></p>
 				<input type="submit" id="submit" value="Log in">
-			</fieldset>
 		</form>
 	</div>
 </div>
