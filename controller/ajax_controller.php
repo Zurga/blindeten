@@ -46,7 +46,7 @@ $times = array('18:00:00'=> 0,
 				      	' jaar om ' . substr($booking->time,0,5) . '</p><button value="Reserveer" onClick="get_output('."'book_table',". 
 					$restaurant->id . ",'input[time]=".$booking->time. "&input[booking]=". 
 					$booking->id ."&input[date]=" .  
-					$input['date'] ."');" . '"><p>Schuif aan!</p></button></li>';
+					$input['date'] ."');" . '"><p id="schuif_aan">Schuif aan!</p></button></li>';
 			}
 			$times[$booking->time] += 1;
 		}
