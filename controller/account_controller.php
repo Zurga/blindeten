@@ -159,7 +159,7 @@ if($request == '/account/mybookings.php') {
 
 //User request editbooking.php
 if($request == '/account/edit_booking'){
-	$booking = new Booking(sanitize(_POST['booking_id'], $model->db));
+	$booking = new Booking(sanitize($_POST['booking_id'], $model->db));
 	$restaurant = new Restaurant($booking->restaurant_id);
 	include $root . '/html/editbooking.php';
 }
