@@ -36,7 +36,7 @@
 					</form>
 				</div>
 			
-				<div id="tab2">
+				<div id="tab2" style="display:none">
 					<b><h2>Toevoegen restaurant:</h2></b>
 					<form action = "add_restaurant" method= "POST" id="admin_form">
 					<input id="name" name='input["name"]' type="text" placeholder="Naam restaurant" required>
@@ -52,7 +52,7 @@
 					</form>	
 				</div>
 		
-				<div id="tab3">
+				<div id="tab3" style="display:none">
 					<b><h2>Verander permissie van gebruiker:</h2></b>
 					<form action = "change_permission" method="POST" id= "admin_form">
 					<input id="email" name="email" type="text" placeholder="E-mail" required>   
