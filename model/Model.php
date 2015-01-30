@@ -27,8 +27,8 @@ class Model{
 			//check if the date is valid
 			if(checkdate($date[1],$date[2], $date[0])){
 				//it is so add account
-				$query = "INSERT INTO user (name, email, birthdate, sex, password, city) ".
-					"VALUES ('". $attr['name'] ."','". $attr['email'] ."','" .
+				$query = "INSERT INTO user (name, surname, email, birthdate, sex, password, city) ".
+					"VALUES ('". $attr['name'] ."','".$attr['surname']."','". $attr['email'] ."','" .
 					$attr['birthdate']. "','". $attr['sex'] ."','". $password ."','". 
 					$attr['city'] ."')";
 				
