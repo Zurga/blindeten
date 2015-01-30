@@ -167,7 +167,7 @@ if($request == '/account/edit_booking'){
 if($request == '/account/save_editbooking'){
 	$booking_id = sanitize($_POST['old_booking'],$model->db);
 	$user->cancel_booking($booking_id);
-	$message = "Je hebt je reservering gewijzigd.";
+	$message = "Je hebt je reservering gewijzigd";
 	$bookings = $model->get_bookings($user);
 	include $root . '/html/mybookings.php';
 }
@@ -182,7 +182,7 @@ if($request == '/account/delete_booking') {
 	$other_user= new User($booking->other_user($user));
 	send_mail($other_user,4,$booking->date);
 	if($user->cancel_booking($booking_id)){
-		$booking_deleted = "Reservering succesvol verwijderd.";
+		$message = "Reservering succesvol verwijderd.";
 		include $root . "/html/mybookings.php";
 		//header("Location: ". $index .'/account/mybookings.php');
 	}

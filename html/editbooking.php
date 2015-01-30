@@ -7,7 +7,7 @@
 		<form action="save_editbooking" method="post">	
 		<fieldset id="inputs">
 			<input id="<?php echo $booking->restaurant_id?>-input" name="date" type="date">
-			<input name="old_booking" value="<?php echo $booking->id; ?>">
+			<input name="old_booking" value="<?php echo $booking->id; ?>" class="hidden">
 		<ul id="bookings-<?php echo $booking->restaurant_id;?>">
 		</ul>
 		</fieldset>	
