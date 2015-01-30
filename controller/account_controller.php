@@ -159,7 +159,7 @@ if($request == '/account/mybookings.php') {
 
 //User request editbooking.php
 if($request == '/account/edit_booking'){
-	$booking = new Booking($_POST['booking_id']);
+	$booking = new Booking(sanitize(_POST['booking_id'], $model->db));
 	$restaurant = new Restaurant($booking->restaurant_id);
 	include $root . '/html/editbooking.php';
 }
@@ -187,7 +187,6 @@ if($request == '/account/delete_booking') {
 		$message = "Reservering succesvol verwijderd.";
 		$bookings = $model->get_bookings($user);
 		include $root . "/html/mybookings.php";
-		//header("Location: ". $index .'/account/mybookings.php');
 	}
 }
 ?>
