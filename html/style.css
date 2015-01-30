@@ -320,6 +320,10 @@ form p {
 	width: 100%;
 }
 
+#new-1 {
+	margin-left:30px;
+}
+
 #footer {
     list-style-type: none;  
 	margin-top: 90px;
