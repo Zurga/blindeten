@@ -184,8 +184,8 @@ if($request == '/account/delete_booking') {
 	send_mail($other_user,4,$booking->date);
 	
 	if($user->cancel_booking($booking_id)){
-		include $root . "/html/mybookings.php";
 		$message = "Reservering succesvol verwijderd.";
+		include $root . "/html/mybookings.php";
 		//header("Location: ". $index .'/account/mybookings.php');
 	}
 }
