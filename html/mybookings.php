@@ -3,8 +3,6 @@
 <div class="content">
 	<div class="maincontent">
 		<h1>Mijn reserveringen</h1>
-		<br>
-		<br>
 		<?php if(isset($message)) {
 					echo '<p class="confirm">' . $message .'</p>';
 				}
@@ -15,7 +13,7 @@
 			else {
 		
 		foreach($bookings as $booking) { ?>	
-		<hr><br>
+		<hr>
 		<p><b>Datum: </b><?php echo $booking->date?></p>
 		<p><b>Tijd: </b><?php echo substr($booking->time, 0, 5); ?></p>
 		<p><b>Met: </b><?php if($booking->user1->age() == 0 or $booking->user2->age() == 0) {
@@ -45,10 +43,7 @@
 		<form action="/account/delete_booking" method="post">
 		<input name="booking_id" value=<?php echo $booking->id; ?> class="hidden">
 	    <input type="submit" id="submit" value="Reservering verwijderen" style="float:right">
-	    <br>
 		</form>
-		
-
 		<?php }} ?>
 	</div>
 </div>
