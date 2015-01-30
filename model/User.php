@@ -42,7 +42,7 @@ class User {
 	//Change data of user
 	public function change_attr($attr) {
 		$query = "UPDATE user SET name = '".$attr['name']."', sex = '".$attr['sex']."',".
-			"birthdate = '".$attr['birthdate']."', city = '".$attr['city']."'". 
+			"birthdate = '".$attr['birthdate']."', city = '".$attr['city']."',".$attr['surname'].'"'
 			" WHERE email = '".$this->email."'";
 		
 		return $this->db->query($query);
