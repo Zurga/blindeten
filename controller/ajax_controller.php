@@ -1,5 +1,4 @@
 <?php
-//sorry jim even testen, don't hate us plies, bye!
 $root = $_SERVER['DOCUMENT_ROOT'];
 include_once $root . '/controller/mail_controller.php';
 

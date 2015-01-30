@@ -1,7 +1,6 @@
 <?php
 $root = $_SERVER['DOCUMENT_ROOT'];
 include_once $root . '/model/User.php';
-//include_once "dblogin.php";
 include_once $root . "/model/dbFunctions.php";
 
 function send_mail($user,$mail_id, $data=NULL) {
