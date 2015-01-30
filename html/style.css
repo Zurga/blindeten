@@ -237,13 +237,13 @@ h2{
 }
 
 form h2{
-		font-size: 14px;
-		margin-right: 15px;
-		margin-left: 15px;
+	font-size: 14px;
+	margin-right: 15px;
+	margin-left: 15px;
 
 }
 
-h2, p{
+h2{
 	font-size: 14px;
 	text-align: left;
 	margin-right: 15px;
@@ -305,11 +305,6 @@ form li p{
 	display: block
 
 }
-form p {
-	 display: inline;  
-     margin: 0;
-
-}
 
 #submit {
 	margin-top: 10px;
@@ -350,6 +345,7 @@ form p {
 }
 
 ol{
+	padding: 30px;
 	list-style-type: decimal;
 }
 
