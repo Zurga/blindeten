@@ -349,6 +349,9 @@ form p {
 	font-size: 14px;
 }
 
+ol{
+	list-style-type: decimal;
+}
 
 #wrapper {
 	max-width: 980px;
