@@ -165,30 +165,10 @@ if($request == '/account/edit_booking'){
 }
 //Save changed booking
 if($request == '/account/save_editbooking'){
-	$time = sanitize($_POST['time'],$model->db);
-	$date = sanitize($_POST['date'],$model->db);
-	$booking_id = sanitize($_POST['booking_id'],$model->db);
-	$booking = new Booking($booking_id);
-	
-	$user->cancel_booking($booking->id);
-	$restaurant = new Restaurant($booking->restaurant_id);
-	//check all free bookings
-	if($cur_bookings = $model->get_bookings($restaurant,$date, $time, NULL, true)){
-		foreach($cur_bookings as $booking){
-			foreach($restaurant->tables as $table){
-				if($booking->table_id != $table){
-					if($booking = $model->book_table($user, $restaurant, 
-						$table, $date, $time)){
-						$message = "Je hebt geboekt!";
-						return true;
-					}
-				}
-			}
-		}
-	}
-	else {
-		$error_message = "Deze boeking is al bezet, kies een ander tijdstip";
-	}
+	$booking_id = sanitize($_POST['old_booking'],$model->db);
+	$user->cancel_booking($booking_id);
+	$message = "Je hebt reservering is gewijzigd!";
+	include $root . '/html/mybookings.php';
 }
 
 //Delete booking

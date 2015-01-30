@@ -5,8 +5,8 @@
 		<h1>Mijn reserveringen</h1>
 		<br>
 		<br>
-		<?php if(isset($booking_deleted)) {
-					echo '<p class="confirm">' . $booking_deleted .'</p>';
+		<?php if(isset($message)) {
+					echo '<p class="confirm">' . $message .'</p>';
 				}
 		
 		if(empty($bookings)) {
