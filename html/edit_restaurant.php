@@ -6,19 +6,19 @@
 		<form action="save_restaurant" method="post">	
 		<fieldset id="inputs">
 		<ul>
-			<li><p>Naam Restaurant:</p><br><br>
+			<li><p>Naam Restaurant:</p>
 			<p><input id="name" name="input[name]" type="text" placeholder="Naam Restaurant" ></p></li>
-			<li><p>Aantal tafels toevoegen*:</p><br><br>
+			<li><p>Aantal tafels toevoegen*:</p>
 			<p><input id="tables" name="input[tables]" type="number" placeholder="1,2,3 etc." ></p></li>
-			<li><p>Website URL:</p><br><br>
+			<li><p>Website URL:</p>
 			<p><input id="url" name="input[url]" type="text" placeholder="www.mijnrestaurant.nl" ></p></li>
-			<li><p>Straat:</p><br><br>
+			<li><p>Straat:</p>
 			<p><input id="street" name="input[street]" type="text" placeholder="Straatnaam" ></p></li>
-			<li><p>Nummer:</p><br><br>
+			<li><p>Nummer:</p>
 			<p><input id="number" name="input[number]" type="text" placeholder="Straatnummer" ></p></li>
-			<li><p>Postcode:</p><br><br>
+			<li><p>Postcode:</p>
 			<p><input id="zipcode" name="input[zipcode]" type="text" placeholder="Postcode" ></p></li>
-			<li><p>Stad:</p><br><br>
+			<li><p>Stad:</p>
 			<p><input id="city" name="input[city]" type="text" placeholder="Stad" ></p></li>
 			<li><input type="submit" id="submit" value="Gegevens opslaan"></p></li>
 		</ul>
