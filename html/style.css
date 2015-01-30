@@ -319,12 +319,7 @@ form p {
 	height: 500px;
 	width: 100%;
 }
-
-#new-1 {
-	margin-left:140px;
-}
-
-#new-2 {
+.booking_buttons {
 	margin-left:140px;
 }
 
