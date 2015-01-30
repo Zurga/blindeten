@@ -67,6 +67,7 @@ td {
 	font-weight: normal;
 	text-align: left;
 }
+p { font-size: 14px;}
 blockquote:before,
 blockquote:after,
 q:before,
@@ -241,13 +242,13 @@ h2{
 }
 
 form h2{
-		font-size: 14px;
-		margin-right: 15px;
-		margin-left: 15px;
+	font-size: 14px;
+	margin-right: 15px;
+	margin-left: 15px;
 
 }
 
-h2, p{
+h2{
 	font-size: 14px;
 	text-align: left;
 	margin-right: 15px;
@@ -309,11 +310,6 @@ form li p{
 	display: block
 
 }
-form p {
-	 display: inline;  
-     margin: 0;
-
-}
 
 #submit {
 	margin-top: 10px;
@@ -324,7 +320,7 @@ form p {
 	width: 100%;
 }
 
-#new-1 {
+.booking_buttons {
 	margin-left:140px;
 }
 
@@ -353,6 +349,14 @@ form p {
 	font-size: 14px;
 }
 
+ol{
+	padding: 30px;
+	list-style-type: decimal;
+}
+
+ol ol{
+	padding: 10px;
+}
 
 #wrapper {
 	max-width: 980px;

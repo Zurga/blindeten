@@ -130,7 +130,7 @@ if($request == '/account/save_new_password'){
 		$restaurant = new Restaurant($user->owner);
 		}
 	if($auth->login($user->email,sanitize($_POST['cur_password'],$model->db))) {
-		$new_e_password = encrypt($user->email,sanitize($_POST['password']),$model->db);
+		$new_e_password = encrypt($user->email,sanitize($_POST['password'],$model->db));
 		$model->change_password($user->id, $new_e_password);
 		$changed_password = 'Je wachtwoord is aangepast.';
 		include $root . '/html/show.php';
@@ -185,6 +185,7 @@ if($request == '/account/delete_booking') {
 	
 	if($user->cancel_booking($booking_id)){
 		$message = "Reservering succesvol verwijderd.";
+		$bookings = $model->get_bookings($user);
 		include $root . "/html/mybookings.php";
 		//header("Location: ". $index .'/account/mybookings.php');
 	}

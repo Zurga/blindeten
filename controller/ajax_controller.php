@@ -55,10 +55,10 @@ $times = array('18:00:00'=> 0,
 	$times_count = array_sum($times);
 	//check if there are disabled times
 	if($times_count < count($restaurant->tables) * 2 and $times_count != 0){
-		$html .= '<li><select name="time" id="new-' . $restaurant->id . '">'; 
+		$html .= '<li><select name="time" class="booking_buttons" id="new-' . $restaurant->id . '">'; 
 		foreach($times as $time=>$count){
 			if($count < count($restaurant->tables)){
-				$html .= '<option value=' . $time . '>' . substr($time, 0, 5) .' ' ' </option>';
+				$html .= '<option value=' . $time . '>' . substr($time, 0, 5) . ' </option>';
 			}
 		}
 		$html .= '</select><button value="Reserveer" onClick="'.
@@ -75,7 +75,7 @@ $times = array('18:00:00'=> 0,
 		return true;
 	}
 	else{
-		$html .= '<li><select name="time" id="new-' . $restaurant->id . '">'; 
+		$html .= '<li><select name="time" class="booking_buttons" id="new-' . $restaurant->id . '">'; 
 		$html .= '<option value="18:00:00">18:00</option><option value="20:00:00">20:00</option>';
 		$html .= '</select><button value="Reserveer" onClick="'.
 			"var params = 'input[time]=' + document.getElementById('new-".$restaurant->id."').value;".
@@ -113,6 +113,7 @@ if($request == '/ajax/book_table'){
 								if($booking = $model->book_table($user, $restaurant, 
 									$table, $date, $time)){
 									echo '<p class="confirm">Je hebt gereserveerd!</p>';
+									return true;
 								}
 							}
 						}

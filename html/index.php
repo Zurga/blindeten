@@ -4,13 +4,11 @@
 	<div id="wrapper">
 	<div class="homemap">
 		<h1> Selecteer een restaurant:</h1>
-		<br><br>
 		<div id='map' >
 	</div>
 		</div>
 	<div class="sidecontent">
 		<h1>Reserveer hier:</h1>
-		<br>
 		<ul>
 		<?php foreach ($restaurants as $restaurant) {
 			echo "<li>";
