@@ -349,6 +349,10 @@ ol{
 	list-style-type: decimal;
 }
 
+ol ol{
+	padding: 0px;
+}
+
 #wrapper {
 	max-width: 980px;
 	overflow: hidden;
