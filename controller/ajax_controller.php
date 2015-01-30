@@ -43,7 +43,7 @@ $times = array('18:00:00'=> 0,
 			if(!isset($booking->user2->id) and $booking->user1->id != $user->id){
 				$html .= '<li id="' . $booking->id . '" class="booking"><p>'.
 					($booking->user1->sex == 0 ? 'Man' : 'Vrouw') . ' van '.  $booking->user1->age() .
-				      	' jaar om ' . substr($booking->time,0,5) . '</p><button value="Reserveer" onClick="get_output('."'book_table',". 
+				      	' jaar om ' . substr($booking->time,0,5) . ' <button value="Reserveer" onClick="get_output('."'book_table',". 
 					$restaurant->id . ",'input[time]=".$booking->time. "&input[booking]=". 
 					$booking->id ."&input[date]=" .  
 					$input['date'] ."');" . '">Schuif aan!</button></li>';
@@ -58,7 +58,7 @@ $times = array('18:00:00'=> 0,
 		$html .= '<li><select name="time" id="new-' . $restaurant->id . '">'; 
 		foreach($times as $time=>$count){
 			if($count < count($restaurant->tables)){
-				$html .= '<option value=' . $time . '>' . substr($time, 0, 5) . '</option>';
+				$html .= '<option value=' . $time . '>' . substr($time, 0, 5) . ' </option>';
 			}
 		}
 		$html .= '</select><button value="Reserveer" onClick="'.
