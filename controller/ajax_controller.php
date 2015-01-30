@@ -64,7 +64,7 @@ $times = array('18:00:00'=> 0,
 		$html .= '</select><button value="Reserveer" onClick="'.
 			"var params = 'input[time]=' + document.getElementById('new-".$restaurant->id."').value;".
 			"params += '&input[restaurant]=" . $restaurant->id . "&input[date]=". $input['date'] . "';" .
-			"get_output('book_table',". $restaurant->id .' ,params);">Reserveer</button></li>';
+			"get_output('book_table',". $restaurant->id .' ,params); ">Reserveer</button></li>';
 		
 		echo $html;
 		return true;
