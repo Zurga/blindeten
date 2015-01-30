@@ -18,9 +18,8 @@
 		<p><b>Geslacht: </b> <?php if ($user->sex == 0) {echo 'Man';} else {echo 'Vrouw';} ?></p>
 		<p><b>Geboortedatum: </b> <?php echo $user->birthdate; ?></p>
 		<p><b>Woonplaats: </b> <?php echo $user->city; ?></p>
-		<p><a href="/account/edit.php" title="Gegevens wijzigen">Gegevens wijzigen</a>
-		<a href="/account/change_password.php" title="Wachtwoord veranderen">Wachtwoord veranderen</a>
-		</p>		
+		<p><a href="/account/edit.php" title="Gegevens wijzigen">Gegevens wijzigen</a></p>
+		<p><a href="/account/change_password.php" title="Wachtwoord veranderen">Wachtwoord veranderen</a></p>		
 	</div>
 </div>
 
@@ -32,7 +31,9 @@ echo '
 		<p><b>Naam: </b> '. $restaurant->name .'</p>
 		<p><b>URL: </b><a href="'.$restaurant->url .'">'.$restaurant->url.'</a></p>
 		<p><b>Aantal tafels: </b>'.count($restaurant->tables).'</p>
-		<p class="adres"><b>Adres: </b>'. $restaurant->street.' '. $restaurant->number .' ' .$restaurant->zipcode.'</p><p> '. $restaurant->city.'</p>	
+		<pre><b>Adres: </b>'. 
+		$restaurant->street.' '. $restaurant->number .' ' 
+		.$restaurant->zipcode.' '. $restaurant->city.'</pre>	
 		<p><a href="/account/edit_restaurant.php" title="Gegevens wijzigen">Gegevens wijzigen</a></p>	
 	</div>
 </div>';
