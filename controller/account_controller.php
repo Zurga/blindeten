@@ -180,8 +180,9 @@ if($request == '/account/delete_booking') {
 	$booking = new Booking($booking_id);
 	//mail_id 6 is cancelling booking
 	send_mail($user,6,$booking->date);
-	$other_user= new User($booking->other_user($user));
-	send_mail($other_user,4,$booking->date);
+	if($other_user= new User($booking->other_user($user))) {
+		send_mail($other_user,4,$booking->date);
+	}
 	if($user->cancel_booking($booking_id)){
 		$message = "Reservering succesvol verwijderd.";
 		include $root . "/html/mybookings.php";
