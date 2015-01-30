@@ -9,9 +9,9 @@ $pos = strpos($request, $needle);
 if($pos === false){
 }
 else{
-	$request = substr($string, strlen($needle));
-	echo $request;
+	$request = substr($request, strlen($needle));
 }
+
 $input = sanitize($_POST['input'], $model->db);
 if($request == '/ajax/calendar'){
 	$restaurant = new Restaurant($input['id']);
@@ -41,11 +41,12 @@ $times = array('18:00:00'=> 0,
 	if(!empty($bookings)){
 		foreach($bookings as $booking){
 			if(!isset($booking->user2->id) and $booking->user1->id != $user->id){
-				$html .= '<li id="' . $booking->id . '" class="booking">'.
-					 $booking->user1->age() . ' ' . ($booking->user1->sex == 0 ? 'Man' : 'Vrouw') . $booking->time .
-					 '<button value="Reserveer" onClick="get_output('."'book_table',". $restaurant->id .
-					",'input[time]=".$booking->time. "&input[booking]=". $booking->id ."&input[date]=" .  
-					$input['date'] ."');" . '">Schuif aan!</button>';
+				$html .= '<li id="' . $booking->id . '" class="booking"><p>'.
+					($booking->user1->sex == 0 ? 'Man' : 'Vrouw') . ' van '.  $booking->user1->age() .
+				      	' jaar.' . substr($booking->time,0,5) . '</p><button value="Reserveer" onClick="get_output('."'book_table',". 
+					$restaurant->id . ",'input[time]=".$booking->time. "&input[booking]=". 
+					$booking->id ."&input[date]=" .  
+					$input['date'] ."');" . '">Schuif aan!</button></li>';
 			}
 			$times[$booking->time] += 1;
 		}
@@ -54,7 +55,7 @@ $times = array('18:00:00'=> 0,
 	$times_count = array_sum($times);
 	//check if there are disabled times
 	if($times_count < count($restaurant->tables) * 2 and $times_count != 0){
-		$html .= '<select name="time" id="new-' . $restaurant->id . '">'; 
+		$html .= '<li><select name="time" id="new-' . $restaurant->id . '">'; 
 		foreach($times as $time=>$count){
 			if($count < count($restaurant->tables)){
 				$html .= '<option value=' . $time . '>' . substr($time, 0, 5) . '</option>';
@@ -63,7 +64,7 @@ $times = array('18:00:00'=> 0,
 		$html .= '</select><button value="Reserveer" onClick="'.
 			"var params = 'input[time]=' + document.getElementById('new-".$restaurant->id."').value;".
 			"params += '&input[restaurant]=" . $restaurant->id . "&input[date]=". $input['date'] . "';" .
-			"get_output('book_table',". $restaurant->id .' ,params);">Reserveer</button>';
+			"get_output('book_table',". $restaurant->id .' ,params);">Reserveer</button></li>';
 		
 		echo $html;
 		return true;
@@ -74,12 +75,12 @@ $times = array('18:00:00'=> 0,
 		return true;
 	}
 	else{
-		$html .= '<select name="time" id="new-' . $restaurant->id . '">'; 
+		$html .= '<li><select name="time" id="new-' . $restaurant->id . '">'; 
 		$html .= '<option value="18:00:00">18:00</option><option value="20:00:00">20:00</option>';
 		$html .= '</select><button value="Reserveer" onClick="'.
 			"var params = 'input[time]=' + document.getElementById('new-".$restaurant->id."').value;".
 			"params += '&input[restaurant]=" . $restaurant->id . "&input[date]=". $input['date'] . "';" .
-			"get_output('book_table',". $restaurant->id .' ,params);">Reserveer</button>';
+			"get_output('book_table',". $restaurant->id .' ,params);">Reserveer</button></li>';
 		
 		echo $html;
 	}
@@ -136,5 +137,4 @@ if($request == '/ajax/book_table'){
 		     '<a href="/account/login.php">Login</a> om te kunnen reserveren</p>';
 	}
 }
-
 ?>

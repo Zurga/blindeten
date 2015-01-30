@@ -35,7 +35,6 @@ function get_output(which, input, params){
 
 	var output;
 	var url = window.location.protocol + window.location.host + '/ajax';
-	console.log(url);
 	
 	if (http_object != null){
 		http_object.open('POST', "ajax/"+ which, true);
@@ -48,6 +47,7 @@ function get_output(which, input, params){
 		
 		http_object.onreadystatechange = function() {
 			if(http_object.readyState == 4){
+				http_object.response
 				if (which == 'calendar'){
 					output = JSON.parse(http_object.response);
 					create_calendar(output, input);

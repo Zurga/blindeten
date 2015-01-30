@@ -17,7 +17,6 @@ class Controller {
 		$index = 'http://' . $_SERVER['SERVER_NAME'];
 		$root = $_SERVER['DOCUMENT_ROOT'];
 		$request = $_SERVER['REQUEST_URI'];
-		echo $request;
 
 		//get user info if logged in
 		if($logged_in){
@@ -36,6 +35,7 @@ class Controller {
 		foreach($urlRoutes as $route=>$controller_name){
 			if(preg_match($route, $request)){
 				$controller = $controller_name;
+				
 			}
 		}
 		

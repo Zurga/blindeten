@@ -13,7 +13,7 @@ if($request == '/account/show.php'){
 	include $root . '/html/show.php';
 	}
 
-//the user wants to edit the iformation
+//the user wants to edit the information
 if($request == '/account/edit.php'){
 	if ($logged_in == true) {
 		$title = "Account wijzigen";
@@ -37,19 +37,27 @@ if ($request == '/account/edit_restaurant.php') {
 
 //change restaurant attributes
 if ($request == '/account/save_restaurant') {
+	if($user->owner != 0){
+		$restaurant = new Restaurant($user->owner);
+	}
 	$attr = sanitize($_POST['input'],$model->db);
 	if($user->change_rest($attr)) {
-		header("Location: ".$index ."/account/show.php");
+		$changed_restaurant = 'Het restaurant is aangepast.';
+		include $root ."/html/show.php";
 	}
 }
 
 //Save user data
 if($request == '/account/save_data'){
+	if($user->owner != 0){
+		$restaurant = new Restaurant($user->owner);
+		}
 	$attr = sanitize($_POST['input'],$model->db);
 	$bday= $attr['year'].'-'.$attr['month'].'-'.$attr['day'];
 	$attr['birthdate'] = $bday;
 	if($user->change_attr($attr)){
-		header("Location: ". $index . "/account/show.php");
+		$changed_attributes = 'Je hebt je gegevens aangepast';
+		include $root . '/html/show.php';
 	}
 }
 //User request register.php
@@ -118,10 +126,14 @@ if($request == '/account/change_password.php') {
 }
 //Save new password
 if($request == '/account/save_new_password'){
+	if($user->owner != 0){
+		$restaurant = new Restaurant($user->owner);
+		}
 	if($auth->login($user->email,sanitize($_POST['cur_password'],$model->db))) {
 		$new_e_password = encrypt($user->email,sanitize($_POST['password']),$model->db);
 		$model->change_password($user->id, $new_e_password);
-		header("Location: ". $index);
+		$changed_password = 'Je wachtwoord is aangepast.';
+		include $root . '/html/show.php';
 	}
 	else {
 		$password_error = "Het huidige wachtwoord is niet correct.";
@@ -181,6 +193,7 @@ if($request == '/account/save_editbooking'){
 
 //Delete booking
 if($request == '/account/delete_booking') {
+	$bookings = $model->get_bookings($user);
 	$booking_id = sanitize($_POST['booking_id'],$model->db);
 	$booking = new Booking($booking_id);
 	//mail_id 6 is cancelling booking
@@ -188,8 +201,9 @@ if($request == '/account/delete_booking') {
 	$other_user= new User($booking->other_user($user));
 	send_mail($other_user,4,$booking->date);
 	if($user->cancel_booking($booking_id)){
-		$booking_deleted = "Booking succesvol verwijderd.";
-		header("Location: ". $index .'/account/mybookings.php');
+		$booking_deleted = "Reservering succesvol verwijderd.";
+		include $root . "/html/mybookings.php";
+		//header("Location: ". $index .'/account/mybookings.php');
 	}
 }
 ?>
