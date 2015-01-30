@@ -58,7 +58,7 @@ $times = array('18:00:00'=> 0,
 		$html .= '<li><select name="time" id="new-' . $restaurant->id . '">'; 
 		foreach($times as $time=>$count){
 			if($count < count($restaurant->tables)){
-				$html .= '<option id="time"value=' . $time . '>' . substr($time, 0, 5) . '</option>';
+				$html .= '<option class="time" value=' . $time . '>' . substr($time, 0, 5) . '</option>';
 			}
 		}
 		$html .= '</select><button value="Reserveer" onClick="'.
