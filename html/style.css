@@ -305,11 +305,6 @@ form li p{
 	display: block
 
 }
-form p {
-	 display: inline;  
-     margin: 0;
-
-}
 
 #submit {
 	margin-top: 10px;
@@ -321,10 +316,6 @@ form p {
 }
 
 #new-1 {
-	margin-left:140px;
-}
-
-#new-2 {
 	margin-left:140px;
 }
 
