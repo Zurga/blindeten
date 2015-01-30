@@ -167,7 +167,8 @@ if($request == '/account/edit_booking'){
 if($request == '/account/save_editbooking'){
 	$booking_id = sanitize($_POST['old_booking'],$model->db);
 	$user->cancel_booking($booking_id);
-	$message = "Je hebt reservering is gewijzigd!";
+	$message = "Je hebt je reservering gewijzigd.";
+	$bookings = $model->get_bookings($user);
 	include $root . '/html/mybookings.php';
 }
 
