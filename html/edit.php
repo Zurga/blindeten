@@ -3,22 +3,16 @@
 <div class="content">
 	<div class="maincontent">
 		<h1>Gegevens veranderen</h1>
-		<br><br>
 		<form action='save_data' method='post'>
 		<fieldset id="inputs">
-			<li><p>Naam:</p><br><br>
+			<li><p>Naam:</p>
 			<input id="name" name="input[name]" type="text"></p></li>
-			<br>
 			<input id="surname" name="input[surname]" type="text"></p></li>
-			<br>
-			<br>
 			<select id= "sex" name="input[sex]">
 			<option value="0" >Man</option>
 			<option value="1" >Vrouw</option>
 			</select>
-			<br>
-			<br>
-			<li><p>Geboortedatum:</p><br><br>
+			<li><p>Geboortedatum:</p>
 			<select id="day" name="input[day]">
 				<option value="01" >01</option>
 				<option value="02" >02</option>
@@ -149,15 +143,10 @@
 				<option value="1921">1921</option>
 				<option value="1920">1920</option>
 				</select>
-			<br>
-			<br>
-			<li><p>Woonplaats:</p><br><br>
+			<li><p>Woonplaats:</p>
 			<input id="city" name="input[city]" type="text"></p></li>
-			<br>
-			<br>
 			<li><input type="submit" id="submit" value="Gegevens opslaan"></p></li>
 			</form>
-			<br>
 			<form action='delete_account' method='post'>
 			<li><input type="submit" id="submit" value="Account verwijderen"></p></li>
 			</form>
@@ -167,32 +156,21 @@
 <?php if(isset($restaurant)){ ?>	
 		<form action='edit' method='post'>	
 		<fieldset id="inputs">
-			<li><p>Naam Restaurant:</p><br><br>
+			<li><p>Naam Restaurant:</p>
 			<p><input id="name" name="input[name]" type="text" placeholder="<?php echo $restaurant->name; ?>" ></p></li>
-			<br>
-			<li><p>Aantal tafels:</p><br><br>
+			<li><p>Aantal tafels:</p>
 			<p><input id="tables" name="input[tables]" type="number" placeholder="<?php echo $restaurant->tables; ?>" ></p></li>
-			<br>
-			<li><p>Website URL:</p><br><br>
+			<li><p>Website URL:</p>
 			<p><input id="url" name="input[url]" type="text" placeholder="<?php echo $restaurant->url; ?>" ></p></li>
-			<br>
 			<p>Straat:</p>
 			 <p><input id="street" name="input[street]" type="text" placeholder="<?php echo $restaurant->street; ?>" ></p></li>
-			
 			<p>Huisnummer:</p>
 			 <p><input id="number" name="input[number]" type="text" size="4" placeholder="<?php echo $restaurant->number; ?>" ></p></li>
-			<br>
-			<br>
 			<p>Postcode:</p>
 			 <p><input id="zipcode" name="input[zipcode]" type="text" size="8" maxlength="6" placeholder="<?php echo $restaurant->zipcode ?>" ></p></li>			
 			<p>Stad:</p>
 			 <p><input id="city" name="input[city]" type="text" placeholder="<?php echo $restaurant->city; ?>" ></p></li>
-			<br>
-			<br>
-			<br>
 			<li><input type="submit" id="submit" value="Gegevens opslaan"></p></li>
-			<br>
-			<br>
 			</fieldset>	
 		</form>
 <?php } ?>

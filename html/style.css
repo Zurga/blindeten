@@ -353,6 +353,10 @@ form p {
 	font-size: 14px;
 }
 
+ol{
+	padding: 30px;
+	list-style-type: decimal;
+}
 
 #wrapper {
 	max-width: 980px;
